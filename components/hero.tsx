@@ -75,12 +75,12 @@ export function Hero() {
           >
             <Button asChild size="lg">
               <Link href={CALENDLY_URL} target="_blank" rel="noreferrer">
-                Book a demo
+                Try in sandbox
                 <ArrowUpRight className="h-4 w-4" />
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <Link href="/solutions">See solutions</Link>
+              <Link href="/solutions">See it live</Link>
             </Button>
             <Link
               href="/case-studies"

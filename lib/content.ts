@@ -1,27 +1,28 @@
-import { CalendarClock, FileText, MessagesSquare } from "lucide-react";
+import { FileText, ShieldCheck, Send } from "lucide-react";
 import { CALENDLY_URL } from "./constants";
 
 export const heroHeadlines = [
-  "Resolve and qualify. Automatically.",
-  "Triages and replies fast.",
-  "Speed up healthcare & legal inboxes.",
+  "Tag. Route. Reply. Safely—on autopilot.",
+  "Sandbox first, then ship to production.",
+  "Inbox triage and replies without the backlog.",
 ];
 
 export const heroHeadline = heroHeadlines[0];
 
-export const heroSubhead = "AI for support and intake in healthcare & legal.";
+export const heroSubhead =
+  "EmailTag auto-tags, routes, and drafts replies with audit trails—test safely in sandbox before you go live.";
 
 export const previewModules = [
   {
     title: "Inbox Triage",
     description: "Routes, prioritizes, logs.",
-    tags: ["Billing", "High priority", "Care team"],
+    tags: ["Sandbox on", "High priority", "Right team"],
     latency: "0.4s",
   },
   {
     title: "Suggested Reply",
     description: "Drafts with citations.",
-    tags: ["Safe context", "Tone guardrails"],
+    tags: ["Tone guardrails", "Audit trail"],
     latency: "Ready",
   },
   {
@@ -44,24 +45,24 @@ export const outcomesBar = {
 
 export const whatWeDoCards = [
   {
-    title: "Support AI",
-    icon: MessagesSquare,
-    value: "AI triage, replies, and routing for patient and client support desks.",
-    outcomes: ["Fewer backlogs", "Faster first responses"],
+    title: "Sandbox-first",
+    icon: ShieldCheck,
+    value: "Test tagging and replies safely before production.",
+    outcomes: ["No live sends", "Flip live fast"],
     href: "/solutions#support",
   },
   {
-    title: "Sales / Intake AI",
-    icon: CalendarClock,
-    value: "Lead qualification, appointment setting, and intake summaries that stay compliant.",
-    outcomes: ["Speed-to-lead", "Cleaner CRM data"],
+    title: "Routing & Auto-reply",
+    icon: Send,
+    value: "Right team instantly with drafted replies that match your tone.",
+    outcomes: ["Faster answers", "Consistent voice"],
     href: "/solutions#intake",
   },
   {
     title: "Document & Workflow Automation",
     icon: FileText,
-    value: "Extract fields, draft summaries, and push structured updates into your systems.",
-    outcomes: ["Fewer manual touches", "Better auditability"],
+    value: "Extract fields, summarize, and sync to your systems.",
+    outcomes: ["No retyping", "Audit-ready"],
     href: "/solutions#automation",
   },
 ];
@@ -304,8 +305,8 @@ export const ctaButtons = [
 ] as const;
 
 export const heroBullets = [
-  "Outcome-first, human control.",
-  "Audit-ready for regulated teams.",
+  "Sandbox safe—no live sends until you’re ready.",
+  "Audit-ready logs for regulated teams.",
   "Live in days, refine weekly.",
 ];
 
