@@ -1,65 +1,66 @@
-import Image from "next/image";
+import { CTASection } from "@/components/cta-section";
+import { CaseStudyCard } from "@/components/case-study-card";
+import { FeatureCards } from "@/components/feature-cards";
+import { Hero } from "@/components/hero";
+import { HowItWorks } from "@/components/how-it-works";
+import { IndustryTabs } from "@/components/industry-tabs";
+import { OutcomesBar } from "@/components/outcomes-bar";
+import { SectionHeading } from "@/components/section-heading";
+import { caseStudies } from "@/lib/content";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="space-y-16 pb-20">
+      <Hero />
+      <div className="space-y-16">
+        <div className="px-4 sm:px-6">
+          <OutcomesBar />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+
+        <section className="mx-auto max-w-6xl space-y-8 px-4 sm:px-6" id="what-we-do">
+          <SectionHeading
+            eyebrow="What we do"
+            title="AI that clears backlogs, accelerates intake, and keeps you in control."
+            subtitle="Support AI, Sales/Intake AI, and automation tailored for healthcare and legal teams."
+          />
+          <FeatureCards />
+        </section>
+
+        <section className="mx-auto max-w-6xl space-y-8 px-4 sm:px-6" id="how-it-works">
+          <SectionHeading
+            eyebrow="How it works"
+            title="Deploy fast, improve weekly."
+            subtitle="Connect your systems, keep humans in the loop, and measure results out of the box."
+          />
+          <HowItWorks />
+        </section>
+
+        <section className="mx-auto max-w-6xl space-y-8 px-4 sm:px-6" id="industries">
+          <SectionHeading
+            eyebrow="Industries"
+            title="Built for healthcare and legal teams"
+            subtitle="Choose the workflows you want to accelerate—intake, triage, replies, and structured data capture."
+          />
+          <IndustryTabs />
+        </section>
+
+        <section className="mx-auto max-w-6xl space-y-8 px-4 sm:px-6" id="case-studies">
+          <SectionHeading
+            eyebrow="Case studies"
+            title="Illustrative examples of how teams ship outcomes quickly"
+            subtitle="We tailor workflows to your stack—here are sample results and patterns."
+          />
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {caseStudies.map((study) => (
+              <CaseStudyCard key={study.title} study={study} compact />
+            ))}
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-5xl px-4 sm:px-6">
+          <CTASection />
+        </section>
+      </div>
     </div>
   );
 }
