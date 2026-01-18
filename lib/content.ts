@@ -1,16 +1,10 @@
 import { FileText, ShieldCheck, Send } from "lucide-react";
 import { CALENDLY_URL } from "./constants";
 
-export const heroHeadlines = [
-  "Tag. Route. Reply. Safely—on autopilot.",
-  "Sandbox first, then ship to production.",
-  "Inbox triage and replies without the backlog.",
-];
-
-export const heroHeadline = heroHeadlines[0];
+export const heroHeadline = "Your inbox, handled.";
 
 export const heroSubhead =
-  "EmailTag auto-tags, routes, and drafts replies with audit trails—test safely in sandbox before you go live.";
+  "AI-powered email triage and replies for healthcare and legal teams.";
 
 export const previewModules = [
   {
