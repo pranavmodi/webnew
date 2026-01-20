@@ -28,8 +28,8 @@ export function Navbar() {
       <Link
         href={href}
         className={cn(
-          "relative px-3 py-2 text-sm font-semibold transition-colors",
-          active ? "text-foreground" : "text-muted-foreground hover:text-foreground",
+          "relative px-3 py-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80",
+          active ? "text-primary" : "",
         )}
       >
         {label}
@@ -45,30 +45,29 @@ export function Navbar() {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-border/70 bg-background/80 backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-primary/20 bg-black/80 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link className="flex items-center gap-2 text-base font-bold" href="/">
           <span className="flex h-8 w-8 items-center justify-center rounded-xl border border-primary/40 bg-primary/15 text-primary">
             PM
           </span>
           <div className="flex flex-col leading-none">
-            <span>{SITE_NAME}</span>
-            <span className="text-xs font-medium text-muted-foreground">
+            <span className="text-primary">{SITE_NAME}</span>
+            <span className="text-xs font-medium text-primary/70">
               Matrix-grade automation
             </span>
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex">
-          {navLinks.map((link) => (
-            <NavLink key={link.href} {...link} />
-          ))}
-        </nav>
+        {navLinks.length > 0 && (
+          <nav className="hidden items-center gap-1 md:flex">
+            {navLinks.map((link) => (
+              <NavLink key={link.href} {...link} />
+            ))}
+          </nav>
+        )}
 
         <div className="hidden items-center gap-2 md:flex">
-          <Button asChild variant="outline" size="sm">
-            <Link href="/#solutions">See solutions</Link>
-          </Button>
           <Button asChild size="sm">
             <Link href={CALENDLY_URL} target="_blank" rel="noreferrer">
               Book a demo
@@ -77,48 +76,51 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center md:hidden">
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="outline" size="icon" aria-label="Open navigation">
-                <Menu className="h-5 w-5" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent>
-              <SheetHeader>
-                <SheetTitle className="text-left">Navigate</SheetTitle>
-              </SheetHeader>
-              <div className="mt-6 flex flex-col gap-3">
-                {navLinks.map((link) => (
-                  <SheetClose asChild key={link.href}>
-                    <Link
-                      href={link.href}
-                      className={cn(
-                        "rounded-lg px-3 py-2 text-base font-semibold transition",
-                        pathname === link.href
-                          ? "bg-muted text-foreground"
-                          : "text-muted-foreground hover:bg-muted hover:text-foreground",
-                      )}
-                    >
-                      {link.label}
-                    </Link>
-                  </SheetClose>
-                ))}
-              </div>
-              <Separator className="my-6 h-px w-full bg-border" />
-              <div className="flex flex-col gap-3">
-                <SheetClose asChild>
-                  <Button asChild variant="outline" size="lg">
-                    <Link href="/#solutions">See solutions</Link>
-                  </Button>
-                </SheetClose>
-                <Button asChild size="lg">
-                  <Link href={CALENDLY_URL} target="_blank" rel="noreferrer">
-                    Book a demo
-                  </Link>
+          {navLinks.length > 0 ? (
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="outline" size="icon" aria-label="Open navigation">
+                  <Menu className="h-5 w-5" />
                 </Button>
-              </div>
-            </SheetContent>
-          </Sheet>
+              </SheetTrigger>
+              <SheetContent>
+                <SheetHeader>
+                  <SheetTitle className="text-left">Navigate</SheetTitle>
+                </SheetHeader>
+                <div className="mt-6 flex flex-col gap-3">
+                  {navLinks.map((link) => (
+                    <SheetClose asChild key={link.href}>
+                      <Link
+                        href={link.href}
+                        className={cn(
+                          "rounded-lg px-3 py-2 text-base font-semibold transition",
+                          pathname === link.href
+                            ? "bg-primary/10 text-primary"
+                            : "text-muted-foreground hover:bg-primary/10 hover:text-primary",
+                        )}
+                      >
+                        {link.label}
+                      </Link>
+                    </SheetClose>
+                  ))}
+                </div>
+                <Separator className="my-6 h-px w-full bg-border" />
+                <div className="flex flex-col gap-3">
+                  <Button asChild size="lg">
+                    <Link href={CALENDLY_URL} target="_blank" rel="noreferrer">
+                      Book a demo
+                    </Link>
+                  </Button>
+                </div>
+              </SheetContent>
+            </Sheet>
+          ) : (
+            <Button asChild size="sm">
+              <Link href={CALENDLY_URL} target="_blank" rel="noreferrer">
+                Book a demo
+              </Link>
+            </Button>
+          )}
         </div>
       </div>
     </header>

@@ -42,6 +42,13 @@
     @apply transition-colors;
   }
 
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: hsl(var(--primary));
+  }
+
   a:focus-visible,
   button:focus-visible,
   input:focus-visible,

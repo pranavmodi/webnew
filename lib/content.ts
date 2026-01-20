@@ -38,14 +38,14 @@ export const whatWeDoCards = [
     icon: FileText,
     value: "AI tagging, routing, and compliance automation for inbox-heavy teams.",
     outcomes: ["Triage fast", "Document-aware", "Audit ready"],
-    href: "/#solutions",
+    href: "/#cta",
   },
   {
     title: "ProdBot",
     icon: Headphones,
     value: "Multichannel support across web chat, SMS, and voice with human handoff.",
     outcomes: ["24/7 coverage", "Voice + SMS", "Consistent answers"],
-    href: "/#solutions",
+    href: "/#cta",
   },
 ] as const;
 
@@ -254,8 +254,8 @@ export const contactIndustries = ["Healthcare", "Legal", "Other"] as const;
 
 export const ctaButtons = [
   { label: "Book a demo", href: CALENDLY_URL, variant: "default" as const },
-  { label: "See solutions", href: "/#solutions", variant: "outline" as const },
-  { label: "View case studies", href: "/#cases", variant: "ghost" as const },
+  { label: "Email us", href: "mailto:hello@possibleminds.ai", variant: "outline" as const },
+  { label: "Learn more", href: "/#cta", variant: "ghost" as const },
 ] as const;
 
 export const valuesList = [

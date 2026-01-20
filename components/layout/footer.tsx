@@ -13,7 +13,7 @@ export function Footer() {
             <span className="flex h-8 w-8 items-center justify-center rounded-xl border border-primary/40 bg-primary/15 text-primary">
               PM
             </span>
-            <span>{SITE_NAME}</span>
+            <span className="text-primary">{SITE_NAME}</span>
           </div>
           <p className="mt-3 max-w-xs text-sm text-muted-foreground">
             AI agents for inbox triage, document validation, and multichannel support in healthcare and legal.
@@ -29,7 +29,7 @@ export function Footer() {
 
         {footerLinks.map((section) => (
           <div key={section.title}>
-            <h3 className="text-sm font-semibold text-muted-foreground">
+            <h3 className="text-sm font-semibold text-primary">
               {section.title}
             </h3>
             <ul className="mt-3 space-y-2 text-sm">
@@ -37,7 +37,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-foreground/80 transition hover:text-foreground"
+                    className="text-foreground/80 transition hover:text-primary"
                   >
                     {link.label}
                   </Link>
@@ -51,11 +51,11 @@ export function Footer() {
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-4 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <span>© {new Date().getFullYear()} {SITE_NAME}. All rights reserved.</span>
           <div className="flex items-center gap-4">
-            <Link href="/#security" className="hover:text-foreground">
-              Security
-            </Link>
-            <Link href="mailto:hello@possibleminds.ai" className="hover:text-foreground">
+            <Link href="mailto:hello@possibleminds.ai" className="hover:text-primary">
               Contact
+            </Link>
+            <Link href={CALENDLY_URL} className="hover:text-primary">
+              Book a demo
             </Link>
           </div>
         </div>
