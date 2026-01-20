@@ -19,29 +19,29 @@ export function Hero() {
       <div className="relative mx-auto grid min-h-[70vh] max-w-6xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.2fr_0.8fr]">
         <div className="max-w-2xl text-left">
           <h1 className="text-5xl font-semibold leading-tight tracking-tight text-[#00ff41] sm:text-6xl lg:text-7xl">
-            Imagine more, do more
+            Imagine More.
+            <span className="block">Do More.</span>
           </h1>
-          <p className="mt-4 text-base text-foreground/80 sm:text-lg">
-            Enterprise software has changed forever with AI, leverage it to surge ahead
-          </p>
         </div>
-        <div className="space-y-4">
-          <div className="rounded-2xl border border-primary/25 bg-black/60 p-5 text-sm text-foreground/80">
-            <p className="text-base leading-relaxed text-foreground/90">
-              “Information is information, not matter or energy.”
-            </p>
-            <p className="mt-3 text-xs uppercase tracking-wide text-primary">
-              Norbert Wiener
-            </p>
-          </div>
-          <div className="rounded-2xl border border-primary/25 bg-black/60 p-5 text-sm text-foreground/80">
-            <p className="text-base leading-relaxed text-foreground/90">
-              “We can only see a short distance ahead, but we can see plenty there that needs to be done.”
-            </p>
-            <p className="mt-3 text-xs uppercase tracking-wide text-primary">
-              Alan Turing
-            </p>
-          </div>
+        <div className="rounded-2xl border border-primary/25 bg-black/60 p-6">
+          <ul className="space-y-4 text-base text-foreground/85 sm:text-lg">
+            <li className="flex items-start gap-3">
+              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#00ff41]" />
+              <span>Double implementation speed</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#00ff41]" />
+              <span>Cut delivery times by 50%</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#00ff41]" />
+              <span>Improve gross margins from ~35% to ~60%</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#00ff41]" />
+              <span>Give developers back 15-20 hours/week on repetitive tasks</span>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
