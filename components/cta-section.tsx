@@ -7,7 +7,7 @@ import { CALENDLY_URL } from "@/lib/constants";
 
 export function CTASection() {
   return (
-    <Card className="border border-primary/20 bg-gradient-to-br from-primary/10 via-background to-background shadow-soft">
+    <Card className="border border-primary/30 bg-[#04150d] shadow-soft">
       <CardHeader className="space-y-3 text-center">
         <CardTitle className="text-3xl font-semibold">
           Ready to automate your highest-volume workflows?
@@ -24,7 +24,7 @@ export function CTASection() {
           </Link>
         </Button>
         <Button asChild size="lg" variant="outline">
-          <Link href="/contact">Contact</Link>
+          <Link href="mailto:hello@possibleminds.ai">Contact</Link>
         </Button>
       </CardContent>
     </Card>

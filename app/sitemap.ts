@@ -4,12 +4,6 @@ import { SITE_URL } from "@/lib/constants";
 
 const routes = [
   "/",
-  "/solutions",
-  "/industries",
-  "/case-studies",
-  "/about",
-  "/contact",
-  "/privacy",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

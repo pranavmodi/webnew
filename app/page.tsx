@@ -18,7 +18,7 @@ export default function Home() {
         <OutcomesBar />
       </div>
 
-      <section className="mx-auto max-w-6xl space-y-8 px-4 sm:px-6">
+      <section id="solutions" className="mx-auto max-w-6xl space-y-8 px-4 sm:px-6">
         <SectionHeading
           eyebrow="Solutions"
           title="Two products, one compliance-first platform"
@@ -27,7 +27,7 @@ export default function Home() {
         <FeatureCards />
       </section>
 
-      <section className="mx-auto max-w-6xl space-y-8 px-4 sm:px-6">
+      <section id="how" className="mx-auto max-w-6xl space-y-8 px-4 sm:px-6">
         <SectionHeading
           eyebrow="How it works"
           title="Connect workflows, automate decisions, keep control"
@@ -36,7 +36,7 @@ export default function Home() {
         <HowItWorks />
       </section>
 
-      <section className="mx-auto max-w-6xl space-y-8 px-4 sm:px-6">
+      <section id="industries" className="mx-auto max-w-6xl space-y-8 px-4 sm:px-6">
         <SectionHeading
           eyebrow="Industries"
           title="Focused on the most document-heavy operations"
@@ -45,7 +45,7 @@ export default function Home() {
         <IndustryTabs />
       </section>
 
-      <section className="mx-auto max-w-6xl space-y-6 px-4 sm:px-6">
+      <section id="security" className="mx-auto max-w-6xl space-y-6 px-4 sm:px-6">
         <SectionHeading
           eyebrow="Security"
           title="Trusted controls for regulated data"
@@ -66,7 +66,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl space-y-6 px-4 sm:px-6">
+      <section id="cases" className="mx-auto max-w-6xl space-y-6 px-4 sm:px-6">
         <SectionHeading
           eyebrow="Case studies"
           title="Patterns we deploy across teams"
@@ -108,7 +108,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 sm:px-6">
+      <section id="cta" className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="rounded-3xl border border-primary/30 bg-[#04150d] p-8 text-center shadow-soft">
           <div className="mx-auto max-w-2xl space-y-4">
             <div className="text-sm font-semibold uppercase tracking-tight text-primary">
@@ -127,7 +127,7 @@ export default function Home() {
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <Link href="/contact">Contact</Link>
+                <Link href="mailto:hello@possibleminds.ai">Contact</Link>
               </Button>
             </div>
           </div>

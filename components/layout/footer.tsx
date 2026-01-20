@@ -51,10 +51,10 @@ export function Footer() {
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-4 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <span>© {new Date().getFullYear()} {SITE_NAME}. All rights reserved.</span>
           <div className="flex items-center gap-4">
-            <Link href="/privacy" className="hover:text-foreground">
-              Privacy
+            <Link href="/#security" className="hover:text-foreground">
+              Security
             </Link>
-            <Link href="/contact" className="hover:text-foreground">
+            <Link href="mailto:hello@possibleminds.ai" className="hover:text-foreground">
               Contact
             </Link>
           </div>

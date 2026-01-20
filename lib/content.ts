@@ -1,14 +1,5 @@
-import {
-  FileText,
-  Headphones,
-  MessagesSquare,
-} from "lucide-react";
+import { FileText, Headphones } from "lucide-react";
 import { CALENDLY_URL } from "./constants";
-
-export const heroHeadline = "AI agents for healthcare and legal operations.";
-
-export const heroSubhead =
-  "Possible Minds builds EmailTag and ProdBot to automate triage, intake, and customer support with compliance-first guardrails.";
 
 export const previewModules = [
   {
@@ -47,14 +38,14 @@ export const whatWeDoCards = [
     icon: FileText,
     value: "AI tagging, routing, and compliance automation for inbox-heavy teams.",
     outcomes: ["Triage fast", "Document-aware", "Audit ready"],
-    href: "/solutions#emailtag",
+    href: "/#solutions",
   },
   {
     title: "ProdBot",
     icon: Headphones,
     value: "Multichannel support across web chat, SMS, and voice with human handoff.",
     outcomes: ["24/7 coverage", "Voice + SMS", "Consistent answers"],
-    href: "/solutions#prodbot",
+    href: "/#solutions",
   },
 ] as const;
 
@@ -263,15 +254,9 @@ export const contactIndustries = ["Healthcare", "Legal", "Other"] as const;
 
 export const ctaButtons = [
   { label: "Book a demo", href: CALENDLY_URL, variant: "default" as const },
-  { label: "See solutions", href: "/solutions", variant: "outline" as const },
-  { label: "View case studies", href: "/case-studies", variant: "ghost" as const },
+  { label: "See solutions", href: "/#solutions", variant: "outline" as const },
+  { label: "View case studies", href: "/#cases", variant: "ghost" as const },
 ] as const;
-
-export const heroBullets = [
-  "Matrix-green branding with audit-first automation.",
-  "Human-in-the-loop controls for every workflow.",
-  "Go live in weeks, iterate weekly.",
-];
 
 export const valuesList = [
   {
@@ -301,19 +286,4 @@ export const proofBadges = [
   { label: "HIPAA-aware", detail: "PHI-safe workflows" },
   { label: "FrontApp", detail: "Inbox automation" },
   { label: "Twilio", detail: "SMS + voice" },
-] as const;
-
-export const productSignals = [
-  {
-    title: "EmailTag",
-    icon: MessagesSquare,
-    description: "Triage and route high-volume inboxes with OCR-powered precision.",
-    highlights: ["Tagging + routing", "Lien validation", "Sender verification"],
-  },
-  {
-    title: "ProdBot",
-    icon: Headphones,
-    description: "Support patients and clients across web, SMS, and voice.",
-    highlights: ["Web chat", "Twilio SMS", "Voice handoff"],
-  },
 ] as const;

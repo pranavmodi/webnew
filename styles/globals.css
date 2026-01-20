@@ -34,13 +34,7 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "ss03" on, "cv02" on, "cv11" on;
-    background-image:
-      radial-gradient(1200px 600px at 85% -10%, rgba(0, 255, 65, 0.15), transparent 60%),
-      radial-gradient(800px 500px at 10% 20%, rgba(14, 164, 114, 0.14), transparent 55%),
-      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: auto, auto, 90px 90px, 90px 90px;
-    background-position: top right, top left, center, center;
+    background: #000;
     color-scheme: dark;
   }
 

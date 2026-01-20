@@ -67,7 +67,7 @@ export function Navbar() {
 
         <div className="hidden items-center gap-2 md:flex">
           <Button asChild variant="outline" size="sm">
-            <Link href="/solutions">See solutions</Link>
+            <Link href="/#solutions">See solutions</Link>
           </Button>
           <Button asChild size="sm">
             <Link href={CALENDLY_URL} target="_blank" rel="noreferrer">
@@ -108,7 +108,7 @@ export function Navbar() {
               <div className="flex flex-col gap-3">
                 <SheetClose asChild>
                   <Button asChild variant="outline" size="lg">
-                    <Link href="/solutions">See solutions</Link>
+                    <Link href="/#solutions">See solutions</Link>
                   </Button>
                 </SheetClose>
                 <Button asChild size="lg">
