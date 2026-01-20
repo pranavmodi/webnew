@@ -3,15 +3,14 @@ import { Check } from "lucide-react";
 import { compareRows } from "@/lib/content";
 
 const columns = [
-  { key: "support", label: "Support AI" },
-  { key: "intake", label: "Sales / Intake AI" },
-  { key: "automation", label: "Automation" },
+  { key: "emailtag", label: "EmailTag" },
+  { key: "prodbot", label: "ProdBot" },
 ] as const;
 
 export function CompareTable() {
   return (
-    <div className="overflow-hidden rounded-2xl border border-border/80 bg-white shadow-sm">
-      <div className="grid grid-cols-[2fr,repeat(3,1fr)] bg-accent/60 text-sm font-semibold text-muted-foreground">
+    <div className="overflow-x-auto rounded-2xl border border-border/80 bg-card/80 shadow-soft">
+      <div className="grid min-w-[560px] grid-cols-[2fr,repeat(2,1fr)] bg-muted/70 text-sm font-semibold text-muted-foreground">
         <div className="px-4 py-3">Capabilities</div>
         {columns.map((col) => (
           <div key={col.key} className="px-4 py-3 text-center">
@@ -23,7 +22,7 @@ export function CompareTable() {
         {compareRows.map((row) => (
           <div
             key={row.label}
-            className="grid grid-cols-[2fr,repeat(3,1fr)] items-center text-sm"
+            className="grid min-w-[560px] grid-cols-[2fr,repeat(2,1fr)] items-center text-sm"
           >
             <div className="px-4 py-3 font-medium text-foreground/90">
               {row.label}

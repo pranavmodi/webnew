@@ -17,7 +17,7 @@ const legal = industries.find((item) => item.key === "legal");
 export const metadata: Metadata = {
   title: `Industries | ${SITE_NAME}`,
   description:
-    "Possible Minds focuses on healthcare and legal workflows: support, intake, automation, and compliance-minded operations.",
+    "Possible Minds supports healthcare and legal teams with inbox automation, multichannel support, and document intelligence.",
 };
 
 export default function IndustriesPage() {
@@ -25,8 +25,8 @@ export default function IndustriesPage() {
     <div className="mx-auto max-w-6xl space-y-14 px-4 pb-16 sm:px-6">
       <PageHero
         eyebrow="Industries"
-        title="Focused on healthcare and legal outcomes"
-        description="AI that respects sensitive data, accelerates triage and intake, and keeps your teams in control."
+        title="Purpose-built for healthcare and legal operations"
+        description="AI that respects sensitive data, accelerates triage, and keeps your teams in control."
         actions={
           <div className="flex flex-wrap gap-3">
             <Button asChild>
@@ -45,11 +45,11 @@ export default function IndustriesPage() {
         <section className="space-y-6">
           <SectionHeading
             eyebrow="Healthcare"
-            title="Reduce backlogs without compromising safety"
+            title="Reduce backlogs without compromising PHI"
             subtitle={healthcare.description}
           />
           <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-            <Card className="border-border/80 shadow-sm">
+            <Card className="border-border/70 bg-card/80 shadow-soft">
               <CardHeader>
                 <CardTitle>Workflows</CardTitle>
               </CardHeader>
@@ -70,13 +70,13 @@ export default function IndustriesPage() {
                     </div>
                   ))}
                 </div>
-                <div className="col-span-2 rounded-xl border border-dashed border-border bg-accent/60 p-3 text-sm text-muted-foreground">
+                <div className="col-span-2 rounded-xl border border-dashed border-border/70 bg-muted/60 p-3 text-sm text-muted-foreground">
                   <span className="font-semibold text-foreground">Example automation:</span>{" "}
                   {healthcare.example}
                 </div>
               </CardContent>
             </Card>
-            <Card className="border-border/80 shadow-sm">
+            <Card className="border-border/70 bg-card/80 shadow-soft">
               <CardHeader>
                 <CardTitle>Outcomes</CardTitle>
               </CardHeader>
@@ -99,7 +99,7 @@ export default function IndustriesPage() {
             ]}
           />
 
-          <Card className="border-border/80 shadow-sm">
+          <Card className="border-border/70 bg-card/80 shadow-soft">
             <CardHeader>
               <CardTitle>Security & privacy posture</CardTitle>
             </CardHeader>
@@ -126,7 +126,7 @@ export default function IndustriesPage() {
             subtitle={legal.description}
           />
           <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-            <Card className="border-border/80 shadow-sm">
+            <Card className="border-border/70 bg-card/80 shadow-soft">
               <CardHeader>
                 <CardTitle>Workflows</CardTitle>
               </CardHeader>
@@ -147,13 +147,13 @@ export default function IndustriesPage() {
                     </div>
                   ))}
                 </div>
-                <div className="col-span-2 rounded-xl border border-dashed border-border bg-accent/60 p-3 text-sm text-muted-foreground">
+                <div className="col-span-2 rounded-xl border border-dashed border-border/70 bg-muted/60 p-3 text-sm text-muted-foreground">
                   <span className="font-semibold text-foreground">Example automation:</span>{" "}
                   {legal.example}
                 </div>
               </CardContent>
             </Card>
-            <Card className="border-border/80 shadow-sm">
+            <Card className="border-border/70 bg-card/80 shadow-soft">
               <CardHeader>
                 <CardTitle>Outcomes</CardTitle>
               </CardHeader>
@@ -176,7 +176,7 @@ export default function IndustriesPage() {
             ]}
           />
 
-          <Card className="border-border/80 shadow-sm">
+          <Card className="border-border/70 bg-card/80 shadow-soft">
             <CardHeader>
               <CardTitle>Security & privacy posture</CardTitle>
             </CardHeader>

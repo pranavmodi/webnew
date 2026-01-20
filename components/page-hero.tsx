@@ -21,13 +21,13 @@ export function PageHero({
   return (
     <div
       className={cn(
-        "space-y-4 rounded-3xl border border-border/70 bg-white/80 p-6 shadow-sm backdrop-blur",
+        "space-y-4 rounded-3xl border border-border/70 bg-card/70 p-6 shadow-soft backdrop-blur",
         align === "center" ? "text-center" : "text-left",
         className,
       )}
     >
       {eyebrow && (
-        <Badge variant="secondary" className={cn("mb-2", align === "center" ? "mx-auto" : "")}>
+        <Badge variant="outline" className={cn("mb-2 text-primary", align === "center" ? "mx-auto" : "")}>
           {eyebrow}
         </Badge>
       )}

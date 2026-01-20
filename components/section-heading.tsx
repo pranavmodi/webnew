@@ -25,7 +25,7 @@ export function SectionHeading({
       )}
     >
       {eyebrow && (
-        <Badge variant="secondary" className="font-medium">
+        <Badge variant="outline" className="font-medium text-primary">
           {eyebrow}
         </Badge>
       )}

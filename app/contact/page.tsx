@@ -11,7 +11,7 @@ import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
 export const metadata: Metadata = {
   title: `Contact | ${SITE_NAME}`,
   description:
-    "Reach the Possible Minds team to discuss your support, intake, or automation workflows.",
+    "Reach the Possible Minds team to discuss inbox automation and multichannel support workflows.",
 };
 
 export default function ContactPage() {
@@ -20,7 +20,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Tell us about your workflows"
-        description="We respond quickly—share the systems and processes you want to accelerate."
+        description="We respond quickly—share the systems and processes you want to automate."
         actions={
           <Button asChild>
             <Link href={CALENDLY_URL} target="_blank" rel="noreferrer">
@@ -32,24 +32,24 @@ export default function ContactPage() {
 
       <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
         <ContactForm />
-        <Card className="border-border/80 shadow-sm">
+        <Card className="border-border/70 bg-card/80 shadow-soft">
           <CardHeader className="space-y-2">
             <CardTitle>What to expect</CardTitle>
             <p className="text-sm text-muted-foreground">
-              A short call to map your current workflows, systems, and guardrails. We keep it focused and actionable.
+              A focused call to map workflows, systems, and compliance requirements.
             </p>
           </CardHeader>
           <CardContent className="space-y-3 text-sm text-muted-foreground">
-            <div className="rounded-xl border border-border bg-accent/50 p-3">
-              <Badge variant="secondary">Agenda</Badge>
+            <div className="rounded-xl border border-border/70 bg-muted/60 p-3">
+              <Badge variant="outline">Agenda</Badge>
               <ul className="mt-2 space-y-1">
                 <li>• Your workflows and target outcomes</li>
                 <li>• Systems to connect (EMR/EHR, CRM, ticketing, telephony)</li>
                 <li>• Controls, review steps, and reporting needs</li>
               </ul>
             </div>
-            <div className="rounded-xl border border-border bg-accent/40 p-3">
-              <Badge variant="secondary">Timeline</Badge>
+            <div className="rounded-xl border border-border/70 bg-muted/50 p-3">
+              <Badge variant="outline">Timeline</Badge>
               <p className="mt-1">
                 Week 1: design + configure. Weeks 2-4: pilots with humans-in-the-loop. Then expand automation with quality gates.
               </p>

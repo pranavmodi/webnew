@@ -1,293 +1,262 @@
-import { FileText, ShieldCheck, Send } from "lucide-react";
+import {
+  FileText,
+  Headphones,
+  MessagesSquare,
+} from "lucide-react";
 import { CALENDLY_URL } from "./constants";
 
-export const heroHeadline = "Your inbox, handled.";
+export const heroHeadline = "AI agents for healthcare and legal operations.";
 
 export const heroSubhead =
-  "AI-powered email triage and replies for healthcare and legal teams.";
+  "Possible Minds builds EmailTag and ProdBot to automate triage, intake, and customer support with compliance-first guardrails.";
 
 export const previewModules = [
   {
     title: "Inbox Triage",
-    description: "Routes, prioritizes, logs.",
-    tags: ["Sandbox on", "High priority", "Right team"],
+    description: "Classify, tag, and route messages with OCR awareness.",
+    tags: ["FrontApp sync", "Attachment OCR", "Auto-routing"],
     latency: "0.4s",
   },
   {
-    title: "Suggested Reply",
-    description: "Drafts with citations.",
-    tags: ["Tone guardrails", "Audit trail"],
-    latency: "Ready",
+    title: "Document Intelligence",
+    description: "Extract IDs, validate signatures, and flag modifications.",
+    tags: ["Lien checks", "Barcode read", "Audit trail"],
+    latency: "2-5s",
   },
   {
-    title: "Intake Summary",
-    description: "Fields + next steps to CRM/EMR.",
-    tags: ["Score 8.7", "Next: Schedule"],
-    latency: "Structured",
+    title: "Voice + SMS Support",
+    description: "Guide patients or clients across web, SMS, and voice.",
+    tags: ["Twilio", "Live handoff", "History-aware"],
+    latency: "Live",
   },
 ] as const;
 
 export const outcomesBar = {
-  label: "Outcomes (example)",
+  label: "Deployment outcomes",
   metrics: [
-    { value: "40% faster response time", context: "Example" },
-    { value: "2× lead qualification throughput", context: "Example" },
-    { value: "60% fewer manual tags", context: "Example" },
+    { value: "60% fewer manual tags", context: "EmailTag" },
+    { value: "2× faster response times", context: "Support teams" },
+    { value: "70% less document review", context: "Lien workflows" },
   ],
   audiences: ["Healthcare ops", "Legal intake"],
 };
 
 export const whatWeDoCards = [
   {
-    title: "Sandbox-first",
-    icon: ShieldCheck,
-    value: "Test tagging and replies safely before production.",
-    outcomes: ["No live sends", "Flip live fast"],
-    href: "/solutions#support",
-  },
-  {
-    title: "Routing & Auto-reply",
-    icon: Send,
-    value: "Right team instantly with drafted replies that match your tone.",
-    outcomes: ["Faster answers", "Consistent voice"],
-    href: "/solutions#intake",
-  },
-  {
-    title: "Document & Workflow Automation",
+    title: "EmailTag",
     icon: FileText,
-    value: "Extract fields, summarize, and sync to your systems.",
-    outcomes: ["No retyping", "Audit-ready"],
-    href: "/solutions#automation",
+    value: "AI tagging, routing, and compliance automation for inbox-heavy teams.",
+    outcomes: ["Triage fast", "Document-aware", "Audit ready"],
+    href: "/solutions#emailtag",
   },
-];
+  {
+    title: "ProdBot",
+    icon: Headphones,
+    value: "Multichannel support across web chat, SMS, and voice with human handoff.",
+    outcomes: ["24/7 coverage", "Voice + SMS", "Consistent answers"],
+    href: "/solutions#prodbot",
+  },
+] as const;
 
 export const howItWorksSteps = [
   {
     title: "Connect",
     description:
-      "Plug into EMR/EHR, CRM, inboxes, telephony, knowledge bases, and secure file stores via APIs.",
+      "Integrate inboxes, EMR/EHR, CRM, telephony, and document stores via secure APIs.",
   },
   {
     title: "Understand",
     description:
-      "Map intents, parties, urgency, and entities. Detect PHI/PII, redact where required, and keep provenance.",
+      "Classify intent, extract entities, and validate documents with OCR and rules.",
   },
   {
     title: "Act",
     description:
-      "Draft replies, route tickets, create tasks, log structured events, and push updates into your systems.",
+      "Route messages, draft compliant replies, and trigger updates across your stack.",
   },
   {
     title: "Learn",
     description:
-      "Capture feedback, score quality, and continuously improve prompts and guardrails with QA loops.",
+      "Review QA signals, tune prompts, and expand automation with measurable results.",
   },
 ] as const;
 
 export const integrationsLine =
-  "Integrates with CRM, EHR/EMR, ticketing, telephony, email, document stores, and data warehouses (generic).";
+  "Integrates with CRM, EMR/EHR, FrontApp, telephony, document stores, and data warehouses.";
 
 export const industries = [
   {
     key: "healthcare",
     title: "Healthcare",
     description:
-      "Purpose-built for patient access, care navigation, and billing support teams.",
+      "Purpose-built for patient access, imaging networks, and revenue cycle teams.",
     workflows: [
-      "Scheduling and rescheduling requests",
-      "Support inbox triage across billing, care, and benefits",
-      "Pre-auth and documentation intake",
-      "Member outreach, follow-ups, and reminders",
+      "Appointment scheduling and status requests",
+      "Medical records, reports, and imaging requests",
+      "Billing and lien workflows with document validation",
+      "Patient outreach across SMS and voice",
     ],
     outcomes: [
-      "Reduce backlog and hold times",
-      "Improve accuracy with cited knowledge",
-      "Lower handle time with structured summaries",
+      "Reduce backlogs without risking PHI exposure",
+      "Standardize responses with audited templates",
+      "Improve turnarounds on document-heavy requests",
     ],
     example:
-      "AI triages patient portal messages, drafts compliant replies, and schedules callbacks for edge cases.",
+      "EmailTag routes records requests, verifies senders, and drafts compliant replies in minutes.",
   },
   {
     key: "legal",
     title: "Legal",
     description:
-      "Built for intake teams, client success, and ops at law firms and legal service providers.",
+      "Built for intake, client communications, and document-heavy case operations.",
     workflows: [
-      "Lead qualification and conflicts intake",
-      "Follow-ups with documents and deadlines",
-      "Matter status updates and reminders",
-      "Document extraction and structured summaries",
+      "Matter intake and lead qualification",
+      "Case updates, document routing, and follow-ups",
+      "Lien processing and verification",
+      "Multi-channel client support with handoff",
     ],
     outcomes: [
       "Accelerate speed-to-lead",
-      "Improve response quality and consistency",
-      "Keep attorneys focused on high-value work",
+      "Reduce time spent on document review",
+      "Deliver consistent, defensible communications",
     ],
     example:
-      "AI collects matter details, drafts conflict checks, and prepares a clean intake summary for review.",
+      "ProdBot answers FAQ queries and escalates complex matters to staff with full context.",
   },
 ] as const;
 
 export const caseStudies = [
   {
-    title: "Regional health network support desk",
-    label: "Illustrative example",
-    context: "Multi-site provider supporting patient portal, billing, and benefits inquiries.",
+    title: "Multi-site imaging provider",
+    label: "Operational example",
+    context: "High-volume inboxes for scheduling, records, and billing across 60 locations.",
     challenge:
-      "Support queues spiked during enrollment and claims season; manual triage slowed responses.",
+      "Manual triage created backlogs and slow response times for time-sensitive requests.",
     solution:
-      "Deployed AI triage and suggested replies with policy citations across email and portal messages.",
-    impact: [
-      "Example: 40% faster median response time",
-      "Example: 35% fewer escalations to clinical staff",
-      "Example: 1.9× more issues resolved in-channel",
-    ],
-    notes: "Generic integrations: EHR, telephony, CRM, shared knowledge base.",
-  },
-  {
-    title: "Specialty clinic intake",
-    label: "Illustrative example",
-    context: "Small team handling referrals, pre-auth requests, and scheduling via phone and forms.",
-    challenge:
-      "Leads and referrals waited hours for follow-up; data entry into the EMR was inconsistent.",
-    solution:
-      "Used intake AI to qualify leads, collect required documents, and auto-populate structured records.",
-    impact: [
-      "Example: 2× faster speed-to-lead",
-      "Example: 25% increase in booked consults",
-      "Example: Cleaner data with required fields enforced",
-    ],
-    notes: "Generic integrations: EMR, CRM, secure file storage.",
-  },
-  {
-    title: "Multi-office law firm client services",
-    label: "Illustrative example",
-    context: "Firm managing inbound matters, follow-ups, and document-heavy requests.",
-    challenge:
-      "Attorneys spent too much time clarifying intake details and digging for prior context.",
-    solution:
-      "Rolled out intake summaries, follow-up drafting, and document extraction with audit logs.",
+      "EmailTag automated tagging, routing, and templated replies with document validation.",
     impact: [
       "Example: 60% fewer manual tags",
-      "Example: Shorter time-to-assign for new matters",
-      "Example: Better visibility with structured summaries",
+      "Example: 2× faster response time",
+      "Example: Automated lien validation for every PDF",
     ],
-    notes: "Generic integrations: CRM, DMS, telephony, email.",
+    notes: "FrontApp + EMR integrations with audit trails.",
+  },
+  {
+    title: "Regional law firm intake",
+    label: "Operational example",
+    context: "Multi-channel inquiries with frequent document follow-ups.",
+    challenge:
+      "Intake teams spent hours re-asking for missing information.",
+    solution:
+      "ProdBot guided clients over web and SMS, escalating complex cases to humans.",
+    impact: [
+      "Example: 40% faster speed-to-lead",
+      "Example: Cleaner intake summaries",
+      "Example: Consistent client updates",
+    ],
+    notes: "Twilio + CRM + document store integration.",
+  },
+  {
+    title: "Healthcare billing operations",
+    label: "Operational example",
+    context: "AR team juggling lien updates, payment notices, and document checks.",
+    challenge:
+      "Document errors and conditional language slowed approvals.",
+    solution:
+      "EmailTag flagged modifications and routed exceptions to human review.",
+    impact: [
+      "Example: 70% fewer manual document checks",
+      "Example: Faster approvals and escalations",
+      "Example: Clear audit logs for compliance",
+    ],
+    notes: "OCR + lien validation with human-in-the-loop QA.",
   },
 ] as const;
 
 export const solutions = [
   {
-    id: "support",
-    title: "Customer Support AI",
-    promise: "Handle inbound tickets with AI triage, suggested replies, and structured logging.",
+    id: "emailtag",
+    title: "EmailTag",
+    promise:
+      "AI-powered email triage, tagging, routing, and compliance automation for inbox-heavy teams.",
     features: [
-      "Intent and urgency detection with routing rules",
-      "Suggested replies with policy citations and tone controls",
-      "Auto-tagging, summarization, and CRM/EMR sync",
+      "Intent detection with OCR-aware document analysis",
+      "Automatic tagging, inbox routing, and template-based replies",
+      "Lien validation with barcode, signature, and modification checks",
+      "Sender verification before sharing PHI",
     ],
     outcomes: [
-      "Faster speed-to-response and resolution",
-      "Reduced backlog and fewer manual tags",
-      "Better visibility with clean, structured data",
+      "Reduce manual triage and routing work",
+      "Improve document accuracy with automated checks",
+      "Maintain audit-ready logs for every action",
     ],
     faqs: [
       {
-        question: "How do you keep responses accurate?",
+        question: "Which inboxes can EmailTag support?",
         answer:
-          "We ground responses in your knowledge, require citations, and enforce tone/guardrails with review flows.",
+          "EmailTag integrates with FrontApp and similar CRMs, with configurable routing rules per department.",
       },
       {
-        question: "Can we choose what is automated vs. suggested?",
+        question: "How does it handle attachments?",
         answer:
-          "Yes. You can keep humans-in-the-loop on any flow and only auto-send for low-risk intents.",
+          "Attachments are OCR-processed and analyzed for barcodes, signatures, and conditional language before any automation.",
       },
       {
-        question: "How do you handle PHI or sensitive data?",
+        question: "Can we keep humans in the loop?",
         answer:
-          "We support redaction, scoped access, and data residency. Sensitive fields stay within your environment when required.",
+          "Yes. You can require review on specific tags, low-confidence scores, or sensitive workflows.",
       },
     ],
   },
   {
-    id: "intake",
-    title: "Sales / Intake AI",
-    promise: "Qualify leads quickly and keep humans focused on high-intent conversations.",
+    id: "prodbot",
+    title: "ProdBot",
+    promise:
+      "AI customer support and sales assistant for web chat, SMS, and voice with seamless human handoff.",
     features: [
-      "Lead scoring, routing, and appointment scheduling",
-      "Intake checklists with required fields and follow-ups",
-      "Conversational data capture across email, chat, or voice",
+      "Web chat widget plus dedicated chat page",
+      "Twilio SMS workflows and live agent escalation",
+      "Voice conversation support with resilient VAD handling",
+      "Knowledge base retrieval with automated re-indexing",
     ],
     outcomes: [
-      "Better speed-to-lead and conversion",
-      "Cleaner, consistent CRM records",
-      "Lower no-show rates with smart reminders",
+      "24/7 support coverage across channels",
+      "Consistent, knowledge-grounded answers",
+      "Faster handoff for high-touch conversations",
     ],
     faqs: [
       {
-        question: "Do we have control over routing rules?",
+        question: "How does ProdBot stay up to date?",
         answer:
-          "Yes. Routing is configurable by region, practice area, availability, and business priority.",
+          "The knowledge base refreshes via webhook updates and can be rebuilt on demand by admins.",
       },
       {
-        question: "Can we keep teams in the loop?",
+        question: "Can we deploy with our own LLM provider?",
         answer:
-          "Every action is logged with context. High-value leads can be flagged for human review before anything is sent.",
+          "Yes. ProdBot supports OpenAI, Anthropic, and Google models with configurable tool usage.",
       },
       {
-        question: "What channels are supported?",
+        question: "Does it support human handoff?",
         answer:
-          "Email, web forms, chat, and telephony transcripts. We can also post updates to Slack or your CRM.",
-      },
-    ],
-  },
-  {
-    id: "automation",
-    title: "Document & Workflow Automation",
-    promise: "Extract fields, summarize, and trigger workflows with auditability built in.",
-    features: [
-      "Document extraction with validation and confidence scoring",
-      "Summaries with cited sources and structured fields",
-      "Task creation and updates across your stack with logs",
-    ],
-    outcomes: [
-      "Fewer manual touches on repetitive workflows",
-      "Higher data quality for reporting and compliance",
-      "Clear audit trails for every action",
-    ],
-    faqs: [
-      {
-        question: "Can we review before updates post to systems?",
-        answer:
-          "Yes. We support approval steps, thresholds, and detailed audit logs before pushing changes.",
-      },
-      {
-        question: "How do you validate extracted data?",
-        answer:
-          "We combine model outputs with rules, regex, and human review where needed. Confidence scores flag edge cases.",
-      },
-      {
-        question: "Which systems can you update?",
-        answer:
-          "CRMs, EMRs/EHRs, ticketing, data warehouses, and document stores via APIs or secure file drops.",
+          "Conversations can be escalated to human agents with full context and transcript history.",
       },
     ],
   },
 ] as const;
 
 export const compareRows = [
-  { label: "Inbox triage and routing", support: true, intake: true, automation: true },
-  { label: "Suggested replies with citations", support: true, intake: true, automation: false },
-  { label: "Lead scoring and booking", support: false, intake: true, automation: false },
-  { label: "Document extraction and summaries", support: true, intake: true, automation: true },
-  { label: "Structured logging to CRM/EMR", support: true, intake: true, automation: true },
-  { label: "Audit logs and controls", support: true, intake: true, automation: true },
+  { label: "Inbox triage and routing", emailtag: true, prodbot: false },
+  { label: "Web chat + SMS conversations", emailtag: false, prodbot: true },
+  { label: "Voice agent support", emailtag: false, prodbot: true },
+  { label: "Document extraction + validation", emailtag: true, prodbot: true },
+  { label: "Template-based auto responses", emailtag: true, prodbot: true },
+  { label: "Audit logs and governance", emailtag: true, prodbot: true },
 ] as const;
 
 export const securityPoints = [
-  "Data is encrypted in transit and at rest; access is scoped by role.",
-  "Option to run certain steps in your VPC or behind your existing identity provider.",
-  "Redaction and minimization for PHI/PII; audit trails for every action.",
+  "Role-based access, scoped permissions, and encrypted data paths.",
+  "Sender verification for PHI workflows and fail-closed behavior on errors.",
+  "Audit trails on every routing, extraction, and response decision.",
 ] as const;
 
 export const contactIndustries = ["Healthcare", "Legal", "Other"] as const;
@@ -299,26 +268,52 @@ export const ctaButtons = [
 ] as const;
 
 export const heroBullets = [
-  "Sandbox safe—no live sends until you’re ready.",
-  "Audit-ready logs for regulated teams.",
-  "Live in days, refine weekly.",
+  "Matrix-green branding with audit-first automation.",
+  "Human-in-the-loop controls for every workflow.",
+  "Go live in weeks, iterate weekly.",
 ];
 
 export const valuesList = [
   {
     title: "Reliability",
-    description: "Deterministic flows, strong guardrails, and clear fallbacks so ops teams can trust automation.",
+    description:
+      "Deterministic flows, clear safeguards, and measured automation you can trust.",
   },
   {
-    title: "Privacy",
-    description: "Scoped access, redaction where needed, and transparent logs. No surprises with sensitive data.",
+    title: "Compliance",
+    description:
+      "Verification, audit logs, and redaction capabilities designed for PHI and sensitive data.",
   },
   {
-    title: "Measurable outcomes",
-    description: "We ship with dashboards for speed-to-response, conversion, and quality so you can track value.",
+    title: "Speed",
+    description:
+      "Compress days of triage and document review into minutes with controlled automation.",
   },
   {
-    title: "Fast iteration",
-    description: "Weekly tuning cycles with your team to ship improvements quickly without breaking processes.",
+    title: "Partnership",
+    description:
+      "We tune workflows with your team weekly and expand only when outcomes are proven.",
   },
 ];
+
+export const proofBadges = [
+  { label: "SOC 2-ready", detail: "Controls and auditability" },
+  { label: "HIPAA-aware", detail: "PHI-safe workflows" },
+  { label: "FrontApp", detail: "Inbox automation" },
+  { label: "Twilio", detail: "SMS + voice" },
+] as const;
+
+export const productSignals = [
+  {
+    title: "EmailTag",
+    icon: MessagesSquare,
+    description: "Triage and route high-volume inboxes with OCR-powered precision.",
+    highlights: ["Tagging + routing", "Lien validation", "Sender verification"],
+  },
+  {
+    title: "ProdBot",
+    icon: Headphones,
+    description: "Support patients and clients across web, SMS, and voice.",
+    highlights: ["Web chat", "Twilio SMS", "Voice handoff"],
+  },
+] as const;

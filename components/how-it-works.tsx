@@ -13,11 +13,13 @@ export function HowItWorks() {
       <div className="space-y-4">
         <h3 className="text-xl font-semibold">How it works</h3>
         <p className="text-muted-foreground">
-          Connect, understand, act, and learn—designed for regulated support and intake teams.
+          Connect, understand, act, and learn with guardrails built for regulated teams.
         </p>
-        <Card className="border-dashed border-border bg-accent/50">
+        <Card className="border-dashed border-primary/30 bg-primary/10">
           <CardContent className="flex flex-wrap items-center gap-3 py-4">
-            <Badge variant="secondary">Integrations</Badge>
+            <Badge variant="outline" className="border-primary/40 text-primary">
+              Integrations
+            </Badge>
             <span className="text-sm text-muted-foreground">{integrationsLine}</span>
           </CardContent>
         </Card>
@@ -30,9 +32,9 @@ export function HowItWorks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.05 }}
-            className="group relative rounded-2xl border border-border bg-card/80 p-4 shadow-sm"
+            className="group relative rounded-2xl border border-primary/25 bg-[#04150d] p-4 shadow-soft"
           >
-            <div className="absolute left-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-border bg-background text-sm font-semibold">
+            <div className="absolute left-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-primary/30 bg-primary/10 text-sm font-semibold text-foreground">
               {index + 1}
             </div>
             <div className="pl-14">

@@ -25,12 +25,12 @@ export function SolutionSection({
 }) {
   return (
     <section id={solution.id} className={cn("grid gap-6 lg:grid-cols-2", className)}>
-      <Card className="border-border/80 shadow-sm">
+      <Card className="border-border/70 bg-card/80 shadow-soft">
         <CardHeader className="space-y-3">
-          <Badge variant="secondary">{solution.title}</Badge>
+          <Badge variant="outline" className="text-primary">{solution.title}</Badge>
           <CardTitle className="text-2xl">{solution.promise}</CardTitle>
           <p className="text-sm text-muted-foreground">
-            Outcomes that matter for support and intake teams.
+            Built for high-volume, regulated workflows with human-in-the-loop controls.
           </p>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -54,7 +54,7 @@ export function SolutionSection({
             <ul className="space-y-2">
               {solution.outcomes.map((outcome) => (
                 <li key={outcome} className="flex items-start gap-2 text-sm">
-                  <span className="mt-1 h-2.5 w-2.5 rounded-full bg-emerald-500/80" />
+                  <span className="mt-1 h-2.5 w-2.5 rounded-full bg-primary/60" />
                   <span>{outcome}</span>
                 </li>
               ))}
@@ -68,7 +68,7 @@ export function SolutionSection({
           </Button>
         </CardContent>
       </Card>
-      <Card className="border-border/80 shadow-sm">
+      <Card className="border-border/70 bg-card/80 shadow-soft">
         <CardHeader>
           <CardTitle className="text-lg">Common questions</CardTitle>
         </CardHeader>

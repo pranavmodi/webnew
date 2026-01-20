@@ -6,17 +6,17 @@ import { Button } from "@/components/ui/button";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border/80 bg-gradient-to-b from-background to-white">
+    <footer className="border-t border-border/70 bg-background">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 sm:py-14 md:grid-cols-4">
         <div className="md:col-span-1">
           <div className="flex items-center gap-2 text-lg font-bold">
-            <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-primary text-primary-foreground">
+            <span className="flex h-8 w-8 items-center justify-center rounded-xl border border-primary/40 bg-primary/15 text-primary">
               PM
             </span>
             <span>{SITE_NAME}</span>
           </div>
           <p className="mt-3 max-w-xs text-sm text-muted-foreground">
-            AI for customer support and sales workflows in healthcare and legal.
+            AI agents for inbox triage, document validation, and multichannel support in healthcare and legal.
           </p>
           <div className="mt-4">
             <Button asChild size="sm">

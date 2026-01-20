@@ -20,13 +20,13 @@ const cardVariants = {
 
 export function ProductPreview() {
   return (
-    <div className="rounded-3xl border border-border/80 bg-white/80 p-4 shadow-soft backdrop-blur-sm">
-      <div className="space-y-3 rounded-2xl border border-dashed border-border/80 bg-gradient-to-b from-white via-white to-primary/5 p-4 text-sm font-semibold text-muted-foreground">
-        <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-tight text-primary">
+    <div className="rounded-3xl border border-primary/30 bg-[#04150d] p-4 shadow-soft backdrop-blur-sm">
+      <div className="space-y-3 rounded-2xl border border-dashed border-primary/30 bg-gradient-to-b from-primary/10 via-transparent to-transparent p-4 text-sm font-semibold text-muted-foreground">
+        <span className="inline-flex items-center rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-tight text-primary">
           Live workflow preview
         </span>
         <p className="text-base font-semibold text-foreground">
-          Inbox Triage → Suggested Reply → Intake Summary
+          Triage → Validate → Respond with auditability
         </p>
       </div>
       <div className="mt-4 space-y-3">
@@ -40,14 +40,14 @@ export function ProductPreview() {
             viewport={{ once: true, amount: 0.4 }}
             whileHover={{ y: -4 }}
             className={cn(
-              "group rounded-2xl border border-border bg-card/90 p-4 shadow-sm transition-all",
+              "group rounded-2xl border border-primary/25 bg-[#03110b] p-4 shadow-soft transition-all",
             )}
           >
             <div className="flex items-center justify-between gap-2">
               <div className="text-sm font-semibold text-foreground">
                 {module.title}
               </div>
-              <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+              <span className="rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
                 {module.latency}
               </span>
             </div>
@@ -58,7 +58,7 @@ export function ProductPreview() {
               {module.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full border border-border bg-accent px-3 py-1 text-xs font-semibold text-foreground/90"
+                  className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-foreground/90"
                 >
                   {tag}
                 </span>

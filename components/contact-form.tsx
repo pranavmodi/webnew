@@ -68,7 +68,7 @@ export function ContactForm({ inline }: { inline?: boolean }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className={cn("space-y-4 rounded-2xl border border-border bg-card p-4 shadow-sm", {
+      className={cn("space-y-4 rounded-2xl border border-border/80 bg-card/80 p-4 shadow-soft", {
         "bg-transparent p-0 border-none shadow-none": inline,
       })}
       noValidate
@@ -135,7 +135,7 @@ export function ContactForm({ inline }: { inline?: boolean }) {
             name="industry"
             value={form.industry}
             onChange={(e) => handleChange("industry", e.target.value)}
-            className="h-11 w-full rounded-lg border border-input bg-background px-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            className="h-11 w-full rounded-xl border border-border/80 bg-muted px-3 text-sm text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             {contactIndustries.map((industry) => (
               <option key={industry} value={industry}>

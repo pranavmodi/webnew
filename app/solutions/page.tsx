@@ -13,7 +13,7 @@ import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
 export const metadata: Metadata = {
   title: `Solutions | ${SITE_NAME}`,
   description:
-    "Customer support AI, sales/intake AI, and automation for healthcare and legal teams.",
+    "EmailTag and ProdBot: inbox automation and multichannel support for healthcare and legal teams.",
 };
 
 export default function SolutionsPage() {
@@ -21,8 +21,8 @@ export default function SolutionsPage() {
     <div className="mx-auto max-w-6xl space-y-14 px-4 pb-16 sm:px-6">
       <PageHero
         eyebrow="Solutions"
-        title="Three ways to accelerate support and intake"
-        description="Choose the workflows you want to automate. Keep humans-in-the-loop and ship measurable outcomes fast."
+        title="EmailTag + ProdBot, built for regulated operations"
+        description="Automate inbox triage, document validation, and multichannel support with audit-ready controls."
         actions={
           <div className="flex flex-wrap gap-3">
             <Button asChild>
@@ -46,8 +46,8 @@ export default function SolutionsPage() {
       <div className="space-y-4">
         <SectionHeading
           eyebrow="Compare"
-          title="Pick the combination that fits your stack"
-          subtitle="All solutions include controls, auditability, and integration support."
+          title="Compare capabilities across products"
+          subtitle="Both solutions ship with governance, audit trails, and integration support."
         />
         <CompareTable />
       </div>

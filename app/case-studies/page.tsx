@@ -10,7 +10,7 @@ import { SITE_NAME } from "@/lib/constants";
 export const metadata: Metadata = {
   title: `Case Studies | ${SITE_NAME}`,
   description:
-    "Sample outcomes and workflows for healthcare and legal teams using Possible Minds.",
+    "Operational examples showing how Possible Minds automates inboxes, documents, and support workflows.",
 };
 
 export default function CaseStudiesPage() {
@@ -18,12 +18,12 @@ export default function CaseStudiesPage() {
     <div className="mx-auto max-w-6xl space-y-12 px-4 pb-16 sm:px-6">
       <PageHero
         eyebrow="Case studies"
-        title="Illustrative examples"
+        title="Operational examples"
         description="Each engagement ships with measurable results, audit trails, and tuned workflows."
       />
       <SectionHeading
         eyebrow="Detailed looks"
-        title="Patterns we ship with teams"
+        title="Patterns we deploy with teams"
         subtitle="All examples are illustrative—your workflows, systems, and controls drive the build."
       />
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">

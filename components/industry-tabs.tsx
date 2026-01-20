@@ -8,7 +8,7 @@ import { industries } from "@/lib/content";
 export function IndustryTabs() {
   return (
     <Tabs defaultValue={industries[0].key}>
-      <TabsList>
+      <TabsList className="border border-primary/30 bg-[#04150d]">
         {industries.map((industry) => (
           <TabsTrigger key={industry.key} value={industry.key}>
             {industry.title}
@@ -17,9 +17,11 @@ export function IndustryTabs() {
       </TabsList>
       {industries.map((industry) => (
         <TabsContent key={industry.key} value={industry.key}>
-          <Card className="border-border/80 shadow-sm">
+          <Card className="border-primary/25 bg-[#04150d] shadow-soft">
             <CardHeader className="space-y-2">
-              <Badge variant="secondary">{industry.title}</Badge>
+              <Badge variant="outline" className="border-primary/40 text-primary">
+                {industry.title}
+              </Badge>
               <CardTitle>{industry.description}</CardTitle>
             </CardHeader>
             <CardContent className="grid gap-6 md:grid-cols-2">
@@ -48,7 +50,7 @@ export function IndustryTabs() {
                     </li>
                   ))}
                 </ul>
-                <div className="rounded-xl border border-dashed border-border bg-accent/50 p-3 text-sm text-muted-foreground">
+                <div className="rounded-xl border border-dashed border-primary/30 bg-primary/10 p-3 text-sm text-muted-foreground">
                   <span className="font-semibold text-foreground">Example automation:</span>{" "}
                   {industry.example}
                 </div>

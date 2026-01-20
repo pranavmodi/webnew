@@ -9,7 +9,7 @@ export function FlowDiagram({ steps }: FlowDiagramProps) {
         {steps.map((step, idx) => (
           <div
             key={step.title}
-            className="relative flex-1 rounded-xl border border-border bg-white p-4 text-sm shadow-sm"
+            className="relative flex-1 rounded-xl border border-border/70 bg-card/80 p-4 text-sm shadow-soft"
           >
             <div className="text-xs font-semibold uppercase tracking-tight text-muted-foreground">
               Step {idx + 1}

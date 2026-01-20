@@ -25,10 +25,10 @@ export function CaseStudyCard({
   compact?: boolean;
 }) {
   return (
-    <Card className="h-full border-border/80 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+    <Card className="h-full border-border/70 bg-card/80 transition hover:-translate-y-1 hover:shadow-glow">
       <CardHeader className="space-y-2">
         <div className="flex items-center gap-2">
-          <Badge variant="secondary">{study.label}</Badge>
+          <Badge variant="outline">{study.label}</Badge>
         </div>
         <CardTitle>{study.title}</CardTitle>
         {!compact && (

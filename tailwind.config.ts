@@ -13,7 +13,7 @@ const config: Config = {
       center: true,
       padding: "1.5rem",
       screens: {
-        "2xl": "1280px",
+        "2xl": "1440px",
       },
     },
     extend: {
@@ -59,15 +59,14 @@ const config: Config = {
       },
       fontFamily: {
         sans: [
-          "var(--font-geist-sans)",
+          "var(--font-manrope)",
+          "Manrope",
           "Inter",
-          "Mona Sans",
-          "IBM Plex Sans",
           "system-ui",
           "sans-serif",
         ],
         mono: [
-          "var(--font-geist-mono)",
+          "var(--font-mono)",
           "ui-monospace",
           "SFMono-Regular",
           "Menlo",
@@ -75,8 +74,9 @@ const config: Config = {
         ],
       },
       boxShadow: {
-        soft: "0px 12px 50px rgba(0, 0, 0, 0.06)",
-        focus: "0 0 0 2px hsla(var(--primary), 0.2)",
+        soft: "0px 18px 80px rgba(0, 0, 0, 0.4)",
+        focus: "0 0 0 2px hsla(var(--primary), 0.3)",
+        glow: "0 0 32px hsla(var(--glow-primary), 0.4)",
       },
       keyframes: {
         "accordion-down": {
