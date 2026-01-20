@@ -53,9 +53,6 @@ export function Navbar() {
           </span>
           <div className="flex flex-col leading-none">
             <span className="text-primary">{SITE_NAME}</span>
-            <span className="text-xs font-medium text-primary/70">
-              Matrix-grade automation
-            </span>
           </div>
         </Link>
 

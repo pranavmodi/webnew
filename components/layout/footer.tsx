@@ -6,40 +6,46 @@ import { Button } from "@/components/ui/button";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border/70 bg-background">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 sm:py-14 md:grid-cols-4">
-        <div className="md:col-span-1">
-          <div className="flex items-center gap-2 text-lg font-bold">
-            <span className="flex h-8 w-8 items-center justify-center rounded-xl border border-primary/40 bg-primary/15 text-primary">
+    <footer className="border-t border-primary/20 bg-black">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 sm:py-14 md:grid-cols-[1.2fr_0.8fr]">
+        <div className="space-y-4">
+          <div className="flex items-center gap-3">
+            <span className="flex h-10 w-10 items-center justify-center rounded-2xl border border-primary/40 bg-primary/15 text-primary shadow-glow">
               PM
             </span>
-            <span className="text-primary">{SITE_NAME}</span>
+            <div className="leading-tight">
+              <div className="text-base font-semibold text-primary">{SITE_NAME}</div>
+            </div>
           </div>
-          <p className="mt-3 max-w-xs text-sm text-muted-foreground">
+          <p className="max-w-md text-sm text-muted-foreground">
             AI agents for inbox triage, document validation, and multichannel support in healthcare and legal.
           </p>
-          <div className="mt-4">
-            <Button asChild size="sm">
+          <div className="flex flex-wrap gap-3">
+            <Button asChild size="sm" className="animate-glow">
               <Link href={CALENDLY_URL} target="_blank" rel="noreferrer">
                 Book a demo
               </Link>
+            </Button>
+            <Button asChild size="sm" variant="outline">
+              <Link href="mailto:hello@possibleminds.ai">Email us</Link>
             </Button>
           </div>
         </div>
 
         {footerLinks.map((section) => (
-          <div key={section.title}>
+          <div key={section.title} className="rounded-2xl border border-primary/20 bg-[#04150d] p-5">
             <h3 className="text-sm font-semibold text-primary">
               {section.title}
             </h3>
-            <ul className="mt-3 space-y-2 text-sm">
+            <ul className="mt-4 space-y-3 text-sm">
               {section.links.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-foreground/80 transition hover:text-primary"
+                    className="flex items-center justify-between text-foreground/80 transition hover:text-primary"
                   >
-                    {link.label}
+                    <span>{link.label}</span>
+                    <span className="text-xs text-primary/60">→</span>
                   </Link>
                 </li>
               ))}
@@ -47,7 +53,7 @@ export function Footer() {
           </div>
         ))}
       </div>
-      <div className="border-t border-border/60">
+      <div className="border-t border-primary/20">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-4 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <span>© {new Date().getFullYear()} {SITE_NAME}. All rights reserved.</span>
           <div className="flex items-center gap-4">
