@@ -1,0 +1,52 @@
+WEB DEVELOPER INTERN
+====================
+
+Location: Remote
+Type: Unpaid Internship
+Duration: 3-6 months
+
+
+ABOUT US
+--------
+
+Possible Minds builds AI agents for healthcare and legal organizations. Our products automate document processing, customer support, and sales through human-AI collaboration.
+
+
+WHAT YOU'LL DO
+--------------
+
+- Build and maintain our Next.js marketing website
+- Implement responsive UI components with React and Tailwind CSS
+- Create animations with Framer Motion
+- Develop embeddable chat widgets and internal dashboards
+- Optimize performance and SEO
+
+
+TECH STACK
+----------
+
+Next.js 14, TypeScript, Tailwind CSS, Radix UI, Framer Motion, Vercel
+
+
+REQUIREMENTS
+------------
+
+- Strong HTML, CSS, JavaScript fundamentals
+- React experience (hooks, components)
+- Tailwind CSS or similar utility-first frameworks
+- Eye for detail and responsive design
+- Currently pursuing or recently completed relevant degree
+
+Nice to have: Next.js, TypeScript, Framer Motion, accessibility knowledge
+
+
+THIS IS AN UNPAID POSITION
+--------------------------
+
+You'll work on production systems, receive mentorship, and build portfolio-worthy projects with potential for full-time conversion.
+
+
+APPLY
+-----
+
+Email hello@getpossibleminds.com with resume, portfolio/GitHub links, and availability.

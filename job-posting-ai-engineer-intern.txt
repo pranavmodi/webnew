@@ -1,0 +1,52 @@
+AI ENGINEER INTERN
+==================
+
+Location: Remote
+Type: Unpaid Internship
+Duration: 3-6 months
+
+
+ABOUT US
+--------
+
+Possible Minds builds AI agents for healthcare and legal organizations. Our products automate document processing, customer support, and sales through human-AI collaboration.
+
+
+WHAT YOU'LL DO
+--------------
+
+- Build AI agents for document processing and customer support
+- Develop NLP pipelines for healthcare and legal documents
+- Design prompts, chains, and agent architectures using LLMs
+- Implement Python/FastAPI backend services
+- Research RAG, agent frameworks, and domain-specific fine-tuning
+
+
+TECH STACK
+----------
+
+Python, FastAPI, OpenAI/Claude APIs, LangChain, vector databases, Next.js, Tailwind CSS
+
+
+REQUIREMENTS
+------------
+
+- Strong CS fundamentals
+- Python proficiency
+- NLP experience or coursework
+- Understanding of LLMs and prompt engineering
+- Currently pursuing or recently completed relevant degree
+
+Nice to have: LangChain, Next.js/React, RAG systems
+
+
+THIS IS AN UNPAID POSITION
+--------------------------
+
+You'll work on production systems, receive mentorship, and build portfolio-worthy projects with potential for full-time conversion.
+
+
+APPLY
+-----
+
+Email hello@getpossibleminds.com with resume, relevant project links, and availability.
