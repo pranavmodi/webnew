@@ -4,6 +4,7 @@ import { SITE_URL } from "@/lib/constants";
 
 const routes = [
   "/",
+  "/about",
   "/solutions/email-automation",
   "/solutions/support-agent",
   "/precise-mri",
