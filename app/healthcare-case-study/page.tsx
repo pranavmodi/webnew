@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/button";
 import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: `Precise Imaging Case Study | ${SITE_NAME}`,
+  title: `Medical Imaging Case Study | ${SITE_NAME}`,
   description:
-    "How Precise Imaging transformed patient support with AI, saving time and improving satisfaction.",
+    "How a California-based medical imaging chain transformed patient support with AI, saving time and improving satisfaction.",
 };
 
 export default function PreciseMRIPage() {
@@ -18,7 +18,7 @@ export default function PreciseMRIPage() {
         <div className="absolute inset-0">
           <Image
             src="/blog/precise-mri.jpg"
-            alt="Precise Imaging case study hero"
+            alt="Medical imaging case study hero"
             fill
             priority
             className="object-cover object-center opacity-85"
@@ -31,10 +31,10 @@ export default function PreciseMRIPage() {
               Case Study
             </div>
             <h1 className="text-4xl font-semibold leading-tight tracking-tight text-[#00ff41] sm:text-5xl lg:text-6xl">
-              How Precise Imaging Transformed Patient Support with AI
+              How a California Medical Imaging Chain Transformed Patient Support with AI
             </h1>
             <p className="max-w-3xl text-base text-foreground/80 sm:text-lg">
-              Precise Imaging partnered with Possible Minds to deploy an AI support agent that reduced repetitive inquiries,
+              A California-based medical imaging company partnered with Possible Minds to deploy an AI support agent that reduced repetitive inquiries,
               safeguarded patient data, and delivered faster answers without sacrificing the human touch.
             </p>
             <div className="flex flex-wrap gap-3 text-xs text-muted-foreground">
@@ -60,9 +60,9 @@ export default function PreciseMRIPage() {
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
           <h2 className="text-2xl font-semibold text-primary">Introduction</h2>
           <p className="mt-4 text-base text-foreground/80">
-            When Precise Imaging, a medical imaging provider with around 200 employees, saw their support team
-            overwhelmed by repetitive patient inquiries, they reached out for a tailored, cost-effective solution. Org
-            leader Danny Rackow needed a way to reduce operational costs while maintaining a high standard of patient
+            When a California-based medical imaging chain with around 200 employees saw their support team
+            overwhelmed by repetitive patient inquiries, they reached out for a tailored, cost-effective solution. The
+            organization&apos;s leadership needed a way to reduce operational costs while maintaining a high standard of patient
             care and satisfaction. The result was an AI support agent built to handle routine questions and seamlessly
             hand off complex issues to human agents.
           </p>
@@ -71,7 +71,7 @@ export default function PreciseMRIPage() {
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
           <h2 className="text-2xl font-semibold text-primary">Objectives and benefits</h2>
           <p className="mt-4 text-base text-foreground/80">
-            From the start, our mission was to help Precise Imaging conserve resources, boost patient satisfaction, and
+            From the start, our mission was to help the imaging center conserve resources, boost patient satisfaction, and
             simplify staff workflows. By automating repetitive queries, we aimed to reduce manual support load, deliver
             faster answers, keep patient data protected, and free staff to handle complex or sensitive requests.
           </p>
@@ -96,7 +96,7 @@ export default function PreciseMRIPage() {
             <div className="overflow-hidden rounded-2xl border border-primary/20">
               <Image
                 src="/blog/pre1.jpg"
-                alt="Precise Imaging chatbot interface"
+                alt="Medical imaging chatbot interface"
                 width={1200}
                 height={720}
                 className="h-auto w-full object-cover"
@@ -126,7 +126,7 @@ export default function PreciseMRIPage() {
             <div className="overflow-hidden rounded-2xl border border-primary/20">
               <Image
                 src="/blog/pre2.jpg"
-                alt="Precise Imaging chatbot analytics"
+                alt="Medical imaging chatbot analytics"
                 width={1200}
                 height={720}
                 className="h-auto w-full object-cover"
@@ -138,9 +138,9 @@ export default function PreciseMRIPage() {
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
           <h2 className="text-2xl font-semibold text-primary">Working with our team</h2>
           <p className="mt-4 text-base text-foreground/80">
-            Working alongside Danny Rackow and his team was a true pleasure. He came prepared with a clear vision but
+            Working alongside the client&apos;s leadership team was a true pleasure. They came prepared with a clear vision but
             also trusted us to innovate and iterate on the project. Transparent communication and quick feedback loops
-            allowed us to fine-tune the agent to meet and exceed Precise Imaging&apos;s standards.
+            allowed us to fine-tune the agent to meet and exceed the organization&apos;s standards.
           </p>
         </div>
 
@@ -148,7 +148,7 @@ export default function PreciseMRIPage() {
           <h2 className="text-2xl font-semibold text-primary">Outcome and results</h2>
           <p className="mt-4 text-base text-foreground/80">
             The deployment reduced wait times and delivered measurable ROI while preserving a human-first experience
-            for complex inquiries. After launch, Precise Imaging immediately reaped tangible benefits across support
+            for complex inquiries. After launch, the imaging center immediately reaped tangible benefits across support
             speed, staff focus, and patient confidence.
           </p>
           <div className="mt-6 grid gap-4 md:grid-cols-2">
@@ -201,7 +201,7 @@ export default function PreciseMRIPage() {
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
           <h2 className="text-2xl font-semibold text-primary">Conclusion and next steps</h2>
           <p className="mt-4 text-base text-foreground/80">
-            Precise Imaging now answers patients faster, protects sensitive data, and keeps staff focused on complex
+            The imaging center now answers patients faster, protects sensitive data, and keeps staff focused on complex
             cases. The next phase includes deeper scheduling automation and expanded AI-driven workflows across channels.
           </p>
           <p className="mt-4 text-base text-foreground/80">

@@ -7,7 +7,7 @@ const routes = [
   "/about",
   "/solutions/email-automation",
   "/solutions/support-agent",
-  "/precise-mri",
+  "/healthcare-case-study",
   "/law-case-study",
 ];
 

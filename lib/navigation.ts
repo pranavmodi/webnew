@@ -11,7 +11,7 @@ export const solutionsLinks = [
 ];
 
 export const caseStudiesLinks = [
-  { href: "/precise-mri", label: "Healthcare case studies" },
+  { href: "/healthcare-case-study", label: "Healthcare case studies" },
   { href: "/law-case-study", label: "Law case studies" },
 ];
 
