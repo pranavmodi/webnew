@@ -233,6 +233,40 @@ export const solutions = [
       },
     ],
   },
+  {
+    id: "lienclear",
+    title: "LienClear",
+    promise:
+      "Autonomous lien negotiation for PI law firms that maximizes client recovery and accelerates disbursements.",
+    features: [
+      "Auto-detection of settlement events from major CMS platforms",
+      "Vision-language document parsing for bills, EOBs, and lien letters",
+      "Provider knowledge graph with historical negotiation outcomes",
+      "Multi-channel negotiation via email, fax, and AI voice",
+    ],
+    outcomes: [
+      "Increase lien reductions from 30% to 50%+",
+      "Cut staff hours per case by 90%",
+      "Accelerate disbursements from months to weeks",
+    ],
+    faqs: [
+      {
+        question: "Which case management systems does LienClear support?",
+        answer:
+          "LienClear integrates with Filevine, Litify, Clio, and other major CMS platforms via API or lightweight RPA.",
+      },
+      {
+        question: "How does it handle Medicare and Medicaid liens?",
+        answer:
+          "The system includes MSP compliance protocols and automates MSPRC documentation for conditional payment recovery.",
+      },
+      {
+        question: "What happens when negotiations hit an impasse?",
+        answer:
+          "Cases are escalated to a human review queue with full context, negotiation history, and recommended next steps.",
+      },
+    ],
+  },
 ] as const;
 
 export const compareRows = [
