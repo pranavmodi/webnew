@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 import { SITE_NAME } from "@/lib/constants";
 
@@ -248,6 +249,29 @@ export default function EmailAutomationPage() {
             Patients get faster answers. Staff get less busywork. And your inbox finally feels manageable.
           </p>
         </div>
+
+        <Link
+          href="/healthcare-case-study"
+          className="group block rounded-2xl border border-primary/25 bg-gradient-to-br from-[#04150d] to-[#0a2618] p-6 transition hover:border-primary/40"
+        >
+          <div className="flex items-center justify-between">
+            <div>
+              <div className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/70">
+                Case Study
+              </div>
+              <h2 className="mt-2 text-2xl font-semibold text-primary group-hover:text-[#00ff41]">
+                See it in action
+              </h2>
+              <p className="mt-2 max-w-2xl text-base text-foreground/80">
+                Learn how a California medical imaging chain used EmailTag alongside our AI chatbot to
+                cut support workload by 62% and boost patient satisfaction by 41%.
+              </p>
+            </div>
+            <span className="hidden text-3xl text-primary/50 transition group-hover:text-primary sm:block">
+              →
+            </span>
+          </div>
+        </Link>
       </section>
     </div>
   );
