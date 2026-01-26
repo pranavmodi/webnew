@@ -64,3 +64,32 @@ All text content lives in `lib/content.ts`. Update copy there rather than in com
 import { Button } from "@/components/ui/button";
 import { heroHeadline } from "@/lib/content";
 ```
+
+### Internal Tools
+
+#### LinkedIn Outreach Tool (`/tools/linkedin-outreach`)
+
+A tool for generating personalized LinkedIn outreach messages from a CSV file of contacts.
+
+**Features:**
+- Upload CSV with contacts (name, title, firm, bio)
+- Automatically search for LinkedIn profiles using Serper API
+- Generate personalized messages using OpenAI GPT-4o
+- Creates 4 messages per contact:
+  - Short message from Pranav (<200 chars)
+  - Short message from Neha (<200 chars)
+  - Long LinkedIn message from Pranav
+  - Long LinkedIn message from Neha
+- Download results as CSV
+
+**API Routes:**
+- `POST /api/linkedin-search` - Search for LinkedIn profile URLs
+- `POST /api/generate-messages` - Generate personalized outreach messages
+
+**Environment Variables Required:**
+```bash
+OPENAI_API_KEY=sk-...      # Required for message generation
+SERPER_API_KEY=...         # Optional, for LinkedIn search (falls back to OpenAI)
+```
+
+See `.env.example` for configuration.
