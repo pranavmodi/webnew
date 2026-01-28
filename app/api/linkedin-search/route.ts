@@ -11,77 +11,91 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Build search query
-    const searchQuery = `${name} ${title || ""} ${firm || ""} LinkedIn site:linkedin.com/in`;
-
-    // Use Serper API for Google search (or fallback to OpenAI for extraction)
-    const serperApiKey = process.env.SERPER_API_KEY;
-
-    if (serperApiKey) {
-      // Use Serper API
-      const response = await fetch("https://google.serper.dev/search", {
-        method: "POST",
-        headers: {
-          "X-API-KEY": serperApiKey,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          q: searchQuery,
-          num: 5,
-        }),
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        const linkedinUrl = extractLinkedInUrl(data.organic || [], name);
-        return NextResponse.json({ linkedinUrl });
-      }
-    }
-
-    // Fallback: Use OpenAI to search and extract
     const openaiApiKey = process.env.OPENAI_API_KEY;
 
-    if (openaiApiKey) {
-      // Use OpenAI with web browsing or just return empty
-      // For now, we'll use OpenAI to make a best guess based on naming conventions
-      const response = await fetch("https://api.openai.com/v1/chat/completions", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${openaiApiKey}`,
-          "Content-Type": "application/json",
+    if (!openaiApiKey) {
+      return NextResponse.json(
+        { error: "OpenAI API key not configured" },
+        { status: 500 }
+      );
+    }
+
+    // Use OpenAI Responses API with web search tool and structured outputs
+    const response = await fetch("https://api.openai.com/v1/responses", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${openaiApiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model: "gpt-5-nano",
+        instructions:
+          "You are a research assistant that finds LinkedIn profile URLs for people. " +
+          "Use the web search tool to find the correct LinkedIn profile. " +
+          "Search for the person by name, title, and company on LinkedIn. " +
+          "Only return a real LinkedIn profile URL (linkedin.com/in/...) that you found via search. " +
+          "If you cannot find a matching profile, set found to false.",
+        input: `Find the LinkedIn profile URL for this person:\n\nName: ${name}\nTitle: ${title || "N/A"}\nCompany: ${firm || "N/A"}\n\nSearch the web and return their LinkedIn profile URL.`,
+        tools: [{ type: "web_search_preview" }],
+        text: {
+          format: {
+            type: "json_schema",
+            name: "linkedin_result",
+            strict: true,
+            schema: {
+              type: "object",
+              properties: {
+                found: {
+                  type: "boolean",
+                  description: "Whether a LinkedIn profile was found",
+                },
+                linkedin_url: {
+                  type: "string",
+                  description:
+                    "The LinkedIn profile URL (e.g. https://www.linkedin.com/in/username). Empty string if not found.",
+                },
+              },
+              required: ["found", "linkedin_url"],
+              additionalProperties: false,
+            },
+          },
         },
-        body: JSON.stringify({
-          model: "gpt-4o-mini",
-          messages: [
-            {
-              role: "system",
-              content: `You are a helper that generates likely LinkedIn profile URLs based on common naming patterns.
-              Given a person's name, title, and company, generate the most likely LinkedIn URL.
-              LinkedIn URLs typically follow patterns like:
-              - linkedin.com/in/firstname-lastname
-              - linkedin.com/in/firstnamelastname
-              - linkedin.com/in/firstname-lastname-numbers
+      }),
+    });
 
-              Only return the URL, nothing else. If you can't make a reasonable guess, return "NOT_FOUND".`,
-            },
-            {
-              role: "user",
-              content: `Name: ${name}\nTitle: ${title || "N/A"}\nCompany: ${firm || "N/A"}`,
-            },
-          ],
-          max_tokens: 100,
-          temperature: 0.3,
-        }),
-      });
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      console.error("OpenAI Responses API error:", errorData);
+      return NextResponse.json({ linkedinUrl: "" });
+    }
 
-      if (response.ok) {
-        const data = await response.json();
-        const suggestion = data.choices?.[0]?.message?.content?.trim() || "";
+    const data = await response.json();
 
-        if (suggestion && suggestion !== "NOT_FOUND" && suggestion.includes("linkedin.com")) {
-          return NextResponse.json({ linkedinUrl: suggestion });
-        }
+    // Extract the text output from the Responses API format
+    const textOutput = data.output?.find(
+      (item: { type: string }) => item.type === "message"
+    );
+    const content =
+      textOutput?.content?.find(
+        (c: { type: string }) => c.type === "output_text"
+      )?.text || "";
+
+    if (!content) {
+      return NextResponse.json({ linkedinUrl: "" });
+    }
+
+    try {
+      const result = JSON.parse(content);
+
+      if (
+        result.found &&
+        result.linkedin_url &&
+        result.linkedin_url.includes("linkedin.com/in/")
+      ) {
+        return NextResponse.json({ linkedinUrl: result.linkedin_url });
       }
+    } catch {
+      console.error("Failed to parse LinkedIn search response:", content);
     }
 
     return NextResponse.json({ linkedinUrl: "" });
@@ -92,43 +106,4 @@ export async function POST(request: NextRequest) {
       { status: 500 }
     );
   }
-}
-
-function extractLinkedInUrl(
-  results: Array<{ link?: string; title?: string }>,
-  name: string
-): string {
-  // Look for LinkedIn profile URLs in search results
-  const nameParts = name.toLowerCase().split(" ");
-  const firstName = nameParts[0];
-  const lastName = nameParts[nameParts.length - 1];
-
-  for (const result of results) {
-    const link = result.link || "";
-    const title = (result.title || "").toLowerCase();
-
-    // Check if it's a LinkedIn profile URL
-    if (link.includes("linkedin.com/in/")) {
-      // Verify the name appears in the title or URL
-      const linkLower = link.toLowerCase();
-      if (
-        title.includes(firstName) ||
-        title.includes(lastName) ||
-        linkLower.includes(firstName) ||
-        linkLower.includes(lastName)
-      ) {
-        return link;
-      }
-    }
-  }
-
-  // Return first LinkedIn /in/ URL if no exact match
-  for (const result of results) {
-    const link = result.link || "";
-    if (link.includes("linkedin.com/in/")) {
-      return link;
-    }
-  }
-
-  return "";
 }

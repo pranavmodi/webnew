@@ -11,8 +11,12 @@ export const solutionsLinks = [
 ];
 
 export const caseStudiesLinks = [
-  { href: "/healthcare-case-study", label: "Healthcare case studies" },
-  { href: "/law-case-study", label: "Law case studies" },
+  { href: "/healthcare-case-study", label: "Healthcare" },
+  { href: "/law-case-study", label: "Personal Injury Law" },
+];
+
+export const blogLinks = [
+  { href: "/blog/the-real-reason-ai-evals-matter", label: "Why AI Evals Matter" },
 ];
 
 export const footerLinks = [

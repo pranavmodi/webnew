@@ -37,44 +37,27 @@ export default function LinkedInOutreachPage() {
     "a California-based medical imaging company we helped transform their patient support operations"
   );
 
-  const parseCSV = (text: string): Contact[] => {
-    const lines = text.split("\n").filter((line) => line.trim());
-    if (lines.length < 2) return [];
+  const splitCSVIntoRows = (text: string): string[] => {
+    const rows: string[] = [];
+    let current = "";
+    let inQuotes = false;
 
-    const headers = lines[0].split(",").map((h) => h.trim().toLowerCase());
-    const nameIdx = headers.findIndex((h) => h.includes("contact name") || h.includes("name"));
-    const titleIdx = headers.findIndex((h) => h.includes("title") || h.includes("position"));
-    const firmIdx = headers.findIndex((h) => h.includes("firm") || h.includes("company"));
-    const bioIdx = headers.findIndex((h) => h.includes("bio"));
-    const linkedinIdx = headers.findIndex((h) => h.includes("linkedin"));
-
-    const parsed: Contact[] = [];
-
-    for (let i = 1; i < lines.length; i++) {
-      // Handle CSV with quoted fields
-      const row = parseCSVRow(lines[i]);
-      if (row.length === 0) continue;
-
-      const name = nameIdx >= 0 ? row[nameIdx]?.trim() : "";
-      if (!name) continue;
-
-      parsed.push({
-        id: `contact-${i}`,
-        name,
-        title: titleIdx >= 0 ? row[titleIdx]?.trim() || "" : "",
-        firm: firmIdx >= 0 ? row[firmIdx]?.trim() || "" : "",
-        bio: bioIdx >= 0 ? row[bioIdx]?.trim() || "" : "",
-        linkedin: linkedinIdx >= 0 ? row[linkedinIdx]?.trim() || "" : "",
-        linkedinStatus: row[linkedinIdx]?.trim() ? "found" : "pending",
-        shortMessagePranav: "",
-        shortMessageNeha: "",
-        longMessagePranav: "",
-        longMessageNeha: "",
-        messageStatus: "pending",
-      });
+    for (let i = 0; i < text.length; i++) {
+      const char = text[i];
+      if (char === '"') {
+        inQuotes = !inQuotes;
+        current += char;
+      } else if ((char === "\n" || char === "\r") && !inQuotes) {
+        if (current.trim()) rows.push(current);
+        current = "";
+        // Skip \r\n pairs
+        if (char === "\r" && text[i + 1] === "\n") i++;
+      } else {
+        current += char;
+      }
     }
-
-    return parsed;
+    if (current.trim()) rows.push(current);
+    return rows;
   };
 
   const parseCSVRow = (row: string): string[] => {
@@ -85,7 +68,12 @@ export default function LinkedInOutreachPage() {
     for (let i = 0; i < row.length; i++) {
       const char = row[i];
       if (char === '"') {
-        inQuotes = !inQuotes;
+        if (inQuotes && row[i + 1] === '"') {
+          current += '"';
+          i++;
+        } else {
+          inQuotes = !inQuotes;
+        }
       } else if (char === "," && !inQuotes) {
         result.push(current);
         current = "";
@@ -95,6 +83,71 @@ export default function LinkedInOutreachPage() {
     }
     result.push(current);
     return result;
+  };
+
+  const findColumnIndex = (headers: string[], ...patterns: string[]): number => {
+    // Try patterns in order of specificity (most specific first)
+    for (const pattern of patterns) {
+      const idx = headers.findIndex((h) => h === pattern);
+      if (idx >= 0) return idx;
+    }
+    // Fall back to partial matches in pattern order
+    for (const pattern of patterns) {
+      const idx = headers.findIndex((h) => h.includes(pattern));
+      if (idx >= 0) return idx;
+    }
+    return -1;
+  };
+
+  const parseCSV = (text: string): Contact[] => {
+    const rows = splitCSVIntoRows(text);
+    if (rows.length < 2) return [];
+
+    const headers = parseCSVRow(rows[0]).map((h) => h.trim().toLowerCase());
+
+    // Use specific matches first to avoid "firm name" matching for "name"
+    const nameIdx = findColumnIndex(headers, "contact name", "contact_name", "full name", "name");
+    const titleIdx = findColumnIndex(headers, "position/title", "position", "title", "role");
+    const firmIdx = findColumnIndex(headers, "firm name", "firm_name", "firm", "company name", "company");
+    const bioIdx = findColumnIndex(headers, "bio", "biography", "description");
+    const linkedinIdx = findColumnIndex(headers, "linkedin", "linkedin url", "linkedin_url");
+
+    // Ensure nameIdx doesn't collide with firmIdx
+    const resolvedNameIdx =
+      nameIdx === firmIdx
+        ? headers.findIndex(
+            (h, i) => i !== firmIdx && (h.includes("contact") || h === "name")
+          )
+        : nameIdx;
+
+    const parsed: Contact[] = [];
+
+    for (let i = 1; i < rows.length; i++) {
+      const row = parseCSVRow(rows[i]);
+      if (row.length === 0) continue;
+
+      const name = resolvedNameIdx >= 0 ? row[resolvedNameIdx]?.trim() : "";
+      if (!name) continue;
+
+      const linkedinVal = linkedinIdx >= 0 ? row[linkedinIdx]?.trim() || "" : "";
+
+      parsed.push({
+        id: `contact-${i}`,
+        name,
+        title: titleIdx >= 0 ? row[titleIdx]?.trim() || "" : "",
+        firm: firmIdx >= 0 ? row[firmIdx]?.trim() || "" : "",
+        bio: bioIdx >= 0 ? row[bioIdx]?.trim() || "" : "",
+        linkedin: linkedinVal,
+        linkedinStatus: linkedinVal ? "found" : "pending",
+        shortMessagePranav: "",
+        shortMessageNeha: "",
+        longMessagePranav: "",
+        longMessageNeha: "",
+        messageStatus: "pending",
+      });
+    }
+
+    return parsed;
   };
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {

@@ -83,13 +83,12 @@ A tool for generating personalized LinkedIn outreach messages from a CSV file of
 - Download results as CSV
 
 **API Routes:**
-- `POST /api/linkedin-search` - Search for LinkedIn profile URLs
-- `POST /api/generate-messages` - Generate personalized outreach messages
+- `POST /api/linkedin-search` - Search for LinkedIn profiles using OpenAI Responses API with web search tool
+- `POST /api/generate-messages` - Generate personalized outreach messages using gpt-5-nano
 
 **Environment Variables Required:**
 ```bash
-OPENAI_API_KEY=sk-...      # Required for message generation
-SERPER_API_KEY=...         # Optional, for LinkedIn search (falls back to OpenAI)
+OPENAI_API_KEY=sk-...      # Required (powers both LinkedIn search and message generation)
 ```
 
 See `.env.example` for configuration.
