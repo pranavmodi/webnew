@@ -7,6 +7,7 @@ export const navLinks = [
 export const solutionsLinks = [
   { href: "/solutions/email-automation", label: "Email Automation" },
   { href: "/solutions/support-agent", label: "Support Agent" },
+  { href: "/solutions/outbound-voice-ai", label: "Outbound Voice AI" },
   { href: "/solutions/lien-reduction", label: "Lien Reduction" },
 ];
 
