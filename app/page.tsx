@@ -100,9 +100,10 @@ export default function Home() {
 
               <p className="mt-4 text-sm leading-relaxed text-foreground/70 sm:text-base">
                 A 15-attorney Southern California personal injury firm was losing
-                cases to faster competitors. We deployed AI intake and document
-                automation that increased signed cases by 34%, cut intake time by
-                70%, and added $2.1M in annual revenue.
+                cases to firms that simply called faster. We deployed AI outbound
+                voice calling and email automation that increased signed cases by
+                34%, cut lead response time to under 90 seconds, and added $2.1M
+                in annual revenue.
               </p>
 
               <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -111,10 +112,10 @@ export default function Home() {
                 </Button>
                 <div className="flex gap-3 text-xs text-muted-foreground">
                   <span className="rounded-full border border-primary/20 bg-black/50 px-3 py-1">
-                    AI Intake
+                    Outbound Voice AI
                   </span>
                   <span className="rounded-full border border-primary/20 bg-black/50 px-3 py-1">
-                    Document Automation
+                    Email Automation
                   </span>
                 </div>
               </div>
