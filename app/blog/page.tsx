@@ -11,6 +11,16 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    href: "/blog/when-ai-is-the-user",
+    title: "When AI Is the User: The New Economics of Software",
+    description:
+      "Software has always been built for people. That era is ending. When AI agents become the primary users of software products, everything changes\u2014pricing, interfaces, distribution, and the very definition of value.",
+    author: "Pranav Modi",
+    date: "February 6, 2026",
+    readTime: "12 min read",
+    category: "AI Strategy",
+  },
+  {
     href: "/blog/the-real-reason-ai-evals-matter",
     title: "The Real Reason AI Evals Matter for Your Business",
     description:
