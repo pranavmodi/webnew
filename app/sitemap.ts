@@ -7,6 +7,11 @@ const routes = [
   "/about",
   "/solutions/email-automation",
   "/solutions/support-agent",
+  "/solutions/outbound-voice-ai",
+  "/solutions/lien-reduction",
+  "/blog",
+  "/blog/when-ai-is-the-user",
+  "/blog/the-real-reason-ai-evals-matter",
   "/healthcare-case-study",
   "/law-case-study",
 ];

@@ -8,4 +8,4 @@ export const CALENDLY_URL = "https://calendly.com/your-calendly-link";
 
 export const ACCENT_HEX = "#0ea472";
 
-export const SITE_URL = "https://possibleminds.example.com";
+export const SITE_URL = "https://getpossibleminds.com";

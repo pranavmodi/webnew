@@ -14,7 +14,7 @@ export default function BlogPostPage() {
   return (
     <div className="bg-black pb-24">
       <section className="relative overflow-hidden bg-gradient-to-b from-[#04150d] to-black">
-        <div className="relative mx-auto max-w-5xl px-4 py-20 sm:px-6">
+        <div className="relative mx-auto max-w-4xl px-4 py-20 sm:px-6">
           <div className="space-y-5">
             <div className="flex items-center gap-3 text-xs text-muted-foreground">
               <Link
