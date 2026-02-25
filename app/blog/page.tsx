@@ -11,6 +11,16 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    href: "/blog/the-science-of-client-intake-conversion",
+    title: "The Science of Client Intake and Lead Conversion",
+    description:
+      "Personal injury firms spend thousands per lead\u2014then lose half of them to slow response times and broken follow-up. Here\u2019s how conversion science, proactive intake, and AI are closing the gap.",
+    author: "Pranav Modi",
+    date: "February 26, 2026",
+    readTime: "10 min read",
+    category: "Legal AI",
+  },
+  {
     href: "/blog/when-ai-is-the-user",
     title: "When AI Is the User: The New Economics of Software",
     description:
