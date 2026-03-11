@@ -11,6 +11,15 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    href: "/blog/economics-of-intake-personal-injury-law-firms",
+    title: "The Economics of Intake: Why Your Most Expensive Employee Is Your Phone",
+    description: "Intake is the highest-leverage function in a PI law firm, yet most firms treat it as an administrative cost center. Here's how the math actually works — and what changes when you get it right.",
+    author: "Pranav Modi",
+    date: "March 11, 2026",
+    readTime: "7 min read",
+    category: "Industry Analysis",
+  },
+  {
     href: "/blog/the-science-of-client-intake-conversion",
     title: "The Science of Client Intake and Lead Conversion",
     description:
@@ -19,6 +28,16 @@ const posts = [
     date: "February 26, 2026",
     readTime: "10 min read",
     category: "Legal AI",
+  },
+  {
+    href: "/blog/sample-agent-ops",
+    title: "How Agentic Ops Actually Launch Inside Regulated Teams",
+    description:
+      "Three quick lessons from launching AI pilots for PI, health, and pharma teams without breaking compliance or losing stakeholder trust.",
+    author: "Pranav Modi",
+    date: "February 25, 2026",
+    readTime: "5 min read",
+    category: "Field Notes",
   },
   {
     href: "/blog/when-ai-is-the-user",
