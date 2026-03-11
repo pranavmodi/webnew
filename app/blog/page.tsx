@@ -11,15 +11,6 @@ export const metadata: Metadata = {
 
 const posts = [
   {
-    href: "/blog/economics-of-intake-personal-injury-law-firms",
-    title: "The Economics of Intake: Why Your Most Expensive Employee Is Your Phone",
-    description: "Intake is the highest-leverage function in a PI law firm, yet most firms treat it as an administrative cost center. Here's how the math actually works — and what changes when you get it right.",
-    author: "Pranav Modi",
-    date: "March 11, 2026",
-    readTime: "7 min read",
-    category: "Industry Analysis",
-  },
-  {
     href: "/blog/the-science-of-client-intake-conversion",
     title: "The Science of Client Intake and Lead Conversion",
     description:
