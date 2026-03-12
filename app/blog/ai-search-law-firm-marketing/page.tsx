@@ -204,6 +204,79 @@ export default function BlogPostPage() {
           </p>
         </section>
 
+        {/* Competitive Landscape */}
+        <section className="space-y-6">
+          <h2 className="text-2xl font-semibold text-[#00ff41]">
+            The Tools That Exist &mdash; and What They Miss
+          </h2>
+          <p>
+            A category of GEO (Generative Engine Optimization) platforms has emerged to track brand visibility in AI answers. None of them were built for how PI firms actually compete.
+          </p>
+
+          <div className="space-y-4">
+            {[
+              { name: "Profound", desc: "Enterprise AI visibility platform. Sequoia-backed, $399+/mo.", gap: "No legal vertical, no local pack, no practice area × city queries" },
+              { name: "Otterly.ai", desc: "Affordable monitoring ($29/mo). 20K+ users. Answers \"are we showing up?\"", gap: "No prescriptive actions, no legal context, no call attribution" },
+              { name: "Semrush AIO", desc: "AI visibility bolt-on to existing SEO platform. Enterprise pricing.", gap: "Add-on, not native. No legal awareness, requires Semrush subscription" },
+              { name: "ZipTie.dev", desc: "Agency-focused. Monitoring + screenshots + optimization guidance.", gap: "Horizontal tool. No legal vertical, no local pack, no lead attribution" },
+              { name: "RankOS", desc: "Only player targeting law firms. Manual agency service, not SaaS.", gap: "No self-serve dashboard, no query-level tracking, no continuous measurement" },
+              { name: "Ahrefs Brand Radar", desc: "SEO platform with GEO tracking added March 2025.", gap: "Extension of SEO tool. No vertical depth, no local pack, no attribution" },
+            ].map((tool) => (
+              <div
+                key={tool.name}
+                className="rounded-xl border border-primary/10 bg-[#04150d]/40 px-5 py-4"
+              >
+                <p className="font-semibold text-white">{tool.name}</p>
+                <p className="text-sm text-foreground/60">{tool.desc}</p>
+                <p className="mt-1 text-sm text-red-400/80">Gap: {tool.gap}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Feature Matrix */}
+          <div className="overflow-x-auto rounded-xl border border-primary/20">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-primary/10 bg-[#04150d]">
+                  <th className="px-4 py-3 text-left text-foreground/60">Capability</th>
+                  <th className="px-3 py-3 text-center text-foreground/60">Profound</th>
+                  <th className="px-3 py-3 text-center text-foreground/60">Otterly</th>
+                  <th className="px-3 py-3 text-center text-foreground/60">Semrush</th>
+                  <th className="px-3 py-3 text-center text-foreground/60">RankOS</th>
+                  <th className="px-3 py-3 text-center font-semibold text-[#00ff41]">LexVisibility</th>
+                </tr>
+              </thead>
+              <tbody className="text-foreground/70">
+                {[
+                  ["AI Overview citations", "✓", "✓", "~", "~", "✓"],
+                  ["Practice area × city queries", "✗", "✗", "✗", "~", "✓"],
+                  ["Local pack monitoring", "✗", "✗", "~", "~", "✓"],
+                  ["Legal query templates", "✗", "✗", "✗", "~", "✓"],
+                  ["Search Console CTR integration", "✗", "✗", "✓", "✗", "✓"],
+                  ["Call / lead attribution", "✗", "✗", "✗", "✗", "v2"],
+                  ["Self-serve SaaS", "✓", "✓", "✓", "✗", "✓"],
+                  ["SMB-accessible pricing", "✗", "✓", "~", "✗", "✓"],
+                ].map((row, i) => (
+                  <tr
+                    key={i}
+                    className="border-b border-primary/5"
+                  >
+                    <td className="px-4 py-2 text-foreground/80">{row[0]}</td>
+                    <td className="px-3 py-2 text-center">{row[1]}</td>
+                    <td className="px-3 py-2 text-center">{row[2]}</td>
+                    <td className="px-3 py-2 text-center">{row[3]}</td>
+                    <td className="px-3 py-2 text-center">{row[4]}</td>
+                    <td className="px-3 py-2 text-center font-semibold text-[#00ff41]">{row[5]}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-foreground/40">
+            ✓ = supported &nbsp; ~ = partial &nbsp; ✗ = not supported &nbsp; v2 = planned
+          </p>
+        </section>
+
         {/* Waitlist */}
         <WaitlistForm />
 
