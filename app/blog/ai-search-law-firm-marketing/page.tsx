@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
+import WaitlistForm from "./waitlist-form";
 
 export const metadata: Metadata = {
   title: `Your Rankings Held. Your Calls Didn't. | ${SITE_NAME}`,
@@ -202,6 +203,9 @@ export default function BlogPostPage() {
             The shift has already happened. The question is who&apos;s paying attention.
           </p>
         </section>
+
+        {/* Waitlist */}
+        <WaitlistForm />
 
         {/* CTA */}
         <section className="rounded-2xl border border-primary/20 bg-gradient-to-br from-[#04150d] to-black p-8 text-center">
