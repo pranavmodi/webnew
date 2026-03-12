@@ -6,6 +6,8 @@ import { Navbar } from "@/components/layout/navbar";
 import { Providers } from "@/components/providers";
 import "@/styles/globals.css";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/constants";
+import { Analytics } from "@vercel/analytics/react";
+import Tracker from "@/components/analytics/tracker";
 
 const sans = Manrope({
   variable: "--font-manrope",
@@ -55,6 +57,8 @@ export default function RootLayout({
           <Navbar />
           <main className="pt-20">{children}</main>
           <Footer />
+          <Tracker />
+          <Analytics />
         </Providers>
       </body>
     </html>
