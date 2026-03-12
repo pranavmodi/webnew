@@ -17,6 +17,7 @@ export const caseStudiesLinks = [
 ];
 
 export const blogLinks = [
+  { href: "/blog/ai-search-law-firm-marketing", label: "Your Rankings Held" },
   { href: "/blog/the-science-of-client-intake-conversion", label: "The Science of Client Intake" },
   { href: "/blog/when-ai-is-the-user", label: "When AI Is the User" },
   { href: "/blog/the-real-reason-ai-evals-matter", label: "Why AI Evals Matter" },

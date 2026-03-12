@@ -11,6 +11,16 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    href: "/blog/ai-search-law-firm-marketing",
+    title: "Your Rankings Held. Your Calls Didn't.",
+    description:
+      "Google's AI Overviews have quietly rewired how clients find personal injury attorneys. Most firms have no idea it's happening — and no tool to measure it.",
+    author: "Pranav Modi",
+    date: "March 12, 2026",
+    readTime: "8 min read",
+    category: "Industry Analysis",
+  },
+  {
     href: "/blog/the-science-of-client-intake-conversion",
     title: "The Science of Client Intake and Lead Conversion",
     description:
