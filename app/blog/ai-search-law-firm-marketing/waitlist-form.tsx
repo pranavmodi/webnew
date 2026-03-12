@@ -11,7 +11,7 @@ export default function WaitlistForm() {
     if (!email.trim()) return;
     setStatus("loading");
     try {
-      const res = await fetch("https://67.205.132.87:4130/api/waitlist", {
+      const res = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
