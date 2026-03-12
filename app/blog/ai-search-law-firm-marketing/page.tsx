@@ -46,7 +46,7 @@ export default function BlogPostPage() {
         </div>
       </section>
 
-      <article className="mx-auto max-w-3xl space-y-12 px-4 py-16 text-foreground/85 sm:px-6">
+      <article className="mx-auto max-w-4xl space-y-12 px-4 pt-12 text-foreground/85 sm:px-6">
         {/* Section: The Invisible Layer Nobody Is Measuring */}
         <section className="space-y-4">
           <h2 className="text-2xl font-semibold text-[#00ff41]">
