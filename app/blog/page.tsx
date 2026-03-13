@@ -11,6 +11,16 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    href: "/blog/the-200000-satisfying-answer",
+    title: "The $200,000 Answer Your Clients Never Called About",
+    description:
+      "A PI managing partner discovers why his calls dropped 30% while his rankings held — and what he found when he Googled himself from his phone.",
+    author: "Pranav Modi",
+    date: "March 13, 2026",
+    readTime: "7 min read",
+    category: "Field Notes",
+  },
+  {
     href: "/blog/ai-search-law-firm-marketing",
     title: "Your Rankings Held. Your Calls Didn't.",
     description:
