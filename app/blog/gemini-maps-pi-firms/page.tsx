@@ -94,7 +94,7 @@ export default function BlogPostPage() {
             What Gemini Actually Reads About Your Firm
           </h2>
           <p>
-            Here&apos;s what most PI firms don&apos;t realize: when someone asks Maps a question, Gemini doesn&apos;t visit your website. It reads your Google Business Profile. Every field. Every photo. Every review. Every Q&amp;A response. It reads your competitors&apos; profiles the same way. Then it picks who to recommend.
+            Here&apos;s what most PI firms don&apos;t realize: Google announced that Ask Maps draws from its database of over 300 million places and 500 million community contributors. That data lives in Google Business Profiles &mdash; your listing&apos;s fields, photos, reviews, and Q&amp;A responses. When Gemini synthesizes an answer, this structured profile data is the primary fuel. It reads your competitors&apos; profiles the same way. Then it picks who to recommend.
           </p>
           <p>
             Imagine two firms three blocks apart. Firm A has a GBP with a two-sentence description that says &quot;We handle personal injury cases. Call for a free consultation.&quot; No Q&amp;A. Twelve reviews, mostly generic. No posts in eight months. No service categories beyond &quot;lawyer.&quot;
