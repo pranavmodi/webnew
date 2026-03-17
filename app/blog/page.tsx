@@ -11,6 +11,16 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    href: "/blog/gemini-maps-pi-firms",
+    title: "Google Just Put Gemini in Maps. Here's What PI Firms Need to Do Now.",
+    description:
+      "Google's biggest Maps update in 10 years puts Gemini AI between your firm and your next client. Here's what personal injury firms need to optimize — before they become invisible.",
+    author: "Pranav Modi",
+    date: "March 17, 2026",
+    readTime: "7 min read",
+    category: "Industry Analysis",
+  },
+  {
     href: "/blog/the-200000-satisfying-answer",
     title: "The $200,000 Answer Your Clients Never Called About",
     description:

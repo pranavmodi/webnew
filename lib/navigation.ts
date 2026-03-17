@@ -17,6 +17,7 @@ export const caseStudiesLinks = [
 ];
 
 export const blogLinks = [
+  { href: "/blog/gemini-maps-pi-firms", label: "Gemini Maps & PI Firms" },
   { href: "/blog/the-200000-satisfying-answer", label: "The $200K Answer" },
   { href: "/blog/ai-search-law-firm-marketing", label: "Your Rankings Held" },
   { href: "/blog/the-science-of-client-intake-conversion", label: "The Science of Client Intake" },
