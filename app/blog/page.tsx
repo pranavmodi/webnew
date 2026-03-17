@@ -1,44 +1,41 @@
-import { Metadata } from "next";
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
-
-import { SITE_NAME } from "@/lib/constants";
-
-export const metadata: Metadata = {
-  title: `Blog | ${SITE_NAME}`,
-  description:
-    "Insights on AI strategy, learning loops, and building competitive moats with intelligent automation.",
-};
 
 const posts = [
   {
     href: "/blog/gemini-maps-pi-firms",
-    title: "Google Just Put Gemini in Maps. Here's What PI Firms Need to Do Now.",
+    title: "Google Just Put Gemini in Maps. Here\u2019s What PI Firms Need to Do Now.",
     description:
-      "Google's biggest Maps update in 10 years puts Gemini AI between your firm and your next client. Here's what personal injury firms need to optimize — before they become invisible.",
+      "Google\u2019s biggest Maps update in 10 years puts Gemini AI between your firm and your next client. Here\u2019s what personal injury firms need to optimize \u2014 before they become invisible.",
     author: "Pranav Modi",
     date: "March 17, 2026",
     readTime: "7 min read",
     category: "Industry Analysis",
+    tags: ["Legal AI"],
   },
   {
     href: "/blog/the-200000-satisfying-answer",
     title: "The $200,000 Answer Your Clients Never Called About",
     description:
-      "A PI managing partner discovers why his calls dropped 30% while his rankings held — and what he found when he Googled himself from his phone.",
+      "A PI managing partner discovers why his calls dropped 30% while his rankings held \u2014 and what he found when he Googled himself from his phone.",
     author: "Pranav Modi",
     date: "March 13, 2026",
     readTime: "7 min read",
     category: "Field Notes",
+    tags: ["Legal AI"],
   },
   {
     href: "/blog/ai-search-law-firm-marketing",
-    title: "Your Rankings Held. Your Calls Didn't.",
+    title: "Your Rankings Held. Your Calls Didn\u2019t.",
     description:
-      "Google's AI Overviews have quietly rewired how clients find personal injury attorneys. Most firms have no idea it's happening — and no tool to measure it.",
+      "Google\u2019s AI Overviews have quietly rewired how clients find personal injury attorneys. Most firms have no idea it\u2019s happening \u2014 and no tool to measure it.",
     author: "Pranav Modi",
     date: "March 12, 2026",
     readTime: "8 min read",
     category: "Industry Analysis",
+    tags: ["Legal AI"],
   },
   {
     href: "/blog/the-science-of-client-intake-conversion",
@@ -49,6 +46,7 @@ const posts = [
     date: "February 26, 2026",
     readTime: "10 min read",
     category: "Legal AI",
+    tags: ["Legal AI"],
   },
   {
     href: "/blog/sample-agent-ops",
@@ -59,6 +57,7 @@ const posts = [
     date: "February 25, 2026",
     readTime: "5 min read",
     category: "Field Notes",
+    tags: ["AI Strategy"],
   },
   {
     href: "/blog/when-ai-is-the-user",
@@ -69,6 +68,7 @@ const posts = [
     date: "February 6, 2026",
     readTime: "12 min read",
     category: "AI Strategy",
+    tags: ["AI Strategy"],
   },
   {
     href: "/blog/the-real-reason-ai-evals-matter",
@@ -79,10 +79,20 @@ const posts = [
     date: "August 17, 2024",
     readTime: "8 min read",
     category: "AI Strategy",
+    tags: ["AI Strategy"],
   },
 ];
 
+const filters = ["All", "Legal AI", "AI Strategy"];
+
 export default function BlogPage() {
+  const [activeFilter, setActiveFilter] = useState("All");
+
+  const filtered =
+    activeFilter === "All"
+      ? posts
+      : posts.filter((p) => p.tags.includes(activeFilter));
+
   return (
     <div className="bg-black pb-24">
       <section className="relative overflow-hidden bg-gradient-to-b from-[#04150d] to-black">
@@ -102,8 +112,28 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-4xl space-y-6 px-4 pt-12 sm:px-6">
-        {posts.map((post) => (
+      {/* Filter buttons */}
+      <section className="mx-auto max-w-4xl px-4 pt-12 sm:px-6">
+        <div className="flex flex-wrap gap-2">
+          {filters.map((f) => (
+            <button
+              key={f}
+              type="button"
+              onClick={() => setActiveFilter(f)}
+              className={`rounded-full border px-4 py-1.5 text-sm font-semibold transition ${
+                activeFilter === f
+                  ? "border-primary bg-primary/15 text-primary"
+                  : "border-primary/20 bg-black/40 text-muted-foreground hover:border-primary/40 hover:text-primary"
+              }`}
+            >
+              {f}
+            </button>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-4xl space-y-6 px-4 pt-8 sm:px-6">
+        {filtered.map((post) => (
           <Link
             key={post.href}
             href={post.href}
@@ -113,6 +143,14 @@ export default function BlogPage() {
               <span className="rounded-full border border-primary/20 bg-black/40 px-3 py-1">
                 {post.category}
               </span>
+              {post.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-[#00ff41]/30 bg-[#00ff41]/10 px-3 py-1 text-[#00ff41]"
+                >
+                  {tag}
+                </span>
+              ))}
               <span className="rounded-full border border-primary/20 bg-black/40 px-3 py-1">
                 {post.date}
               </span>

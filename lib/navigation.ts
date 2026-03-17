@@ -1,6 +1,7 @@
 import { CALENDLY_URL } from "./constants";
 
 export const navLinks = [
+  { href: "/personal-injury", label: "For PI Firms" },
   { href: "/about", label: "About" },
 ];
 
