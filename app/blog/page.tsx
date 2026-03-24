@@ -5,13 +5,24 @@ import Link from "next/link";
 
 const posts = [
   {
+    href: "/blog/nobody-owns-ai-at-your-firm",
+    title: "Nobody Owns AI at Your Firm (And That\u2019s Why It\u2019s Failing)",
+    description:
+      "80% of law firms can\u2019t show ROI from AI investments. The problem isn\u2019t the tools \u2014 it\u2019s that nobody owns the strategy. Here\u2019s what the most successful PI firms are doing differently.",
+    author: "Pranav Modi",
+    date: "March 24, 2026",
+    readTime: "8 min read",
+    category: "AI Strategy",
+    tags: ["AI Strategy"],
+  },
+  {
     href: "/blog/gemini-maps-pi-firms",
     title: "Google Just Put Gemini in Maps. Here\u2019s What PI Firms Need to Do Now.",
     description:
       "Google\u2019s biggest Maps update in 10 years puts Gemini AI between your firm and your next client. Here\u2019s what personal injury firms need to optimize \u2014 before they become invisible.",
     author: "Pranav Modi",
     date: "March 17, 2026",
-    readTime: "7 min read",
+    readTime: "11 min read",
     category: "Industry Analysis",
     tags: ["Legal AI"],
   },
