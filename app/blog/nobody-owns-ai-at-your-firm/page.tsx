@@ -8,6 +8,18 @@ export const metadata: Metadata = {
   title: `Nobody Owns AI at Your Firm (And That's Why It's Failing) | ${SITE_NAME}`,
   description:
     "80% of law firms can't show ROI from AI investments. The problem isn't the tools — it's that nobody owns the strategy. Here's what the most successful PI firms are doing differently.",
+  openGraph: {
+    title: "Nobody Owns AI at Your Firm (And That's Why It's Failing)",
+    description:
+      "80% of law firms can't show ROI from AI investments. The problem isn't the tools — it's that nobody owns the strategy. Here's what the most successful PI firms are doing differently.",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nobody Owns AI at Your Firm (And That's Why It's Failing)",
+    description:
+      "80% of law firms can't show ROI from AI investments. The problem isn't the tools — it's that nobody owns the strategy.",
+  },
 };
 
 export default function BlogPostPage() {
