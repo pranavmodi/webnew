@@ -31,14 +31,11 @@ export const metadata: Metadata = {
   description: SITE_DESCRIPTION,
   metadataBase: new URL(SITE_URL),
   openGraph: {
-    title: `${SITE_NAME} | AI agents for regulated operations`,
-    description: SITE_DESCRIPTION,
     type: "website",
+    siteName: SITE_NAME,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} | AI agents for regulated operations`,
-    description: SITE_DESCRIPTION,
   },
 };
 

@@ -4,10 +4,22 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
 
+const pageTitle = "The Hidden Math of Lien Negotiations: What 563 Cases Reveal";
+const pageDescription = "We analyzed 563 real medical lien negotiations between a diagnostic imaging provider and PI law firms. The data reveals striking patterns in reduction demands, settlement timing, and firm behavior that neither side is tracking.";
+
 export const metadata: Metadata = {
-  title: `The Hidden Math of Lien Negotiations: What 563 Cases Reveal | ${SITE_NAME}`,
-  description:
-    "We analyzed 563 real medical lien negotiations between a diagnostic imaging provider and PI law firms. The data reveals striking patterns in reduction demands, settlement timing, and firm behavior that neither side is tracking.",
+  title: `${pageTitle} | ${SITE_NAME}`,
+  description: pageDescription,
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: pageTitle,
+    description: pageDescription,
+  },
 };
 
 export default function BlogPostPage() {
