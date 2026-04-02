@@ -5,6 +5,17 @@ import Link from "next/link";
 
 const posts = [
   {
+    href: "/blog/hidden-math-lien-negotiations",
+    title: "The Hidden Math of Lien Negotiations: What 563 Cases Reveal",
+    description:
+      "We analyzed 563 real medical lien negotiations between a diagnostic imaging provider and PI law firms. The data reveals striking patterns in reduction demands, settlement timing, and firm behavior that neither side is tracking.",
+    author: "Pranav Modi",
+    date: "April 2, 2026",
+    readTime: "9 min read",
+    category: "Industry Analysis",
+    tags: ["Legal AI", "For PI Firms"],
+  },
+  {
     href: "/blog/nobody-owns-ai-at-your-firm",
     title: "Nobody Owns AI at Your Firm (And That\u2019s Why It\u2019s Failing)",
     description:
