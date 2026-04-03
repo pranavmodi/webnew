@@ -6,7 +6,16 @@ import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
 export const metadata: Metadata = {
   title: `AI Operations for Personal Injury Firms | ${SITE_NAME}`,
   description:
-    "From intake to lien resolution — automation built by people who understand PI. AI-powered solutions for personal injury law firms.",
+    "AI-powered intake automation, lien negotiation, and case operations for personal injury law firms. Built by a team that processes thousands of medical-legal documents monthly across 60+ provider locations.",
+  keywords: [
+    "AI for personal injury law firms",
+    "PI firm intake automation",
+    "legal AI operations",
+    "lien negotiation automation",
+    "law firm AI chatbot",
+    "personal injury case management AI",
+    "AI intake for lawyers",
+  ],
 };
 
 const painPoints = [
@@ -42,24 +51,93 @@ const solutions = [
     title: "Email Automation",
     description:
       "Auto-triage intake emails, route to the right paralegal, and respond to routine queries instantly.",
+    details:
+      "Our email classification engine processes thousands of messages monthly, sorting across intake, scheduling, billing, liens, collections, records, and legal categories. It detects urgency, extracts case references, and routes to the right person — reducing response times from hours to minutes. Built from real workflows handling 15+ inbox categories for a medical provider network.",
   },
   {
     href: "/solutions/support-agent",
     title: "Support Agent",
     description:
       "24/7 AI chat that answers client questions, collects case details, and books consultations.",
+    details:
+      "Most PI firms lose 30-50% of after-hours inquiries because no one is there to answer. Our support agent handles initial case qualification, collects accident details, insurance information, and injury severity — then books directly into your calendar. It knows PI terminology, understands statute of limitations urgency, and escalates complex situations to your team.",
   },
   {
     href: "/solutions/outbound-voice-ai",
     title: "Outbound Voice AI",
     description:
       "Automated follow-up calls for missed intakes, appointment reminders, and lien status updates.",
+    details:
+      "The first 5 minutes after a lead submits a form are critical — response time directly correlates with conversion rate. Our voice AI calls back missed intakes within minutes, confirms appointments to reduce no-shows, and provides case status updates so your paralegals focus on case work instead of phone tag.",
   },
   {
     href: "/solutions/lien-reduction",
     title: "Lien Reduction",
     description:
       "AI-powered lien negotiation that analyzes balances, generates reduction letters, and tracks resolutions.",
+    details:
+      "Lien negotiation is one of the most time-consuming parts of PI case resolution. Our system analyzes lien documents using OCR and AI — detecting modifications, verifying signatures, extracting balances, and generating negotiation letters. It handles the back-and-forth with providers, flags edge cases for human review, and tracks every lien from filing to resolution.",
+  },
+];
+
+const whyUsPoints = [
+  {
+    title: "Built from Real Operations, Not Theory",
+    description:
+      "We didn't build PI automation in a lab. Our team runs AI systems that process thousands of medical-legal documents monthly across a 60-location provider network. We've handled the edge cases — ambiguous case law, missing records, conflicting provider claims, documents with strikethroughs that change liability. That operational experience is baked into every product we ship.",
+  },
+  {
+    title: "PI-Specific AI, Not Generic Legal Tech",
+    description:
+      "General-purpose AI tools don't understand the difference between a lien and a subrogation claim, or why a 3-day gap in treatment matters for case value. Our models are trained on PI-specific workflows: intake qualification, medical records classification, lien negotiation patterns, and provider communication. The domain knowledge is the product.",
+  },
+  {
+    title: "Plug In Without Ripping Out",
+    description:
+      "You don't need to replace your case management system, retrain your staff, or overhaul your workflows. Each module connects to your existing stack — whether you're on Clio, Smart Advocate, Filevine, or a custom setup. Start with one automation (most firms begin with intake or lien processing) and expand as you see results.",
+  },
+  {
+    title: "Human Oversight Where It Matters",
+    description:
+      "AI handles the volume, but your team stays in control. Every automated action has clear escalation rules — the system knows when to resolve autonomously and when to surface a decision to a human. No black boxes, no surprises. You see exactly what the AI did, why it did it, and what it flagged for review.",
+  },
+];
+
+const faqs = [
+  {
+    question: "How long does it take to set up AI automation for my firm?",
+    answer:
+      "Most firms are live within 2-4 weeks. We start with a workflow audit to identify your highest-impact automation opportunity (usually intake or lien processing), configure the system to match your existing processes, and run a parallel pilot before going live. No big-bang migrations.",
+  },
+  {
+    question: "Will AI replace my intake staff or paralegals?",
+    answer:
+      "No. AI handles the repetitive volume work — triaging emails, qualifying leads after hours, chasing lien documents — so your team can focus on the high-value tasks that require human judgment. Most firms find their existing staff becomes more productive, not redundant. The goal is leverage, not replacement.",
+  },
+  {
+    question: "How does AI intake work for personal injury cases?",
+    answer:
+      "When a potential client reaches out — via web form, chat, phone, or email — our AI qualifies the lead by collecting accident details, injury type, insurance information, and timeline. It understands PI-specific qualification criteria (statute of limitations, liability indicators, injury severity) and either books a consultation directly or routes to your intake team with a complete summary. After-hours inquiries get immediate response instead of hitting voicemail.",
+  },
+  {
+    question: "Is my client data secure?",
+    answer:
+      "Absolutely. All data is encrypted in transit and at rest. We never use client data to train models. Our systems run on SOC 2-compliant infrastructure, and we can deploy within your existing cloud environment if required. Attorney-client privilege and HIPAA compliance are non-negotiable in our architecture.",
+  },
+  {
+    question: "What if AI makes a mistake on a lien or intake qualification?",
+    answer:
+      "Every AI decision has confidence scoring and escalation thresholds. Low-confidence classifications get routed to your team for review — the system flags exactly what it's unsure about and why. For lien processing, modifications and anomalies (strikethroughs, missing signatures, unusual terms) are always surfaced for human verification before any action is taken.",
+  },
+  {
+    question: "Do you work with firms of all sizes?",
+    answer:
+      "We work best with mid-size PI firms — typically 5 to 50 attorneys — that have enough case volume to benefit from automation but aren't so large that they've already built everything in-house. That said, we've helped solo practitioners automate intake and large firms streamline lien operations. The right fit depends on volume and pain points, not headcount.",
+  },
+  {
+    question: "How is this different from my case management software's built-in AI features?",
+    answer:
+      "Case management platforms are designed to organize your cases. We're designed to work the cases — processing inbound communications, qualifying leads, negotiating liens, and handling the operational tasks between your CMS entries. Think of us as the intelligent layer that feeds clean, processed information into whatever system you already use.",
   },
 ];
 
@@ -184,23 +262,53 @@ export default function PersonalInjuryPage() {
             Each module works standalone or together — plug into your existing stack without ripping anything out.
           </p>
         </div>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2">
+        <div className="mt-12 space-y-6">
           {solutions.map((sol) => (
             <Link
               key={sol.href}
               href={sol.href}
-              className="group rounded-2xl border border-primary/25 bg-[#04150d] p-6 transition hover:border-primary/40 hover:bg-[#04150d]/80"
+              className="group block rounded-2xl border border-primary/25 bg-[#04150d] p-6 transition hover:border-primary/40 hover:bg-[#04150d]/80 sm:p-8"
             >
-              <h3 className="text-xl font-semibold text-primary transition group-hover:text-[#00ff41]">
+              <h3 className="text-xl font-semibold text-primary transition group-hover:text-[#00ff41] sm:text-2xl">
                 {sol.title}
               </h3>
-              <p className="mt-3 text-sm text-foreground/70">
+              <p className="mt-2 text-sm font-medium text-foreground/80">
                 {sol.description}
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-foreground/60">
+                {sol.details}
               </p>
               <span className="mt-4 inline-block text-sm font-medium text-primary">
                 Learn more →
               </span>
             </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Why PI Firms Choose Us */}
+      <section className="mx-auto max-w-5xl px-4 py-20 sm:px-6">
+        <div className="text-center">
+          <h2 className="text-3xl font-semibold text-primary sm:text-4xl">
+            Why PI Firms Choose Possible Minds
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base text-foreground/70">
+            We build automation from operational experience, not pitch decks.
+          </p>
+        </div>
+        <div className="mt-12 grid gap-6 sm:grid-cols-2">
+          {whyUsPoints.map((point) => (
+            <div
+              key={point.title}
+              className="rounded-2xl border border-primary/25 bg-gradient-to-br from-[#04150d] to-[#0a2618] p-6"
+            >
+              <h3 className="text-lg font-semibold text-[#00ff41]">
+                {point.title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-foreground/70">
+                {point.description}
+              </p>
+            </div>
           ))}
         </div>
       </section>
@@ -291,6 +399,33 @@ export default function PersonalInjuryPage() {
           >
             Check Your Visibility →
           </Link>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="mx-auto max-w-4xl px-4 py-20 sm:px-6">
+        <div className="text-center">
+          <h2 className="text-3xl font-semibold text-primary sm:text-4xl">
+            Frequently Asked Questions
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base text-foreground/70">
+            Common questions from PI firm leaders evaluating AI automation.
+          </p>
+        </div>
+        <div className="mt-12 space-y-4">
+          {faqs.map((faq) => (
+            <div
+              key={faq.question}
+              className="rounded-2xl border border-primary/25 bg-[#04150d] p-6"
+            >
+              <h3 className="text-base font-semibold text-primary sm:text-lg">
+                {faq.question}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-foreground/70">
+                {faq.answer}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
