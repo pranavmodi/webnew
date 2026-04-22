@@ -5,6 +5,17 @@ import Link from "next/link";
 
 const posts = [
   {
+    href: "/blog/build-vs-consume-ai-law-firms",
+    title: "Build vs. Consume: The AI Choice That Will Define Your Firm",
+    description:
+      "The legal industry is splitting into firms that use AI and firms that build with it. Here is what builders actually do, why the economics favor them, and how to start in the next 30 days.",
+    author: "Pranav Modi",
+    date: "April 22, 2026",
+    readTime: "7 min read",
+    category: "AI Strategy",
+    tags: ["AI Strategy", "For PI Firms"],
+  },
+  {
     href: "/blog/hidden-math-lien-negotiations",
     title: "The Hidden Math of Lien Negotiations: What 563 Cases Reveal",
     description:

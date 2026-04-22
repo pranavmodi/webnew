@@ -18,6 +18,7 @@ export const caseStudiesLinks = [
 ];
 
 export const blogLinks = [
+  { href: "/blog/build-vs-consume-ai-law-firms", label: "Build vs. Consume with AI" },
   { href: "/blog/hidden-math-lien-negotiations", label: "Hidden Math of Lien Negotiations" },
   { href: "/blog/nobody-owns-ai-at-your-firm", label: "Nobody Owns AI" },
   { href: "/blog/gemini-maps-pi-firms", label: "Gemini Maps & PI Firms" },
