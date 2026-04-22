@@ -14,8 +14,10 @@ const AUTOCALLER_API =
   process.env.NEXT_PUBLIC_AUTOCALLER_API_URL ||
   "https://autocaller.getpossibleminds.com";
 
+type Slot = { iso: string; available: boolean };
+
 type SlotsResponse = {
-  slots: string[]; // ISO-8601 UTC
+  slots: Slot[];
   slot_minutes: number;
   tz_offset_hours: number;
 };
@@ -27,7 +29,7 @@ type BookingResponse = {
   message: string;
 };
 
-function groupByDay(slots: string[]) {
+function groupByDay(slots: Slot[]) {
   const dtf = new Intl.DateTimeFormat(undefined, {
     weekday: "short",
     month: "short",
@@ -39,11 +41,11 @@ function groupByDay(slots: string[]) {
   });
   const groups: {
     label: string;
-    items: { iso: string; label: string }[];
+    items: { iso: string; label: string; available: boolean }[];
   }[] = [];
   const indexByLabel = new Map<string, number>();
-  for (const iso of slots) {
-    const d = new Date(iso);
+  for (const s of slots) {
+    const d = new Date(s.iso);
     const dayLabel = dtf.format(d);
     let idx = indexByLabel.get(dayLabel);
     if (idx === undefined) {
@@ -51,13 +53,17 @@ function groupByDay(slots: string[]) {
       indexByLabel.set(dayLabel, idx);
       groups.push({ label: dayLabel, items: [] });
     }
-    groups[idx].items.push({ iso, label: timeFmt.format(d) });
+    groups[idx].items.push({
+      iso: s.iso,
+      label: timeFmt.format(d),
+      available: s.available,
+    });
   }
   return groups;
 }
 
 export function ConsultBookingForm() {
-  const [slots, setSlots] = useState<string[] | null>(null);
+  const [slots, setSlots] = useState<Slot[] | null>(null);
   const [fetchError, setFetchError] = useState<string | null>(null);
   const [selectedSlot, setSelectedSlot] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
@@ -204,33 +210,68 @@ export function ConsultBookingForm() {
             .
           </p>
         )}
+        {slots && slots.length > 0 && slots.every((s) => !s.available) && (
+          <p className="mb-3 text-sm text-foreground/60">
+            All slots in the next week are taken — please email{" "}
+            <a
+              href="mailto:hello@possibleminds.ai"
+              className="text-primary underline-offset-4 hover:underline"
+            >
+              hello@possibleminds.ai
+            </a>
+            .
+          </p>
+        )}
         {groups.length > 0 && (
-          <div className="space-y-5">
+          <>
+            <div className="mb-4 flex items-center gap-4 text-xs text-foreground/60">
+              <span className="inline-flex items-center gap-1.5">
+                <span className="h-3 w-3 rounded-full border border-primary/50 bg-black/30" />
+                Available
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <span className="h-3 w-3 rounded-full border border-rose-500/40 bg-rose-950/50" />
+                Booked
+              </span>
+            </div>
+            <div className="space-y-5">
             {groups.map((g) => (
               <div key={g.label}>
                 <div className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary/70">
                   {g.label}
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {g.items.map((s) => (
-                    <button
-                      key={s.iso}
-                      type="button"
-                      onClick={() => setSelectedSlot(s.iso)}
-                      className={cn(
-                        "rounded-full border px-4 py-1.5 text-sm font-medium transition",
-                        selectedSlot === s.iso
-                          ? "border-[#00ff41] bg-[#00ff41] text-[#04150d]"
-                          : "border-primary/30 bg-black/30 text-foreground/80 hover:border-primary/60 hover:bg-primary/10 hover:text-primary",
-                      )}
-                    >
-                      {s.label}
-                    </button>
-                  ))}
+                  {g.items.map((s) => {
+                    const isSelected = selectedSlot === s.iso;
+                    const classes = !s.available
+                      ? "cursor-not-allowed border-rose-500/40 bg-rose-950/30 text-rose-400/70 line-through"
+                      : isSelected
+                      ? "border-[#00ff41] bg-[#00ff41] text-[#04150d]"
+                      : "border-primary/30 bg-black/30 text-foreground/80 hover:border-primary/60 hover:bg-primary/10 hover:text-primary";
+                    return (
+                      <button
+                        key={s.iso}
+                        type="button"
+                        disabled={!s.available}
+                        aria-disabled={!s.available}
+                        title={!s.available ? "Already booked" : undefined}
+                        onClick={() =>
+                          s.available && setSelectedSlot(s.iso)
+                        }
+                        className={cn(
+                          "rounded-full border px-4 py-1.5 text-sm font-medium transition",
+                          classes,
+                        )}
+                      >
+                        {s.label}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
             ))}
-          </div>
+            </div>
+          </>
         )}
       </div>
 
