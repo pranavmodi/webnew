@@ -29,15 +29,23 @@ type BookingResponse = {
   message: string;
 };
 
+// All slots are pinned to Pacific time — the email confirmation and the
+// backend slot grid both use PT as the canonical zone, so the picker
+// must render in PT too or users see two different times for the same
+// booking (e.g. "3:30 PM" on the page, "1:30 PM PT" in the email).
+const BOOKING_TIME_ZONE = "America/Los_Angeles";
+
 function groupByDay(slots: Slot[]) {
-  const dtf = new Intl.DateTimeFormat(undefined, {
+  const dtf = new Intl.DateTimeFormat("en-US", {
     weekday: "short",
     month: "short",
     day: "numeric",
+    timeZone: BOOKING_TIME_ZONE,
   });
-  const timeFmt = new Intl.DateTimeFormat(undefined, {
+  const timeFmt = new Intl.DateTimeFormat("en-US", {
     hour: "numeric",
     minute: "2-digit",
+    timeZone: BOOKING_TIME_ZONE,
   });
   const groups: {
     label: string;
@@ -142,12 +150,13 @@ export function ConsultBookingForm() {
 
   if (done) {
     const start = new Date(done.slot_start);
-    const fmt = new Intl.DateTimeFormat(undefined, {
+    const fmt = new Intl.DateTimeFormat("en-US", {
       weekday: "long",
       month: "long",
       day: "numeric",
       hour: "numeric",
       minute: "2-digit",
+      timeZone: BOOKING_TIME_ZONE,
       timeZoneName: "short",
     });
     return (
@@ -224,7 +233,7 @@ export function ConsultBookingForm() {
         )}
         {groups.length > 0 && (
           <>
-            <div className="mb-4 flex items-center gap-4 text-xs text-foreground/60">
+            <div className="mb-4 flex flex-wrap items-center gap-4 text-xs text-foreground/60">
               <span className="inline-flex items-center gap-1.5">
                 <span className="h-3 w-3 rounded-full border border-primary/50 bg-black/30" />
                 Available
@@ -232,6 +241,9 @@ export function ConsultBookingForm() {
               <span className="inline-flex items-center gap-1.5">
                 <span className="h-3 w-3 rounded-full border border-rose-500/40 bg-rose-950/50" />
                 Booked
+              </span>
+              <span className="ml-auto font-medium uppercase tracking-[0.2em] text-primary/70">
+                All times Pacific (PT)
               </span>
             </div>
             <div className="space-y-5">
