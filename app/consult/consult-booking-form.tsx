@@ -128,7 +128,6 @@ export function ConsultBookingForm() {
         title: "Couldn't book",
         description:
           e instanceof Error ? e.message : "Something went wrong.",
-        variant: "destructive",
       });
     } finally {
       setSubmitting(false);
