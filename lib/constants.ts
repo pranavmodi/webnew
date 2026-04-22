@@ -3,8 +3,12 @@ export const BRAND_SHORT = "PossibleMinds";
 export const SITE_DESCRIPTION =
   "AI agents for healthcare and legal operations: inbox automation, document intelligence, and multichannel support.";
 
-// Replace this with your actual Calendly URL when ready.
-export const CALENDLY_URL = "https://calendly.com/your-calendly-link";
+// All "Book a Demo" / "Book a Call" CTAs across the site point at
+// /consult — our own 30-min booking page backed by the autocaller
+// (slot picker + Postgres-saved bookings + SMS + email confirm with
+// Meet link). Kept the `CALENDLY_URL` name because it's referenced
+// from many files; the value is now an internal route.
+export const CALENDLY_URL = "/consult";
 
 export const ACCENT_HEX = "#0ea472";
 
