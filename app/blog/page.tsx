@@ -5,6 +5,17 @@ import Link from "next/link";
 
 const posts = [
   {
+    href: "/blog/derisk-ai-adoption-legal-practice",
+    title: "How to Derisk AI Adoption in Your Legal Practice",
+    description:
+      "A practical framework for law firms adopting agentic AI safely: define handoffs, map pause conditions, tighten review gates, and align legal judgment with technical workflow design.",
+    author: "Pranav Modi",
+    date: "April 23, 2026",
+    readTime: "8 min read",
+    category: "AI Strategy",
+    tags: ["AI Strategy", "For PI Firms"],
+  },
+  {
     href: "/blog/build-vs-consume-ai-law-firms",
     title: "Build vs. Consume: The AI Choice That Will Define Your Firm",
     description:
