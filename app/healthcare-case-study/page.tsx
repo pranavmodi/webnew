@@ -206,7 +206,7 @@ export default function HealthcareCaseStudyPage() {
           </p>
           <div className="mt-6 overflow-hidden rounded-2xl border border-primary/20">
             <Image
-              src="/blog/pre1.jpg"
+              src="/blog/pre1.png"
               alt="AI chatbot interface showing a patient conversation"
               width={1200}
               height={720}
@@ -309,7 +309,7 @@ export default function HealthcareCaseStudyPage() {
           </p>
           <div className="mt-6 overflow-hidden rounded-2xl border border-primary/20">
             <Image
-              src="/blog/pre2.jpg"
+              src="/blog/pre2.png"
               alt="Email automation dashboard showing tagged and routed messages"
               width={1200}
               height={720}
