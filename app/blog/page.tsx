@@ -5,6 +5,17 @@ import Link from "next/link";
 
 const posts = [
   {
+    href: "/blog/tools-vs-systems-pi-firms-ai",
+    title: "Tools vs. Systems: Why Most PI Firms Will Get the AI Era Wrong",
+    description:
+      "Most PI firms think they are adopting AI because staff use ChatGPT or Claude. The real divide is between firms using AI tools and firms building AI systems that run core workflows.",
+    author: "Pranav Modi",
+    date: "May 5, 2026",
+    readTime: "10 min read",
+    category: "Industry Analysis",
+    tags: ["Legal AI", "For PI Firms"],
+  },
+  {
     href: "/blog/derisk-ai-adoption-legal-practice",
     title: "How to Derisk AI Adoption in Your Legal Practice",
     description:
