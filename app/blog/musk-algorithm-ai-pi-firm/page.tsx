@@ -49,10 +49,13 @@ export default function BlogPostPage() {
       <article className="mx-auto max-w-4xl space-y-12 px-4 pt-12 text-foreground/85 sm:px-6">
         <section className="space-y-4">
           <p>
-            Most AI projects inside personal injury firms fail for the same reason: they bolt AI onto a workflow that was designed for paper files, fax machines, and a paralegal with an Outlook calendar. They copy. They don&apos;t redesign.
+            Personal injury law and orbital rocketry do not usually share a chapter in anyone&apos;s consulting deck. Elon Musk has, to my knowledge, never tried a slip-and-fall case. Most PI managing partners have never had to land a booster on a drone ship. The Venn diagram is two circles and a polite handshake.
           </p>
           <p>
-            The firm picks the step where staff spend the most time &mdash; intake qualification, medical record retrieval, demand drafting &mdash; and points an AI at that step. Each move looks like progress. Each is correct as a local optimization. Each is wrong as a transformation strategy. The firm ends up with an AI-augmented version of a workflow designed in 1995.
+            But the operating problem the best PI firms are trying to solve right now &mdash; how to run more cases, faster, with fewer people, without dropping quality &mdash; is the same operating problem Musk&apos;s companies solved when they stopped trying to be Boeing and started shipping reusable rockets at a fraction of the cost. The vertical is different. The discipline is the same.
+          </p>
+          <p>
+            And right now, most AI projects inside PI firms fail for the same reason: they bolt AI onto a workflow that was designed for paper files, fax machines, and a paralegal with an Outlook calendar. The firm picks the step where staff spend the most time &mdash; intake qualification, medical record retrieval, demand drafting &mdash; and points an AI at that step. Each move looks like progress. Each is correct as a local optimization. Each is wrong as a transformation strategy. The firm ends up with an AI-augmented version of a workflow designed in 1995.
           </p>
           <p>
             That is the central thesis of this essay:
@@ -63,7 +66,28 @@ export default function BlogPostPage() {
             </p>
           </div>
           <p>
-            Copy versus redesign is the difference between a 10&ndash;20% efficiency gain and a 3&ndash;5x change in throughput per attorney. The clearest framework I&apos;ve seen for forcing the redesign is the one Elon Musk uses inside Tesla and SpaceX. He calls it &quot;the algorithm.&quot; It is 5 steps, in strict order, and it is specifically designed to keep teams from optimizing parts of a process that should have been deleted.
+            Copy versus redesign is the difference between a 10&ndash;20% efficiency gain and a 3&ndash;5x change in throughput per attorney. The clearest framework I&apos;ve seen for forcing that redesign is the one Musk uses inside Tesla and SpaceX. He calls it &quot;the algorithm.&quot; It is five steps, in strict order, and it is specifically designed to keep teams from optimizing parts of a process that should have been deleted.
+          </p>
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold text-[#00ff41]">
+            Where the algorithm came from
+          </h2>
+          <p>
+            Musk did not invent first-principles thinking. He did formalize a particular version of it &mdash; the five steps in strict order &mdash; inside Tesla and SpaceX during the Model 3 and Starship eras, when both companies were trying to do things that the incumbents had quoted as either impossible or commercially insane at the price.
+          </p>
+          <p>
+            The canonical example is the Gigapress. Instead of stamping and welding roughly 70 separate parts to form the rear underbody of a Tesla &mdash; the way the entire auto industry had done it for half a century &mdash; Tesla cast the whole structure as a single piece of aluminum. That decision did not come from a CAD engineer optimizing the welding sequence. It came from running step 2 hard &mdash; <em>delete the part</em> &mdash; on a process every other carmaker had simply optimized for decades.
+          </p>
+          <p>
+            SpaceX is the same story at a different altitude. Building a Falcon 9 engine for roughly a million dollars instead of the industry-standard tens of millions did not come from haggling with suppliers. It came from questioning every requirement the rest of the industry treated as load-bearing, deleting the components those requirements implied, simplifying what was left, then automating the manufacturing of that simplified thing. That sequence &mdash; in that order &mdash; is the algorithm.
+          </p>
+          <p>
+            The reason it ports to a law firm is not that PI is rocket science. It is the opposite. Most PI workflows have far <em>more</em> deletable assumptions than a rocket does, because the cost of dragging them along has been hidden inside salaries and time-to-disbursement rather than printed on a bill of materials. Nobody at SpaceX gets to keep an extra 60 pounds of tubing because &quot;that&apos;s how we&apos;ve always done it.&quot; Lots of PI firms keep the operational equivalent on every case.
+          </p>
+          <p>
+            Musk uses the algorithm to build rockets. We&apos;re going to use it to redesign a law firm. Same algorithm. Lower stakes. Faster ROI. Nobody explodes if you get it wrong on a Tuesday.
           </p>
         </section>
 
