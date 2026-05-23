@@ -5,6 +5,17 @@ import Link from "next/link";
 
 const posts = [
   {
+    href: "/blog/musk-algorithm-ai-pi-firm",
+    title: "Elon Musk’s Algorithm Applied to AI Transformation for a PI Law Firm",
+    description:
+      "Most AI projects inside personal injury firms fail because they automate the wrong workflow. Musk’s 5-step algorithm forces the redesign first — and produces a 10-agent operating model built on case movement, not case management.",
+    author: "Pranav Modi",
+    date: "May 20, 2026",
+    readTime: "16 min read",
+    category: "AI Strategy",
+    tags: ["AI Strategy", "For PI Firms"],
+  },
+  {
     href: "/blog/tools-vs-systems-pi-firms-ai",
     title: "Tools vs. Systems: Why Most PI Firms Will Get the AI Era Wrong",
     description:
