@@ -47,6 +47,38 @@ export default function BlogPostPage() {
       </section>
 
       <article className="mx-auto max-w-4xl space-y-12 px-4 pt-12 text-foreground/85 sm:px-6">
+        <section className="rounded-2xl border border-[#00ff41]/30 bg-[#04150d]/70 p-6 sm:p-8">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-[#00ff41]">
+            TL;DR
+          </p>
+          <ul className="space-y-3 text-sm text-foreground/80">
+            <li className="flex gap-3">
+              <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#00ff41]" />
+              <span>
+                <strong className="text-foreground">The thesis:</strong> AI should not copy the current PI firm workflow. AI should force the firm to redesign the workflow.
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#00ff41]" />
+              <span>
+                <strong className="text-foreground">The tool:</strong> Elon Musk&apos;s five-step algorithm &mdash; question, delete, simplify, accelerate, automate &mdash; run in that strict order.
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#00ff41]" />
+              <span>
+                <strong className="text-foreground">The reframe:</strong> &quot;Case management&quot; is the wrong mental model. The right one is <em>case movement</em>.
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#00ff41]" />
+              <span>
+                <strong className="text-foreground">The output:</strong> A 10-agent operating model covering intake, onboarding, case movement, medical records, treatment, demand, negotiation, lien, client communication, and partner dashboards.
+              </span>
+            </li>
+          </ul>
+        </section>
+
         <section className="space-y-4">
           <p>
             Personal injury law and orbital rocketry do not usually share a chapter in anyone&apos;s consulting deck. Elon Musk has, to my knowledge, never tried a slip-and-fall case. Most PI managing partners have never had to land a booster on a drone ship. The Venn diagram is two circles and a polite handshake.
@@ -111,9 +143,14 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
-            Step 1 &mdash; Make the requirements less dumb
-          </h2>
+          <div className="flex items-baseline gap-4 sm:gap-5">
+            <span className="text-5xl font-bold leading-none text-[#00ff41]/40 sm:text-6xl">
+              01
+            </span>
+            <h2 className="text-2xl font-semibold text-[#00ff41] sm:text-3xl">
+              Make the requirements less dumb
+            </h2>
+          </div>
           <p>
             The unexamined requirements inside a PI firm are everywhere. A handful that don&apos;t survive five minutes of honest questioning:
           </p>
@@ -131,9 +168,14 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
-            Step 2 &mdash; Delete the part or process
-          </h2>
+          <div className="flex items-baseline gap-4 sm:gap-5">
+            <span className="text-5xl font-bold leading-none text-[#00ff41]/40 sm:text-6xl">
+              02
+            </span>
+            <h2 className="text-2xl font-semibold text-[#00ff41] sm:text-3xl">
+              Delete the part or process
+            </h2>
+          </div>
           <p>
             This is the step most firms skip entirely. They go from &quot;AI is interesting&quot; straight to &quot;let&apos;s automate medical record retrieval&quot; without first asking what they can simply remove.
           </p>
@@ -155,9 +197,14 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
-            Step 3 &mdash; Simplify and optimize what&apos;s left
-          </h2>
+          <div className="flex items-baseline gap-4 sm:gap-5">
+            <span className="text-5xl font-bold leading-none text-[#00ff41]/40 sm:text-6xl">
+              03
+            </span>
+            <h2 className="text-2xl font-semibold text-[#00ff41] sm:text-3xl">
+              Simplify and optimize what&apos;s left
+            </h2>
+          </div>
           <p>
             Only now do you redesign the surviving workflows. A few examples of what simplification looks like:
           </p>
@@ -177,9 +224,14 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
-            Step 4 &mdash; Accelerate cycle time
-          </h2>
+          <div className="flex items-baseline gap-4 sm:gap-5">
+            <span className="text-5xl font-bold leading-none text-[#00ff41]/40 sm:text-6xl">
+              04
+            </span>
+            <h2 className="text-2xl font-semibold text-[#00ff41] sm:text-3xl">
+              Accelerate cycle time
+            </h2>
+          </div>
           <p>
             Cycle time in PI is a hidden P&amp;L lever. The firm gets paid when cases close. The faster a case moves from sign-up to disbursement &mdash; without compromising case value &mdash; the more capital you free, the more cases each staff member can carry, and the better your client experience scores.
           </p>
@@ -198,9 +250,14 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
-            Step 5 &mdash; Automate
-          </h2>
+          <div className="flex items-baseline gap-4 sm:gap-5">
+            <span className="text-5xl font-bold leading-none text-[#00ff41]/40 sm:text-6xl">
+              05
+            </span>
+            <h2 className="text-2xl font-semibold text-[#00ff41] sm:text-3xl">
+              Automate
+            </h2>
+          </div>
           <p>
             Only now do you bring in agents. And when you do, you do not build one big &quot;AI assistant.&quot; You build a fleet of narrow agents, each one responsible for a specific job, each one talking to a structured system of record.
           </p>
@@ -232,11 +289,22 @@ export default function BlogPostPage() {
           </p>
           <div className="overflow-x-auto rounded-xl border border-primary/20">
             <table className="w-full min-w-[640px] text-left text-sm">
+              <colgroup>
+                <col />
+                <col className="bg-red-500/[0.05]" />
+                <col className="bg-[#00ff41]/[0.06]" />
+              </colgroup>
               <thead className="bg-[#04150d] text-[#00ff41]">
                 <tr>
                   <th className="px-4 py-3 font-semibold">Area</th>
-                  <th className="px-4 py-3 font-semibold">Current workflow</th>
-                  <th className="px-4 py-3 font-semibold">AI-redesigned workflow</th>
+                  <th className="px-4 py-3 font-semibold">
+                    <span className="block text-[10px] uppercase tracking-widest text-red-300/70">Before</span>
+                    Current workflow
+                  </th>
+                  <th className="px-4 py-3 font-semibold">
+                    <span className="block text-[10px] uppercase tracking-widest text-[#00ff41]/70">After</span>
+                    AI-redesigned workflow
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-primary/10 bg-[#04150d]/30 text-foreground/80">
@@ -320,68 +388,207 @@ export default function BlogPostPage() {
           <p>
             Once the workflow has been redesigned, the automation in step 5 organizes naturally into ten narrow agents. Each one has a defined job, a structured input, a structured output, and a clear escalation path to a human. No agent is a general &quot;AI assistant.&quot; Every agent is built to move cases.
           </p>
-          <ol className="list-decimal space-y-4 pl-6 text-foreground/80">
-            <li>
-              <strong className="text-[#00ff41]">Intake Agent.</strong>
-              <p className="mt-1">
-                Answers every inbound call and form submission 24/7. Runs structured qualification &mdash; mechanism, jurisdiction, treatment, fault, statute &mdash; in the caller&apos;s language. Captures clean data, schedules attorney follow-up when warranted, and escalates anything outside the standard play. Replaces voicemail and undertrained after-hours coverage.
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-xl border border-primary/20 bg-[#04150d]/50 p-5">
+              <div className="flex items-baseline gap-3">
+                <span className="text-2xl font-bold leading-none text-[#00ff41]/50">01</span>
+                <h3 className="text-lg font-semibold text-[#00ff41]">Intake Agent</h3>
+              </div>
+              <p className="mt-3 text-sm text-foreground/85">
+                24/7 structured qualification of every inbound call and form, in the caller&apos;s language.
               </p>
-            </li>
-            <li>
-              <strong className="text-[#00ff41]">Onboarding Agent.</strong>
-              <p className="mt-1">
-                Continues the intake conversation into a signed retainer, HIPAA authorization, provider list, and identity documents &mdash; in the same session. No second packet. No re-entry. The file is operational within hours of first contact.
+              <dl className="mt-4 space-y-1.5 text-xs text-foreground/65">
+                <div>
+                  <dt className="inline font-semibold text-foreground/80">Replaces: </dt>
+                  <dd className="inline">voicemail, after-hours rollover, undertrained intake coordinators.</dd>
+                </div>
+                <div>
+                  <dt className="inline font-semibold text-foreground/80">Escalates when: </dt>
+                  <dd className="inline">jurisdiction is unusual, fact pattern is ambiguous, or the caller asks for an attorney.</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div className="rounded-xl border border-primary/20 bg-[#04150d]/50 p-5">
+              <div className="flex items-baseline gap-3">
+                <span className="text-2xl font-bold leading-none text-[#00ff41]/50">02</span>
+                <h3 className="text-lg font-semibold text-[#00ff41]">Onboarding Agent</h3>
+              </div>
+              <p className="mt-3 text-sm text-foreground/85">
+                Continues intake into signed retainer, HIPAA auth, provider list, and ID docs in the same session.
               </p>
-            </li>
-            <li>
-              <strong className="text-[#00ff41]">Case Movement Agent.</strong>
-              <p className="mt-1">
-                The heartbeat of the firm. Watches every active file for the next required action, the next blocker, the next deadline. Triggers the right agent or the right human at the right moment. The case management meeting becomes redundant because this agent surfaces only what needs attention.
+              <dl className="mt-4 space-y-1.5 text-xs text-foreground/65">
+                <div>
+                  <dt className="inline font-semibold text-foreground/80">Replaces: </dt>
+                  <dd className="inline">the paper sign-up packet and the second round of data entry.</dd>
+                </div>
+                <div>
+                  <dt className="inline font-semibold text-foreground/80">Escalates when: </dt>
+                  <dd className="inline">identity verification fails or a clause needs an attorney edit.</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div className="rounded-xl border border-primary/20 bg-[#04150d]/50 p-5">
+              <div className="flex items-baseline gap-3">
+                <span className="text-2xl font-bold leading-none text-[#00ff41]/50">03</span>
+                <h3 className="text-lg font-semibold text-[#00ff41]">Case Movement Agent</h3>
+              </div>
+              <p className="mt-3 text-sm text-foreground/85">
+                The heartbeat. Watches every active file for the next required action and the next blocker.
               </p>
-            </li>
-            <li>
-              <strong className="text-[#00ff41]">Medical Records Agent.</strong>
-              <p className="mt-1">
-                Owns the entire retrieval pipeline: provider portals, fax-to-email, mail-in, and follow-up. Indexes inbound records, attaches them to the right file, flags missing visits and incomplete chart pulls, and tells the demand agent when the record set is complete.
+              <dl className="mt-4 space-y-1.5 text-xs text-foreground/65">
+                <div>
+                  <dt className="inline font-semibold text-foreground/80">Replaces: </dt>
+                  <dd className="inline">the weekly case review meeting for the 80% of cases that are on track.</dd>
+                </div>
+                <div>
+                  <dt className="inline font-semibold text-foreground/80">Escalates when: </dt>
+                  <dd className="inline">a case is stalled past threshold or a deadline is at risk.</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div className="rounded-xl border border-primary/20 bg-[#04150d]/50 p-5">
+              <div className="flex items-baseline gap-3">
+                <span className="text-2xl font-bold leading-none text-[#00ff41]/50">04</span>
+                <h3 className="text-lg font-semibold text-[#00ff41]">Medical Records Agent</h3>
+              </div>
+              <p className="mt-3 text-sm text-foreground/85">
+                Owns retrieval across portals, fax-to-email, and mail. Indexes, attaches, and flags gaps.
               </p>
-            </li>
-            <li>
-              <strong className="text-[#00ff41]">Treatment Monitoring Agent.</strong>
-              <p className="mt-1">
-                Watches client treatment cadence. Detects gaps and missed appointments the day they happen. Triggers gentle, language-matched outreach to the client and a flag to the case manager when compliance is at risk. Catches the value-leak most firms only discover at demand time.
+              <dl className="mt-4 space-y-1.5 text-xs text-foreground/65">
+                <div>
+                  <dt className="inline font-semibold text-foreground/80">Replaces: </dt>
+                  <dd className="inline">the paralegal phone tree and the records-sitting-in-someone&apos;s-inbox problem.</dd>
+                </div>
+                <div>
+                  <dt className="inline font-semibold text-foreground/80">Escalates when: </dt>
+                  <dd className="inline">a provider refuses release or chart pages are missing.</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div className="rounded-xl border border-primary/20 bg-[#04150d]/50 p-5">
+              <div className="flex items-baseline gap-3">
+                <span className="text-2xl font-bold leading-none text-[#00ff41]/50">05</span>
+                <h3 className="text-lg font-semibold text-[#00ff41]">Treatment Monitoring Agent</h3>
+              </div>
+              <p className="mt-3 text-sm text-foreground/85">
+                Watches client treatment cadence and detects gaps the day they happen, in any language.
               </p>
-            </li>
-            <li>
-              <strong className="text-[#00ff41]">Demand Agent.</strong>
-              <p className="mt-1">
-                Assembles the demand package from structured case data &mdash; injuries, treatment timeline, billing, lost wages, pain narrative, exhibits. Produces a diff the attorney reviews instead of a 30-page document the attorney reads. Drops demand cycle time from weeks to days.
+              <dl className="mt-4 space-y-1.5 text-xs text-foreground/65">
+                <div>
+                  <dt className="inline font-semibold text-foreground/80">Replaces: </dt>
+                  <dd className="inline">monthly status calls to providers and end-of-treatment surprises.</dd>
+                </div>
+                <div>
+                  <dt className="inline font-semibold text-foreground/80">Escalates when: </dt>
+                  <dd className="inline">a client misses two appointments or declines further treatment.</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div className="rounded-xl border border-primary/20 bg-[#04150d]/50 p-5">
+              <div className="flex items-baseline gap-3">
+                <span className="text-2xl font-bold leading-none text-[#00ff41]/50">06</span>
+                <h3 className="text-lg font-semibold text-[#00ff41]">Demand Agent</h3>
+              </div>
+              <p className="mt-3 text-sm text-foreground/85">
+                Assembles narrative, damages, and exhibits from structured case data. Produces a diff, not a draft.
               </p>
-            </li>
-            <li>
-              <strong className="text-[#00ff41]">Negotiation Agent.</strong>
-              <p className="mt-1">
-                Drafts counters informed by carrier-specific historical patterns: what this adjuster has paid on comparable cases, how their offer curves typically move, where the realistic settlement zone sits. The attorney makes the decision. The agent executes the structured back-and-forth and keeps the negotiation moving.
+              <dl className="mt-4 space-y-1.5 text-xs text-foreground/65">
+                <div>
+                  <dt className="inline font-semibold text-foreground/80">Replaces: </dt>
+                  <dd className="inline">the Word-template demand and the full-document attorney read.</dd>
+                </div>
+                <div>
+                  <dt className="inline font-semibold text-foreground/80">Escalates when: </dt>
+                  <dd className="inline">liability is contested or damages require expert valuation.</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div className="rounded-xl border border-primary/20 bg-[#04150d]/50 p-5">
+              <div className="flex items-baseline gap-3">
+                <span className="text-2xl font-bold leading-none text-[#00ff41]/50">07</span>
+                <h3 className="text-lg font-semibold text-[#00ff41]">Negotiation Agent</h3>
+              </div>
+              <p className="mt-3 text-sm text-foreground/85">
+                Drafts carrier-specific counters using historical patterns. Executes the back-and-forth under attorney authority.
               </p>
-            </li>
-            <li>
-              <strong className="text-[#00ff41]">Lien Agent.</strong>
-              <p className="mt-1">
-                Identifies every lienholder at settlement, pulls balances, generates negotiation letters informed by historical reduction patterns for that provider category, tracks responses, and produces a disbursement-ready ledger. Routine reductions become a workflow. Complex liens (ERISA, Medicare, plan-language disputes) escalate to a human or outside counsel.
+              <dl className="mt-4 space-y-1.5 text-xs text-foreground/65">
+                <div>
+                  <dt className="inline font-semibold text-foreground/80">Replaces: </dt>
+                  <dd className="inline">phone tag and negotiation history living in one attorney&apos;s head.</dd>
+                </div>
+                <div>
+                  <dt className="inline font-semibold text-foreground/80">Escalates when: </dt>
+                  <dd className="inline">an offer crosses a threshold or the carrier opens a new theory.</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div className="rounded-xl border border-primary/20 bg-[#04150d]/50 p-5">
+              <div className="flex items-baseline gap-3">
+                <span className="text-2xl font-bold leading-none text-[#00ff41]/50">08</span>
+                <h3 className="text-lg font-semibold text-[#00ff41]">Lien Agent</h3>
+              </div>
+              <p className="mt-3 text-sm text-foreground/85">
+                Identifies lienholders, pulls balances, negotiates routine reductions, produces a disbursement-ready ledger.
               </p>
-            </li>
-            <li>
-              <strong className="text-[#00ff41]">Client Communication Agent.</strong>
-              <p className="mt-1">
-                Event-driven, multi-channel, multi-language. Every meaningful change in the file produces a clear update to the client in their preferred channel. Inbound messages get categorized, acknowledged, and routed in minutes. The &quot;what&apos;s happening with my case?&quot; call goes from a daily reality to a rare exception.
+              <dl className="mt-4 space-y-1.5 text-xs text-foreground/65">
+                <div>
+                  <dt className="inline font-semibold text-foreground/80">Replaces: </dt>
+                  <dd className="inline">the lien spreadsheet and a meaningful chunk of outside lien-vendor spend.</dd>
+                </div>
+                <div>
+                  <dt className="inline font-semibold text-foreground/80">Escalates when: </dt>
+                  <dd className="inline">ERISA, Medicare, plan language, or a genuine legal dispute is involved.</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div className="rounded-xl border border-primary/20 bg-[#04150d]/50 p-5">
+              <div className="flex items-baseline gap-3">
+                <span className="text-2xl font-bold leading-none text-[#00ff41]/50">09</span>
+                <h3 className="text-lg font-semibold text-[#00ff41]">Client Communication Agent</h3>
+              </div>
+              <p className="mt-3 text-sm text-foreground/85">
+                Event-driven, multi-channel, multi-language updates plus inbound triage in minutes, not days.
               </p>
-            </li>
-            <li>
-              <strong className="text-[#00ff41]">Partner Dashboard Agent.</strong>
-              <p className="mt-1">
-                Turns the firm&apos;s operations into a real-time picture. Stalled cases, cycle-time medians by stage, demand pipeline, settlement pipeline, lien recovery, marketing cost-per-signed-case, and staff load &mdash; all live, all drillable. The partner stops managing by anecdote and starts managing by signal.
+              <dl className="mt-4 space-y-1.5 text-xs text-foreground/65">
+                <div>
+                  <dt className="inline font-semibold text-foreground/80">Replaces: </dt>
+                  <dd className="inline">calendar-driven check-ins and the &quot;whoever answers&quot; inbound model.</dd>
+                </div>
+                <div>
+                  <dt className="inline font-semibold text-foreground/80">Escalates when: </dt>
+                  <dd className="inline">the client expresses dissatisfaction, asks for legal advice, or signals a complaint.</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div className="rounded-xl border border-primary/20 bg-[#04150d]/50 p-5">
+              <div className="flex items-baseline gap-3">
+                <span className="text-2xl font-bold leading-none text-[#00ff41]/50">10</span>
+                <h3 className="text-lg font-semibold text-[#00ff41]">Partner Dashboard Agent</h3>
+              </div>
+              <p className="mt-3 text-sm text-foreground/85">
+                Live operational picture: stalled cases, cycle times, pipelines, marketing yield, staff load.
               </p>
-            </li>
-          </ol>
+              <dl className="mt-4 space-y-1.5 text-xs text-foreground/65">
+                <div>
+                  <dt className="inline font-semibold text-foreground/80">Replaces: </dt>
+                  <dd className="inline">the monthly P&amp;L review and the &quot;going well&quot; anecdote.</dd>
+                </div>
+                <div>
+                  <dt className="inline font-semibold text-foreground/80">Escalates when: </dt>
+                  <dd className="inline">a KPI crosses a threshold the partner has set.</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
           <p>
             Three properties of this architecture matter more than the agent list itself:
           </p>
@@ -408,6 +615,49 @@ export default function BlogPostPage() {
           <p>
             None of these numbers move because the firm bought AI. They move because the firm let AI force a redesign.
           </p>
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold text-[#00ff41]">
+            Common pushbacks (and crisp answers)
+          </h2>
+          <p>
+            Every time I walk a managing partner through this, the same four objections come back in roughly the same order. Worth addressing each one directly.
+          </p>
+          <div className="space-y-4">
+            <div className="rounded-xl border border-primary/20 bg-[#04150d]/40 p-5">
+              <p className="text-sm font-semibold text-[#00ff41]">
+                &quot;Our state bar won&apos;t allow it.&quot;
+              </p>
+              <p className="mt-2 text-sm text-foreground/80">
+                Most state bars allow it. The actual rules are about competence, supervision, confidentiality, fee splitting, and the unauthorized practice of law &mdash; not about whether software touches the workflow. The bar is fine with you using an associate, a paralegal, or a contract attorney. They will be fine with an agent that has the same scope of authority and the same supervision. The compliance burden is real. The prohibition usually isn&apos;t.
+              </p>
+            </div>
+            <div className="rounded-xl border border-primary/20 bg-[#04150d]/40 p-5">
+              <p className="text-sm font-semibold text-[#00ff41]">
+                &quot;Our cases are too complex for AI.&quot;
+              </p>
+              <p className="mt-2 text-sm text-foreground/80">
+                The cases are complex. The workflow around them is not. 80% of a typical PI file is repeatable operational work &mdash; intake, records retrieval, treatment monitoring, lien identification, demand assembly. The 20% that is genuine legal judgment is where your attorneys should be spending their time, and aren&apos;t, because they&apos;re drowning in the 80%.
+              </p>
+            </div>
+            <div className="rounded-xl border border-primary/20 bg-[#04150d]/40 p-5">
+              <p className="text-sm font-semibold text-[#00ff41]">
+                &quot;Our CMS can&apos;t do this.&quot;
+              </p>
+              <p className="mt-2 text-sm text-foreground/80">
+                Correct. Your CMS encodes the old workflow. The new workflow does not fit it. The right move is to treat the CMS as a database of record and let the agent layer run alongside it, writing back the structured outputs the CMS expects. You are not ripping out the CMS. You are stopping the practice of asking it to be the workflow engine, because it never was one.
+              </p>
+            </div>
+            <div className="rounded-xl border border-primary/20 bg-[#04150d]/40 p-5">
+              <p className="text-sm font-semibold text-[#00ff41]">
+                &quot;My paralegals will quit.&quot;
+              </p>
+              <p className="mt-2 text-sm text-foreground/80">
+                Some will. The ones you want to keep won&apos;t, because the work they actually like &mdash; judgment calls, client moments, the cases that need a human &mdash; is the part the agents leave alone. The work the agents take is the part your best paralegals describe as &quot;the reason I&apos;m tired by Thursday.&quot; The retention risk is real but inverted: firms that build this layer tend to hold on to their best people longer.
+              </p>
+            </div>
+          </div>
         </section>
 
         <section className="space-y-4">
