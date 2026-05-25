@@ -36,6 +36,7 @@ export const footerLinks = [
   {
     title: "Connect",
     links: [
+      { label: "AI Reputation Tool", href: "https://reputable.getpossibleminds.com" },
       { label: "Email", href: "mailto:hello@possibleminds.ai" },
       { label: "LinkedIn", href: "#" },
     ],

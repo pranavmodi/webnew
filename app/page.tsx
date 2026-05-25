@@ -1,13 +1,108 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight, Gauge, Radar, ShieldCheck, Sparkles } from "lucide-react";
 
 import { Hero } from "@/components/hero";
 import { Button } from "@/components/ui/button";
+
+const REPUTATION_TOOL_URL = "https://reputable.getpossibleminds.com";
 
 export default function Home() {
   return (
     <div className="space-y-20 bg-black pb-24">
       <Hero />
+
+      {/* Reputation Tool Feature */}
+      <section className="relative mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="overflow-hidden rounded-3xl border border-[#00ff41]/25 bg-gradient-to-br from-[#04150d] via-black to-[#06131c] shadow-[0_30px_100px_rgba(0,255,65,0.12)]">
+          <div className="grid gap-8 p-6 sm:p-8 lg:grid-cols-[1fr_0.95fr] lg:p-10">
+            <div className="flex flex-col justify-center">
+              <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[#00ff41]/30 bg-[#00ff41]/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#00ff41]">
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#00ff41]" />
+                Free AI reputation tool
+              </div>
+
+              <h2 className="mt-5 max-w-2xl text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
+                See how visible your PI firm is to
+                <span className="text-[#00ff41]"> AI answer engines</span>.
+              </h2>
+
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-foreground/75 sm:text-lg">
+                Run a live public-footprint audit that turns website proof, attorney signals,
+                competitor context, and third-party mentions into a reputation graph score and
+                prioritized action plan.
+              </p>
+
+              <div className="mt-7 flex flex-wrap items-center gap-3">
+                <Button asChild size="lg" className="animate-glow">
+                  <Link href={REPUTATION_TOOL_URL} target="_blank" rel="noreferrer">
+                    Launch the reputation tool
+                    <ArrowUpRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+                <span className="rounded-full border border-primary/20 bg-black/50 px-3 py-1 text-xs font-medium text-muted-foreground">
+                  Built for personal injury firms
+                </span>
+              </div>
+            </div>
+
+            <div className="grid gap-3">
+              {[
+                {
+                  icon: Gauge,
+                  label: "Reputation Graph Score",
+                  value: "74",
+                  detail: "How clearly the public record proves authority",
+                },
+                {
+                  icon: ShieldCheck,
+                  label: "Evidence confidence",
+                  value: "82%",
+                  detail: "How much source material the scan can verify",
+                },
+                {
+                  icon: Radar,
+                  label: "AI readiness",
+                  value: "68",
+                  detail: "Whether answer systems can confidently cite the firm",
+                },
+              ].map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div
+                    key={item.label}
+                    className="group rounded-2xl border border-white/10 bg-white/[0.04] p-4 transition hover:border-[#00ff41]/35 hover:bg-white/[0.07]"
+                  >
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.15em] text-[#00ff41]">
+                          <Icon className="h-4 w-4" />
+                          {item.label}
+                        </div>
+                        <p className="mt-2 text-sm leading-relaxed text-foreground/65">
+                          {item.detail}
+                        </p>
+                      </div>
+                      <div className="text-3xl font-bold text-white">{item.value}</div>
+                    </div>
+                  </div>
+                );
+              })}
+
+              <div className="rounded-2xl border border-[#00ff41]/20 bg-[#00ff41]/10 p-4">
+                <div className="flex items-center gap-2 text-sm font-semibold text-[#00ff41]">
+                  <Sparkles className="h-4 w-4" />
+                  Action plan included
+                </div>
+                <p className="mt-2 text-sm leading-relaxed text-foreground/70">
+                  The report translates weak signals into concrete fixes for bios, case proof,
+                  local relevance, and citable third-party validation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Case Study Feature */}
       <section className="relative mx-auto max-w-6xl px-4 sm:px-6">

@@ -4,6 +4,8 @@ import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
 import { footerLinks } from "@/lib/navigation";
 import { Button } from "@/components/ui/button";
 
+const REPUTATION_TOOL_URL = "https://reputable.getpossibleminds.com";
+
 export function Footer() {
   return (
     <footer className="border-t border-primary/20 bg-black">
@@ -24,6 +26,11 @@ export function Footer() {
             <Button asChild size="sm" className="animate-glow">
               <Link href={CALENDLY_URL} target="_blank" rel="noreferrer">
                 Book a demo
+              </Link>
+            </Button>
+            <Button asChild size="sm" variant="outline">
+              <Link href={REPUTATION_TOOL_URL} target="_blank" rel="noreferrer">
+                AI reputation tool
               </Link>
             </Button>
             <Button asChild size="sm" variant="outline">
@@ -62,6 +69,9 @@ export function Footer() {
             </Link>
             <Link href={CALENDLY_URL} className="hover:text-primary">
               Book a demo
+            </Link>
+            <Link href={REPUTATION_TOOL_URL} target="_blank" rel="noreferrer" className="hover:text-primary">
+              AI reputation tool
             </Link>
           </div>
         </div>

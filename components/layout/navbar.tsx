@@ -19,6 +19,8 @@ import {
 } from "@/components/ui/sheet";
 import { Separator } from "@/components/ui/separator";
 
+const REPUTATION_TOOL_URL = "https://reputable.getpossibleminds.com";
+
 export function Navbar() {
   const pathname = usePathname();
 
@@ -152,6 +154,11 @@ export function Navbar() {
         )}
 
         <div className="hidden items-center gap-2 md:flex">
+          <Button asChild size="sm" variant="outline">
+            <Link href={REPUTATION_TOOL_URL} target="_blank" rel="noreferrer">
+              AI reputation tool
+            </Link>
+          </Button>
           <Button asChild size="sm">
             <Link href={CALENDLY_URL} target="_blank" rel="noreferrer">
               Book a demo
@@ -262,6 +269,11 @@ export function Navbar() {
                 </div>
                 <Separator className="my-6 h-px w-full bg-border" />
                 <div className="flex flex-col gap-3">
+                  <Button asChild size="lg" variant="outline">
+                    <Link href={REPUTATION_TOOL_URL} target="_blank" rel="noreferrer">
+                      AI reputation tool
+                    </Link>
+                  </Button>
                   <Button asChild size="lg">
                     <Link href={CALENDLY_URL} target="_blank" rel="noreferrer">
                       Book a demo
