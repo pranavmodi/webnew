@@ -5,6 +5,17 @@ import Link from "next/link";
 
 const posts = [
   {
+    href: "/blog/cybernetic-organization-ai",
+    title: "The Cybernetic Organization: What Norbert Wiener Saw Before the AI Era",
+    description:
+      "Most companies still operate like Roman legions: information climbs a hierarchy, decisions travel back down, and humans serve as the routing layer. AI changes that. Norbert Wiener&apos;s cybernetics offers a better model for how modern firms will sense, decide, act, and learn.",
+    author: "Pranav Modi",
+    date: "May 25, 2026",
+    readTime: "11 min read",
+    category: "AI Strategy",
+    tags: ["AI Strategy"],
+  },
+  {
     href: "/blog/musk-algorithm-ai-pi-firm",
     title: "Elon Musk’s Algorithm Applied to AI Transformation for a PI Law Firm",
     description:
