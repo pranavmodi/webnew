@@ -5,6 +5,18 @@ import Link from "next/link";
 
 const posts = [
   {
+    href: "/blog/speed-is-easy-to-graph-intake",
+    title: "Speed Is Easy to Graph: The Intake Metric PI Firms Keep Optimizing Wrong",
+    description:
+      "Industry-wide, only 7% of personal injury leads set a consultation. Most firms respond by making intake faster. The best intake thinkers are converging on a different answer: stability, not speed, is what converts.",
+    author: "Pranav Modi",
+    date: "June 12, 2026",
+    readTime: "8 min read",
+    category: "Intake Operations",
+    tags: ["Intake"],
+  },
+
+  {
     href: "/blog/cybernetic-organization-ai",
     title: "The Cybernetic Organization: What Norbert Wiener Saw Before the AI Era",
     description:
@@ -160,7 +172,7 @@ const posts = [
   },
 ];
 
-const filters = ["All", "Legal AI", "AI Strategy"];
+const filters = ["All", "Legal AI", "AI Strategy", "Intake"];
 
 export default function BlogPage() {
   const [activeFilter, setActiveFilter] = useState("All");
