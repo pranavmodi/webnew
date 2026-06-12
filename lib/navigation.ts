@@ -18,6 +18,7 @@ export const caseStudiesLinks = [
 ];
 
 export const blogLinks = [
+  { href: "/blog/speed-is-easy-to-graph-intake", label: "Speed Is Easy to Graph" },
   { href: "/blog/cybernetic-organization-ai", label: "The Cybernetic Organization" },
   { href: "/blog/musk-algorithm-ai-pi-firm", label: "Musk's Algorithm for PI" },
   { href: "/blog/tools-vs-systems-pi-firms-ai", label: "Tools vs. Systems" },
