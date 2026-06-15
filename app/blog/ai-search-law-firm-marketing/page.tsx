@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
+import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
 import WaitlistForm from "./waitlist-form";
 
@@ -12,6 +13,8 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPostPage() {
+  const post = BLOG_POSTS_BY_SLUG["ai-search-law-firm-marketing"];
+
   return (
     <div className="bg-black pb-24">
       <section className="relative overflow-hidden bg-gradient-to-b from-[#04150d] to-black">
@@ -34,7 +37,7 @@ export default function BlogPostPage() {
               Google&apos;s AI Overviews have quietly rewired how clients find personal injury attorneys. Most firms have no idea it&apos;s happening &mdash; and no tool to measure it.
             </p>
             <div className="flex flex-wrap gap-3 text-xs text-muted-foreground">
-              {["Pranav Modi", "March 12, 2026", "8 min read"].map((item) => (
+              {[post.author, post.date, post.readTime].map((item) => (
                 <span
                   key={item}
                   className="rounded-full border border-primary/20 bg-[#04150d] px-3 py-1"

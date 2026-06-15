@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
+import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -11,6 +12,8 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPostPage() {
+  const post = BLOG_POSTS_BY_SLUG["gemini-maps-pi-firms"];
+
   return (
     <div className="bg-black pb-24">
       <section className="relative overflow-hidden bg-gradient-to-b from-[#04150d] to-black">
@@ -33,7 +36,7 @@ export default function BlogPostPage() {
               The new ranking signal inside Google Maps isn&apos;t keywords, backlinks, or ad spend. It&apos;s unstructured data &mdash; reviews, Q&amp;A, photos, post narratives. PI firms sit on a goldmine of it. Most are wasting every ounce.
             </p>
             <div className="flex flex-wrap gap-3 text-xs text-muted-foreground">
-              {["Pranav Modi", "March 17, 2026", "11 min read"].map((item) => (
+              {[post.author, post.date, post.readTime].map((item) => (
                 <span
                   key={item}
                   className="rounded-full border border-primary/20 bg-[#04150d] px-3 py-1"

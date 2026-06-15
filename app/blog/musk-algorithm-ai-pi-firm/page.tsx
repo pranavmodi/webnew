@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
+import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -11,6 +12,8 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPostPage() {
+  const post = BLOG_POSTS_BY_SLUG["musk-algorithm-ai-pi-firm"];
+
   return (
     <div className="bg-black pb-24">
       <section className="relative overflow-hidden bg-gradient-to-b from-[#04150d] to-black">
@@ -33,7 +36,7 @@ export default function BlogPostPage() {
               Most AI projects inside personal injury firms fail because they automate the wrong workflow. Musk&apos;s 5-step algorithm forces the redesign first &mdash; and produces a 10-agent operating model built on case movement, not case management.
             </p>
             <div className="flex flex-wrap gap-3 text-xs text-muted-foreground">
-              {["Pranav Modi", "May 20, 2026", "16 min read"].map((item) => (
+              {[post.author, post.date, post.readTime].map((item) => (
                 <span
                   key={item}
                   className="rounded-full border border-primary/20 bg-[#04150d] px-3 py-1"

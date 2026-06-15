@@ -12,6 +12,53 @@ export default function Home() {
     <div className="space-y-20 bg-black pb-24">
       <Hero />
 
+      {/* Precise Imaging Stability Anchor */}
+      <section className="relative mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="overflow-hidden rounded-3xl border border-[#00ff41]/25 bg-gradient-to-br from-[#04150d] via-black to-[#06131c] p-6 shadow-[0_30px_100px_rgba(0,255,65,0.12)] sm:p-8 lg:p-10">
+          <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+            <div>
+              <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[#00ff41]/30 bg-[#00ff41]/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#00ff41]">
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#00ff41]" />
+                Proven in production at scale
+              </div>
+
+              <h2 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
+                The automation behind Precise Imaging runs on our systems.
+              </h2>
+
+              <p className="mt-5 max-w-3xl text-base leading-relaxed text-foreground/75 sm:text-lg">
+                We build and run the automation behind Precise Imaging&apos;s operations: a
+                system that triages roughly 600 inbound emails a day, auto-handles about
+                73% of that volume, and saves on the order of 520 staff-hours a month
+                across the ~1,900 personal injury firms Precise serves. It has run in
+                production for years. When you work with us, you are not betting on a
+                prototype.
+              </p>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+              {[
+                { value: "600", label: "emails/day" },
+                { value: "73%", label: "auto-handled" },
+                { value: "~520", label: "staff-hours/month" },
+              ].map((stat) => (
+                <div
+                  key={stat.label}
+                  className="rounded-2xl border border-white/10 bg-white/[0.04] p-4 transition hover:border-[#00ff41]/35 hover:bg-white/[0.07]"
+                >
+                  <div className="text-3xl font-bold text-[#00ff41] sm:text-4xl">
+                    {stat.value}
+                  </div>
+                  <div className="mt-1 text-sm font-medium text-foreground/75">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Reputation Tool Feature */}
       <section className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <div className="overflow-hidden rounded-3xl border border-[#00ff41]/25 bg-gradient-to-br from-[#04150d] via-black to-[#06131c] shadow-[0_30px_100px_rgba(0,255,65,0.12)]">
@@ -244,6 +291,90 @@ export default function Home() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Proof Scaffold */}
+      <section className="relative mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="rounded-3xl border border-primary/20 bg-gradient-to-br from-[#04150d] to-black p-6 sm:p-8">
+            <h2 className="text-2xl font-semibold leading-tight text-white sm:text-3xl">
+              What clients say
+            </h2>
+
+            {/* TODO: Replace placeholder testimonial quote and attribution when approved assets are provided. */}
+            <blockquote className="mt-5 text-base leading-relaxed text-foreground/75 sm:text-lg">
+              &ldquo;{"{{TESTIMONIAL_QUOTE}}"}&rdquo;
+            </blockquote>
+            <p className="mt-4 text-sm font-semibold text-[#00ff41]">
+              {"{{NAME}}, {{TITLE}}, {{FIRM}}"}
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-primary/20 bg-[#04150d] p-6 sm:p-8">
+            {/* TODO: Drop approved client logo assets into these empty styled slots. */}
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {[0, 1, 2, 3].map((slot) => (
+                <div
+                  key={slot}
+                  className="min-h-20 rounded-2xl border border-white/10 bg-white/[0.04]"
+                />
+              ))}
+            </div>
+
+            <Link
+              href="/consult"
+              className="mt-6 block text-base leading-relaxed text-foreground/75 transition hover:text-[#00ff41]"
+            >
+              Want to talk to a firm already running this? We&apos;ll connect you with a
+              reference.
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Ownership Teaser */}
+      <section className="relative mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="rounded-3xl border border-primary/20 bg-gradient-to-br from-[#04150d] to-black p-6 sm:p-8 lg:p-10">
+          <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-start">
+            <div>
+              <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl">
+                Built to outlast us
+              </h2>
+
+              <Link
+                href="/security"
+                className="mt-5 inline-flex text-sm font-semibold text-[#00ff41] transition hover:text-[#00ff41]/80"
+              >
+                Security &amp; ownership →
+              </Link>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2">
+              {[
+                {
+                  title: "Runs on your accounts",
+                  copy: "Everything we build runs on infrastructure you own and control. If we ever stepped away, your system keeps running.",
+                },
+                {
+                  title: "You own what we build",
+                  copy: "The source code and documentation are yours. No black box, no lock-in.",
+                },
+              ].map((point) => (
+                <div
+                  key={point.title}
+                  className="rounded-2xl border border-white/10 bg-white/[0.04] p-5"
+                >
+                  <h3 className="text-lg font-semibold text-[#00ff41]">
+                    {point.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-foreground/70 sm:text-base">
+                    {point.copy}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

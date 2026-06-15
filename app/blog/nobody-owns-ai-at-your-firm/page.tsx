@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
+import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -23,6 +24,8 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPostPage() {
+  const post = BLOG_POSTS_BY_SLUG["nobody-owns-ai-at-your-firm"];
+
   return (
     <div className="bg-black pb-24">
       <section className="relative overflow-hidden bg-gradient-to-b from-[#04150d] to-black">
@@ -45,7 +48,7 @@ export default function BlogPostPage() {
               80% of law firms can&apos;t show ROI from AI investments. The problem isn&apos;t the tools &mdash; it&apos;s that nobody owns the strategy. Here&apos;s what the most successful PI firms are doing differently.
             </p>
             <div className="flex flex-wrap gap-3 text-xs text-muted-foreground">
-              {["Pranav Modi", "March 24, 2026", "8 min read"].map((item) => (
+              {[post.author, post.date, post.readTime].map((item) => (
                 <span
                   key={item}
                   className="rounded-full border border-primary/20 bg-[#04150d] px-3 py-1"

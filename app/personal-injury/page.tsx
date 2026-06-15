@@ -78,6 +78,46 @@ const solutions = [
     details:
       "Lien negotiation is one of the most time-consuming parts of PI case resolution. Our system analyzes lien documents using OCR and AI — detecting modifications, verifying signatures, extracting balances, and generating negotiation letters. It handles the back-and-forth with providers, flags edge cases for human review, and tracks every lien from filing to resolution.",
   },
+  {
+    href: "#solutions",
+    title: "Intake Chatbots",
+    description:
+      "Around-the-clock intake bots that gather case information and qualify leads automatically.",
+    details:
+      "These systems capture the details that matter before a human ever gets involved: incident type, timeline, injuries, treatment status, insurance, representation history, and urgency. They reduce lead leakage, standardize qualification, and make sure every prospect gets a fast response even after hours.",
+  },
+  {
+    href: "#solutions",
+    title: "Document Automation",
+    description:
+      "Generate demand letters, medical summaries, and routine correspondence without starting from scratch.",
+    details:
+      "Instead of drafting the same documents over and over, your team works from AI-generated first drafts built from the case file, provider records, and your preferred templates. That means faster turnaround, more consistency, and less time lost to repetitive writing work.",
+  },
+  {
+    href: "#solutions",
+    title: "Case Summarization Systems",
+    description:
+      "Digest large record sets and surface the facts, chronology, and risks that actually matter.",
+    details:
+      "Medical records, bills, correspondence, and claim documents pile up fast. Our summarization workflows organize them into usable narratives, highlight treatment gaps and contradictions, and help attorneys or paralegals get context in minutes instead of hours.",
+  },
+  {
+    href: "#solutions",
+    title: "Follow-Up Automation",
+    description:
+      "Send reminders, status updates, and document requests automatically at the right moments.",
+    details:
+      "Clients should not have to chase your firm for updates, and staff should not have to manually remember every reminder. These automations trigger outreach based on case stage, missing paperwork, appointments, and deadlines — keeping cases moving and clients informed.",
+  },
+  {
+    href: "#solutions",
+    title: "Internal Knowledge Tools",
+    description:
+      "Give staff instant access to SOPs, templates, and operational know-how inside one searchable system.",
+    details:
+      "Instead of asking around for the latest template or guessing how a workflow is supposed to run, staff can query a centralized knowledge layer built on your firm&apos;s SOPs, precedent language, and internal playbooks. This reduces training drag and improves consistency across the team.",
+  },
 ];
 
 const whyUsPoints = [
@@ -262,10 +302,10 @@ export default function PersonalInjuryPage() {
             Each module works standalone or together — plug into your existing stack without ripping anything out.
           </p>
         </div>
-        <div className="mt-12 space-y-6">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2">
           {solutions.map((sol) => (
             <Link
-              key={sol.href}
+              key={`${sol.title}-${sol.href}`}
               href={sol.href}
               className="group block rounded-2xl border border-primary/25 bg-[#04150d] p-6 transition hover:border-primary/40 hover:bg-[#04150d]/80 sm:p-8"
             >

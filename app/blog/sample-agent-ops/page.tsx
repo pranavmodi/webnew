@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
+import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -11,7 +12,8 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPostPage() {
-  const pills = ["Pranav Modi", "February 25, 2026", "5 min read"];
+  const post = BLOG_POSTS_BY_SLUG["sample-agent-ops"];
+  const pills = [post.author, post.date, post.readTime];
   const checklist = [
     {
       title: "Frame the workflow in business language",
