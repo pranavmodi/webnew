@@ -304,24 +304,33 @@ export default function Home() {
               What clients say
             </h2>
 
-            {/* TODO: Replace placeholder testimonial quote and attribution when approved assets are provided. */}
             <blockquote className="mt-5 text-base leading-relaxed text-foreground/75 sm:text-lg">
-              &ldquo;{"{{TESTIMONIAL_QUOTE}}"}&rdquo;
+              &ldquo;The team loves the solution, genuinely cuts down the time for
+              email handling!&rdquo;
             </blockquote>
             <p className="mt-4 text-sm font-semibold text-[#00ff41]">
-              {"{{NAME}}, {{TITLE}}, {{FIRM}}"}
+              Danny Rackow, Director of Engineering, Precise Imaging
             </p>
           </div>
 
           <div className="rounded-3xl border border-primary/20 bg-[#04150d] p-6 sm:p-8">
-            {/* TODO: Drop approved client logo assets into these empty styled slots. */}
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-              {[0, 1, 2, 3].map((slot) => (
-                <div
-                  key={slot}
-                  className="min-h-20 rounded-2xl border border-white/10 bg-white/[0.04]"
-                />
-              ))}
+            <div className="grid gap-3 sm:grid-cols-2">
+              <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#00ff41]">
+                  Reference customer
+                </p>
+                <p className="mt-3 text-2xl font-semibold text-white">
+                  Precise Imaging
+                </p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#00ff41]">
+                  Workflow
+                </p>
+                <p className="mt-3 text-2xl font-semibold text-white">
+                  Email handling
+                </p>
+              </div>
             </div>
 
             <Link
