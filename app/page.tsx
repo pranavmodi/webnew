@@ -23,16 +23,17 @@ export default function Home() {
               </div>
 
               <h2 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
-                The automation behind Precise Imaging runs on our systems.
+                The Precise Imaging system does more than automate email.
               </h2>
 
               <p className="mt-5 max-w-3xl text-base leading-relaxed text-foreground/75 sm:text-lg">
-                We build and run the automation behind Precise Imaging&apos;s operations: a
-                system that triages roughly 600 inbound emails a day, auto-handles about
-                73% of that volume, and saves on the order of 520 staff-hours a month
-                across the ~1,900 personal injury firms Precise serves. It has run in
-                production for years. When you work with us, you are not betting on a
-                prototype.
+                We build and run the automation behind Precise Imaging&apos;s operations:
+                a system that triages roughly 600 inbound emails a day, auto-handles
+                about 73% of that volume, and turns staff review into a private
+                learning loop. Human-approved decisions improve the company&apos;s own
+                rules, evals, and workflow intelligence, so the operational knowledge
+                stays with Precise instead of disappearing into a generic model or a
+                single employee&apos;s head.
               </p>
             </div>
 
@@ -193,16 +194,16 @@ export default function Home() {
               </div>
 
               <h2 className="mt-4 text-2xl font-semibold leading-tight text-white sm:text-3xl lg:text-4xl">
-                How a medical imaging chain
-                <span className="text-[#00ff41]"> stopped drowning</span> in
-                600 daily emails
+                How a medical imaging chain turned
+                <span className="text-[#00ff41]"> 600 daily emails</span> into
+                owned operational intelligence
               </h2>
 
               <p className="mt-4 text-sm leading-relaxed text-foreground/70 sm:text-base">
                 A 200-person California imaging company deployed our AI chatbot
                 and email automation together. The result: their staff got back
-                670+ hours a month, patients got answers in under 5 minutes, and
-                annual support costs dropped by $127K.
+                670+ hours a month while every reviewed edge case made the system
+                smarter, more model-agnostic, and less dependent on any one person.
               </p>
 
               <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -350,8 +351,13 @@ export default function Home() {
           <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-start">
             <div>
               <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl">
-                Built to outlast us
+                Your operational IP stays yours
               </h2>
+              <p className="mt-4 text-sm leading-relaxed text-foreground/70 sm:text-base">
+                The model can change. Your software stack can change. Employees can
+                move roles. The learning loop keeps the company&apos;s expertise inside
+                the company.
+              </p>
 
               <Link
                 href="/security"
@@ -364,12 +370,12 @@ export default function Home() {
             <div className="grid gap-3 sm:grid-cols-2">
               {[
                 {
-                  title: "Runs on your accounts",
-                  copy: "Everything we build runs on infrastructure you own and control. If we ever stepped away, your system keeps running.",
+                  title: "Model-agnostic by design",
+                  copy: "The operating logic lives in your rules, evals, prompts, workflows, and audit trails, so you can switch models without losing what the company has learned.",
                 },
                 {
-                  title: "You own what we build",
-                  copy: "The source code and documentation are yours. No black box, no lock-in.",
+                  title: "Employee-agnostic by design",
+                  copy: "Human expertise gets captured as durable workflow intelligence, so critical knowledge does not walk out the door when someone leaves.",
                 },
               ].map((point) => (
                 <div

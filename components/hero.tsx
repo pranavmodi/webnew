@@ -23,21 +23,22 @@ export function Hero() {
             <span className="block">Do More.</span>
           </h1>
           <p className="mt-6 max-w-lg border-l-2 border-[#00ff41]/50 pl-4 text-lg font-medium text-foreground/90 sm:text-xl">
-            We build AI agents that <span className="text-[#00ff41]">do the work</span>—not just help with it
+            We build company-owned AI systems where human expertise and{" "}
+            <span className="text-[#00ff41]">AI capability compound</span> over time
           </p>
         </div>
         <div className="space-y-4">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#00ff41]/30 bg-[#00ff41]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-[#00ff41]">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#00ff41]" />
-            The AI-Native Advantage
+            The Learning Loop Advantage
           </div>
 
           <div className="grid gap-3">
             {[
-              { metric: "2x", label: "Implementation speed" },
-              { metric: "50%", label: "Faster delivery" },
-              { metric: "60%", label: "Gross margins" },
-              { metric: "15-20h", label: "Saved per dev/week" },
+              { metric: "Human", label: "judgment sets the direction" },
+              { metric: "AI", label: "scales the execution" },
+              { metric: "Loop", label: "compounds the expertise" },
+              { metric: "IP", label: "stays with your company" },
             ].map((item) => (
               <div
                 key={item.label}

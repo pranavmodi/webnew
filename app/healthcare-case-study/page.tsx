@@ -8,7 +8,7 @@ import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
 export const metadata: Metadata = {
   title: `Healthcare Case Study | ${SITE_NAME}`,
   description:
-    "How a California-based medical imaging chain cut support costs by 60% and boosted patient satisfaction with AI-powered chat and email automation.",
+    "How a California medical imaging company turned 600 daily emails into a company-owned AI learning loop that improves its private workflow intelligence over time.",
 };
 
 export default function HealthcareCaseStudyPage() {
@@ -31,12 +31,13 @@ export default function HealthcareCaseStudyPage() {
               Case Study
             </div>
             <h1 className="text-4xl font-semibold leading-tight tracking-tight text-[#00ff41] sm:text-5xl lg:text-6xl">
-              From drowning in messages to delighting patients
+              From 600 daily emails to company-owned operational intelligence
             </h1>
             <p className="max-w-3xl text-base text-foreground/80 sm:text-lg">
-              A California medical imaging chain was losing the battle against their inbox. Between website
-              inquiries, phone calls, and 600+ daily emails, their support team couldn&apos;t keep up. Here&apos;s
-              how we helped them turn things around—without hiring a single new employee.
+              Precise Imaging processes referrals, lien requests, medical records, billing questions,
+              appointment updates, patient documents, and a long tail of operational edge cases. We helped
+              them automate the work and retain the knowledge, so every reviewed workflow can make the
+              company smarter over time.
             </p>
             <div className="flex flex-wrap gap-3 text-xs text-muted-foreground">
               {["Healthcare", "Medical Imaging", "200+ Employees", "California"].map(
@@ -59,9 +60,10 @@ export default function HealthcareCaseStudyPage() {
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
           <h2 className="text-2xl font-semibold text-primary">The situation when we first met</h2>
           <p className="mt-4 text-base text-foreground/80">
-            When this imaging center first reached out, their challenge was straightforward: volume. Over 600
-            emails landing in their inbox every day. A website chat that went unanswered after hours. The same
-            questions coming in repeatedly—appointment times, prep instructions, records requests.
+            When Precise Imaging first reached out, their challenge was straightforward: volume. Over 600
+            emails landing in their inbox every day. Referrals, lien requests, medical records, billing
+            questions, appointment updates, patient documents, and edge cases that did not fit neatly into
+            a standard queue.
           </p>
           <p className="mt-4 text-base text-foreground/80">
             Their support staff were spending a good chunk of their day on routine tasks, which meant less
@@ -70,12 +72,41 @@ export default function HealthcareCaseStudyPage() {
           </p>
         </div>
 
+        {/* Guiding Philosophy */}
+        <div className="rounded-2xl border border-[#00ff41]/30 bg-gradient-to-br from-[#04150d] to-[#0a2618] p-6 shadow-[0_20px_70px_rgba(0,255,65,0.1)]">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#00ff41]/30 bg-black/60 px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-[#00ff41]">
+            The strategic layer
+          </div>
+          <h2 className="mt-4 text-2xl font-semibold text-primary">
+            The point was never just automation. The point was a learning loop.
+          </h2>
+          <p className="mt-4 text-base text-foreground/80">
+            At Possible Minds, our founding belief is that the most valuable AI systems do not just
+            complete tasks. They create loops where human expertise and AI capability compound over time.
+            Human judgment sets the direction. AI scales the execution. The learning loop compounds the
+            expertise.
+          </p>
+          <p className="mt-4 text-base text-foreground/80">
+            For Precise, that means reviewed emails become durable operational IP. When a human marks an
+            email for AI training, the system preserves the conversation, the correct human-approved labels,
+            the AI&apos;s original decision, and the trace of how that decision was made. If the AI was right,
+            that becomes validation. If it was wrong, that becomes training signal.
+          </p>
+          <p className="mt-4 text-base text-foreground/80">
+            Over time, those examples improve the company&apos;s private rules, evals, and workflow
+            intelligence. The knowledge does not disappear into a generic model or walk out the door when
+            someone leaves. It becomes company-owned intelligence that can survive model changes, software
+            changes, and team changes.
+          </p>
+        </div>
+
         {/* The Solution */}
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
           <h2 className="text-2xl font-semibold text-primary">The solution: two products, one unified approach</h2>
           <p className="mt-4 text-base text-foreground/80">
             We tackled the problem in two phases, deploying a pair of AI systems that work together to cover
-            both real-time and asynchronous patient communication.
+            both real-time and asynchronous patient communication while keeping the operating knowledge
+            inside Precise&apos;s own system.
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             <Link
@@ -292,6 +323,12 @@ export default function HealthcareCaseStudyPage() {
             routed automatically. Routine requests get drafted responses. Complex cases get flagged for
             staff with full context attached.
           </p>
+          <p className="mt-4 text-base text-foreground/80">
+            Just as importantly, the review process creates memory. When staff correct a label, approve a
+            response, or mark a conversation for AI training, the system captures the example against the
+            original AI decision. That gives Precise a growing private library of what good judgment looks
+            like in its own operation.
+          </p>
         </div>
 
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
@@ -332,6 +369,11 @@ export default function HealthcareCaseStudyPage() {
             type, personalized with the patient&apos;s name and appointment details. Staff can review and
             send with one click, or edit if needed.
           </p>
+          <p className="mt-4 text-base text-foreground/80">
+            That is the IP layer: not a generic answer from a generic model, but Precise&apos;s own tone,
+            policies, exception handling, and routing logic encoded into a system the company can keep
+            improving.
+          </p>
         </div>
 
         {/* Working Together */}
@@ -370,12 +412,12 @@ export default function HealthcareCaseStudyPage() {
 
         {/* What's Next */}
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
-          <h2 className="text-2xl font-semibold text-primary">What&apos;s next</h2>
+          <h2 className="text-2xl font-semibold text-primary">What compounds next</h2>
           <p className="mt-4 text-base text-foreground/80">
-            This isn&apos;t a &ldquo;set it and forget it&rdquo; deployment. We&apos;re continuously improving
-            the system based on real conversations and feedback. The knowledge base gets updated as
-            policies change. New response templates get added as patterns emerge. The AI gets smarter
-            because it&apos;s learning from how staff handle edge cases.
+            This isn&apos;t a &ldquo;set it and forget it&rdquo; deployment. The system keeps improving
+            based on real conversations and staff feedback. The knowledge base gets updated as policies
+            change. New response templates get added as patterns emerge. Private evals and rules improve
+            as the team reviews more edge cases.
           </p>
           <p className="mt-4 text-base text-foreground/80">
             Next on the roadmap: deeper scheduling automation (patients booking and rescheduling directly
@@ -389,9 +431,10 @@ export default function HealthcareCaseStudyPage() {
           <h2 className="text-2xl font-semibold text-primary">Could this work for you?</h2>
           <p className="mt-4 text-base text-foreground/80">
             If your team is spending more time sorting messages than helping patients, we should talk.
-            Every healthcare organization is different, and we&apos;ll build a solution that fits your
-            workflows, your policies, and your patients. No generic chatbots, no one-size-fits-all
-            templates—just AI that actually understands your operation.
+            Every healthcare organization is different, and we&apos;ll build a system that fits your
+            workflows, your policies, and your patients while keeping the operational knowledge inside
+            your company. No generic chatbots, no one-size-fits-all templates, and no lock-in to a single
+            model or employee.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button asChild size="lg" className="animate-glow">
