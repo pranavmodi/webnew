@@ -12,6 +12,18 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    href: "/blog/why-ai-readiness-matters-pi-firms",
+    slug: "why-ai-readiness-matters-pi-firms",
+    title: "Why AI Readiness Starts Before AI: The Operating Questions Every PI Firm Should Answer",
+    description:
+      "AI does not fail inside PI firms because the model is weak. It fails because case data, workflows, metrics, security, and ownership are not ready for automation.",
+    author: "Pranav Modi",
+    date: "June 24, 2026",
+    readTime: "12 min read",
+    category: "AI Strategy",
+    tags: ["AI Strategy", "For PI Firms"],
+  },
+  {
     href: "/blog/speed-is-easy-to-graph-intake",
     slug: "speed-is-easy-to-graph-intake",
     title: "Speed Is Easy to Graph: The Intake Metric PI Firms Keep Optimizing Wrong",
