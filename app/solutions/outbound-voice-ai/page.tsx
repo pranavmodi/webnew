@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 import { SITE_NAME } from "@/lib/constants";
+import EarlyAccessForm from "./early-access-form";
 
 export const metadata: Metadata = {
   title: `Outbound Voice AI | ${SITE_NAME}`,
@@ -32,6 +33,70 @@ export default function OutboundVoiceAiPage() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* For personal-injury firms: the missed-call problem */}
+      <section className="mx-auto max-w-5xl space-y-8 px-4 pt-12 sm:px-6">
+        <div className="rounded-2xl border border-primary/30 bg-[#04150d] p-6">
+          <div className="inline-flex items-center rounded-full border border-primary/30 bg-black/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+            For personal-injury firms
+          </div>
+          <h2 className="mt-4 text-2xl font-semibold text-primary">
+            A missed call costs you twice
+          </h2>
+          <p className="mt-4 text-base text-foreground/80">
+            When a caller hits voicemail, you don&apos;t just lose that case. Google reads an
+            unanswered call as a failed result for your listing and quietly lowers your local
+            map-pack ranking, so the missed call costs you the next callers too. The decline
+            compounds: fewer answered calls, lower ranking, fewer calls.
+          </p>
+          <p className="mt-4 text-base text-foreground/80">
+            <span className="text-primary">Built for Precise.</span> We built and run the
+            voice intake line and automated status-reply system behind Precise Imaging, which
+            fields hundreds of inbound contacts a day and auto-handles the routine ones so
+            staff only touch exceptions. We&apos;re now packaging that same system for
+            personal-injury firms.
+          </p>
+        </div>
+
+        {/* What we're building for PI firms */}
+        <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
+          <h2 className="text-2xl font-semibold text-primary">
+            What we&apos;re building for PI firms
+          </h2>
+          <ul className="mt-4 space-y-3 text-base text-foreground/80">
+            <li>
+              <span className="text-primary">Answers every inbound call, 24/7</span> &mdash;
+              after-hours and overflow included, so no caller ever hits voicemail.
+            </li>
+            <li>
+              <span className="text-primary">Captures the lead on the spot</span> &mdash;
+              name, callback number, case type, and what happened, texted and emailed to your
+              intake team instantly.
+            </li>
+            <li>
+              <span className="text-primary">Books or warm-transfers</span> &mdash; schedules
+              the consult or hands a ready caller to a human, only when your team is free.
+            </li>
+            <li>
+              <span className="text-primary">Protects your Google ranking</span> &mdash; a
+              high answer rate keeps the goal-completion signal healthy, so your map-pack
+              position holds.
+            </li>
+            <li>
+              <span className="text-primary">English and Spanish, queue-safe</span> &mdash;
+              inbound callers always come first; outbound follow-up only runs when the line is
+              quiet.
+            </li>
+            <li>
+              <span className="text-primary">Fully auditable</span> &mdash; every call
+              recorded, transcribed, and logged, so you can see exactly what was said.
+            </li>
+          </ul>
+        </div>
+
+        {/* Early-access capture */}
+        <EarlyAccessForm />
       </section>
 
       <section className="mx-auto max-w-5xl space-y-8 px-4 pt-12 sm:px-6">
