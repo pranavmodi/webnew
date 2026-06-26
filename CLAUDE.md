@@ -65,6 +65,27 @@ import { Button } from "@/components/ui/button";
 import { heroHeadline } from "@/lib/content";
 ```
 
+### Click-tracking beacon — REQUIRED on every tracked landing page
+
+Any landing page we drive **tracked email traffic** to (via possibleos short links
+`/a/`, `/c/`, `/s/` on `aiaudit.getpossibleminds.com`) **MUST render the human-session
+beacon**. Reason: the redirect click is logged server-side, but email-security
+scanners (Proofpoint, Microsoft Safe Links, Mimecast, Barracuda) fetch every URL in
+an email **without running page JS**, so raw clicks are bot-dominated. A `session_ready`
+beacon only fires in a real browser, giving the human-confirmation signal the click
+cannot. (See possibleos `docs/LEAD_GEN_CYBERNETIC_TECHNICAL.md` → `page_session`
+observation.)
+
+- Use the shared client component **`components/analytics/click-beacon.tsx`**
+  (`<ClickBeacon page="consult" />`). On mount it reads the `lc` query param (the
+  short-link code the `/c/` and `/s/` redirects append) and POSTs
+  `{event:"session_ready", page, link_code, session_id, time_on_page_ms}` to
+  `${NEXT_PUBLIC_AUTOCALLER_API_URL}/api/lead-gen/page-event`; on unload it re-posts
+  with `time_on_page_ms` via `navigator.sendBeacon`.
+- **When you add or start tracking a new landing/solution page, add `<ClickBeacon>`
+  to it.** Pages currently requiring it: `app/consult`, `app/solutions/outbound-voice-ai`.
+  Add to the other `app/solutions/*` pages as soon as we send tracked links to them.
+
 ### Internal Tools
 
 #### LinkedIn Outreach Tool (`/tools/linkedin-outreach`)

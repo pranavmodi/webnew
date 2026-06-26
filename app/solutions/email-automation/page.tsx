@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+import ClickBeacon from "@/components/analytics/click-beacon";
 import { SITE_NAME } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 export default function EmailAutomationPage() {
   return (
     <div className="bg-black pb-24">
+      <ClickBeacon page="email-automation" />
       <section className="relative overflow-hidden border-b border-primary/15">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(0,255,65,0.15),_rgba(0,0,0,0)_55%)]" />
         <div className="relative mx-auto max-w-5xl px-4 py-16 sm:px-6">
