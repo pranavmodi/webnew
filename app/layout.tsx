@@ -8,6 +8,7 @@ import "@/styles/globals.css";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/constants";
 import { Analytics } from "@vercel/analytics/react";
 import Tracker from "@/components/analytics/tracker";
+import ClickBeacon from "@/components/analytics/click-beacon";
 
 const sans = Manrope({
   variable: "--font-manrope",
@@ -54,6 +55,7 @@ export default function RootLayout({
           <Navbar />
           <main className="pt-20">{children}</main>
           <Footer />
+          <ClickBeacon />
           <Tracker />
           <Analytics />
         </Providers>

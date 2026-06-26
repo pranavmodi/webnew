@@ -7,7 +7,7 @@ const AUTOCALLER_API =
   "https://autocaller.getpossibleminds.com";
 
 type ClickBeaconProps = {
-  page: string;
+  page?: string;
   event?: string;
 };
 
@@ -41,7 +41,7 @@ function getLinkCode() {
 }
 
 export default function ClickBeacon({
-  page,
+  page: explicitPage,
   event = "session_ready",
 }: ClickBeaconProps) {
   const sentMount = useRef(false);
@@ -49,6 +49,9 @@ export default function ClickBeacon({
 
   useEffect(() => {
     const mountedAt = Date.now();
+    const page =
+      explicitPage ??
+      (window.location.pathname.replace(/^\/+|\/+$/g, "") || "home");
     const linkCode = getLinkCode();
     const sessionId = getSessionId();
     const url = `${AUTOCALLER_API}/api/lead-gen/page-event`;
@@ -114,7 +117,7 @@ export default function ClickBeacon({
       document.removeEventListener("visibilitychange", handleVisibilityChange);
       window.removeEventListener("pagehide", sendLeave);
     };
-  }, [event, page]);
+  }, [event, explicitPage]);
 
   return null;
 }
