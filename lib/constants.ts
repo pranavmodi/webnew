@@ -10,8 +10,7 @@ export const SITE_DESCRIPTION =
 // from many files; the value is now an internal route.
 export const CALENDLY_URL = "/consult";
 
-// TODO: real LinkedIn vanity URL
-export const LINKEDIN_URL = "https://www.linkedin.com/in/REPLACE_ME";
+export const LINKEDIN_URL = "https://in.linkedin.com/in/pranav-modi-5a3a9b7";
 
 export const ACCENT_HEX = "#0ea472";
 
