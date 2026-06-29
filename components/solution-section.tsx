@@ -62,7 +62,7 @@ export function SolutionSection({
           </div>
           <Button asChild>
             <a href={CALENDLY_URL} target="_blank" rel="noreferrer">
-              Book a demo
+              Diagnostic call
               <ChevronRight className="ml-1.5 h-4 w-4" />
             </a>
           </Button>

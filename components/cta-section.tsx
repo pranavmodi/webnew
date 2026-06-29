@@ -10,16 +10,17 @@ export function CTASection() {
     <Card className="border border-primary/30 bg-[#04150d] shadow-soft">
       <CardHeader className="space-y-3 text-center">
         <CardTitle className="text-3xl font-semibold">
-          Ready to automate your highest-volume workflows?
+          Ready to find the workflow AI should actually fix?
         </CardTitle>
         <p className="text-base text-muted-foreground">
-          Map your inboxes, document flows, and support channels with a Possible Minds specialist.
+          Map the intake, records, lien, or client-update leak with a Possible
+          Minds specialist before you commit to a build.
         </p>
       </CardHeader>
       <CardContent className="flex flex-col items-center justify-center gap-3 sm:flex-row">
         <Button asChild size="lg" className="animate-glow">
           <Link href={CALENDLY_URL} target="_blank" rel="noreferrer">
-            Book a demo
+            Diagnostic call
             <ArrowUpRight className="ml-2 h-4 w-4" />
           </Link>
         </Button>

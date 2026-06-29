@@ -5,29 +5,29 @@ import { SITE_NAME } from "@/lib/constants";
 import { ConsultBookingForm } from "./consult-booking-form";
 
 export const metadata: Metadata = {
-  title: `Free 30-minute AI consult for PI firms | ${SITE_NAME}`,
+  title: `Free diagnostic call for PI firms | ${SITE_NAME}`,
   description:
-    "Book a free 30-minute consult on AI that saves PI firms hours a day on intake, records, and follow-up — and turns that time back into new cases.",
+    "Book a free diagnostic call to identify the PI firm workflow where AI can safely improve intake, records, liens, follow-up, or vendor risk.",
 };
 
 const outcomes = [
   {
-    stat: "Save time",
-    title: "Cut hours from intake and records",
+    stat: "Find the leak",
+    title: "Pinpoint the costly workflow",
     description:
-      "Automated email triage, after-hours intake responses, records chasing, and lien follow-ups. The repetitive work that drains paralegal time, done in the background.",
+      "We look at intake response, after-hours coverage, records chasing, lien follow-up, AI visibility, and client communication to find the highest-leverage starting point.",
   },
   {
-    stat: "Save money",
-    title: "Fewer missed cases, leaner staff",
+    stat: "Check readiness",
+    title: "Avoid automating a broken process",
     description:
-      "After-hours inquiries converted instead of lost. Follow-up cadence your team can't sustain, automated. Fewer hires to scale the same caseload.",
+      "Some workflows need cleaner data, better handoffs, policy, or vendor diligence first. We name that before recommending a build.",
   },
   {
-    stat: "Grow business",
-    title: "Response time becomes a moat",
+    stat: "Scope the first win",
+    title: "Start narrow and measurable",
     description:
-      "The firm that responds in two minutes wins the case. AI closes the gap between a lead hitting your form and someone qualified talking to them.",
+      "The best first project is usually one measurable workflow: missed-call capture, records follow-up, lien tracking, or client update automation.",
   },
 ];
 
@@ -40,16 +40,16 @@ export default function ConsultPage() {
         <div className="relative mx-auto max-w-5xl px-4 py-20 sm:px-6">
           <div className="space-y-6 text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-black/70 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-              Free 30-min consult for PI firms
+              Free diagnostic call for PI firms
             </div>
             <h1 className="text-4xl font-semibold leading-tight tracking-tight text-[#00ff41] sm:text-5xl lg:text-6xl">
-              AI that gives your firm its hours back.
+              Start with the leak, not the demo.
             </h1>
             <p className="mx-auto max-w-3xl text-base text-foreground/80 sm:text-lg">
-              Intake, records, liens, follow-up — the repetitive work that eats
-              partner and paralegal time. We build the systems that handle it, so
-              your team focuses on cases. Thirty minutes with us, no slides — we
-              show you what fits your firm and what doesn&apos;t.
+              In 30 minutes, we look for the workflow where AI can safely create
+              leverage for your PI firm: missed leads, records, liens, client
+              updates, AI visibility, or vendor-risk controls. No slides. We tell
+              you what fits, what does not, and what should come first.
             </p>
             <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Link
@@ -62,7 +62,7 @@ export default function ConsultPage() {
                 href="/healthcare-case-study"
                 className="inline-flex items-center rounded-full border border-primary/30 px-8 py-3 text-sm font-semibold text-primary transition hover:bg-primary/10"
               >
-                See a live deployment →
+                See production proof →
               </Link>
             </div>
           </div>
@@ -95,13 +95,13 @@ export default function ConsultPage() {
       <section className="mx-auto max-w-5xl px-4 pb-16 sm:px-6">
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6 sm:p-8">
           <h2 className="text-xl font-semibold text-primary">
-            This isn&apos;t theory — we run it in production.
+            This is not a speculative AI workshop.
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-foreground/75 sm:text-base">
             We operate the AI backend for a 60-location medical imaging
             provider that PI firms send thousands of cases through. That same
-            engine — email triage, records automation, outbound voice follow-up
-            — is what we&apos;ll adapt to your firm&apos;s workflow on the call.
+            operating pattern, with human review and clear workflow boundaries,
+            is what we adapt when a PI firm has a real, measurable leak.
           </p>
           <Link
             href="/healthcare-case-study"

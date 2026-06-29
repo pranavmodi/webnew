@@ -26,7 +26,7 @@ const mono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: `${SITE_NAME} | AI agents for regulated operations`,
+    default: `${SITE_NAME} | AI systems for personal injury firms`,
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,

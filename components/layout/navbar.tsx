@@ -31,7 +31,7 @@ export function Navbar() {
       <Link
         href={href}
         className={cn(
-          "relative px-3 py-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80",
+          "relative whitespace-nowrap px-3 py-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80",
           active ? "text-primary" : "",
         )}
       >
@@ -49,7 +49,7 @@ export function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-primary/20 bg-black/80 backdrop-blur-xl">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link className="flex items-center gap-2 text-base font-bold" href="/">
           <span className="flex h-8 w-8 items-center justify-center rounded-xl border border-primary/40 bg-primary/15 text-primary">
             PM
@@ -60,14 +60,14 @@ export function Navbar() {
         </Link>
 
         {navLinks.length > 0 && (
-          <nav className="hidden items-center gap-6 md:flex">
+          <nav className="hidden items-center gap-3 md:flex lg:gap-5">
             {solutionsLinks.length > 0 && (
               <div className="relative group">
                 <button
                   type="button"
                   aria-haspopup="menu"
                   aria-expanded="false"
-                  className="flex items-center gap-1 px-3 py-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+                  className="flex items-center gap-1 whitespace-nowrap px-3 py-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
                 >
                   Solutions
                   <ChevronDown className="h-4 w-4" />
@@ -96,7 +96,7 @@ export function Navbar() {
                   type="button"
                   aria-haspopup="menu"
                   aria-expanded="false"
-                  className="flex items-center gap-1 px-3 py-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+                  className="flex items-center gap-1 whitespace-nowrap px-3 py-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
                 >
                   Case studies
                   <ChevronDown className="h-4 w-4" />
@@ -125,7 +125,7 @@ export function Navbar() {
                   type="button"
                   aria-haspopup="menu"
                   aria-expanded="false"
-                  className="flex items-center gap-1 px-3 py-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+                  className="flex items-center gap-1 whitespace-nowrap px-3 py-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
                 >
                   Blog
                   <ChevronDown className="h-4 w-4" />
@@ -157,17 +157,17 @@ export function Navbar() {
         <div className="hidden items-center gap-2 md:flex">
           <Button asChild size="sm" variant="outline">
             <Link href={AI_AUDIT_URL} target="_blank" rel="noreferrer">
-              AI audit
+              AI readiness
             </Link>
           </Button>
           <Button asChild size="sm" variant="outline">
             <Link href={REPUTATION_TOOL_URL} target="_blank" rel="noreferrer">
-              AI reputation tool
+              Reputation diagnostic
             </Link>
           </Button>
           <Button asChild size="sm">
             <Link href={CALENDLY_URL} target="_blank" rel="noreferrer">
-              Book a demo
+              Diagnostic call
             </Link>
           </Button>
         </div>
@@ -277,17 +277,17 @@ export function Navbar() {
                 <div className="flex flex-col gap-3">
                   <Button asChild size="lg" variant="outline">
                     <Link href={AI_AUDIT_URL} target="_blank" rel="noreferrer">
-                      AI audit
+                      AI readiness
                     </Link>
                   </Button>
                   <Button asChild size="lg" variant="outline">
                     <Link href={REPUTATION_TOOL_URL} target="_blank" rel="noreferrer">
-                      AI reputation tool
+                      Reputation diagnostic
                     </Link>
                   </Button>
                   <Button asChild size="lg">
                     <Link href={CALENDLY_URL} target="_blank" rel="noreferrer">
-                      Book a demo
+                      Diagnostic call
                     </Link>
                   </Button>
                 </div>
@@ -296,7 +296,7 @@ export function Navbar() {
           ) : (
             <Button asChild size="sm">
               <Link href={CALENDLY_URL} target="_blank" rel="noreferrer">
-                Book a demo
+                Diagnostic call
               </Link>
             </Button>
           )}

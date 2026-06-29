@@ -4,9 +4,9 @@ import Link from "next/link";
 import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: `AI Operations for Personal Injury Firms | ${SITE_NAME}`,
+  title: `AI Systems for Personal Injury Firms | ${SITE_NAME}`,
   description:
-    "AI-powered intake automation, lien negotiation, and case operations for personal injury law firms. Built by a team that processes thousands of medical-legal documents monthly across 60+ provider locations.",
+    "Diagnostic-led AI systems for personal injury firms: intake leakage, AI visibility, records, liens, follow-up, and vendor-risk controls.",
   keywords: [
     "AI for personal injury law firms",
     "PI firm intake automation",
@@ -20,149 +20,117 @@ export const metadata: Metadata = {
 
 const painPoints = [
   {
-    title: "Missed Intake Calls",
-    stat: "$5K–$50K",
+    title: "Leads going cold",
+    stat: "Intake",
     description:
-      "Every missed call is a lost case. After-hours inquiries, slow callbacks, and overwhelmed front desks silently drain your pipeline.",
+      "After-hours forms, missed calls, slow callbacks, and overwhelmed intake teams turn paid demand into signed cases for someone else.",
   },
   {
-    title: "Manual Lien Negotiation",
-    stat: "40+ hrs/mo",
+    title: "Files stalling after sign-up",
+    stat: "Cycle time",
     description:
-      "Your staff spends weeks chasing providers, negotiating reductions, and reconciling balances that AI can handle in minutes.",
+      "Records, bills, treatment updates, liens, and client follow-up create delays that push settlement checks further out.",
   },
   {
-    title: "Invisible in AI Search",
-    stat: "0 citations",
+    title: "Invisible in AI answers",
+    stat: "Visibility",
     description:
-      "Gemini, ChatGPT, and Perplexity are answering your prospects&apos; questions. If your firm isn&apos;t in those answers, you don&apos;t exist.",
+      "When AI systems answer a crash victim&apos;s question, your competitors may be cited while your firm is missing or described incorrectly.",
   },
   {
-    title: "Disconnected Systems",
-    stat: "3–5 tools",
+    title: "Unsafe AI adoption",
+    stat: "Vendor risk",
     description:
-      "Your CRM doesn&apos;t talk to your medical providers. Your intake forms don&apos;t sync with your case management. Gaps become errors.",
+      "Staff may already be experimenting with AI while the firm lacks policy, vendor diligence, data controls, or review rules.",
   },
 ];
 
 const solutions = [
   {
-    href: "/solutions/email-automation",
-    title: "Email Automation",
+    href: "/solutions/outbound-voice-ai",
+    title: "Missed-call and after-hours intake",
     description:
-      "Auto-triage intake emails, route to the right paralegal, and respond to routine queries instantly.",
+      "Call back web leads, missed callers, and after-hours inquiries before they go cold.",
     details:
-      "Our email classification engine processes thousands of messages monthly, sorting across intake, scheduling, billing, liens, collections, records, and legal categories. It detects urgency, extracts case references, and routes to the right person — reducing response times from hours to minutes. Built from real workflows handling 15+ inbox categories for a medical provider network.",
+      "Queue-safe voice automation reaches leads quickly, qualifies the basics, captures case facts, and transfers only when your team can take the call. The wedge is the unstaffed moment, where the alternative is often voicemail or no callback.",
   },
   {
     href: "/solutions/support-agent",
-    title: "Support Agent",
+    title: "Website and chat intake",
     description:
-      "24/7 AI chat that answers client questions, collects case details, and books consultations.",
+      "Turn anonymous visitors into structured, qualified conversations.",
     details:
-      "Most PI firms lose 30-50% of after-hours inquiries because no one is there to answer. Our support agent handles initial case qualification, collects accident details, insurance information, and injury severity — then books directly into your calendar. It knows PI terminology, understands statute of limitations urgency, and escalates complex situations to your team.",
+      "The system collects incident type, timeline, injuries, treatment status, insurance details, language preference, and urgency, then routes high-intent prospects with context instead of making staff start from a blank screen.",
   },
   {
-    href: "/solutions/outbound-voice-ai",
-    title: "Outbound Voice AI",
+    href: "/solutions/email-automation",
+    title: "Records and status automation",
     description:
-      "Automated follow-up calls for missed intakes, appointment reminders, and lien status updates.",
+      "Clean up the inbox, document chase, and provider follow-up loops that slow cases down.",
     details:
-      "The first 5 minutes after a lead submits a form are critical — response time directly correlates with conversion rate. Our voice AI calls back missed intakes within minutes, confirms appointments to reduce no-shows, and provides case status updates so your paralegals focus on case work instead of phone tag.",
+      "Email triage, attachment extraction, missing-record reminders, provider follow-up, and case-status routing reduce the repetitive work that keeps paralegals out of higher-value file movement.",
   },
   {
     href: "/solutions/lien-reduction",
-    title: "Lien Reduction",
+    title: "Lien and disbursement workflow",
     description:
-      "AI-powered lien negotiation that analyzes balances, generates reduction letters, and tracks resolutions.",
+      "Track liens, spot exceptions, and speed up the closeout work that frustrates clients.",
     details:
-      "Lien negotiation is one of the most time-consuming parts of PI case resolution. Our system analyzes lien documents using OCR and AI — detecting modifications, verifying signatures, extracting balances, and generating negotiation letters. It handles the back-and-forth with providers, flags edge cases for human review, and tracks every lien from filing to resolution.",
+      "We focus on the repeatable pieces first: identifying lien correspondence, extracting provider and balance details, tracking status, drafting follow-ups, and surfacing anomalies for human review before action.",
   },
   {
     href: "#solutions",
-    title: "Intake Chatbots",
+    title: "AI policy and vendor-risk controls",
     description:
-      "Around-the-clock intake bots that gather case information and qualify leads automatically.",
+      "Make AI usable without letting client data or firm judgment drift into a black box.",
     details:
-      "These systems capture the details that matter before a human ever gets involved: incident type, timeline, injuries, treatment status, insurance, representation history, and urgency. They reduce lead leakage, standardize qualification, and make sure every prospect gets a fast response even after hours.",
-  },
-  {
-    href: "#solutions",
-    title: "Document Automation",
-    description:
-      "Generate demand letters, medical summaries, and routine correspondence without starting from scratch.",
-    details:
-      "Instead of drafting the same documents over and over, your team works from AI-generated first drafts built from the case file, provider records, and your preferred templates. That means faster turnaround, more consistency, and less time lost to repetitive writing work.",
-  },
-  {
-    href: "#solutions",
-    title: "Case Summarization Systems",
-    description:
-      "Digest large record sets and surface the facts, chronology, and risks that actually matter.",
-    details:
-      "Medical records, bills, correspondence, and claim documents pile up fast. Our summarization workflows organize them into usable narratives, highlight treatment gaps and contradictions, and help attorneys or paralegals get context in minutes instead of hours.",
-  },
-  {
-    href: "#solutions",
-    title: "Follow-Up Automation",
-    description:
-      "Send reminders, status updates, and document requests automatically at the right moments.",
-    details:
-      "Clients should not have to chase your firm for updates, and staff should not have to manually remember every reminder. These automations trigger outreach based on case stage, missing paperwork, appointments, and deadlines — keeping cases moving and clients informed.",
-  },
-  {
-    href: "#solutions",
-    title: "Internal Knowledge Tools",
-    description:
-      "Give staff instant access to SOPs, templates, and operational know-how inside one searchable system.",
-    details:
-      "Instead of asking around for the latest template or guessing how a workflow is supposed to run, staff can query a centralized knowledge layer built on your firm&apos;s SOPs, precedent language, and internal playbooks. This reduces training drag and improves consistency across the team.",
+      "We help define what AI may touch, where human review is required, how vendor data handling is evaluated, and how audit trails should work before sensitive workflows go live.",
   },
 ];
 
 const whyUsPoints = [
   {
-    title: "Built from Real Operations, Not Theory",
+    title: "We diagnose before we demo",
     description:
-      "We didn't build PI automation in a lab. Our team runs AI systems that process thousands of medical-legal documents monthly across a 60-location provider network. We've handled the edge cases — ambiguous case law, missing records, conflicting provider claims, documents with strikethroughs that change liability. That operational experience is baked into every product we ship.",
+      "The first conversation is about the leak: intake response, file movement, AI visibility, data readiness, or vendor risk. If a workflow is not ready, we say so and define the blocker.",
   },
   {
-    title: "PI-Specific AI, Not Generic Legal Tech",
+    title: "Built from real medical-legal operations",
     description:
-      "General-purpose AI tools don't understand the difference between a lien and a subrogation claim, or why a 3-day gap in treatment matters for case value. Our models are trained on PI-specific workflows: intake qualification, medical records classification, lien negotiation patterns, and provider communication. The domain knowledge is the product.",
+      "We run systems that process high-volume provider communication, records, billing, status, and lien-adjacent workflows. The edge cases are not theoretical to us.",
   },
   {
-    title: "Plug In Without Ripping Out",
+    title: "Narrow first workflow, not a giant platform rollout",
     description:
-      "You don't need to replace your case management system, retrain your staff, or overhaul your workflows. Each module connects to your existing stack — whether you're on Clio, Smart Advocate, Filevine, or a custom setup. Start with one automation (most firms begin with intake or lien processing) and expand as you see results.",
+      "Most firms should start with one measurable workflow: after-hours capture, records chasing, lien follow-up, or a client-update loop. The system earns expansion by proving value.",
   },
   {
-    title: "Human Oversight Where It Matters",
+    title: "Human oversight and firm ownership",
     description:
-      "AI handles the volume, but your team stays in control. Every automated action has clear escalation rules — the system knows when to resolve autonomously and when to surface a decision to a human. No black boxes, no surprises. You see exactly what the AI did, why it did it, and what it flagged for review.",
+      "Sensitive and low-confidence actions route to your team. Your firm keeps the rules, review history, workflow knowledge, and audit trail instead of depending on an opaque vendor layer.",
   },
 ];
 
 const faqs = [
   {
-    question: "How long does it take to set up AI automation for my firm?",
+    question: "What happens before you recommend a build?",
     answer:
-      "Most firms are live within 2-4 weeks. We start with a workflow audit to identify your highest-impact automation opportunity (usually intake or lien processing), configure the system to match your existing processes, and run a parallel pilot before going live. No big-bang migrations.",
+      "We look for a specific leak: slow speed-to-lead, after-hours drop-off, file stalls, records follow-up, lien delays, AI visibility gaps, or unsafe AI use. If the workflow is not ready, we name the blocker before proposing software.",
   },
   {
     question: "Will AI replace my intake staff or paralegals?",
     answer:
-      "No. AI handles the repetitive volume work — triaging emails, qualifying leads after hours, chasing lien documents — so your team can focus on the high-value tasks that require human judgment. Most firms find their existing staff becomes more productive, not redundant. The goal is leverage, not replacement.",
+      "No. The best first workflows are the repetitive or unstaffed moments: missed-call capture, after-hours qualification, records chasing, status follow-up, and lien tracking. Your team keeps the judgment calls and gets cleaner handoffs.",
   },
   {
-    question: "How does AI intake work for personal injury cases?",
+    question: "Where is AI intake safest to start?",
     answer:
-      "When a potential client reaches out — via web form, chat, phone, or email — our AI qualifies the lead by collecting accident details, injury type, insurance information, and timeline. It understands PI-specific qualification criteria (statute of limitations, liability indicators, injury severity) and either books a consultation directly or routes to your intake team with a complete summary. After-hours inquiries get immediate response instead of hitting voicemail.",
+      "The lowest-resistance starting point is usually the unstaffed moment: web leads, missed calls, after-hours inquiries, and overflow follow-up. The alternative is often voicemail or a slow callback, not a present human conversation.",
   },
   {
-    question: "Is my client data secure?",
+    question: "How do you reduce vendor risk?",
     answer:
-      "Absolutely. All data is encrypted in transit and at rest. We never use client data to train models. Our systems run on SOC 2-compliant infrastructure, and we can deploy within your existing cloud environment if required. Attorney-client privilege and HIPAA compliance are non-negotiable in our architecture.",
+      "We scope access narrowly, avoid using client data to train shared models, keep human review on sensitive or low-confidence actions, document what the system did, and help define realistic AI-use policy and vendor diligence before sensitive workflows go live.",
   },
   {
     question: "What if AI makes a mistake on a lien or intake qualification?",
@@ -172,29 +140,29 @@ const faqs = [
   {
     question: "Do you work with firms of all sizes?",
     answer:
-      "We work best with mid-size PI firms — typically 5 to 50 attorneys — that have enough case volume to benefit from automation but aren't so large that they've already built everything in-house. That said, we've helped solo practitioners automate intake and large firms streamline lien operations. The right fit depends on volume and pain points, not headcount.",
+      "We work best with mid-size PI firms that have enough volume to feel the pain and enough operational structure to integrate a workflow. The clearest fit is usually a plaintiff firm with paid or web lead flow, auto-accident volume, and a modern case-management system.",
   },
   {
     question: "How is this different from my case management software's built-in AI features?",
     answer:
-      "Case management platforms are designed to organize your cases. We're designed to work the cases — processing inbound communications, qualifying leads, negotiating liens, and handling the operational tasks between your CMS entries. Think of us as the intelligent layer that feeds clean, processed information into whatever system you already use.",
+      "Case-management systems organize cases. We build around the work between systems: intake response, triage, records follow-up, lien tracking, status communication, and human review. The goal is to feed cleaner information into the stack you already use.",
   },
 ];
 
 const caseStudies = [
   {
-    href: "/healthcare-case-study",
-    title: "Healthcare Operations",
-    description:
-      "How a California imaging provider automated 73% of their inbox and saved 520+ staff hours monthly.",
-    tag: "Healthcare",
-  },
-  {
     href: "/law-case-study",
     title: "Personal Injury Law",
     description:
-      "How a PI firm recaptured lost leads and cut lien processing time by 60%.",
+      "How a 15-attorney plaintiff firm cut response time below 90 seconds and increased signed cases by 34%.",
     tag: "Legal",
+  },
+  {
+    href: "/healthcare-case-study",
+    title: "Medical-Legal Operations",
+    description:
+      "How a California imaging provider automated 73% of its inbox and proved the operating pattern at scale.",
+    tag: "Scale proof",
   },
 ];
 
@@ -230,28 +198,28 @@ export default function PersonalInjuryPage() {
         <div className="relative mx-auto max-w-5xl px-4 py-20 sm:px-6">
           <div className="space-y-6 text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-black/70 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-              For Personal Injury Firms
+              Diagnostic-led AI for Personal Injury Firms
             </div>
             <h1 className="text-4xl font-semibold leading-tight tracking-tight text-[#00ff41] sm:text-5xl lg:text-6xl">
-              AI Operations for Personal Injury Firms
+              Find the leak. Fix the workflow. Keep control of the AI.
             </h1>
             <p className="mx-auto max-w-3xl text-base text-foreground/80 sm:text-lg">
-              From intake to lien resolution — automation built by people who understand PI.
+              Possible Minds helps plaintiff firms identify the operational gaps
+              costing signed cases, cash flow, and client trust, then builds
+              narrow, firm-owned AI systems around the workflows that are ready.
             </p>
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link
-                href={CALENDLY_URL}
-                target="_blank"
-                rel="noreferrer"
+                href="#diagnostics"
                 className="inline-flex items-center rounded-full bg-[#00ff41] px-8 py-3 text-sm font-semibold text-[#04150d] transition hover:bg-[#00ff41]/90"
               >
-                Book a Strategy Call
+                Get a firm-specific diagnostic
               </Link>
               <Link
-                href="#solutions"
+                href="/law-case-study"
                 className="inline-flex items-center rounded-full border border-primary/30 px-8 py-3 text-sm font-semibold text-primary transition hover:bg-primary/10"
               >
-                See Solutions
+                See PI case study
               </Link>
             </div>
           </div>
@@ -259,13 +227,15 @@ export default function PersonalInjuryPage() {
       </section>
 
       {/* Pain Points */}
-      <section className="mx-auto max-w-5xl px-4 py-20 sm:px-6">
+      <section id="diagnostics" className="mx-auto max-w-5xl px-4 py-20 sm:px-6">
         <div className="text-center">
           <h2 className="text-3xl font-semibold text-primary sm:text-4xl">
-            The Problems Costing You Cases
+            Start with the expensive question
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base text-foreground/70">
-            Most PI firms lose revenue to operational gaps they can&apos;t see. Here&apos;s where the money goes.
+            PI owners do not need another abstract AI demo. They need to know
+            which leak is real, whether it is safe to automate, and what the first
+            fix should be.
           </p>
         </div>
         <div className="mt-12 grid gap-6 sm:grid-cols-2">
@@ -296,10 +266,11 @@ export default function PersonalInjuryPage() {
       >
         <div className="text-center">
           <h2 className="text-3xl font-semibold text-primary sm:text-4xl">
-            Solutions Built for PI
+            What we build after the diagnosis
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base text-foreground/70">
-            Each module works standalone or together — plug into your existing stack without ripping anything out.
+            We do not start with a platform migration. We start with one workflow
+            tied to signed cases, cycle time, staff capacity, or risk reduction.
           </p>
         </div>
         <div className="mt-12 grid gap-6 sm:grid-cols-2">
@@ -330,10 +301,11 @@ export default function PersonalInjuryPage() {
       <section className="mx-auto max-w-5xl px-4 py-20 sm:px-6">
         <div className="text-center">
           <h2 className="text-3xl font-semibold text-primary sm:text-4xl">
-            Why PI Firms Choose Possible Minds
+            Why this is different from another AI vendor
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base text-foreground/70">
-            We build automation from operational experience, not pitch decks.
+            The trust problem is the product problem: the system has to fit the
+            firm&apos;s workflow, data obligations, and adoption reality.
           </p>
         </div>
         <div className="mt-12 grid gap-6 sm:grid-cols-2">
@@ -357,7 +329,7 @@ export default function PersonalInjuryPage() {
       <section className="mx-auto max-w-5xl px-4 py-20 sm:px-6">
         <div className="text-center">
           <h2 className="text-3xl font-semibold text-primary sm:text-4xl">
-            Real Results
+            Proof from live operations
           </h2>
         </div>
         <div className="mt-12 grid gap-6 sm:grid-cols-2">
@@ -422,22 +394,23 @@ export default function PersonalInjuryPage() {
       <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6">
         <div className="rounded-2xl border border-primary/25 bg-gradient-to-br from-[#04150d] to-[#0a2618] p-8 text-center sm:p-12">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-black/70 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-            Free Tool
+            Free Diagnostic
           </div>
           <h2 className="mt-6 text-3xl font-semibold text-[#00ff41] sm:text-4xl">
-            Maps GEO Readiness Checker
+            See how AI systems read your firm
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base text-foreground/70">
-            Find out if your firm shows up when AI answers your prospects&apos; questions.
-            Free, instant, no email required.
+            Run a public-footprint diagnostic that checks whether your website,
+            attorney proof, local relevance, and third-party signals are strong
+            enough for answer systems to cite.
           </p>
           <Link
-            href="http://67.205.132.87:8004/"
+            href="https://reputable.getpossibleminds.com"
             target="_blank"
             rel="noreferrer"
             className="mt-8 inline-flex items-center rounded-full bg-[#00ff41] px-8 py-3 text-sm font-semibold text-[#04150d] transition hover:bg-[#00ff41]/90"
           >
-            Check Your Visibility →
+            Run the diagnostic →
           </Link>
         </div>
       </section>
@@ -473,10 +446,12 @@ export default function PersonalInjuryPage() {
       <section className="mx-auto max-w-4xl px-4 py-20 sm:px-6">
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-8 text-center sm:p-12">
           <h2 className="text-3xl font-semibold text-[#00ff41] sm:text-4xl">
-            Ready to Stop Losing Cases to Broken Ops?
+            Start with the leak, not the demo
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base text-foreground/70">
-            Book a 30-minute strategy call. We&apos;ll audit your intake flow, identify the biggest leaks, and show you what automation looks like for your firm.
+            Send us your firm website and market. We&apos;ll tell you which AI
+            opportunity is real, which one is risky, and where the first dollar of
+            ROI is likely to come from.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
@@ -485,7 +460,7 @@ export default function PersonalInjuryPage() {
               rel="noreferrer"
               className="inline-flex items-center rounded-full bg-[#00ff41] px-8 py-3 text-sm font-semibold text-[#04150d] transition hover:bg-[#00ff41]/90"
             >
-              Book a Strategy Call
+              Book a diagnostic call
             </Link>
             <Link
               href="mailto:hello@possibleminds.ai"

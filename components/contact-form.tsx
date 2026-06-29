@@ -172,7 +172,7 @@ export function ContactForm({ inline }: { inline?: boolean }) {
           target="_blank"
           rel="noreferrer"
         >
-          Prefer to talk? Book a demo →
+          Prefer to talk? Book a diagnostic call →
         </a>
       </div>
     </form>

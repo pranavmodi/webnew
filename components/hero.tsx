@@ -6,21 +6,21 @@ import Image from "next/image";
 
 const advantagePanels = [
   {
-    title: "The Learning Loop Advantage",
+    title: "The PI Growth Leak",
     items: [
-      { metric: "Human", label: "judgment sets the direction" },
-      { metric: "AI", label: "scales the execution" },
-      { metric: "Loop", label: "compounds the expertise" },
-      { metric: "IP", label: "stays with your company" },
+      { metric: "Lead", label: "submitted after hours" },
+      { metric: "Call", label: "missed by a busy intake team" },
+      { metric: "File", label: "stalled waiting on records or liens" },
+      { metric: "Case", label: "lost to a faster, cleaner operation" },
     ],
   },
   {
-    title: "The AI-Native Advantage",
+    title: "The Safe AI Pattern",
     items: [
-      { metric: "2x", label: "Implementation speed" },
-      { metric: "50%", label: "Faster delivery" },
-      { metric: "60%", label: "Gross margins" },
-      { metric: "15-20h", label: "Saved per dev/week" },
+      { metric: "Find", label: "the measurable leak first" },
+      { metric: "Build", label: "one narrow workflow" },
+      { metric: "Review", label: "sensitive actions with humans" },
+      { metric: "Own", label: "the rules, data, and audit trail" },
     ],
   },
 ] as const;
@@ -53,13 +53,14 @@ export function Hero() {
 
       <div className="relative mx-auto grid min-h-[70vh] max-w-6xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.2fr_0.8fr]">
         <div className="max-w-2xl text-left">
-          <h1 className="text-6xl font-semibold leading-tight tracking-tight text-[#00ff41] sm:text-7xl lg:text-8xl">
-            Imagine More.
-            <span className="block">Do More.</span>
+          <h1 className="text-5xl font-semibold leading-tight tracking-tight text-[#00ff41] sm:text-6xl lg:text-7xl">
+            Stop losing PI cases to broken operations.
           </h1>
-          <p className="mt-6 max-w-lg border-l-2 border-[#00ff41]/50 pl-4 text-lg font-medium text-foreground/90 sm:text-xl">
-            We build company-owned AI systems where human expertise and{" "}
-            <span className="text-[#00ff41]">AI capability compound</span> over time
+          <p className="mt-6 max-w-xl border-l-2 border-[#00ff41]/50 pl-4 text-lg font-medium text-foreground/90 sm:text-xl">
+            Possible Minds finds the intake, records, lien, and vendor-risk gaps
+            costing personal injury firms money, then builds{" "}
+            <span className="text-[#00ff41]">firm-owned AI systems</span> to fix the
+            workflows that are actually ready.
           </p>
         </div>
         <div className="min-h-[288px] [perspective:1200px]">
@@ -83,7 +84,7 @@ export function Hero() {
                     key={item.label}
                     className="group flex min-h-[60px] items-center gap-4 rounded-xl border border-primary/20 bg-black/50 px-4 py-3 backdrop-blur-sm transition-all hover:border-[#00ff41]/40 hover:bg-black/70"
                   >
-                    <div className="w-20 shrink-0 text-2xl font-bold text-[#00ff41] sm:text-3xl">
+                    <div className="w-24 shrink-0 whitespace-nowrap text-2xl font-bold text-[#00ff41] sm:text-3xl">
                       {item.metric}
                     </div>
                     <div className="text-sm font-medium text-foreground/80 sm:text-base">

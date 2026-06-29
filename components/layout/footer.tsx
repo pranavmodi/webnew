@@ -20,17 +20,18 @@ export function Footer() {
             </div>
           </div>
           <p className="max-w-md text-sm text-muted-foreground">
-            AI agents for inbox triage, document validation, and multichannel support in healthcare and legal.
+            Diagnostic-led AI systems for personal injury firms: intake leakage,
+            records, liens, AI visibility, and vendor-risk controls.
           </p>
           <div className="flex flex-wrap gap-3">
             <Button asChild size="sm" className="animate-glow">
               <Link href={CALENDLY_URL} target="_blank" rel="noreferrer">
-                Book a demo
+                Diagnostic call
               </Link>
             </Button>
             <Button asChild size="sm" variant="outline">
               <Link href={REPUTATION_TOOL_URL} target="_blank" rel="noreferrer">
-                AI reputation tool
+                Reputation diagnostic
               </Link>
             </Button>
             <Button asChild size="sm" variant="outline">
@@ -68,10 +69,10 @@ export function Footer() {
               Contact
             </Link>
             <Link href={CALENDLY_URL} className="hover:text-primary">
-              Book a demo
+              Diagnostic call
             </Link>
             <Link href={REPUTATION_TOOL_URL} target="_blank" rel="noreferrer" className="hover:text-primary">
-              AI reputation tool
+              Reputation diagnostic
             </Link>
           </div>
         </div>

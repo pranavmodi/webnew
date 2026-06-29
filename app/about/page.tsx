@@ -5,7 +5,7 @@ import { LINKEDIN_URL, SITE_NAME } from "@/lib/constants";
 export const metadata: Metadata = {
   title: `About | ${SITE_NAME}`,
   description:
-    "Possible Minds builds AI agents for regulated operations with measurable operational impact.",
+    "Possible Minds builds diagnostic-led AI systems for personal injury firms and regulated operations with measurable operational impact.",
 };
 
 export default function AboutPage() {
@@ -26,8 +26,10 @@ export default function AboutPage() {
               Possible Minds
             </h1>
             <p className="max-w-3xl text-base text-foreground/80 sm:text-lg">
-              We build AI agents for regulated operations. Our focus is measurable outcomes: faster handling of high
-              volume requests, higher accuracy on document heavy workflows, and clearer audit trails for compliance.
+              We build diagnostic-led AI systems for personal injury firms and
+              regulated operations. Our focus is measurable outcomes: faster
+              intake, cleaner document-heavy workflows, safer vendor controls,
+              and clearer audit trails.
             </p>
           </div>
         </div>

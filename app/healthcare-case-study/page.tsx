@@ -439,7 +439,7 @@ export default function HealthcareCaseStudyPage() {
           <div className="mt-6 flex flex-wrap gap-3">
             <Button asChild size="lg" className="animate-glow">
               <Link href={CALENDLY_URL} target="_blank" rel="noreferrer">
-                Book a demo
+                Diagnostic call
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline">

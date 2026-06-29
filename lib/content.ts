@@ -287,7 +287,7 @@ export const securityPoints = [
 export const contactIndustries = ["Healthcare", "Legal", "Other"] as const;
 
 export const ctaButtons = [
-  { label: "Book a demo", href: CALENDLY_URL, variant: "default" as const },
+  { label: "Diagnostic call", href: CALENDLY_URL, variant: "default" as const },
   { label: "Email us", href: "mailto:hello@possibleminds.ai", variant: "outline" as const },
   { label: "Learn more", href: "/#cta", variant: "ghost" as const },
 ] as const;
