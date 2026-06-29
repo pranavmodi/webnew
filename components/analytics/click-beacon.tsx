@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const AUTOCALLER_API =
   process.env.NEXT_PUBLIC_AUTOCALLER_API_URL ||
@@ -32,9 +33,15 @@ function getSessionId() {
   }
 }
 
-function getLinkCode() {
+function getPersistedParam(param: string, storageKey: string) {
   try {
-    return new URLSearchParams(window.location.search).get("lc");
+    const params = new URLSearchParams(window.location.search);
+    const value = params.get(param);
+    if (value) {
+      window.sessionStorage.setItem(storageKey, value);
+      return value;
+    }
+    return window.sessionStorage.getItem(storageKey);
   } catch {
     return null;
   }
@@ -44,15 +51,18 @@ export default function ClickBeacon({
   page: explicitPage,
   event = "session_ready",
 }: ClickBeaconProps) {
-  const sentMount = useRef(false);
-  const sentLeave = useRef(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const mountedAt = Date.now();
-    const page =
+    let sentLeave = false;
+    const page = (
       explicitPage ??
-      (window.location.pathname.replace(/^\/+|\/+$/g, "") || "home");
-    const linkCode = getLinkCode();
+      (window.location.pathname.replace(/^\/+|\/+$/g, "") || "home")
+    ).slice(0, 64);
+    const linkCode = getPersistedParam("lc", "pm_link_code");
+    const clickId = getPersistedParam("c", "pm_click_id");
+    const source = getPersistedParam("src", "pm_tracking_source");
     const sessionId = getSessionId();
     const url = `${AUTOCALLER_API}/api/lead-gen/page-event`;
 
@@ -61,8 +71,12 @@ export default function ClickBeacon({
         event,
         page,
         link_code: linkCode,
+        click_id: clickId,
+        source,
         session_id: sessionId,
         time_on_page_ms: timeOnPageMs,
+        url: window.location.href,
+        referrer: document.referrer || null,
       });
 
     const sendWithFetch = (body: string) => {
@@ -78,14 +92,11 @@ export default function ClickBeacon({
       }
     };
 
-    if (!sentMount.current) {
-      sentMount.current = true;
-      sendWithFetch(makeBody(0));
-    }
+    sendWithFetch(makeBody(0));
 
     const sendLeave = () => {
-      if (sentLeave.current) return;
-      sentLeave.current = true;
+      if (sentLeave) return;
+      sentLeave = true;
 
       const body = makeBody(Date.now() - mountedAt);
 
@@ -117,7 +128,7 @@ export default function ClickBeacon({
       document.removeEventListener("visibilitychange", handleVisibilityChange);
       window.removeEventListener("pagehide", sendLeave);
     };
-  }, [event, explicitPage]);
+  }, [event, explicitPage, pathname]);
 
   return null;
 }
