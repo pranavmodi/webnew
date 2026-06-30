@@ -14,6 +14,11 @@ type SessionPage = {
   event?: string | null;
   url?: string | null;
   referrer?: string | null;
+  engagement_type?: string | null;
+  click_text?: string | null;
+  click_href?: string | null;
+  click_tag?: string | null;
+  utm_campaign?: string | null;
   time_on_page_ms?: number | null;
   created_at?: string | null;
 };
@@ -69,6 +74,13 @@ function formatDuration(ms?: number | null) {
 function compactPage(page: string) {
   if (!page || page === "home") return "/";
   return page.startsWith("/") ? page : `/${page}`;
+}
+
+function eventLabel(event?: string | null) {
+  if (!event) return "event";
+  if (event === "session_ready") return "view";
+  if (event === "page_leave") return "time";
+  return event.replace(/_/g, " ");
 }
 
 export default function EngagementAdminPage() {
@@ -191,7 +203,20 @@ export default function EngagementAdminPage() {
                       <div key={`${session.session_id}-${page.created_at || index}`} className="grid gap-2 border-b border-border px-3 py-3 text-sm last:border-b-0 md:grid-cols-[140px_1fr_auto]">
                         <div className="text-xs text-muted-foreground">{formatTime(page.created_at)}</div>
                         <div className="min-w-0">
-                          <div className="truncate font-semibold">{compactPage(page.page)}</div>
+                          <div className="flex min-w-0 flex-wrap items-center gap-2">
+                            <span className="truncate font-semibold">{compactPage(page.page)}</span>
+                            <span className="rounded border border-border px-1.5 py-0.5 text-[11px] font-medium text-muted-foreground">
+                              {eventLabel(page.event)}
+                            </span>
+                          </div>
+                          {page.click_text ? (
+                            <div className="mt-1 truncate text-xs text-foreground">
+                              Clicked {page.click_text}
+                            </div>
+                          ) : null}
+                          {page.click_href ? (
+                            <div className="truncate text-xs text-muted-foreground">{page.click_href}</div>
+                          ) : null}
                           {page.url ? <div className="truncate text-xs text-muted-foreground">{page.url}</div> : null}
                         </div>
                         <div className="text-xs text-muted-foreground">{formatDuration(page.time_on_page_ms)}</div>
