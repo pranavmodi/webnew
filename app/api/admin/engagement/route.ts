@@ -11,8 +11,16 @@ function cleanInt(value: string | null, fallback: number, min: number, max: numb
   return Math.max(min, Math.min(max, parsed));
 }
 
-async function possibleOsCookie() {
-  const password = process.env.POSSIBLEOS_AUTH_PASSWORD;
+function bearerPassword(req: NextRequest) {
+  const auth = req.headers.get("authorization") || "";
+  if (auth.toLowerCase().startsWith("bearer ")) {
+    return auth.slice(7).trim();
+  }
+  return req.headers.get("x-possibleos-password") || "";
+}
+
+async function possibleOsCookie(passwordOverride = "") {
+  const password = process.env.POSSIBLEOS_AUTH_PASSWORD || passwordOverride;
   if (!password) return "";
 
   const res = await fetch(`${POSSIBLEOS_API}/api/auth/login`, {
@@ -31,7 +39,7 @@ export async function GET(req: NextRequest) {
   const params = req.nextUrl.searchParams;
   const sinceDays = cleanInt(params.get("since_days"), 30, 0, 3650);
   const limit = cleanInt(params.get("limit"), 100, 1, 500);
-  const cookie = await possibleOsCookie();
+  const cookie = await possibleOsCookie(bearerPassword(req));
 
   const res = await fetch(
     `${POSSIBLEOS_API}/api/lead-gen/engagement-analytics?since_days=${sinceDays}&limit=${limit}`,
@@ -43,6 +51,17 @@ export async function GET(req: NextRequest) {
 
   const text = await res.text();
   if (!res.ok) {
+    if (res.status === 401) {
+      return NextResponse.json(
+        {
+          error: "possibleos_auth_required",
+          status: 401,
+          detail: "Possible OS password required",
+        },
+        { status: 401 },
+      );
+    }
+
     return NextResponse.json(
       {
         error: "engagement_analytics_unavailable",

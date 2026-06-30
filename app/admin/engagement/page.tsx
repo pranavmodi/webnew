@@ -88,6 +88,16 @@ export default function EngagementAdminPage() {
   const [data, setData] = useState<Analytics | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [needsAuth, setNeedsAuth] = useState(false);
+  const [password, setPassword] = useState("");
+
+  useEffect(() => {
+    try {
+      setPassword(window.sessionStorage.getItem("pm_engagement_admin_password") || "");
+    } catch {
+      setPassword("");
+    }
+  }, []);
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -95,16 +105,29 @@ export default function EngagementAdminPage() {
     try {
       const res = await fetch(`/api/admin/engagement?since_days=${sinceDays}&limit=100`, {
         cache: "no-store",
+        headers: password ? { Authorization: `Bearer ${password}` } : {},
       });
       const body = await res.json();
+      if (res.status === 401) {
+        setNeedsAuth(true);
+        throw new Error("Enter the Possible OS password to view engagement analytics.");
+      }
       if (!res.ok) throw new Error(body.detail || body.error || "Could not load engagement analytics");
+      setNeedsAuth(false);
+      if (password) {
+        try {
+          window.sessionStorage.setItem("pm_engagement_admin_password", password);
+        } catch {
+          /* ignore */
+        }
+      }
       setData(body);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Could not load engagement analytics");
     } finally {
       setLoading(false);
     }
-  }, [sinceDays]);
+  }, [password, sinceDays]);
 
   useEffect(() => {
     load();
@@ -149,6 +172,34 @@ export default function EngagementAdminPage() {
           <section className="rounded-lg border border-destructive/40 bg-destructive/10 p-4 text-sm text-destructive">
             {error}
           </section>
+        ) : null}
+
+        {needsAuth ? (
+          <form
+            className="grid gap-3 rounded-lg border border-border bg-card p-4 sm:grid-cols-[1fr_auto]"
+            onSubmit={(event) => {
+              event.preventDefault();
+              load();
+            }}
+          >
+            <label className="grid gap-2 text-sm font-semibold">
+              Possible OS password
+              <input
+                type="password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+                className="h-10 rounded-md border border-border bg-background px-3 text-sm font-normal text-foreground outline-none transition focus:border-primary"
+                autoComplete="current-password"
+              />
+            </label>
+            <button
+              type="submit"
+              disabled={loading || !password}
+              className="self-end rounded-md border border-primary bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90 disabled:opacity-50"
+            >
+              Unlock
+            </button>
+          </form>
         ) : null}
 
         <section className="grid gap-3 md:grid-cols-4">
