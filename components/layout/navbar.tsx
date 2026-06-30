@@ -6,7 +6,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
-import { blogLinks, caseStudiesLinks, navLinks, solutionsLinks } from "@/lib/navigation";
+import {
+  blogLinks,
+  caseStudiesLinks,
+  navLinks,
+  piSystemsLinks,
+  solutionsLinks,
+} from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -61,6 +67,35 @@ export function Navbar() {
 
         {navLinks.length > 0 && (
           <nav className="hidden items-center gap-3 md:flex lg:gap-5">
+            {piSystemsLinks.length > 0 && (
+              <div className="relative group">
+                <button
+                  type="button"
+                  aria-haspopup="menu"
+                  aria-expanded="false"
+                  className="flex items-center gap-1 whitespace-nowrap px-3 py-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+                >
+                  PI Systems
+                  <ChevronDown className="h-4 w-4" />
+                </button>
+                <div className="pointer-events-none absolute left-0 top-full z-20 mt-2 w-64 translate-y-2 opacity-0 transition duration-200 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
+                  <div className="rounded-xl border border-primary/20 bg-black/95 p-2 shadow-[0_15px_40px_rgba(0,0,0,0.5)]">
+                    {piSystemsLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className={cn(
+                          "block rounded-lg px-3 py-2 text-sm font-semibold text-foreground/80 transition hover:bg-primary/10 hover:text-primary",
+                          pathname === link.href ? "bg-primary/10 text-primary" : "",
+                        )}
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
             {solutionsLinks.length > 0 && (
               <div className="relative group">
                 <button
@@ -185,6 +220,30 @@ export function Navbar() {
                   <SheetTitle className="text-left">Navigate</SheetTitle>
                 </SheetHeader>
                 <div className="mt-6 flex flex-col gap-3">
+                  {piSystemsLinks.length > 0 && (
+                    <div>
+                      <div className="px-3 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                        PI Systems
+                      </div>
+                      <div className="mt-3 flex flex-col gap-2">
+                        {piSystemsLinks.map((link) => (
+                          <SheetClose asChild key={link.href}>
+                            <Link
+                              href={link.href}
+                              className={cn(
+                                "rounded-lg px-3 py-2 text-base font-semibold transition",
+                                pathname === link.href
+                                  ? "bg-primary/10 text-primary"
+                                  : "text-muted-foreground hover:bg-primary/10 hover:text-primary",
+                              )}
+                            >
+                              {link.label}
+                            </Link>
+                          </SheetClose>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                   {solutionsLinks.length > 0 && (
                     <div>
                       <div className="px-3 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">

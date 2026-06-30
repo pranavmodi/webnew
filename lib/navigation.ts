@@ -1,9 +1,18 @@
 import { CALENDLY_URL } from "./constants";
 
 export const navLinks = [
-  { href: "/personal-injury", label: "For PI Firms" },
   { href: "/about", label: "About" },
   { href: "/security", label: "Security" },
+];
+
+export const piSystemsLinks = [
+  { href: "/personal-injury#intake-conversion", label: "Intake & Conversion" },
+  { href: "/personal-injury#case-development", label: "Case Development" },
+  { href: "/personal-injury#client-communication", label: "Client Communication" },
+  { href: "/personal-injury#settlement-liens", label: "Settlement & Liens" },
+  { href: "/personal-injury#firm-intelligence", label: "Firm Intelligence" },
+  { href: "/personal-injury#vendor-risk", label: "Vendor Risk & AI Governance" },
+  { href: "/personal-injury#growth-visibility", label: "Growth & Visibility" },
 ];
 
 export const solutionsLinks = [

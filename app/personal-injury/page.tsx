@@ -88,6 +88,51 @@ const solutions = [
   },
 ];
 
+const operatingCategories = [
+  {
+    id: "intake-conversion",
+    title: "Intake & Conversion",
+    description:
+      "Capture paid demand, qualify injury leads quickly, recover missed calls, and measure which sources become signed cases.",
+  },
+  {
+    id: "case-development",
+    title: "Case Development",
+    description:
+      "Move signed matters forward with evidence collection, treatment follow-up, records chasing, medical chronology, and demand support.",
+  },
+  {
+    id: "client-communication",
+    title: "Client Communication",
+    description:
+      "Keep clients informed without burying staff in repetitive updates, reminders, FAQs, and status calls.",
+  },
+  {
+    id: "settlement-liens",
+    title: "Settlement & Liens",
+    description:
+      "Track lien exposure, provider balances, subrogation work, settlement statements, reductions, and disbursement readiness.",
+  },
+  {
+    id: "firm-intelligence",
+    title: "Firm Intelligence",
+    description:
+      "Give owners visibility into intake performance, stalled files, workload, vendor performance, attribution, and case pipeline health.",
+  },
+  {
+    id: "vendor-risk",
+    title: "Vendor Risk & AI Governance",
+    description:
+      "Audit vendor exposure, AI data handling, staff usage, review rules, and the controls needed before sensitive workflows scale.",
+  },
+  {
+    id: "growth-visibility",
+    title: "Growth & Visibility",
+    description:
+      "Improve how the firm is discovered and trusted across search, AI answers, local reputation, referrals, and competitive markets.",
+  },
+];
+
 const whyUsPoints = [
   {
     title: "We diagnose before we demo",
@@ -254,6 +299,35 @@ export default function PersonalInjuryPage() {
                 className="mt-2 text-sm text-foreground/70"
                 dangerouslySetInnerHTML={{ __html: point.description }}
               />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Operating Categories */}
+      <section className="mx-auto max-w-5xl px-4 py-20 sm:px-6">
+        <div className="text-center">
+          <h2 className="text-3xl font-semibold text-primary sm:text-4xl">
+            The PI firm systems we organize around
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base text-foreground/70">
+            Each category can hold today&apos;s workflow offers and future
+            products without turning the site into a list of disconnected tools.
+          </p>
+        </div>
+        <div className="mt-12 grid gap-4 sm:grid-cols-2">
+          {operatingCategories.map((category) => (
+            <div
+              key={category.id}
+              id={category.id}
+              className="scroll-mt-24 rounded-2xl border border-primary/25 bg-[#04150d] p-6"
+            >
+              <h3 className="text-xl font-semibold text-primary">
+                {category.title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-foreground/70">
+                {category.description}
+              </p>
             </div>
           ))}
         </div>
