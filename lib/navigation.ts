@@ -1,19 +1,15 @@
 import { CALENDLY_URL } from "./constants";
+import { piProblemPages } from "./pi-pages";
 
 export const navLinks = [
   { href: "/about", label: "About" },
   { href: "/security", label: "Security" },
 ];
 
-export const piSystemsLinks = [
-  { href: "/personal-injury#intake-conversion", label: "Intake & Conversion" },
-  { href: "/personal-injury#case-development", label: "Case Development" },
-  { href: "/personal-injury#client-communication", label: "Client Communication" },
-  { href: "/personal-injury#settlement-liens", label: "Settlement & Liens" },
-  { href: "/personal-injury#firm-intelligence", label: "Firm Intelligence" },
-  { href: "/personal-injury#vendor-risk", label: "Vendor Risk & AI Governance" },
-  { href: "/personal-injury#growth-visibility", label: "Growth & Visibility" },
-];
+export const piSystemsLinks = piProblemPages.map((page) => ({
+  href: `/personal-injury/${page.slug}`,
+  label: page.navLabel,
+}));
 
 export const solutionsLinks = [
   { href: "/solutions/email-automation", label: "Email Automation" },

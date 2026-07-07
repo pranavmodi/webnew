@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { JsonLd } from "@/components/seo/json-ld";
 import { CALENDLY_URL, SITE_NAME, SITE_URL } from "@/lib/constants";
+import { piProblemPages } from "@/lib/pi-pages";
 
 export const metadata: Metadata = {
   title: `AI Systems for Personal Injury Firms | ${SITE_NAME}`,
@@ -80,57 +81,12 @@ const solutions = [
       "We focus on the repeatable pieces first: identifying lien correspondence, extracting provider and balance details, tracking status, drafting follow-ups, and surfacing anomalies for human review before action.",
   },
   {
-    href: "#solutions",
+    href: "/personal-injury/vendor-risk-governance",
     title: "AI policy and vendor-risk controls",
     description:
       "Make AI usable without letting client data or firm judgment drift into a black box.",
     details:
       "We help define what AI may touch, where human review is required, how vendor data handling is evaluated, and how audit trails should work before sensitive workflows go live.",
-  },
-];
-
-const operatingCategories = [
-  {
-    id: "intake-conversion",
-    title: "Intake & Conversion",
-    description:
-      "Capture paid demand, qualify injury leads quickly, recover missed calls, and measure which sources become signed cases.",
-  },
-  {
-    id: "case-development",
-    title: "Case Development",
-    description:
-      "Move signed matters forward with evidence collection, treatment follow-up, records chasing, medical chronology, and demand support.",
-  },
-  {
-    id: "client-communication",
-    title: "Client Communication",
-    description:
-      "Keep clients informed without burying staff in repetitive updates, reminders, FAQs, and status calls.",
-  },
-  {
-    id: "settlement-liens",
-    title: "Settlement & Liens",
-    description:
-      "Track lien exposure, provider balances, subrogation work, settlement statements, reductions, and disbursement readiness.",
-  },
-  {
-    id: "firm-intelligence",
-    title: "Firm Intelligence",
-    description:
-      "Give owners visibility into intake performance, stalled files, workload, vendor performance, attribution, and case pipeline health.",
-  },
-  {
-    id: "vendor-risk",
-    title: "Vendor Risk & AI Governance",
-    description:
-      "Audit vendor exposure, AI data handling, staff usage, review rules, and the controls needed before sensitive workflows scale.",
-  },
-  {
-    id: "growth-visibility",
-    title: "Growth & Visibility",
-    description:
-      "Improve how the firm is discovered and trusted across search, AI answers, local reputation, referrals, and competitive markets.",
   },
 ];
 
@@ -255,12 +211,12 @@ export default function PersonalInjuryPage() {
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "PI firm operating systems",
-        itemListElement: operatingCategories.map((category) => ({
+        itemListElement: piProblemPages.map((category) => ({
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: category.title,
-            description: category.description,
+            name: category.navLabel,
+            description: category.metaDescription,
           },
         })),
       },
@@ -362,19 +318,23 @@ export default function PersonalInjuryPage() {
           </p>
         </div>
         <div className="mt-12 grid gap-4 sm:grid-cols-2">
-          {operatingCategories.map((category) => (
-            <div
-              key={category.id}
-              id={category.id}
-              className="scroll-mt-24 rounded-2xl border border-primary/25 bg-[#04150d] p-6"
+          {piProblemPages.map((category) => (
+            <Link
+              key={category.slug}
+              id={category.slug}
+              href={`/personal-injury/${category.slug}`}
+              className="group scroll-mt-24 rounded-2xl border border-primary/25 bg-[#04150d] p-6 transition hover:border-primary/40 hover:bg-[#04150d]/80"
             >
-              <h3 className="text-xl font-semibold text-primary">
-                {category.title}
+              <h3 className="text-xl font-semibold text-primary transition group-hover:text-[#00ff41]">
+                {category.navLabel}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-foreground/70">
-                {category.description}
+                {category.intro}
               </p>
-            </div>
+              <span className="mt-4 inline-block text-sm font-medium text-primary">
+                View page →
+              </span>
+            </Link>
           ))}
         </div>
       </section>
