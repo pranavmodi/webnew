@@ -520,6 +520,14 @@ export default function PersonalInjuryPage() {
             </div>
           ))}
         </div>
+        <div className="mt-10 text-center">
+          <Link
+            href="/personal-injury/faq"
+            className="inline-flex items-center justify-center rounded-full border border-primary/30 px-8 py-3 text-sm font-semibold text-primary transition hover:bg-primary/10"
+          >
+            View the full PI AI FAQ
+          </Link>
+        </div>
       </section>
 
       {/* Bottom CTA */}

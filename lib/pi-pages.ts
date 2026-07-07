@@ -57,6 +57,31 @@ export const piProblemPages: PiProblemPage[] = [
           "No. The system collects and organizes the facts. Your team keeps the legal and business judgment around whether to sign.",
       },
       {
+        question: "Can AI qualify PI leads without giving legal advice?",
+        answer:
+          "Yes, if the workflow is scoped around fact collection, fit signals, urgency, and routing. It should not tell a prospect what their case is worth or what legal strategy to pursue.",
+      },
+      {
+        question: "Does this integrate with Lead Docket, Filevine, CASEpeer, Clio, or other intake tools?",
+        answer:
+          "Usually, yes. The first step is mapping where leads arrive, where intake notes should live, and what fields your team needs before a callback or signing review.",
+      },
+      {
+        question: "How does the system handle bad-fit cases?",
+        answer:
+          "It can route them differently, collect enough context for review, and apply your firm's disqualification rules. The goal is not to reject more aggressively; it is to stop good cases from being buried inside noisy lead flow.",
+      },
+      {
+        question: "Can it capture referral source and campaign attribution?",
+        answer:
+          "Yes. Source, campaign, landing page, call status, lead status, and signed-case outcome are core signals because PI owners need to know which channels produce real cases.",
+      },
+      {
+        question: "What happens when a lead looks urgent or high value?",
+        answer:
+          "Urgent or high-value matters should follow explicit escalation rules: live transfer when possible, immediate staff alert, priority callback, and a clear summary of the facts that triggered escalation.",
+      },
+      {
         question: "Can it handle Spanish-language or after-hours inquiries?",
         answer:
           "Yes, if that is part of the scoped workflow. Language, time of day, and channel are useful routing signals.",
@@ -102,9 +127,34 @@ export const piProblemPages: PiProblemPage[] = [
           "No. It covers the moments when staff are not present or cannot answer fast enough, then hands off to people.",
       },
       {
+        question: "Can it respond to web forms, missed calls, and chat inquiries at night?",
+        answer:
+          "Yes. The workflow can be designed around the channels where leads go cold: web forms, missed calls, chat, SMS, email, and overflow from paid campaigns.",
+      },
+      {
+        question: "What if the caller wants a human immediately?",
+        answer:
+          "The system should make that path clear. Depending on your rules, it can transfer to a live line, collect the basics first, or mark the matter for immediate human callback.",
+      },
+      {
         question: "What should happen with urgent cases?",
         answer:
           "Urgent cases should follow explicit escalation rules, such as sending an alert, routing to a live line, or marking the lead for immediate review.",
+      },
+      {
+        question: "Can after-hours intake work in Spanish or other languages?",
+        answer:
+          "Yes, when language coverage is part of the scope. The important part is routing language preference cleanly so the next human touch is handled by the right person.",
+      },
+      {
+        question: "How does this prevent voicemail leakage?",
+        answer:
+          "It gives the prospect a response and a next step while intent is still high. Even when the lead needs human review, the firm receives a structured summary instead of only a voicemail notification.",
+      },
+      {
+        question: "How do we measure whether after-hours intake is working?",
+        answer:
+          "Track response time, completed qualification rate, callback success, signed-case rate, channel, campaign source, and which time windows produce the most leakage.",
       },
     ],
   },
@@ -151,6 +201,31 @@ export const piProblemPages: PiProblemPage[] = [
         answer:
           "It can extract and summarize structured facts, but medical or legal conclusions should remain reviewable by the team.",
       },
+      {
+        question: "Can AI request medical records and bills from providers?",
+        answer:
+          "It can prepare and send approved follow-ups when the authorization, provider contact, and request rules are defined. Exceptions should route to staff instead of being guessed.",
+      },
+      {
+        question: "Can it track missing bills, reports, images, and authorizations?",
+        answer:
+          "Yes. The system can maintain a structured checklist by provider or source so staff can see what is requested, received, missing, overdue, or ready for review.",
+      },
+      {
+        question: "Can it read PDFs and email attachments?",
+        answer:
+          "Yes, for extraction and routing. Sensitive conclusions, unusual documents, or low-confidence reads should be surfaced for human review before they drive case decisions.",
+      },
+      {
+        question: "Does this remove paralegal review?",
+        answer:
+          "No. It removes repetitive checking and reminder work. Paralegals still review important records, exceptions, inconsistencies, and judgment-heavy file movement.",
+      },
+      {
+        question: "Can it handle provider-specific request templates?",
+        answer:
+          "Yes. Provider rules, preferred forms, portals, fax details, and follow-up timing can be captured as workflow knowledge instead of staying in one staff member's head.",
+      },
     ],
   },
   {
@@ -192,9 +267,34 @@ export const piProblemPages: PiProblemPage[] = [
           "No. The system should be scoped to procedural updates, reminders, and approved language, with escalation for legal judgment.",
       },
       {
+        question: "Can it send treatment, document, and appointment reminders?",
+        answer:
+          "Yes. Reminders are often a strong starting point because they are concrete, repeatable, and easy to escalate when a client is confused or unresponsive.",
+      },
+      {
+        question: "Can it tell a client the status of their case?",
+        answer:
+          "It can provide approved procedural status updates when the data is reliable. Anything involving strategy, settlement advice, fault, value, or legal interpretation should route to staff.",
+      },
+      {
+        question: "How does it detect upset or at-risk clients?",
+        answer:
+          "The workflow can flag sentiment, repeated confusion, missed treatment, unanswered requests, or language that suggests frustration so the firm can step in earlier.",
+      },
+      {
+        question: "Does this work over SMS, email, and web chat?",
+        answer:
+          "Yes, if those channels are in scope. The best channel mix depends on where your clients already respond and what your case management system can track cleanly.",
+      },
+      {
         question: "Can this reduce bad reviews?",
         answer:
           "It can reduce the silence and confusion that often lead to complaints, but it must be paired with real staff escalation.",
+      },
+      {
+        question: "Will clients know when they are talking to automation?",
+        answer:
+          "They should. Clear disclosure and easy escalation protect trust. The system should feel helpful, not like the firm is hiding behind software.",
       },
     ],
   },
@@ -241,6 +341,31 @@ export const piProblemPages: PiProblemPage[] = [
         answer:
           "No. It gives specialists cleaner inventories, follow-ups, and exception flags so they can focus on judgment-heavy work.",
       },
+      {
+        question: "Can it identify Medicare, Medicaid, ERISA, provider, or health-plan issues?",
+        answer:
+          "It can help classify lien-related documents and flag categories that need special review. The firm should still apply its own legal standards and review rules before taking action.",
+      },
+      {
+        question: "Can it parse bills, EOBs, lien letters, and reduction responses?",
+        answer:
+          "Yes, the workflow can extract parties, balances, dates, patient details, status, and next steps from common settlement and lien documents.",
+      },
+      {
+        question: "How does this speed up disbursement?",
+        answer:
+          "It reduces the time spent rebuilding the lien picture from emails, PDFs, notes, and provider calls. Staff can see blockers earlier and push the right next step sooner.",
+      },
+      {
+        question: "Can it forecast net recovery for the client?",
+        answer:
+          "It can organize the inputs that affect net recovery and show a working estimate, but final numbers and advice should remain a reviewed firm decision.",
+      },
+      {
+        question: "What lien work should always require human review?",
+        answer:
+          "Unusual plan language, government liens, disputed balances, compromised claims, ambiguous documents, reduction strategy, and final disbursement decisions should stay in a human review path.",
+      },
     ],
   },
   {
@@ -285,6 +410,31 @@ export const piProblemPages: PiProblemPage[] = [
         question: "Do we need perfect data before starting?",
         answer:
           "No. The diagnostic usually starts by showing which data is reliable, which is missing, and which workflow should be fixed first.",
+      },
+      {
+        question: "Which metrics matter most for a PI firm?",
+        answer:
+          "The first layer is usually speed-to-lead, signed-case rate, source quality, stalled files, records status, lien blockers, staff workload, cycle time, and vendor performance.",
+      },
+      {
+        question: "Can it combine intake, case, marketing, and vendor data?",
+        answer:
+          "Yes, when the sources are accessible. The point is to connect the operating picture instead of leaving owners to reconcile disconnected reports by hand.",
+      },
+      {
+        question: "Can it show which cases are stalled right now?",
+        answer:
+          "Yes. A useful system should surface files that have gone quiet, are missing records, lack client follow-through, have lien blockers, or have not moved to the next expected stage.",
+      },
+      {
+        question: "How does this help choose the next AI workflow?",
+        answer:
+          "It shows which bottleneck is costly and repeatable enough to justify automation. That keeps the roadmap grounded in firm operations instead of vendor demos.",
+      },
+      {
+        question: "What if our reports disagree with each other?",
+        answer:
+          "That is common. The first deliverable can be a source-of-truth map that explains which system owns each signal and where the gaps or contradictions live.",
       },
     ],
   },
@@ -331,6 +481,31 @@ export const piProblemPages: PiProblemPage[] = [
         answer:
           "Yes. The first pass is usually a practical inventory of vendors, data flows, permissions, and review obligations.",
       },
+      {
+        question: "Can staff use ChatGPT or other general AI tools with client facts?",
+        answer:
+          "The firm should decide that through a written policy. In many cases, sensitive client facts, medical information, strategy, and privileged material should not be pasted into unmanaged tools.",
+      },
+      {
+        question: "What should a law firm ask AI vendors before signing?",
+        answer:
+          "Ask what data the vendor stores, whether it trains on firm data, who can access the data, how deletion works, what audit logs exist, where human review fits, and who owns the workflow output.",
+      },
+      {
+        question: "How do we know whether vendors train on our data?",
+        answer:
+          "You need to review contract terms, security documentation, model-provider settings, and product behavior. Marketing copy alone is not enough for sensitive legal workflows.",
+      },
+      {
+        question: "What AI use needs attorney or senior-staff review?",
+        answer:
+          "Anything involving legal judgment, case valuation, settlement strategy, privileged facts, medical conclusions, final client communications, or low-confidence outputs should have a review path.",
+      },
+      {
+        question: "What should an AI policy cover?",
+        answer:
+          "A practical policy should cover allowed tools, prohibited data, approved workflows, review rules, disclosure, vendor diligence, audit trails, and who owns exceptions when something is unclear.",
+      },
     ],
   },
   {
@@ -375,6 +550,31 @@ export const piProblemPages: PiProblemPage[] = [
         question: "Is this the same as traditional SEO?",
         answer:
           "It overlaps with SEO, but it focuses more on citations, entity clarity, local proof, structured content, and how answer systems summarize the firm.",
+      },
+      {
+        question: "Which AI and search surfaces should a PI firm check?",
+        answer:
+          "The useful set usually includes Google AI answers, local map-style results, ChatGPT-style answers, Perplexity-style citation behavior, and the third-party sources those systems appear to trust.",
+      },
+      {
+        question: "What signals help AI systems cite a firm?",
+        answer:
+          "Clear practice-area pages, local relevance, attorney proof, case results where appropriate, structured FAQs, consistent entity data, reviews, authoritative mentions, and crawlable text all help machines understand the firm.",
+      },
+      {
+        question: "How often should we run an AI visibility audit?",
+        answer:
+          "Quarterly is a practical rhythm for most firms, with extra checks after major site changes, brand campaigns, market expansion, or visible shifts in AI search behavior.",
+      },
+      {
+        question: "Does this replace local SEO work?",
+        answer:
+          "No. It sharpens local SEO by showing how answer systems interpret the public footprint. The fixes often overlap, but the measurement lens is different.",
+      },
+      {
+        question: "What is the first fix if the firm is invisible?",
+        answer:
+          "Usually it is not one trick. Start with crawlable service pages, stronger local proof, clearer attorney and case signals, consistent directory data, and FAQ content that directly answers buyer questions.",
       },
     ],
   },
