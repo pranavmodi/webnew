@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
 
-import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
+import { JsonLd } from "@/components/seo/json-ld";
+import { CALENDLY_URL, SITE_NAME, SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: `AI Systems for Personal Injury Firms | ${SITE_NAME}`,
@@ -235,8 +236,53 @@ const blogPosts = [
 ];
 
 export default function PersonalInjuryPage() {
+  const personalInjuryStructuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": `${SITE_URL}/personal-injury#service`,
+      name: "AI systems for personal injury firms",
+      serviceType: "AI operations systems for personal injury law firms",
+      provider: {
+        "@id": `${SITE_URL}/#organization`,
+      },
+      areaServed: {
+        "@type": "Country",
+        name: "United States",
+      },
+      description:
+        "Diagnostic-led AI systems for personal injury firms across intake, case development, client communication, settlement and liens, firm intelligence, vendor risk, and growth visibility.",
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "PI firm operating systems",
+        itemListElement: operatingCategories.map((category) => ({
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: category.title,
+            description: category.description,
+          },
+        })),
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": `${SITE_URL}/personal-injury#faq`,
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    },
+  ];
+
   return (
     <div className="bg-black pb-24">
+      <JsonLd data={personalInjuryStructuredData} />
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-primary/15">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(0,255,65,0.15),_rgba(0,0,0,0)_55%)]" />

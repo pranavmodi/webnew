@@ -4,8 +4,9 @@ import { IBM_Plex_Mono, Manrope } from "next/font/google";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { Providers } from "@/components/providers";
+import { JsonLd } from "@/components/seo/json-ld";
 import "@/styles/globals.css";
-import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/constants";
+import { LINKEDIN_URL, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/constants";
 import { Analytics } from "@vercel/analytics/react";
 import Tracker from "@/components/analytics/tracker";
 import ClickBeacon from "@/components/analytics/click-beacon";
@@ -31,6 +32,9 @@ export const metadata: Metadata = {
   },
   description: SITE_DESCRIPTION,
   metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: "./",
+  },
   openGraph: {
     type: "website",
     siteName: SITE_NAME,
@@ -38,6 +42,31 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
   },
+};
+
+const siteStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      email: "hello@possibleminds.ai",
+      description: SITE_DESCRIPTION,
+      sameAs: [LINKEDIN_URL],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      description: SITE_DESCRIPTION,
+      publisher: {
+        "@id": `${SITE_URL}/#organization`,
+      },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -55,6 +84,7 @@ export default function RootLayout({
           <Navbar />
           <main className="pt-20">{children}</main>
           <Footer />
+          <JsonLd data={siteStructuredData} />
           <ClickBeacon />
           <Tracker />
           <Analytics />

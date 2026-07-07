@@ -3,7 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 
+import { JsonLd } from "@/components/seo/json-ld";
 import { blogPosts } from "@/lib/blog";
+import { SITE_NAME, SITE_URL } from "@/lib/constants";
 
 const filters = ["All", "Legal AI", "AI Strategy", "Intake"];
 
@@ -17,6 +19,32 @@ export default function BlogPage() {
 
   return (
     <div className="bg-black pb-24">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          "@id": `${SITE_URL}/blog#blog`,
+          name: `Insights & Ideas | ${SITE_NAME}`,
+          url: `${SITE_URL}/blog`,
+          publisher: {
+            "@id": `${SITE_URL}/#organization`,
+          },
+          blogPost: blogPosts.map((post) => ({
+            "@type": "BlogPosting",
+            headline: post.title,
+            description: post.description,
+            url: `${SITE_URL}${post.href}`,
+            datePublished: new Date(post.date).toISOString().slice(0, 10),
+            author: {
+              "@type": "Person",
+              name: post.author,
+            },
+            publisher: {
+              "@id": `${SITE_URL}/#organization`,
+            },
+          })),
+        }}
+      />
       <section className="relative overflow-hidden bg-gradient-to-b from-[#04150d] to-black">
         <div className="relative mx-auto max-w-5xl px-4 py-20 sm:px-6">
           <div className="space-y-5">

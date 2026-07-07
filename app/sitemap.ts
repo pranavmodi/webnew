@@ -1,32 +1,32 @@
 import { MetadataRoute } from "next";
 
+import { blogPosts } from "@/lib/blog";
 import { SITE_URL } from "@/lib/constants";
 
-const pages = [
+const staticPages = [
   { url: "/", changeFrequency: "weekly" as const, priority: 1.0 },
   { url: "/about", changeFrequency: "monthly" as const, priority: 0.8 },
+  { url: "/personal-injury", changeFrequency: "weekly" as const, priority: 0.9 },
+  { url: "/consult", changeFrequency: "monthly" as const, priority: 0.8 },
   { url: "/solutions/email-automation", changeFrequency: "monthly" as const, priority: 0.8 },
   { url: "/solutions/support-agent", changeFrequency: "monthly" as const, priority: 0.8 },
   { url: "/solutions/outbound-voice-ai", changeFrequency: "monthly" as const, priority: 0.8 },
   { url: "/solutions/lien-reduction", changeFrequency: "monthly" as const, priority: 0.8 },
   { url: "/healthcare-case-study", changeFrequency: "monthly" as const, priority: 0.7 },
   { url: "/law-case-study", changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: "/security", changeFrequency: "monthly" as const, priority: 0.7 },
+  { url: "/tools/linkedin-outreach", changeFrequency: "monthly" as const, priority: 0.6 },
   { url: "/blog", changeFrequency: "weekly" as const, priority: 0.9 },
-  { url: "/personal-injury", changeFrequency: "weekly" as const, priority: 0.9 },
-  // Blog posts — newest first
-  { url: "/blog/hidden-math-lien-negotiations", changeFrequency: "yearly" as const, priority: 0.8 },
-  { url: "/blog/nobody-owns-ai-at-your-firm", changeFrequency: "yearly" as const, priority: 0.8 },
-  { url: "/blog/gemini-maps-pi-firms", changeFrequency: "yearly" as const, priority: 0.8 },
-  { url: "/blog/the-200000-satisfying-answer", changeFrequency: "yearly" as const, priority: 0.7 },
-  { url: "/blog/ai-search-law-firm-marketing", changeFrequency: "yearly" as const, priority: 0.7 },
-  { url: "/blog/the-science-of-client-intake-conversion", changeFrequency: "yearly" as const, priority: 0.7 },
-  { url: "/blog/when-ai-is-the-user", changeFrequency: "yearly" as const, priority: 0.7 },
-  { url: "/blog/the-real-reason-ai-evals-matter", changeFrequency: "yearly" as const, priority: 0.7 },
-  { url: "/blog/sample-agent-ops", changeFrequency: "yearly" as const, priority: 0.6 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return pages.map((page) => ({
+  const blogPages = blogPosts.map((post) => ({
+    url: post.href,
+    changeFrequency: "yearly" as const,
+    priority: post.tags.includes("For PI Firms") ? 0.8 : 0.7,
+  }));
+
+  return [...staticPages, ...blogPages].map((page) => ({
     url: `${SITE_URL}${page.url}`,
     lastModified: new Date(),
     changeFrequency: page.changeFrequency,
