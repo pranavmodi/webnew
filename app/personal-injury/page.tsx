@@ -170,6 +170,11 @@ const caseStudies = [
 
 const blogPosts = [
   {
+    href: "/blog/sb-623-rideshare-injury-pi-firms",
+    title: "SB 623 and Rideshare Injury Cases: What California PI Firms Should Do Now",
+    tag: "PI Operations",
+  },
+  {
     href: "/blog/gemini-maps-pi-firms",
     title: "Google Just Put Gemini in Maps. Here&apos;s What PI Firms Need to Do Now.",
     tag: "Legal AI",

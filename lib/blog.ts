@@ -12,6 +12,18 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    href: "/blog/sb-623-rideshare-injury-pi-firms",
+    slug: "sb-623-rideshare-injury-pi-firms",
+    title: "SB 623 and Rideshare Injury Cases: What California PI Firms Should Do Now",
+    description:
+      "California SB 623 is a major but targeted change for PI firms handling Uber and Lyft injury cases with lien-based treatment. Here are the operating, valuation, discovery, and vendor-risk implications.",
+    author: "Pranav Modi",
+    date: "July 8, 2026",
+    readTime: "13 min read",
+    category: "Industry Analysis",
+    tags: ["Legal AI", "For PI Firms", "Lien Workflows"],
+  },
+  {
     href: "/blog/why-ai-readiness-matters-pi-firms",
     slug: "why-ai-readiness-matters-pi-firms",
     title: "Why AI Readiness Starts Before AI: The Operating Questions Every PI Firm Should Answer",

@@ -24,6 +24,7 @@ export const caseStudiesLinks = [
 ];
 
 export const blogLinks = [
+  { href: "/blog/sb-623-rideshare-injury-pi-firms", label: "SB 623 & Rideshare Cases" },
   { href: "/blog/why-ai-readiness-matters-pi-firms", label: "AI Readiness for PI Firms" },
   { href: "/blog/speed-is-easy-to-graph-intake", label: "Speed Is Easy to Graph" },
   { href: "/blog/cybernetic-organization-ai", label: "The Cybernetic Organization" },
