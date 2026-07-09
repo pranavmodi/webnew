@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { Activity, Clock, MousePointerClick, RefreshCcw, UserRound } from "lucide-react";
+import { Activity, Clock, Globe2, MousePointerClick, RefreshCcw, UserRound } from "lucide-react";
 
 type PageRow = {
   page: string;
@@ -19,6 +19,11 @@ type SessionPage = {
   click_href?: string | null;
   click_tag?: string | null;
   utm_campaign?: string | null;
+  ip_address_display?: string | null;
+  country_code?: string | null;
+  country_name?: string | null;
+  region?: string | null;
+  city?: string | null;
   time_on_page_ms?: number | null;
   created_at?: string | null;
 };
@@ -31,14 +36,27 @@ type SessionRow = {
   link_code?: string | null;
   click_id?: string | null;
   source?: string | null;
+  ip_address_display?: string | null;
+  country_code?: string | null;
+  country_name?: string | null;
+  region?: string | null;
+  city?: string | null;
   first_seen_at?: string | null;
   last_seen_at?: string | null;
   total_time_on_page_ms?: number;
   pages: SessionPage[];
 };
 
+type CountryRow = {
+  country_code: string;
+  country_name: string;
+  events: number;
+  sessions: number;
+};
+
 type Analytics = {
   since_days: number;
+  country: string;
   summary: {
     event_count: number;
     distinct_sessions: number;
@@ -47,8 +65,17 @@ type Analytics = {
     total_time_on_page_ms: number;
   };
   pages: PageRow[];
+  countries: CountryRow[];
   sessions: SessionRow[];
 };
+
+const countryFilters = [
+  { value: "all", label: "All" },
+  { value: "US", label: "US" },
+  { value: "IN", label: "India" },
+  { value: "other", label: "Other" },
+  { value: "unknown", label: "Unknown" },
+];
 
 function formatTime(value?: string | null) {
   if (!value) return "-";
@@ -83,8 +110,20 @@ function eventLabel(event?: string | null) {
   return event.replace(/_/g, " ");
 }
 
+function locationLabel(row: {
+  country_code?: string | null;
+  country_name?: string | null;
+  region?: string | null;
+  city?: string | null;
+}) {
+  const country = row.country_name || row.country_code || "";
+  const locality = [row.city, row.region].filter(Boolean).join(", ");
+  return [country, locality].filter(Boolean).join(" · ");
+}
+
 export default function EngagementAdminPage() {
   const [sinceDays, setSinceDays] = useState(30);
+  const [countryFilter, setCountryFilter] = useState("all");
   const [data, setData] = useState<Analytics | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -93,7 +132,12 @@ export default function EngagementAdminPage() {
     setLoading(true);
     setError("");
     try {
-      const res = await fetch(`/api/admin/engagement?since_days=${sinceDays}&limit=100`, {
+      const params = new URLSearchParams({
+        since_days: String(sinceDays),
+        limit: "100",
+        country: countryFilter,
+      });
+      const res = await fetch(`/api/admin/engagement?${params.toString()}`, {
         cache: "no-store",
       });
       const body = await res.json();
@@ -104,7 +148,7 @@ export default function EngagementAdminPage() {
     } finally {
       setLoading(false);
     }
-  }, [sinceDays]);
+  }, [countryFilter, sinceDays]);
 
   useEffect(() => {
     load();
@@ -133,6 +177,20 @@ export default function EngagementAdminPage() {
                 {days}d
               </button>
             ))}
+            {countryFilters.map((item) => (
+              <button
+                key={item.value}
+                type="button"
+                onClick={() => setCountryFilter(item.value)}
+                className={`rounded-md border px-3 py-2 text-sm font-semibold transition ${
+                  countryFilter === item.value
+                    ? "border-primary bg-primary text-primary-foreground"
+                    : "border-border bg-card text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
             <button
               type="button"
               onClick={load}
@@ -156,6 +214,25 @@ export default function EngagementAdminPage() {
           <Metric icon={UserRound} label="Sessions" value={data?.summary.distinct_sessions || 0} />
           <Metric icon={MousePointerClick} label="Contacts" value={data?.summary.distinct_contacts || 0} />
           <Metric icon={Clock} label="Time" value={formatDuration(data?.summary.total_time_on_page_ms || 0)} />
+        </section>
+
+        <section className="rounded-lg border border-border bg-card p-4">
+          <div className="flex items-center gap-2 text-sm font-semibold">
+            <Globe2 className="h-4 w-4 text-primary" />
+            Traffic by country
+          </div>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {data?.countries?.length ? data.countries.map((country) => (
+              <div key={country.country_code} className="rounded-md border border-border bg-background p-3 text-sm">
+                <div className="font-semibold">{country.country_name}</div>
+                <div className="mt-1 text-xs text-muted-foreground">
+                  {country.sessions} sessions · {country.events} events
+                </div>
+              </div>
+            )) : (
+              <div className="text-sm text-muted-foreground">{loading ? "Loading..." : "No country data yet."}</div>
+            )}
+          </div>
         </section>
 
         <section className="grid gap-6 lg:grid-cols-[380px_1fr]">
@@ -186,6 +263,10 @@ export default function EngagementAdminPage() {
                       <div className="font-semibold">{session.contact_name || "Unknown contact"}</div>
                       <div className="mt-1 text-sm text-muted-foreground">
                         {[session.firm_name, session.contact_email].filter(Boolean).join(" · ") || "Unattributed visitor"}
+                      </div>
+                      <div className="mt-1 flex flex-wrap gap-2 text-xs text-muted-foreground">
+                        {locationLabel(session) ? <span>{locationLabel(session)}</span> : null}
+                        {session.ip_address_display ? <span>IP {session.ip_address_display}</span> : null}
                       </div>
                     </div>
                     <div className="text-right text-xs text-muted-foreground">
@@ -218,6 +299,13 @@ export default function EngagementAdminPage() {
                             <div className="truncate text-xs text-muted-foreground">{page.click_href}</div>
                           ) : null}
                           {page.url ? <div className="truncate text-xs text-muted-foreground">{page.url}</div> : null}
+                          {locationLabel(page) || page.ip_address_display ? (
+                            <div className="truncate text-xs text-muted-foreground">
+                              {[locationLabel(page), page.ip_address_display ? `IP ${page.ip_address_display}` : ""]
+                                .filter(Boolean)
+                                .join(" · ")}
+                            </div>
+                          ) : null}
                         </div>
                         <div className="text-xs text-muted-foreground">{formatDuration(page.time_on_page_ms)}</div>
                       </div>

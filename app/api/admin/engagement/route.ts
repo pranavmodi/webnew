@@ -15,9 +15,10 @@ export async function GET(req: NextRequest) {
   const params = req.nextUrl.searchParams;
   const sinceDays = cleanInt(params.get("since_days"), 30, 0, 3650);
   const limit = cleanInt(params.get("limit"), 100, 1, 500);
+  const country = (params.get("country") || "all").slice(0, 32);
 
   const res = await fetch(
-    `${POSSIBLEOS_API}/api/lead-gen/engagement-analytics?since_days=${sinceDays}&limit=${limit}`,
+    `${POSSIBLEOS_API}/api/lead-gen/engagement-analytics?since_days=${sinceDays}&limit=${limit}&country=${encodeURIComponent(country)}`,
     {
       cache: "no-store",
     },

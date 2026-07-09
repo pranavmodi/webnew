@@ -3,10 +3,6 @@
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
-const AUTOCALLER_API =
-  process.env.NEXT_PUBLIC_AUTOCALLER_API_URL ||
-  "https://autocaller.getpossibleminds.com";
-
 type ClickBeaconProps = {
   page?: string;
   event?: string;
@@ -107,9 +103,11 @@ export default function ClickBeacon({
       explicitPage ??
       (window.location.pathname.replace(/^\/+|\/+$/g, "") || "home")
     ).slice(0, 64);
+    if (page === "admin" || page.startsWith("admin/")) return;
+
     const attribution = attributionFields();
     const sessionId = getSessionId();
-    const url = `${AUTOCALLER_API}/api/lead-gen/page-event`;
+    const url = "/api/lead-gen/page-event";
 
     const makeBody = (
       eventName: string,
