@@ -170,6 +170,11 @@ const caseStudies = [
 
 const blogPosts = [
   {
+    href: "/blog/from-prompts-to-systems-law-firms-ai",
+    title: "From Prompts to Systems: How Law Firms Should Absorb AI",
+    tag: "AI Strategy",
+  },
+  {
     href: "/blog/sb-623-rideshare-injury-pi-firms",
     title: "SB 623 and Rideshare Injury Cases: What California PI Firms Should Do Now",
     tag: "PI Operations",

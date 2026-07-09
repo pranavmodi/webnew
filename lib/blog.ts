@@ -12,6 +12,18 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    href: "/blog/from-prompts-to-systems-law-firms-ai",
+    slug: "from-prompts-to-systems-law-firms-ai",
+    title: "From Prompts to Systems: How Law Firms Should Absorb AI",
+    description:
+      "Good AI prompting is good legal delegation. Learn the six-part instruction anatomy lawyers need and why firms must move from prompts to AI systems.",
+    author: "Pranav Modi",
+    date: "July 9, 2026",
+    readTime: "11 min read",
+    category: "AI Strategy",
+    tags: ["Legal AI", "AI Strategy", "For PI Firms"],
+  },
+  {
     href: "/blog/sb-623-rideshare-injury-pi-firms",
     slug: "sb-623-rideshare-injury-pi-firms",
     title: "SB 623 and Rideshare Injury Cases: What California PI Firms Should Do Now",
