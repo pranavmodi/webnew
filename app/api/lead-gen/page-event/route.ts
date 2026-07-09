@@ -17,6 +17,15 @@ function firstForwardedIp(value: string) {
   return value.split(",").map((part) => part.trim()).find(Boolean) || "";
 }
 
+function decodeHeaderValue(value: string) {
+  if (!value) return "";
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
@@ -29,8 +38,8 @@ export async function POST(req: NextRequest) {
       "cloudfront-viewer-country",
       "x-country-code",
     ]).toUpperCase();
-    const region = firstHeader(req, ["x-vercel-ip-country-region", "x-region"]);
-    const city = firstHeader(req, ["x-vercel-ip-city", "x-city"]);
+    const region = decodeHeaderValue(firstHeader(req, ["x-vercel-ip-country-region", "x-region"]));
+    const city = decodeHeaderValue(firstHeader(req, ["x-vercel-ip-city", "x-city"]));
 
     const res = await fetch(`${POSSIBLEOS_API}/api/lead-gen/page-event`, {
       method: "POST",
