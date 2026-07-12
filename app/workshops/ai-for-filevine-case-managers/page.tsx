@@ -291,10 +291,13 @@ export default function WorkshopPage() {
             >
               From Prompts to Systems
             </Link>
-            . Here&apos;s the case-manager version, free, no registration
-            required:
+            . Here&apos;s instruction one of the five — the one we send case
+            managers by email. Free, no registration required:
           </p>
-          <div className="rounded-xl border border-primary/25 bg-[#04150d] p-5 font-mono text-sm leading-relaxed text-foreground/80">
+          <div
+            id="instruction"
+            className="rounded-xl border border-primary/25 bg-[#04150d] p-5 font-mono text-sm leading-relaxed text-foreground/80"
+          >
             <p className="text-primary/70">
               # Instead of &quot;summarize these records&quot;:
             </p>
@@ -312,8 +315,10 @@ export default function WorkshopPage() {
           <p>
             The difference between that and &quot;summarize these records&quot;
             is the difference between a draft your attorney trusts and one
-            they quietly redo. The session is five more of these, built by
-            you, for your files.
+            they quietly redo. Instruction one is yours either way. The
+            session is where you build the other four — client updates,
+            records chases, gap sweeps, handoff memos — tuned to your own
+            files, with the verification checklist for each.
           </p>
         </section>
 
@@ -374,6 +379,10 @@ export default function WorkshopPage() {
           <h2 className="text-2xl font-semibold text-[#00ff41]">
             Reserve a seat
           </h2>
+          <p className="text-sm text-foreground/60">
+            Here from our email? Your details may already be filled in below —
+            one click and you&apos;re done.
+          </p>
           <WorkshopRegisterForm />
         </section>
 

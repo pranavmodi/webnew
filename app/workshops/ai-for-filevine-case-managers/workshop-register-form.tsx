@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -50,6 +50,22 @@ export function WorkshopRegisterForm() {
     cms: "Filevine",
     firmSize: FIRM_SIZES[1],
   });
+
+  // Prefill from tracked-link params (same keys ClickBeacon persists), so
+  // invitees arriving from a possibleos email register in one click.
+  useEffect(() => {
+    const name = getPersistedParam(["contact_name", "name"], "pm_contact_name");
+    const email = getPersistedParam(["contact_email", "email"], "pm_contact_email");
+    const firm = getPersistedParam(["firm_name", "firm"], "pm_firm_name");
+    if (name || email || firm) {
+      setForm((prev) => ({
+        ...prev,
+        name: prev.name || name || "",
+        email: prev.email || email || "",
+        firm: prev.firm || firm || "",
+      }));
+    }
+  }, []);
 
   const canSubmit =
     form.name.trim().length > 0 &&

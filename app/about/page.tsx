@@ -1,4 +1,6 @@
 import { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 
 import { LINKEDIN_URL, SITE_NAME } from "@/lib/constants";
 
@@ -27,9 +29,10 @@ export default function AboutPage() {
             </h1>
             <p className="max-w-3xl text-base text-foreground/80 sm:text-lg">
               We build diagnostic-led AI systems for personal injury firms and
-              regulated operations. Our focus is measurable outcomes: faster
-              intake, cleaner document-heavy workflows, safer vendor controls,
-              and clearer audit trails.
+              regulated operations. Find the operational leak first, decide
+              what is safe and ready to automate, build the narrow system that
+              fixes it — and keep it governed, measurable, and owned by the
+              firm.
             </p>
           </div>
         </div>
@@ -39,13 +42,15 @@ export default function AboutPage() {
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
           <div className="grid gap-8 md:grid-cols-[180px_1fr]">
             <div className="space-y-4">
-              <div className="flex aspect-square items-center justify-center rounded-2xl border border-primary/30 bg-black/45">
-                {/* TODO: real headshot */}
-                <div className="flex h-24 w-24 items-center justify-center rounded-full border border-primary/50 bg-primary/10 text-3xl font-semibold text-[#00ff41]">
-                  PM
-                </div>
+              <div className="relative aspect-square overflow-hidden rounded-2xl border border-primary/30 bg-black/45">
+                <Image
+                  src="/pranav-modi.jpg"
+                  alt="Pranav Modi, founder of Possible Minds"
+                  fill
+                  sizes="(min-width: 768px) 180px, 100vw"
+                  className="object-cover"
+                />
               </div>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/70">Headshot placeholder</p>
             </div>
 
             <div className="space-y-5">
@@ -77,55 +82,51 @@ export default function AboutPage() {
               <div className="flex flex-wrap items-center gap-3">
                 <a
                   href={LINKEDIN_URL}
+                  target="_blank"
+                  rel="noreferrer"
                   className="inline-flex rounded-full border border-primary/35 px-4 py-2 text-sm font-semibold text-primary transition hover:border-primary hover:bg-primary/10"
                 >
                   Connect on LinkedIn
                 </a>
-                <span className="text-xs font-medium uppercase tracking-[0.16em] text-foreground/45">
-                  LinkedIn URL placeholder
-                </span>
               </div>
             </div>
           </div>
         </div>
 
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
-          <h2 className="text-2xl font-semibold text-primary">What we build</h2>
-          <ul className="mt-4 space-y-3 text-base text-foreground/80">
-            <li>Email automation that tags, routes, and drafts compliant responses at scale.</li>
-            <li>Support agents across web, SMS, and voice with grounded answers and fast handoff.</li>
-            <li>Document intelligence for lien validation, signature placement, and fraud checks.</li>
-            <li>Audit-first systems that keep humans in control of sensitive edge cases.</li>
-          </ul>
-        </div>
-
-        <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
-            <h2 className="text-2xl font-semibold text-primary">How we work</h2>
-            <ol className="mt-4 list-decimal space-y-3 pl-6 text-base text-foreground/80">
-              <li>Start with the workflow and the &quot;so what&quot; business outcome.</li>
-              <li>Design guardrails, security checks, and escalation paths first.</li>
-              <li>Automate the repetitive tasks and keep humans on judgment calls.</li>
-              <li>Measure impact with routing speed, accuracy, and backlog reduction.</li>
-            </ol>
-          </div>
-          <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
-            <h2 className="text-2xl font-semibold text-primary">Where we deliver</h2>
-            <ul className="mt-4 space-y-3 text-base text-foreground/80">
-              <li>Healthcare operations with strict PHI controls and auditability.</li>
-              <li>Legal and lien workflows that demand precise document handling.</li>
-              <li>Multi stakeholder support teams with complex routing rules.</li>
-              <li>High volume inboxes that need reliable automation.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
-          <h2 className="text-2xl font-semibold text-primary">Why it works</h2>
-          <p className="mt-4 text-base text-foreground/80">
-            We combine production grade engineering with domain specific automation. The result is a system that stays
-            grounded in approved content, flags risk when confidence drops, and gives teams back the time to focus on
-            higher value decisions.
+          <h2 className="text-2xl font-semibold text-primary">Proof, not promises</h2>
+          <p className="mt-4 text-base leading-7 text-foreground/80">
+            Our first production systems run in live, regulated operations
+            today — read the{" "}
+            <Link
+              href="/law-case-study"
+              className="text-primary underline-offset-4 hover:underline"
+            >
+              personal injury case study
+            </Link>{" "}
+            and the{" "}
+            <Link
+              href="/healthcare-case-study"
+              className="text-primary underline-offset-4 hover:underline"
+            >
+              healthcare operations case study
+            </Link>
+            . If you want to see how we think before you talk to us, start with
+            the{" "}
+            <Link
+              href="/blog"
+              className="text-primary underline-offset-4 hover:underline"
+            >
+              blog
+            </Link>{" "}
+            or join a free{" "}
+            <Link
+              href="/workshops"
+              className="text-primary underline-offset-4 hover:underline"
+            >
+              working session
+            </Link>
+            .
           </p>
         </div>
       </section>
