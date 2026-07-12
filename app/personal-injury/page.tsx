@@ -170,6 +170,11 @@ const caseStudies = [
 
 const blogPosts = [
   {
+    href: "/blog/insurance-ai-claims-pi-firms",
+    title: "Insurance AI Is Scoring PI Claims. Firms Need a Counter-System.",
+    tag: "Claims AI",
+  },
+  {
     href: "/blog/from-prompts-to-systems-law-firms-ai",
     title: "From Prompts to Systems: How Law Firms Should Absorb AI",
     tag: "AI Strategy",

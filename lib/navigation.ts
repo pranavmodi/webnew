@@ -25,6 +25,7 @@ export const caseStudiesLinks = [
 ];
 
 export const blogLinks = [
+  { href: "/blog/insurance-ai-claims-pi-firms", label: "Insurance AI Claims" },
   { href: "/blog/from-prompts-to-systems-law-firms-ai", label: "Prompts to Systems" },
   { href: "/blog/sb-623-rideshare-injury-pi-firms", label: "SB 623 & Rideshare Cases" },
   { href: "/blog/why-ai-readiness-matters-pi-firms", label: "AI Readiness for PI Firms" },

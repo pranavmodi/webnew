@@ -12,6 +12,18 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    href: "/blog/insurance-ai-claims-pi-firms",
+    slug: "insurance-ai-claims-pi-firms",
+    title: "Insurance AI Is Scoring PI Claims. Firms Need a Counter-System.",
+    description:
+      "Insurers use AI to triage, score, and negotiate injury claims. PI firms need cleaner case data, review rules, and counter-workflows.",
+    author: "Pranav Modi",
+    date: "July 12, 2026",
+    readTime: "12 min read",
+    category: "Industry Analysis",
+    tags: ["Legal AI", "AI Strategy", "For PI Firms"],
+  },
+  {
     href: "/blog/from-prompts-to-systems-law-firms-ai",
     slug: "from-prompts-to-systems-law-firms-ai",
     title: "From Prompts to Systems: How Law Firms Should Absorb AI",
