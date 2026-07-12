@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 
 import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
 import {
-  blogLinks,
   caseStudiesLinks,
   navLinks,
   piSystemsLinks,
@@ -25,8 +24,17 @@ import {
 } from "@/components/ui/sheet";
 import { Separator } from "@/components/ui/separator";
 
-const REPUTATION_TOOL_URL = "https://reputable.getpossibleminds.com";
-const AI_AUDIT_URL = "https://aiaudit.getpossibleminds.com";
+const dropdownGroups = [
+  { label: "PI Systems", links: piSystemsLinks, width: "w-64" },
+  {
+    label: "Solutions",
+    links: [...solutionsLinks, ...caseStudiesLinks.map((link) => ({
+      ...link,
+      label: `Case study: ${link.label}`,
+    }))],
+    width: "w-64",
+  },
+];
 
 export function Navbar() {
   const pathname = usePathname();
@@ -65,141 +73,47 @@ export function Navbar() {
           </div>
         </Link>
 
-        {navLinks.length > 0 && (
-          <nav className="hidden items-center gap-3 md:flex lg:gap-5">
-            {piSystemsLinks.length > 0 && (
-              <div className="relative group">
-                <button
-                  type="button"
-                  aria-haspopup="menu"
-                  aria-expanded="false"
-                  className="flex items-center gap-1 whitespace-nowrap px-3 py-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
-                >
-                  PI Systems
-                  <ChevronDown className="h-4 w-4" />
-                </button>
-                <div className="pointer-events-none absolute left-0 top-full z-20 mt-2 w-64 translate-y-2 opacity-0 transition duration-200 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
-                  <div className="rounded-xl border border-primary/20 bg-black/95 p-2 shadow-[0_15px_40px_rgba(0,0,0,0.5)]">
-                    {piSystemsLinks.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        className={cn(
-                          "block rounded-lg px-3 py-2 text-sm font-semibold text-foreground/80 transition hover:bg-primary/10 hover:text-primary",
-                          pathname === link.href ? "bg-primary/10 text-primary" : "",
-                        )}
-                      >
-                        {link.label}
-                      </Link>
-                    ))}
-                  </div>
+        <nav className="hidden items-center gap-3 md:flex lg:gap-5">
+          {dropdownGroups.map((group) => (
+            <div key={group.label} className="relative group">
+              <button
+                type="button"
+                aria-haspopup="menu"
+                aria-expanded="false"
+                className="flex items-center gap-1 whitespace-nowrap px-3 py-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+              >
+                {group.label}
+                <ChevronDown className="h-4 w-4" />
+              </button>
+              <div
+                className={cn(
+                  "pointer-events-none absolute left-0 top-full z-20 mt-2 translate-y-2 opacity-0 transition duration-200 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100",
+                  group.width,
+                )}
+              >
+                <div className="rounded-xl border border-primary/20 bg-black/95 p-2 shadow-[0_15px_40px_rgba(0,0,0,0.5)]">
+                  {group.links.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className={cn(
+                        "block rounded-lg px-3 py-2 text-sm font-semibold text-foreground/80 transition hover:bg-primary/10 hover:text-primary",
+                        pathname === link.href ? "bg-primary/10 text-primary" : "",
+                      )}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
                 </div>
               </div>
-            )}
-            {solutionsLinks.length > 0 && (
-              <div className="relative group">
-                <button
-                  type="button"
-                  aria-haspopup="menu"
-                  aria-expanded="false"
-                  className="flex items-center gap-1 whitespace-nowrap px-3 py-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
-                >
-                  Solutions
-                  <ChevronDown className="h-4 w-4" />
-                </button>
-                <div className="pointer-events-none absolute left-0 top-full z-20 mt-2 w-56 translate-y-2 opacity-0 transition duration-200 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
-                  <div className="rounded-xl border border-primary/20 bg-black/95 p-2 shadow-[0_15px_40px_rgba(0,0,0,0.5)]">
-                    {solutionsLinks.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        className={cn(
-                          "block rounded-lg px-3 py-2 text-sm font-semibold text-foreground/80 transition hover:bg-primary/10 hover:text-primary",
-                          pathname === link.href ? "bg-primary/10 text-primary" : "",
-                        )}
-                      >
-                        {link.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            )}
-            {caseStudiesLinks.length > 0 && (
-              <div className="relative group">
-                <button
-                  type="button"
-                  aria-haspopup="menu"
-                  aria-expanded="false"
-                  className="flex items-center gap-1 whitespace-nowrap px-3 py-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
-                >
-                  Case studies
-                  <ChevronDown className="h-4 w-4" />
-                </button>
-                <div className="pointer-events-none absolute left-0 top-full z-20 mt-2 w-56 translate-y-2 opacity-0 transition duration-200 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
-                  <div className="rounded-xl border border-primary/20 bg-black/95 p-2 shadow-[0_15px_40px_rgba(0,0,0,0.5)]">
-                    {caseStudiesLinks.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        className={cn(
-                          "block rounded-lg px-3 py-2 text-sm font-semibold text-foreground/80 transition hover:bg-primary/10 hover:text-primary",
-                          pathname === link.href ? "bg-primary/10 text-primary" : "",
-                        )}
-                      >
-                        {link.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            )}
-            {blogLinks.length > 0 && (
-              <div className="relative group">
-                <button
-                  type="button"
-                  aria-haspopup="menu"
-                  aria-expanded="false"
-                  className="flex items-center gap-1 whitespace-nowrap px-3 py-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
-                >
-                  Blog
-                  <ChevronDown className="h-4 w-4" />
-                </button>
-                <div className="pointer-events-none absolute left-0 top-full z-20 mt-2 w-56 translate-y-2 opacity-0 transition duration-200 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
-                  <div className="rounded-xl border border-primary/20 bg-black/95 p-2 shadow-[0_15px_40px_rgba(0,0,0,0.5)]">
-                    {blogLinks.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        className={cn(
-                          "block rounded-lg px-3 py-2 text-sm font-semibold text-foreground/80 transition hover:bg-primary/10 hover:text-primary",
-                          pathname === link.href ? "bg-primary/10 text-primary" : "",
-                        )}
-                      >
-                        {link.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            )}
-            {navLinks.map((link) => (
-              <NavLink key={link.href} {...link} />
-            ))}
-          </nav>
-        )}
+            </div>
+          ))}
+          {navLinks.map((link) => (
+            <NavLink key={link.href} {...link} />
+          ))}
+        </nav>
 
         <div className="hidden items-center gap-2 md:flex">
-          <Button asChild size="sm" variant="outline">
-            <Link href={AI_AUDIT_URL} target="_blank" rel="noreferrer">
-              AI readiness
-            </Link>
-          </Button>
-          <Button asChild size="sm" variant="outline">
-            <Link href={REPUTATION_TOOL_URL} target="_blank" rel="noreferrer">
-              Reputation diagnostic
-            </Link>
-          </Button>
           <Button asChild size="sm">
             <Link href={CALENDLY_URL} target="_blank" rel="noreferrer">
               Diagnostic call
@@ -208,157 +122,67 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center md:hidden">
-          {navLinks.length > 0 ? (
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="outline" size="icon" aria-label="Open navigation">
-                  <Menu className="h-5 w-5" />
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="outline" size="icon" aria-label="Open navigation">
+                <Menu className="h-5 w-5" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent>
+              <SheetHeader>
+                <SheetTitle className="text-left">Navigate</SheetTitle>
+              </SheetHeader>
+              <div className="mt-6 flex flex-col gap-3">
+                {dropdownGroups.map((group) => (
+                  <div key={group.label}>
+                    <div className="px-3 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                      {group.label}
+                    </div>
+                    <div className="mt-3 flex flex-col gap-2">
+                      {group.links.map((link) => (
+                        <SheetClose asChild key={link.href}>
+                          <Link
+                            href={link.href}
+                            className={cn(
+                              "rounded-lg px-3 py-2 text-base font-semibold transition",
+                              pathname === link.href
+                                ? "bg-primary/10 text-primary"
+                                : "text-muted-foreground hover:bg-primary/10 hover:text-primary",
+                            )}
+                          >
+                            {link.label}
+                          </Link>
+                        </SheetClose>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+                {navLinks.map((link) => (
+                  <SheetClose asChild key={link.href}>
+                    <Link
+                      href={link.href}
+                      className={cn(
+                        "rounded-lg px-3 py-2 text-base font-semibold transition",
+                        pathname === link.href
+                          ? "bg-primary/10 text-primary"
+                          : "text-muted-foreground hover:bg-primary/10 hover:text-primary",
+                      )}
+                    >
+                      {link.label}
+                    </Link>
+                  </SheetClose>
+                ))}
+              </div>
+              <Separator className="my-6 h-px w-full bg-border" />
+              <div className="flex flex-col gap-3">
+                <Button asChild size="lg">
+                  <Link href={CALENDLY_URL} target="_blank" rel="noreferrer">
+                    Diagnostic call
+                  </Link>
                 </Button>
-              </SheetTrigger>
-              <SheetContent>
-                <SheetHeader>
-                  <SheetTitle className="text-left">Navigate</SheetTitle>
-                </SheetHeader>
-                <div className="mt-6 flex flex-col gap-3">
-                  {piSystemsLinks.length > 0 && (
-                    <div>
-                      <div className="px-3 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                        PI Systems
-                      </div>
-                      <div className="mt-3 flex flex-col gap-2">
-                        {piSystemsLinks.map((link) => (
-                          <SheetClose asChild key={link.href}>
-                            <Link
-                              href={link.href}
-                              className={cn(
-                                "rounded-lg px-3 py-2 text-base font-semibold transition",
-                                pathname === link.href
-                                  ? "bg-primary/10 text-primary"
-                                  : "text-muted-foreground hover:bg-primary/10 hover:text-primary",
-                              )}
-                            >
-                              {link.label}
-                            </Link>
-                          </SheetClose>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                  {solutionsLinks.length > 0 && (
-                    <div>
-                      <div className="px-3 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                        Solutions
-                      </div>
-                      <div className="mt-3 flex flex-col gap-2">
-                        {solutionsLinks.map((link) => (
-                          <SheetClose asChild key={link.href}>
-                            <Link
-                              href={link.href}
-                              className={cn(
-                                "rounded-lg px-3 py-2 text-base font-semibold transition",
-                                pathname === link.href
-                                  ? "bg-primary/10 text-primary"
-                                  : "text-muted-foreground hover:bg-primary/10 hover:text-primary",
-                              )}
-                            >
-                              {link.label}
-                            </Link>
-                          </SheetClose>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                  {caseStudiesLinks.length > 0 && (
-                    <div>
-                      <div className="px-3 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                        Case studies
-                      </div>
-                      <div className="mt-3 flex flex-col gap-2">
-                        {caseStudiesLinks.map((link) => (
-                          <SheetClose asChild key={link.href}>
-                            <Link
-                              href={link.href}
-                              className={cn(
-                                "rounded-lg px-3 py-2 text-base font-semibold transition",
-                                pathname === link.href
-                                  ? "bg-primary/10 text-primary"
-                                  : "text-muted-foreground hover:bg-primary/10 hover:text-primary",
-                              )}
-                            >
-                              {link.label}
-                            </Link>
-                          </SheetClose>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                  {blogLinks.length > 0 && (
-                    <div>
-                      <div className="px-3 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                        Blog
-                      </div>
-                      <div className="mt-3 flex flex-col gap-2">
-                        {blogLinks.map((link) => (
-                          <SheetClose asChild key={link.href}>
-                            <Link
-                              href={link.href}
-                              className={cn(
-                                "rounded-lg px-3 py-2 text-base font-semibold transition",
-                                pathname === link.href
-                                  ? "bg-primary/10 text-primary"
-                                  : "text-muted-foreground hover:bg-primary/10 hover:text-primary",
-                              )}
-                            >
-                              {link.label}
-                            </Link>
-                          </SheetClose>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                  {navLinks.map((link) => (
-                    <SheetClose asChild key={link.href}>
-                      <Link
-                        href={link.href}
-                        className={cn(
-                          "rounded-lg px-3 py-2 text-base font-semibold transition",
-                          pathname === link.href
-                            ? "bg-primary/10 text-primary"
-                            : "text-muted-foreground hover:bg-primary/10 hover:text-primary",
-                        )}
-                      >
-                        {link.label}
-                      </Link>
-                    </SheetClose>
-                  ))}
-                </div>
-                <Separator className="my-6 h-px w-full bg-border" />
-                <div className="flex flex-col gap-3">
-                  <Button asChild size="lg" variant="outline">
-                    <Link href={AI_AUDIT_URL} target="_blank" rel="noreferrer">
-                      AI readiness
-                    </Link>
-                  </Button>
-                  <Button asChild size="lg" variant="outline">
-                    <Link href={REPUTATION_TOOL_URL} target="_blank" rel="noreferrer">
-                      Reputation diagnostic
-                    </Link>
-                  </Button>
-                  <Button asChild size="lg">
-                    <Link href={CALENDLY_URL} target="_blank" rel="noreferrer">
-                      Diagnostic call
-                    </Link>
-                  </Button>
-                </div>
-              </SheetContent>
-            </Sheet>
-          ) : (
-            <Button asChild size="sm">
-              <Link href={CALENDLY_URL} target="_blank" rel="noreferrer">
-                Diagnostic call
-              </Link>
-            </Button>
-          )}
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>

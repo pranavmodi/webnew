@@ -2,8 +2,9 @@ import { CALENDLY_URL } from "./constants";
 import { piProblemPages } from "./pi-pages";
 
 export const navLinks = [
+  { href: "/blog", label: "Blog" },
+  { href: "/workshops", label: "Workshops" },
   { href: "/about", label: "About" },
-  { href: "/security", label: "Security" },
 ];
 
 export const piSystemsLinks = piProblemPages.map((page) => ({
@@ -48,6 +49,8 @@ export const footerLinks = [
     title: "Connect",
     links: [
       { label: "AI Reputation Tool", href: "https://reputable.getpossibleminds.com" },
+      { label: "AI Readiness Audit", href: "https://aiaudit.getpossibleminds.com" },
+      { label: "Security", href: "/security" },
       { label: "Email", href: "mailto:hello@possibleminds.ai" },
       { label: "LinkedIn", href: "#" },
     ],
