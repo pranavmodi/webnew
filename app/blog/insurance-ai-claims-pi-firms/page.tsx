@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 import { JsonLd } from "@/components/seo/json-ld";
@@ -13,6 +14,8 @@ const metaTitle = `Insurance AI Claims: PI Firm Counter-System | ${SITE_NAME}`;
 const pageDescription =
   "Insurers use AI to triage, score, and negotiate injury claims. PI firms need cleaner case data, review rules, and counter-workflows.";
 const pageUrl = `${SITE_URL}/blog/${slug}`;
+const imagePath = "/blog/insurance-ai-counter-system.png";
+const imageUrl = `${SITE_URL}${imagePath}`;
 
 const insurerUses = [
   {
@@ -160,11 +163,20 @@ export const metadata: Metadata = {
     description: pageDescription,
     type: "article",
     url: pageUrl,
+    images: [
+      {
+        url: imageUrl,
+        width: 1600,
+        height: 900,
+        alt: "Comparison of carrier AI claims scoring and the PI firm counter-system.",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: pageTitle,
     description: pageDescription,
+    images: [imageUrl],
   },
 };
 
@@ -187,6 +199,7 @@ export default function BlogPostPage() {
       publisher: {
         "@id": `${SITE_URL}/#organization`,
       },
+      image: imageUrl,
       mainEntityOfPage: pageUrl,
       articleSection: "Industry Analysis",
       keywords:
@@ -313,6 +326,22 @@ export default function BlogPostPage() {
             negotiation intelligence.
           </p>
         </section>
+
+        <figure className="overflow-hidden rounded-2xl border border-primary/20 bg-[#04150d]/60">
+          <Image
+            src={imagePath}
+            alt="Carrier AI scores exposure, treatment gaps, bills, demand packages, litigation risk, and offers while a PI firm counter-system structures case facts, explains gaps, ties bills to records, makes demands machine-readable, routes judgment calls to humans, and tracks negotiation memory."
+            width={1600}
+            height={900}
+            sizes="(min-width: 1024px) 896px, calc(100vw - 32px)"
+            className="h-auto w-full"
+            priority={false}
+          />
+          <figcaption className="border-t border-primary/15 px-5 py-4 text-sm leading-relaxed text-foreground/65">
+            The plaintiff-side answer is not a single AI tool. It is a cleaner,
+            more structured case-development workflow.
+          </figcaption>
+        </figure>
 
         <section className="space-y-4">
           <h2 className="text-2xl font-semibold text-[#00ff41]">
