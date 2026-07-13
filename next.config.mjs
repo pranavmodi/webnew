@@ -14,6 +14,10 @@ const nextConfig = {
         source: "/s/:code*",
         destination: `${resolverBase}/s/:code*`,
       },
+      {
+        source: "/w/:code*",
+        destination: `${resolverBase}/w/:code*`,
+      },
     ];
   },
 };
