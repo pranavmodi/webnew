@@ -2,6 +2,7 @@ import { CALENDLY_URL } from "./constants";
 import { piProblemPages } from "./pi-pages";
 
 export const navLinks = [
+  { href: "/engagement-process", label: "Process" },
   { href: "/blog", label: "Blog" },
   { href: "/workshops", label: "Workshops" },
   { href: "/about", label: "About" },
