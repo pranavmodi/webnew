@@ -140,6 +140,45 @@ export default function ClickBeacon({
 
     sendWithFetch(makeBody(event, 0));
 
+    // Progressive-funnel steps. A scanner runs page JS (so `session_ready`
+    // fires and it can even emulate dwell), but it does not move a pointer,
+    // scroll the document, or tap a "reveal" control. Each of these is a
+    // human gesture we emit at most once per session, so the rollup can score
+    // a session on how deep into the funnel it actually got.
+    const firedSteps = new Set<string>();
+    const emitStep = (step: string, details: EventDetails = {}) => {
+      if (firedSteps.has(step)) return;
+      firedSteps.add(step);
+      sendWithFetch(makeBody(step, Date.now() - mountedAt, { funnel_step: step, ...details }));
+    };
+
+    let pointerTravel = 0;
+    let lastPointer: { x: number; y: number } | null = null;
+    const handlePointerMove = (moveEvent: PointerEvent | MouseEvent) => {
+      const point = { x: moveEvent.clientX, y: moveEvent.clientY };
+      if (lastPointer) {
+        pointerTravel += Math.hypot(point.x - lastPointer.x, point.y - lastPointer.y);
+      }
+      lastPointer = point;
+      // Require real cursor travel so a single synthetic event can't trip it.
+      if (pointerTravel >= 40) emitStep("first_pointer");
+    };
+    const handleGesture = () => emitStep("first_pointer");
+
+    const handleScroll = () => {
+      const doc = document.documentElement;
+      const scrollable = doc.scrollHeight - window.innerHeight;
+      if (scrollable <= 0) return;
+      const depth = (window.scrollY || doc.scrollTop) / scrollable;
+      if (depth >= 0.5) emitStep("scroll_50");
+    };
+
+    const handleFunnelStep = (funnelEvent: Event) => {
+      const step = (funnelEvent as CustomEvent<{ step?: string }>).detail?.step;
+      if (!step) return;
+      emitStep(String(step).slice(0, 32));
+    };
+
     const handleClick = (clickEvent: MouseEvent) => {
       const details = clickDetails(clickEvent.target);
       if (!details) return;
@@ -175,11 +214,25 @@ export default function ClickBeacon({
 
     document.addEventListener("visibilitychange", handleVisibilityChange);
     document.addEventListener("click", handleClick, { capture: true });
+    document.addEventListener("pointermove", handlePointerMove, { passive: true });
+    document.addEventListener("pointerdown", handleGesture, { passive: true });
+    document.addEventListener("touchstart", handleGesture, { passive: true });
+    document.addEventListener("keydown", handleGesture);
+    document.addEventListener("wheel", handleGesture, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("pm:funnel-step", handleFunnelStep as EventListener);
     window.addEventListener("pagehide", sendLeave);
 
     return () => {
       document.removeEventListener("visibilitychange", handleVisibilityChange);
       document.removeEventListener("click", handleClick, { capture: true });
+      document.removeEventListener("pointermove", handlePointerMove);
+      document.removeEventListener("pointerdown", handleGesture);
+      document.removeEventListener("touchstart", handleGesture);
+      document.removeEventListener("keydown", handleGesture);
+      document.removeEventListener("wheel", handleGesture);
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("pm:funnel-step", handleFunnelStep as EventListener);
       window.removeEventListener("pagehide", sendLeave);
     };
   }, [event, explicitPage, pathname]);

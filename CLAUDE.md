@@ -85,6 +85,21 @@ observation.)
 - **When you add or start tracking a new landing/solution page, add `<ClickBeacon>`
   to it.** Pages currently requiring it: `app/consult`, `app/solutions/outbound-voice-ai`.
   Add to the other `app/solutions/*` pages as soon as we send tracked links to them.
+- **Progressive-funnel gestures are what actually prove a human.** Scanners now
+  run page JS *and* emulate dwell, so a bare `session_ready` (and even a long
+  `time_on_page_ms`) is no longer trustworthy. ClickBeacon therefore also emits,
+  at most once per session, the funnel steps `first_pointer` (first real
+  pointer/scroll/touch/key gesture), `scroll_50` (scrolled ≥50% depth), and
+  `content_revealed` — gestures a scanner does not perform. The possibleos
+  wave-rollup scores sessions on these (`gesture_page_sessions`,
+  `revealed_page_sessions`) rather than on dwell.
+- **Gate the gifted payload behind a tap.** Wrap giveaway content (e.g. the
+  workshop's "instruction one") in **`components/analytics/reveal-panel.tsx`**
+  (`<RevealPanel buttonLabel="Show me…">…</RevealPanel>`). It hides children
+  behind a tap-to-reveal button and, on tap, dispatches a `pm:funnel-step`
+  window event (`content_revealed`) that ClickBeacon relays. A human taps to
+  read it; a scanner never does — so this is the strongest pre-registration
+  human signal. Use it on any tracked page that gives something away for free.
 
 ### Internal Tools
 

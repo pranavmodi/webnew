@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 import ClickBeacon from "@/components/analytics/click-beacon";
+import RevealPanel from "@/components/analytics/reveal-panel";
 import { JsonLd } from "@/components/seo/json-ld";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
 
@@ -294,24 +295,26 @@ export default function WorkshopPage() {
             . Here&apos;s instruction one of the five — the one we send case
             managers by email. Free, no registration required:
           </p>
-          <div
-            id="instruction"
-            className="rounded-xl border border-primary/25 bg-[#04150d] p-5 font-mono text-sm leading-relaxed text-foreground/80"
-          >
-            <p className="text-primary/70">
-              # Instead of &quot;summarize these records&quot;:
-            </p>
-            <p className="mt-3">
-              Build a chronological treatment timeline from these records for a
-              personal injury case manager preparing a file for demand. Flag
-              every gap in treatment longer than 30 days. Separate documented
-              facts from provider conclusions and label which is which. List
-              every record, image, or bill that is referenced but not present.
-              End with the questions a case manager should verify with the
-              client or provider before anyone relies on this summary. Do not
-              guess at dates or diagnoses; mark them as unverified instead.
-            </p>
-          </div>
+          <RevealPanel buttonLabel="Show me instruction one">
+            <div
+              id="instruction"
+              className="rounded-xl border border-primary/25 bg-[#04150d] p-5 font-mono text-sm leading-relaxed text-foreground/80"
+            >
+              <p className="text-primary/70">
+                # Instead of &quot;summarize these records&quot;:
+              </p>
+              <p className="mt-3">
+                Build a chronological treatment timeline from these records for
+                a personal injury case manager preparing a file for demand. Flag
+                every gap in treatment longer than 30 days. Separate documented
+                facts from provider conclusions and label which is which. List
+                every record, image, or bill that is referenced but not present.
+                End with the questions a case manager should verify with the
+                client or provider before anyone relies on this summary. Do not
+                guess at dates or diagnoses; mark them as unverified instead.
+              </p>
+            </div>
+          </RevealPanel>
           <p>
             The difference between that and &quot;summarize these records&quot;
             is the difference between a draft your attorney trusts and one
