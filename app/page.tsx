@@ -213,30 +213,6 @@ export default function Home() {
       <JsonLd data={structuredData} />
       <Hero />
 
-      <section className="border-y border-primary/15 bg-[#031009]">
-        <div className="mx-auto max-w-5xl px-4 py-14 text-center sm:px-6 sm:py-16">
-          <p className="text-sm font-semibold uppercase text-primary">
-            Why personal injury
-          </p>
-          <h2 className="mx-auto mt-4 max-w-4xl text-3xl font-semibold leading-tight text-white sm:text-4xl">
-            In personal injury, efficiency creates revenue.
-          </h2>
-          <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-foreground/75 sm:text-lg sm:leading-8">
-            Billable-hour firms can lose revenue when technology reduces the
-            time they charge for. PI firms operate differently. Faster response,
-            stronger conversion, and fewer case delays allow the same team to
-            sign and move more valuable cases.
-          </p>
-          <Link
-            href="/thesis"
-            className="mt-6 inline-flex items-center text-sm font-semibold text-primary transition hover:text-[#00ff41]"
-          >
-            Read our thesis
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
-        </div>
-      </section>
-
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24">
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div className="lg:sticky lg:top-28">
