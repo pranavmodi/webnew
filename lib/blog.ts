@@ -12,6 +12,18 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    href: "/blog/headless-legal-software-pi-vendor-rankings",
+    slug: "headless-legal-software-pi-vendor-rankings",
+    title: "Headless Legal Software: Which PI Vendors Are Ready for AI Agents?",
+    description:
+      "We rank 12 PI legal-tech vendors on APIs, webhooks, CLI/MCP access, and whether external AI agents can safely operate their software.",
+    author: "Pranav Modi",
+    date: "July 16, 2026",
+    readTime: "17 min read",
+    category: "Industry Analysis",
+    tags: ["Legal AI", "AI Strategy", "For PI Firms"],
+  },
+  {
     href: "/blog/insurance-ai-claims-pi-firms",
     slug: "insurance-ai-claims-pi-firms",
     title: "Insurance AI Is Scoring PI Claims. Firms Need a Counter-System.",

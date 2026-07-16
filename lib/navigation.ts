@@ -27,6 +27,10 @@ export const caseStudiesLinks = [
 ];
 
 export const blogLinks = [
+  {
+    href: "/blog/headless-legal-software-pi-vendor-rankings",
+    label: "Headless PI Software",
+  },
   { href: "/blog/insurance-ai-claims-pi-firms", label: "Insurance AI Claims" },
   { href: "/blog/from-prompts-to-systems-law-firms-ai", label: "Prompts to Systems" },
   { href: "/blog/sb-623-rideshare-injury-pi-firms", label: "SB 623 & Rideshare Cases" },

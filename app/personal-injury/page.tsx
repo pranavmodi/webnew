@@ -170,6 +170,11 @@ const caseStudies = [
 
 const blogPosts = [
   {
+    href: "/blog/headless-legal-software-pi-vendor-rankings",
+    title: "Headless Legal Software: Which PI Vendors Are Ready for AI Agents?",
+    tag: "Vendor Strategy",
+  },
+  {
     href: "/blog/insurance-ai-claims-pi-firms",
     title: "Insurance AI Is Scoring PI Claims. Firms Need a Counter-System.",
     tag: "Claims AI",
