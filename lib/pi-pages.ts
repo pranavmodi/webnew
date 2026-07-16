@@ -21,70 +21,70 @@ export const piProblemPages: PiProblemPage[] = [
   {
     slug: "intake-automation",
     navLabel: "Intake & Conversion",
-    title: "AI Intake Automation for Personal Injury Firms",
-    shortTitle: "Intake Automation",
+    title: "Rapid Intake Response for Personal Injury Firms",
+    shortTitle: "Rapid Intake Response",
     metaDescription:
-      "AI intake automation for personal injury firms that helps qualify leads, recover missed calls, route high-value cases, and improve speed to signed retainer.",
-    eyebrow: "Intake & Conversion",
+      "Turn PI inquiries, web forms, and police reports into a reviewed response, qualified lead, retainer, and measurable path to a signed case in minutes.",
+    eyebrow: "Rapid Intake Response",
     intro:
-      "PI firms spend heavily to create demand, then lose good cases when intake is slow, inconsistent, or understaffed. We build intake systems that capture case facts, qualify fit, and hand staff a cleaner conversation before the lead goes cold.",
+      "A prospective client has just been injured. They are stressed, uncertain, and likely contacting more than one firm. Possible Minds helps your team understand the inquiry, prepare the right response, and move toward a signed retainer while intent is still high.",
     buyerProblem:
-      "The firm has paid leads, web forms, referrals, or inbound calls, but too many potential clients do not become signed cases.",
+      "The firm pays to create demand, but delays, manual data entry, weak follow-up, and unsigned retainers allow qualified prospects to sign somewhere else.",
     bestFit:
-      "Best for firms with steady lead flow, more than one intake channel, and a need to standardize qualification without removing human judgment from the signing decision.",
+      "Best for PI firms with meaningful lead volume, multiple intake channels, and an existing CRM or case-management system that needs a faster, more reliable conversion workflow around it.",
     outcomes: [
-      "Faster response to web leads and missed callers",
+      "A review-ready intake package in minutes instead of hours",
       "More complete incident, injury, treatment, and insurance facts",
-      "Cleaner routing by case type, urgency, language, and value",
-      "Better visibility into source quality and conversion leaks",
+      "Faster escalation of urgent, catastrophic, or high-value matters",
+      "Clear measurement from lead source through signed and accepted case",
     ],
     workflow: [
-      "Capture the lead across phone, form, chat, or email.",
-      "Ask a consistent PI-specific qualification sequence.",
-      "Identify urgency, liability signals, injury severity, treatment status, and coverage.",
-      "Route qualified matters with a concise intake summary and next action.",
-      "Log source, outcome, and follow-up status for owner-level reporting.",
+      "Receive the inquiry from a call, form, chat, email, referral, or intake system.",
+      "Read the submission and supporting records, then structure the relevant facts with source evidence.",
+      "Apply firm-approved qualification, routing, and escalation rules.",
+      "Prepare a personalized response, booking step, and approved retainer for human review.",
+      "Send, follow up, and synchronize the final state across the firm's existing systems.",
     ],
     proof: [
-      "The law-firm case study shows how faster callback and structured follow-up increased signed cases.",
-      "The PI hub frames intake as the first leak to diagnose before recommending a build.",
-      "The intake blog explains why conversion is more than raw response speed.",
+      "Designed around the full path from first contact to signed and accepted case.",
+      "Human approval remains the default for client-facing and legally meaningful actions.",
+      "Vendor-neutral connectors preserve the firm's existing systems of record.",
     ],
     faqs: [
       {
-        question: "Does AI decide whether to sign the case?",
+        question: "Does the system automatically accept a case?",
         answer:
-          "No. The system collects and organizes the facts. Your team keeps the legal and business judgment around whether to sign.",
+          "No. It prepares the facts, proposed actions, message, and agreement for review. Your team keeps control of conflict checks, legal judgment, case acceptance, and the exact client-facing package.",
       },
       {
-        question: "Can AI qualify PI leads without giving legal advice?",
+        question: "Is the first response fully automated?",
         answer:
-          "Yes, if the workflow is scoped around fact collection, fit signals, urgency, and routing. It should not tell a prospect what their case is worth or what legal strategy to pursue.",
+          "The workflow is configurable. A firm can use immediate acknowledgment, a review-ready draft, or approved low-risk sends. Retainers and consequential communications remain subject to the firm's approval policy.",
       },
       {
-        question: "Does this integrate with Lead Docket, Filevine, CASEpeer, Clio, or other intake tools?",
+        question: "Does this replace Lead Docket, Filevine, or Clio?",
         answer:
-          "Usually, yes. The first step is mapping where leads arrive, where intake notes should live, and what fields your team needs before a callback or signing review.",
+          "No. Possible Minds coordinates the work between intake, documents, communications, e-signature, and case management while keeping the firm's chosen systems authoritative.",
       },
       {
-        question: "How does the system handle bad-fit cases?",
+        question: "Does it only work when a prospect sends a police report?",
         answer:
-          "It can route them differently, collect enough context for review, and apply your firm's disqualification rules. The goal is not to reject more aggressively; it is to stop good cases from being buried inside noisy lead flow.",
+          "No. A police report is one useful trigger, but the workflow can begin with a website form, email, referral, webhook, intake CRM event, missed call, or uploaded document.",
       },
       {
-        question: "Can it capture referral source and campaign attribution?",
+        question: "What happens when a matter looks urgent or high value?",
         answer:
-          "Yes. Source, campaign, landing page, call status, lead status, and signed-case outcome are core signals because PI owners need to know which channels produce real cases.",
+          "The system applies explicit red flags and escalation rules, alerts the right intake specialist or attorney, and provides a structured briefing so a human can take over without making the prospect repeat the story.",
       },
       {
-        question: "What happens when a lead looks urgent or high value?",
+        question: "Can the system follow up on an unsigned retainer?",
         answer:
-          "Urgent or high-value matters should follow explicit escalation rules: live transfer when possible, immediate staff alert, priority callback, and a clear summary of the facts that triggered escalation.",
+          "Yes. It can track whether the agreement was delivered, opened, or signed and create approved reminders or staff tasks until the lead signs, declines, opts out, or requires human intervention.",
       },
       {
-        question: "Can it handle Spanish-language or after-hours inquiries?",
+        question: "How do we know whether faster response is producing revenue?",
         answer:
-          "Yes, if that is part of the scoped workflow. Language, time of day, and channel are useful routing signals.",
+          "The measurement layer connects response time, contact, qualification, retainer delivery, signature, final acceptance, and lead source. That lets the firm see where wanted cases are leaking and whether the workflow improves conversion.",
       },
     ],
   },

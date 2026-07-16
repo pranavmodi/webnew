@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { IntakeAutomationPage } from "@/components/personal-injury/intake-automation-page";
 import { JsonLd } from "@/components/seo/json-ld";
 import { CALENDLY_URL, SITE_URL } from "@/lib/constants";
 import { PI_PROBLEM_PAGE_BY_SLUG, piProblemPages } from "@/lib/pi-pages";
@@ -19,10 +20,37 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: PageProps): Metadata {
   const page = PI_PROBLEM_PAGE_BY_SLUG[params.slug];
   if (!page) return {};
+  const socialImage =
+    page.slug === "intake-automation" ? "/blog/law-intake.png" : undefined;
 
   return {
     title: page.title,
     description: page.metaDescription,
+    alternates: {
+      canonical: `${SITE_URL}/personal-injury/${page.slug}`,
+    },
+    openGraph: {
+      title: page.title,
+      description: page.metaDescription,
+      type: "website",
+      url: `${SITE_URL}/personal-injury/${page.slug}`,
+      images: socialImage
+        ? [
+            {
+              url: socialImage,
+              width: 1024,
+              height: 1024,
+              alt: "Rapid intake response for personal injury firms",
+            },
+          ]
+        : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: page.title,
+      description: page.metaDescription,
+      images: socialImage ? [socialImage] : undefined,
+    },
     keywords: [
       page.title,
       page.eyebrow,
@@ -91,6 +119,12 @@ export default function PiProblemPage({ params }: PageProps) {
       ],
     },
   ];
+
+  if (page.slug === "intake-automation") {
+    return (
+      <IntakeAutomationPage page={page} structuredData={structuredData} />
+    );
+  }
 
   return (
     <div className="bg-black pb-24">
