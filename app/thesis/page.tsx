@@ -43,10 +43,21 @@ export default function ThesisPage() {
               The gap in the market
             </h2>
             <p>
-              Personal injury firms already have systems for leads, matters,
-              documents, tasks, calls, and communication. These are useful
-              systems of record. They do not execute the work between systems.
+              Personal injury firms already have useful systems of record for:
             </p>
+            <ul className="space-y-2 pl-6">
+              {[
+                "Leads and intake",
+                "Matters and documents",
+                "Tasks and deadlines",
+                "Calls and client communication",
+              ].map((item) => (
+                <li key={item} className="list-disc pl-1 marker:text-primary">
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p>What these systems do not execute is the work between them.</p>
             <p>
               Incumbents are adding AI features inside their products, but each
               feature remains confined to its product. Firms need an execution
@@ -70,10 +81,21 @@ export default function ThesisPage() {
               intake.
             </p>
             <p>
-              Firms spend heavily on leads, then lose cases through missed
-              calls, slow response, weak follow-up, inconsistent qualification,
-              broken handoffs, and unsigned retainers.
+              Firms spend heavily on leads, then lose cases through:
             </p>
+            <ul className="space-y-2 pl-6">
+              {[
+                "Missed calls and slow first response",
+                "Weak or inconsistent follow-up",
+                "Inconsistent qualification",
+                "Broken handoffs",
+                "Unsigned retainers",
+              ].map((item) => (
+                <li key={item} className="list-disc pl-1 marker:text-primary">
+                  {item}
+                </li>
+              ))}
+            </ul>
             <p>
               Intake can be improved without replacing the firm&apos;s
               case-management system. The product can connect to tools such as
@@ -92,11 +114,25 @@ export default function ThesisPage() {
               exceptions are handled.
             </p>
             <p>
-              That operating knowledge supports expansion into case opening,
-              client communication, records, treatment, demands, liens,
-              disbursement, and vendor governance. The long-term product is a
-              firm-owned execution layer, not a bundle of disconnected AI
-              features.
+              That operating knowledge supports expansion across the case
+              lifecycle:
+            </p>
+            <ul className="space-y-2 pl-6">
+              {[
+                "Case opening and client communication",
+                "Records and treatment coordination",
+                "Demand preparation",
+                "Settlement, liens, and disbursement",
+                "Vendor governance",
+              ].map((item) => (
+                <li key={item} className="list-disc pl-1 marker:text-primary">
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p>
+              The long-term product is a firm-owned execution layer, not a
+              bundle of disconnected AI features.
             </p>
           </section>
 
@@ -110,11 +146,25 @@ export default function ThesisPage() {
               follow-up, handoffs, and attribution.
             </p>
             <p>
-              Free tools for after-hours coverage, website and AI visibility,
-              and review monitoring provide an immediate benefit and create an
-              entry point to the paid system. Forward-deployed engineers handle
-              early integration; repeated implementation work becomes reusable
-              product capability.
+              We plan to create immediate value before asking firms to replace
+              behavior or make a large commitment:
+            </p>
+            <ul className="space-y-2 pl-6">
+              {[
+                "Automated intake audits",
+                "Free after-hours coverage",
+                "Website and AI-visibility tools",
+                "Review monitoring",
+                "Integrations with the systems firms already use",
+              ].map((item) => (
+                <li key={item} className="list-disc pl-1 marker:text-primary">
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p>
+              Forward-deployed engineers handle early integration. Repeated
+              implementation work becomes reusable product capability.
             </p>
           </section>
 
@@ -129,10 +179,21 @@ export default function ThesisPage() {
               useful operational benchmarks.
             </p>
             <p>
-              Our deployment playbooks improve with each implementation.
-              Documented rules, human review, audit logs, and vendor boundaries
-              keep the resulting systems governed and owned by the firm.
+              Our deployment playbooks improve with each implementation. The
+              resulting systems remain governed and owned by the firm through:
             </p>
+            <ul className="space-y-2 pl-6">
+              {[
+                "Documented operating rules",
+                "Human-review thresholds",
+                "Complete audit logs",
+                "Explicit vendor and data boundaries",
+              ].map((item) => (
+                <li key={item} className="list-disc pl-1 marker:text-primary">
+                  {item}
+                </li>
+              ))}
+            </ul>
           </section>
         </div>
 
