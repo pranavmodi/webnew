@@ -3,6 +3,7 @@ import { piProblemPages } from "./pi-pages";
 
 export const navLinks = [
   { href: "/engagement-process", label: "Process" },
+  { href: "/thesis", label: "Thesis" },
   { href: "/blog", label: "Blog" },
   { href: "/workshops", label: "Workshops" },
   { href: "/about", label: "About" },
@@ -52,6 +53,7 @@ export const footerLinks = [
     links: [
       { label: "AI Reputation Tool", href: "https://reputable.getpossibleminds.com" },
       { label: "AI Readiness Audit", href: "https://aiaudit.getpossibleminds.com" },
+      { label: "Our Thesis", href: "/thesis" },
       { label: "Security", href: "/security" },
       { label: "Email", href: "mailto:hello@possibleminds.ai" },
       { label: "LinkedIn", href: "#" },
