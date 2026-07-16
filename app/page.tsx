@@ -213,8 +213,8 @@ export default function Home() {
       <JsonLd data={structuredData} />
       <Hero />
 
-      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24">
-        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+      <section className="border-b border-primary/15 bg-[#031009]">
+        <div className="mx-auto grid max-w-6xl gap-12 px-4 py-20 sm:px-6 sm:py-24 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div className="lg:sticky lg:top-28">
             <p className="text-sm font-semibold uppercase text-primary">
               The intake revenue leak
@@ -251,7 +251,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-primary/15 bg-[#031009]">
+      <section className="border-b border-primary/15 bg-black">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase text-primary">
@@ -270,7 +270,7 @@ export default function Home() {
 
           <div className="mt-12 grid gap-px overflow-hidden border border-primary/15 bg-primary/15 sm:grid-cols-5">
             {implementationSteps.map((step) => (
-              <div key={step.number} className="min-h-52 bg-black p-5">
+              <div key={step.number} className="min-h-52 bg-[#031009] p-5">
                 <span className="font-mono text-sm text-primary">
                   {step.number}
                 </span>
