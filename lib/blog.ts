@@ -19,7 +19,7 @@ export const blogPosts: BlogPost[] = [
       "We rank 12 PI legal-tech vendors on APIs, webhooks, CLI/MCP access, and whether external AI agents can safely operate their software.",
     author: "Pranav Modi",
     date: "July 16, 2026",
-    readTime: "17 min read",
+    readTime: "20 min read",
     category: "Industry Analysis",
     tags: ["Legal AI", "AI Strategy", "For PI Firms"],
   },

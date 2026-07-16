@@ -28,12 +28,13 @@ const vendors: Vendor[] = [
   {
     rank: 1,
     name: "Litify",
-    score: "8.5",
-    access: "Salesforce REST APIs, events, flows, and platform CLI",
+    score: "9.5",
+    access:
+      "Salesforce REST APIs, events, CLI, and generally available hosted MCP servers",
     verdict:
-      "The strongest machine-operable foundation reviewed, although much of the advantage comes from Salesforce and requires serious implementation discipline.",
+      "The strongest machine-operable foundation reviewed. Salesforce MCP can expose records, flows, Apex actions, and queries to authorized AI clients, although implementation and licensing still require discipline.",
     publication:
-      "Litify publishes agentic-AI product material and a State of AI in Legal report.",
+      "Litify publishes agentic-AI product material and a State of AI in Legal report; Salesforce publishes extensive Headless 360 and MCP documentation.",
     href: "https://www.litify.com/platform",
   },
   {
@@ -60,6 +61,18 @@ const vendors: Vendor[] = [
   },
   {
     rank: 4,
+    name: "SmartAdvocate",
+    score: "7.0",
+    access:
+      "First-party MCP server for external AI platforms, custom agents, and integrations",
+    verdict:
+      "The clearest PI-specific first-party MCP commitment reviewed. The score remains below the leaders because exact public documentation for tools, authentication, writes, events, and audit behavior is limited.",
+    publication:
+      "SmartAdvocate publishes a dedicated MCP article and lists its MCP server as part of SmartIntelligence.",
+    href: "https://www.smartadvocate.com/smart-intelligence",
+  },
+  {
+    rank: 5,
     name: "PracticePanther",
     score: "6.5",
     access: "REST API, OAuth 2, OData, Swagger, and JSON",
@@ -70,7 +83,7 @@ const vendors: Vendor[] = [
     href: "https://support.practicepanther.com/en/articles/479897-practicepanther-api",
   },
   {
-    rank: 5,
+    rank: 6,
     name: "Assembly Neos",
     score: "6.0",
     access: "Partner API platform, Zapier, and embedded NeosAI agents",
@@ -81,7 +94,7 @@ const vendors: Vendor[] = [
     href: "https://www.assemblysoftware.com/",
   },
   {
-    rank: 6,
+    rank: 7,
     name: "Supio",
     score: "5.5",
     access: "Connectors, APIs, and a proprietary Supio Agent",
@@ -92,7 +105,7 @@ const vendors: Vendor[] = [
     href: "https://www.supio.com/",
   },
   {
-    rank: 6,
+    rank: 7,
     name: "CASEpeer",
     score: "5.5",
     access: "Advanced-tier API access, integrations, and Zapier",
@@ -103,7 +116,7 @@ const vendors: Vendor[] = [
     href: "https://www.casepeer.com/integrations/",
   },
   {
-    rank: 8,
+    rank: 9,
     name: "MyCase",
     score: "5.0",
     access: "Open API on the Advanced tier",
@@ -114,7 +127,7 @@ const vendors: Vendor[] = [
     href: "https://supportcenter.mycase.com/en/articles/9370198-open-api",
   },
   {
-    rank: 9,
+    rank: 10,
     name: "EvenUp",
     score: "4.5",
     access: "Managed integrations and proprietary AI products",
@@ -125,7 +138,7 @@ const vendors: Vendor[] = [
     href: "https://www.evenuplaw.com/products/integrations/",
   },
   {
-    rank: 9,
+    rank: 10,
     name: "Smokeball",
     score: "4.5",
     access: "Zapier and API access by request",
@@ -136,7 +149,7 @@ const vendors: Vendor[] = [
     href: "https://support.smokeball.com/hc/en-us/articles/15431574575511-Zapier-Integration",
   },
   {
-    rank: 11,
+    rank: 12,
     name: "Lead Docket",
     score: "4.0",
     access: "Filevine integrations, automations, and documented webhook activity",
@@ -145,17 +158,6 @@ const vendors: Vendor[] = [
     publication:
       "Capabilities appear mainly in Filevine product specifications and release notes.",
     href: "https://www.filevine.com/legal/product-specifications/",
-  },
-  {
-    rank: 11,
-    name: "SmartAdvocate",
-    score: "4.0",
-    access: "Large partner ecosystem and custom integrations",
-    verdict:
-      "The ecosystem is broad, but public API, CLI, MCP, and event documentation was not readily available for independent review.",
-    publication:
-      "SmartAdvocate publishes AI and integration material, but no CLI-first or headless paper was located.",
-    href: "https://www.smartadvocate.com/",
   },
 ];
 
@@ -178,12 +180,17 @@ const faqs = [
   {
     question: "Which PI case management vendor is most ready for external AI agents?",
     answer:
-      "Among the vendors reviewed in July 2026, Litify had the strongest overall machine-operable foundation because it inherits Salesforce APIs, events, automation, and CLI tooling. Filevine and Clio were close behind because of their public APIs and webhook documentation.",
+      "Among the vendors reviewed in July 2026, Litify had the strongest overall machine-operable foundation because it inherits Salesforce APIs, events, CLI tooling, and generally available hosted MCP servers. Filevine and Clio followed because of their public APIs and webhook documentation.",
   },
   {
-    question: "Do Filevine, CASEpeer, SmartAdvocate, or Neos have a public CLI?",
+    question: "Which PI legal software vendors support MCP?",
     answer:
-      "No dedicated first-party CLI or MCP server was located in the public documentation reviewed for Filevine, CASEpeer, SmartAdvocate, or Neos. They offer different combinations of APIs, integrations, webhooks, partner programs, and vendor-owned AI features.",
+      "Litify customers can use Salesforce-hosted MCP servers, subject to Salesforce edition, configuration, permissions, and validation of the relevant Litify objects and actions. SmartAdvocate explicitly advertises a first-party MCP server connecting external AI platforms to case data and documents. Clio has announced a forthcoming MCP connector for Vincent legal research, but not a generally available Clio Manage case-management MCP server.",
+  },
+  {
+    question: "Do Filevine, CASEpeer, or Neos have a public MCP server?",
+    answer:
+      "No dedicated first-party MCP server was located in the public documentation reviewed for Filevine, CASEpeer, or Neos. They offer different combinations of APIs, integrations, webhooks, partner programs, and vendor-owned AI features.",
   },
   {
     question: "Can headless legal software reduce labor costs?",
@@ -347,10 +354,11 @@ export default function BlogPostPage() {
           </p>
           <p className="mt-4 leading-relaxed text-foreground/75">
             Most PI vendors are not there yet. Several have strong APIs. Several
-            have impressive AI inside their own products. Almost none expose a
-            dedicated first-party CLI or MCP server for a firm&apos;s own agents.
-            That gap will shape vendor economics, implementation speed, and how
-            much administrative labor a firm can actually remove.
+            have impressive AI inside their own products. Two relevant MCP paths
+            now stand out: Salesforce-hosted MCP for Litify environments and
+            SmartAdvocate&apos;s first-party MCP server. That scarcity will shape
+            vendor economics, implementation speed, and how much administrative
+            labor a firm can actually remove.
           </p>
         </section>
 
@@ -373,9 +381,11 @@ export default function BlogPostPage() {
               idempotency, approval gates, and reliable error handling.
             </li>
             <li className="list-disc">
-              <strong>Litify, Filevine, and Clio lead this review.</strong>{" "}
-              Litify benefits from Salesforce&apos;s CLI and platform tooling.
-              Filevine and Clio publish strong API and webhook documentation.
+              <strong>Litify leads this review.</strong> It benefits from
+              Salesforce&apos;s hosted MCP, CLI, API, event, permission, and
+              audit infrastructure. Filevine and Clio publish strong API and
+              webhook documentation. SmartAdvocate now stands out as the most
+              explicit PI-specific first-party MCP offering.
             </li>
             <li className="list-disc">
               <strong>The labor opportunity is real but conditional.</strong>{" "}
@@ -416,6 +426,105 @@ export default function BlogPostPage() {
             a person where to click, the software is not headless. If an
             authorized agent can retrieve the right record, take a bounded
             action, return structured evidence, and leave an audit trail, it is.
+          </p>
+        </section>
+
+        <section className="space-y-6">
+          <div>
+            <h2 className="text-2xl font-semibold text-[#00ff41]">
+              API vs. MCP: what is the difference?
+            </h2>
+            <p className="mt-4">
+              MCP does not replace an API. It usually sits above APIs, databases,
+              and application logic and presents selected capabilities in a
+              standard format designed for AI agents.
+            </p>
+          </div>
+
+          <div className="overflow-x-auto rounded-lg border border-primary/20">
+            <table className="min-w-[680px] w-full text-left text-sm">
+              <thead className="bg-[#04150d] text-primary">
+                <tr>
+                  <th className="px-4 py-3 font-semibold">Question</th>
+                  <th className="px-4 py-3 font-semibold">API</th>
+                  <th className="px-4 py-3 font-semibold">MCP server</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  [
+                    "Designed primarily for",
+                    "Developers and deterministic software integrations",
+                    "LLM clients and AI agents",
+                  ],
+                  [
+                    "How capabilities are found",
+                    "The developer reads documentation and codes against endpoints",
+                    "The agent can discover declared tools, resources, prompts, and schemas",
+                  ],
+                  [
+                    "Integration work",
+                    "A custom connector is usually built for each application",
+                    "One MCP server can serve multiple compatible AI clients",
+                  ],
+                  [
+                    "Typical interface",
+                    "URLs, methods, request bodies, responses, and webhooks",
+                    "Named tools with descriptions, typed inputs, outputs, and context",
+                  ],
+                  [
+                    "Control model",
+                    "Whatever authentication, permissions, and logging the API implements",
+                    "The server exposes a deliberately bounded tool catalog, but still depends on strong authentication, permissions, and auditing",
+                  ],
+                ].map(([question, api, mcp]) => (
+                  <tr
+                    key={question}
+                    className="border-t border-primary/15 align-top"
+                  >
+                    <td className="px-4 py-4 font-semibold text-foreground">
+                      {question}
+                    </td>
+                    <td className="px-4 py-4 text-foreground/75">{api}</td>
+                    <td className="px-4 py-4 text-foreground/75">{mcp}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            The practical difference is discoverability. A conventional API may
+            contain hundreds of endpoints, but the agent does not automatically
+            know which endpoint represents a safe business action. An MCP server
+            can advertise a narrower tool such as &quot;find overdue medical
+            records requests&quot; or &quot;draft a client status update,&quot;
+            including the fields it accepts and the output it returns. The agent
+            can reason about when to call that tool without every AI product
+            building a separate Filevine, Litify, or SmartAdvocate connector.
+          </p>
+          <p>
+            That makes MCP useful in three ways: it reduces integration work,
+            makes capabilities portable across compatible AI clients, and gives
+            the vendor or firm a place to define exactly which actions an agent
+            may take. The{" "}
+            <a
+              href="https://modelcontextprotocol.io/specification/2025-06-18/server/tools"
+              target="_blank"
+              rel="noreferrer"
+              className="font-medium text-primary underline decoration-primary/40 underline-offset-4"
+            >
+              MCP tools specification
+            </a>{" "}
+            requires servers to describe callable tools and their input schemas.
+          </p>
+          <p>
+            MCP is not automatically secure. A poorly designed MCP server can
+            expose excessive data or dangerous actions just as a poorly designed
+            API can. PI firms still need least-privilege access, read-only
+            defaults, confirmation for consequential writes, source validation,
+            complete audit logs, and defenses against prompt injection and
+            malicious tool instructions.
           </p>
         </section>
 
@@ -599,7 +708,8 @@ export default function BlogPostPage() {
             {[
               ["30%", "Public read/write API breadth and documentation"],
               ["20%", "Webhooks, events, and automation triggers"],
-              ["20%", "First-party CLI, MCP, or equivalent machine interface"],
+              ["15%", "First-party MCP availability, scope, and maturity"],
+              ["5%", "CLI, SDK, or equivalent programmable interface"],
               ["10%", "Developer access, test environment, and friction"],
               ["10%", "Structured schemas, outputs, and error behavior"],
               ["10%", "Evidence of safe external-agent composability"],
@@ -685,11 +795,11 @@ export default function BlogPostPage() {
 
           <div className="space-y-4">
             <h3 className="text-xl font-semibold text-primary">
-              1. Litify has the strongest foundation, but it is not plug-and-play
+              1. Litify has the strongest foundation, including hosted MCP
             </h3>
             <p>
               Litify is built on Salesforce, so it inherits a mature REST
-              platform, events, flows, permissions, developer tooling, and the{" "}
+              platform, events, flows, permissions, developer tooling, the{" "}
               <a
                 href="https://developer.salesforce.com/tools/salesforcecli"
                 target="_blank"
@@ -698,14 +808,28 @@ export default function BlogPostPage() {
               >
                 Salesforce CLI
               </a>
-              . Litify is also moving toward agentic operation through ACE, its
-              Agentic Case Expert.
+              , and{" "}
+              <a
+                href="https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.html"
+                target="_blank"
+                rel="noreferrer"
+                className="font-medium text-primary underline decoration-primary/40 underline-offset-4"
+              >
+                Salesforce-hosted MCP servers
+              </a>
+              . Those hosted servers are generally available for Enterprise
+              Edition organizations and above and can expose Salesforce records,
+              flows, Apex actions, and queries to authorized MCP clients. Litify
+              is also moving toward agentic operation through ACE, its Agentic
+              Case Expert.
             </p>
             <p>
               That makes Litify the closest platform in this review to a true
               agent-operable legal stack. The tradeoff is complexity. Salesforce
               flexibility can create excellent infrastructure or an expensive,
-              brittle implementation. The score reflects capability, not ease.
+              brittle implementation. Firms should confirm that their edition,
+              Litify package objects, custom flows, and required actions are
+              exposed and permitted. The score reflects capability, not ease.
             </p>
           </div>
 
@@ -755,7 +879,43 @@ export default function BlogPostPage() {
 
           <div className="space-y-4">
             <h3 className="text-xl font-semibold text-primary">
-              3. Strong proprietary agents can coexist with a closed platform
+              3. SmartAdvocate is the clearest PI-specific MCP entrant
+            </h3>
+            <p>
+              SmartAdvocate now explicitly lists a{" "}
+              <a
+                href="https://www.smartadvocate.com/smart-intelligence"
+                target="_blank"
+                rel="noreferrer"
+                className="font-medium text-primary underline decoration-primary/40 underline-offset-4"
+              >
+                first-party MCP server
+              </a>{" "}
+              that lets technical teams connect external AI platforms such as
+              Claude to SmartAdvocate case data and documents. Its separate{" "}
+              <a
+                href="https://www.smartadvocate.com/article/the-mcp-standard-the-high-speed-bridge-between-your-data-and-the-future"
+                target="_blank"
+                rel="noreferrer"
+                className="font-medium text-primary underline decoration-primary/40 underline-offset-4"
+              >
+                MCP article
+              </a>{" "}
+              describes real-time, bidirectional access.
+            </p>
+            <p>
+              That is a substantial external-agent signal and moves
+              SmartAdvocate from the bottom tier to fourth place in this review.
+              The score stops at 7.0 because its public materials do not yet
+              provide the technical depth needed to independently verify the
+              exact tool catalog, authentication flows, write permissions,
+              webhook coverage, approval controls, or audit semantics.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-xl font-semibold text-primary">
+              4. Strong proprietary agents can coexist with a closed platform
             </h3>
             <p>
               Supio, EvenUp, Neos, Litify, and Filevine all describe AI that can
@@ -780,7 +940,7 @@ export default function BlogPostPage() {
 
           <div className="space-y-4">
             <h3 className="text-xl font-semibold text-primary">
-              4. The middle of the market has APIs, but access friction matters
+              5. The middle of the market has APIs, but access friction matters
             </h3>
             <p>
               PracticePanther&apos;s public documentation is stronger than its
@@ -801,19 +961,29 @@ export default function BlogPostPage() {
 
           <div className="space-y-4">
             <h3 className="text-xl font-semibold text-primary">
-              5. No PI vendor reviewed has made the CLI the product
+              6. MCP support exists, but remains narrow and uneven
             </h3>
             <p>
-              We did not locate a dedicated, first-party PI case-management CLI
-              or public MCP server among the vendors reviewed. Litify is the
-              partial exception because it inherits Salesforce CLI tooling.
+              Two current paths stand out. Litify can inherit generally
+              available Salesforce-hosted MCP infrastructure, while
+              SmartAdvocate advertises a PI-specific first-party MCP server.
+              Neither should be reduced to a checkbox: buyers must verify which
+              case objects, documents, actions, permissions, and audit records
+              are actually exposed in their environment.
             </p>
             <p>
-              That is the market gap. The first PI platform to expose its core
-              case actions as supported, permission-aware, auditable commands
-              will make itself dramatically easier for AI agents to use. It may
-              also reduce the cost of every integration partner building on top
-              of it.
+              Clio has announced an MCP connector that will make Vincent legal
+              research available inside Perplexity&apos;s Computer for Counsel.
+              It is set to launch in the coming months and does not establish a
+              generally available MCP surface for Clio Manage case-management
+              records or actions, so Clio&apos;s current score does not change.
+            </p>
+            <p>
+              No dedicated first-party MCP server was located in the public
+              materials reviewed for Filevine, PracticePanther, Neos, Supio,
+              CASEpeer, MyCase, EvenUp, Smokeball, or Lead Docket. Supio discusses
+              MCP as a way to connect general AI tools to legal databases, but
+              that is not evidence of a Supio-operated MCP server.
             </p>
           </div>
         </section>
@@ -867,6 +1037,10 @@ export default function BlogPostPage() {
                 "https://www.litify.com/blog/introducing-litify-ace-the-agentic-case-expert",
               ],
               [
+                "SmartAdvocate: MCP for law firms",
+                "https://www.smartadvocate.com/article/the-mcp-standard-the-high-speed-bridge-between-your-data-and-the-future",
+              ],
+              [
                 "Supio: Supio Agent launch",
                 "https://www.supio.com/press/supio-launches-supio-agent-transforming-how-plaintiff-law-firms-operate",
               ],
@@ -881,6 +1055,10 @@ export default function BlogPostPage() {
               [
                 "EvenUp: integration architecture",
                 "https://www.evenuplaw.com/products/integrations/",
+              ],
+              [
+                "Clio: forthcoming Vincent MCP connector",
+                "https://www.clio.com/about/press/clio-perplexity-partnership/",
               ],
             ].map(([label, href]) => (
               <a
