@@ -156,7 +156,7 @@ export function IntakeAutomationPage({
           className="object-cover object-[62%_center]"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/65" />
+        <div className="absolute inset-0 bg-black/70" />
         <div className="absolute inset-y-0 left-0 w-full bg-black/30 lg:w-[62%]" />
 
         <div className="relative mx-auto w-full max-w-6xl px-4 pb-14 pt-32 sm:px-6 sm:pb-16 lg:pb-20">
@@ -174,7 +174,7 @@ export function IntakeAutomationPage({
             They were just in a crash. Your firm has one minute to make them
             feel taken care of.
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-7 text-white/78 sm:text-lg sm:leading-8">
+          <p className="mt-6 max-w-2xl text-base leading-7 text-white/80 sm:text-lg sm:leading-8">
             A police report or inquiry arrives. Before the prospect calls the
             next firm, Possible Minds can organize the facts, prepare a
             personalized response, generate the right retainer, and give your
@@ -191,7 +191,7 @@ export function IntakeAutomationPage({
               asChild
               size="lg"
               variant="outline"
-              className="border-white/35 bg-black/35 text-white hover:bg-black/60"
+              className="border-white/40 bg-black/40 text-white hover:bg-black/60"
             >
               <Link href="#response-workflow">
                 See the response workflow
@@ -199,7 +199,7 @@ export function IntakeAutomationPage({
               </Link>
             </Button>
           </div>
-          <p className="mt-6 text-xs leading-5 text-white/55">
+          <p className="mt-6 text-xs leading-5 text-white/60">
             Designed to work with Lead Docket, Filevine, Clio, email, forms,
             scheduling, and e-signature. Human approval remains in the loop.
           </p>
@@ -215,13 +215,13 @@ export function IntakeAutomationPage({
             <h2 className="mt-4 text-3xl font-semibold leading-tight text-white sm:text-4xl">
               The intake race starts before anyone on your team opens the lead.
             </h2>
-            <p className="mt-5 text-base leading-7 text-foreground/72 sm:text-lg">
+            <p className="mt-5 text-base leading-7 text-foreground/70 sm:text-lg">
               The person on the other side is not comparing software. They are
               trying to decide who will help them. They may be in pain, without
               a car, worried about work, and repeating the story to several
               firms.
             </p>
-            <p className="mt-5 text-base leading-7 text-foreground/72 sm:text-lg">
+            <p className="mt-5 text-base leading-7 text-foreground/70 sm:text-lg">
               The first useful response creates relief. It proves the firm is
               paying attention and turns uncertainty into a concrete next step.
               Speed matters because trust begins forming before the first legal
@@ -238,7 +238,7 @@ export function IntakeAutomationPage({
                 <p className="text-xs font-semibold uppercase text-primary">
                   Live intake workflow
                 </p>
-                <p className="mt-1 text-sm text-foreground/55">
+                <p className="mt-1 text-sm text-foreground/60">
                   Police report received by email
                 </p>
               </div>
@@ -262,12 +262,12 @@ export function IntakeAutomationPage({
                         className={`h-4 w-4 ${
                           index === responseTimeline.length - 1
                             ? "text-[#00ff41]"
-                            : "text-primary/65"
+                            : "text-primary/60"
                         }`}
                       />
                       <h3 className="font-semibold text-white">{event.title}</h3>
                     </div>
-                    <p className="mt-2 text-sm leading-6 text-foreground/62">
+                    <p className="mt-2 text-sm leading-6 text-foreground/60">
                       {event.detail}
                     </p>
                   </div>
@@ -313,7 +313,7 @@ export function IntakeAutomationPage({
                 <h3 className="text-lg font-semibold text-white">
                   {step.title}
                 </h3>
-                <p className="text-sm leading-7 text-foreground/66">
+                <p className="text-sm leading-7 text-foreground/70">
                   {step.body}
                 </p>
               </div>
@@ -387,7 +387,7 @@ export function IntakeAutomationPage({
                   <h3 className="mt-5 text-lg font-semibold text-white">
                     {control.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-7 text-foreground/65">
+                  <p className="mt-3 text-sm leading-7 text-foreground/70">
                     {control.body}
                   </p>
                 </div>
@@ -526,7 +526,7 @@ export function IntakeAutomationPage({
               className="grid gap-3 py-7 md:grid-cols-[0.8fr_1.2fr] md:gap-10"
             >
               <h3 className="text-lg font-semibold text-white">{faq.question}</h3>
-              <p className="text-sm leading-7 text-foreground/68">{faq.answer}</p>
+              <p className="text-sm leading-7 text-foreground/70">{faq.answer}</p>
             </div>
           ))}
         </div>
