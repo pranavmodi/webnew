@@ -43,21 +43,11 @@ export default function ThesisPage() {
               The gap in the market
             </h2>
             <p>
-              Personal injury firms already have useful systems of record for:
+              Personal injury firms already have useful systems of record for
+              leads, matters, documents, tasks, deadlines, calls, and client
+              communication. What these systems do not execute is the work
+              between them.
             </p>
-            <ul className="space-y-2 pl-6">
-              {[
-                "Leads and intake",
-                "Matters and documents",
-                "Tasks and deadlines",
-                "Calls and client communication",
-              ].map((item) => (
-                <li key={item} className="list-disc pl-1 marker:text-primary">
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <p>What these systems do not execute is the work between them.</p>
             <p>
               Incumbents are adding AI features inside their products, but each
               feature remains confined to its product. Firms need an execution
@@ -115,24 +105,10 @@ export default function ThesisPage() {
             </p>
             <p>
               That operating knowledge supports expansion across the case
-              lifecycle:
-            </p>
-            <ul className="space-y-2 pl-6">
-              {[
-                "Case opening and client communication",
-                "Records and treatment coordination",
-                "Demand preparation",
-                "Settlement, liens, and disbursement",
-                "Vendor governance",
-              ].map((item) => (
-                <li key={item} className="list-disc pl-1 marker:text-primary">
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <p>
-              The long-term product is a firm-owned execution layer, not a
-              bundle of disconnected AI features.
+              lifecycle: case opening, client communication, records, treatment,
+              demands, liens, disbursement, and vendor governance. The long-term
+              product is a firm-owned execution layer, not a bundle of
+              disconnected AI features.
             </p>
           </section>
 
@@ -180,20 +156,10 @@ export default function ThesisPage() {
             </p>
             <p>
               Our deployment playbooks improve with each implementation. The
-              resulting systems remain governed and owned by the firm through:
+              resulting systems remain governed and owned by the firm through
+              documented operating rules, human-review thresholds, complete
+              audit logs, and explicit vendor and data boundaries.
             </p>
-            <ul className="space-y-2 pl-6">
-              {[
-                "Documented operating rules",
-                "Human-review thresholds",
-                "Complete audit logs",
-                "Explicit vendor and data boundaries",
-              ].map((item) => (
-                <li key={item} className="list-disc pl-1 marker:text-primary">
-                  {item}
-                </li>
-              ))}
-            </ul>
           </section>
         </div>
 
