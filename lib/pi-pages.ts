@@ -21,13 +21,13 @@ export const piProblemPages: PiProblemPage[] = [
   {
     slug: "intake-automation",
     navLabel: "Intake & Conversion",
-    title: "Rapid Intake Response for Personal Injury Firms",
+    title: "AI-Assisted Rapid Intake Response for PI Firms",
     shortTitle: "Rapid Intake Response",
     metaDescription:
-      "Turn PI inquiries, web forms, and police reports into a reviewed response, qualified lead, retainer, and measurable path to a signed case in minutes.",
+      "AI intake automation for PI firms that identifies priority matters, briefs the right human, accelerates attorney response, and improves conversion to signed cases.",
     eyebrow: "Rapid Intake Response",
     intro:
-      "A prospective client has just been injured. They are stressed, uncertain, and likely contacting more than one firm. Possible Minds helps your team understand the inquiry, prepare the right response, and move toward a signed retainer while intent is still high.",
+      "A prospective client has just been injured. They are stressed, uncertain, and may be contacting more than one firm. Possible Minds organizes the inquiry, identifies when human presence matters, and gets the right intake specialist or lawyer into the conversation while intent is still high.",
     buyerProblem:
       "The firm pays to create demand, but delays, manual data entry, weak follow-up, and unsigned retainers allow qualified prospects to sign somewhere else.",
     bestFit:
@@ -42,7 +42,7 @@ export const piProblemPages: PiProblemPage[] = [
       "Receive the inquiry from a call, form, chat, email, referral, or intake system.",
       "Read the submission and supporting records, then structure the relevant facts with source evidence.",
       "Apply firm-approved qualification, routing, and escalation rules.",
-      "Prepare a personalized response, booking step, and approved retainer for human review.",
+      "Brief the right intake specialist, closer, or lawyer and trigger the firm's human-response plan.",
       "Send, follow up, and synchronize the final state across the firm's existing systems.",
     ],
     proof: [
@@ -51,6 +51,11 @@ export const piProblemPages: PiProblemPage[] = [
       "Vendor-neutral connectors preserve the firm's existing systems of record.",
     ],
     faqs: [
+      {
+        question: "Will a chatbot handle our most valuable cases?",
+        answer:
+          "No. The system is designed to recognize urgency, severity, competitive-shopping signals, and other firm-defined triggers. It organizes the facts and alerts the right person so a lawyer or intake closer can take over while the prospect is still engaged.",
+      },
       {
         question: "Does the system automatically accept a case?",
         answer:
@@ -91,29 +96,29 @@ export const piProblemPages: PiProblemPage[] = [
   {
     slug: "after-hours-intake",
     navLabel: "After-Hours Intake",
-    title: "After-Hours AI Intake for PI Firms",
+    title: "After-Hours Intake Coverage for PI Firms",
     shortTitle: "After-Hours Intake",
     metaDescription:
-      "After-hours AI intake for personal injury firms that responds to web leads, missed calls, and overflow inquiries before prospects call another firm.",
+      "AI-assisted after-hours intake coverage for PI firms that acknowledges every inquiry, captures essential facts, and escalates priority matters to a human.",
     eyebrow: "Missed Calls & Web Leads",
     intro:
-      "The most expensive intake gap is often the unstaffed moment: nights, weekends, lunch breaks, overflow, and voicemail. After-hours AI intake gives a prospect a real next step when the alternative is silence.",
+      "The most expensive intake gap is often the unstaffed moment: nights, weekends, lunch breaks, overflow, and voicemail. Every inquiry gets an immediate next step, while serious, urgent, or competitive matters trigger the firm's human escalation plan.",
     buyerProblem:
       "Good prospects reach the firm outside staffed hours or during call spikes, then keep searching and sign somewhere else.",
     bestFit:
       "Best for PI firms with paid lead spend, after-hours form fills, missed-call logs, or intake teams that cannot reliably cover every channel.",
     outcomes: [
       "Less lead leakage from nights, weekends, and overflow",
-      "Immediate qualification when staff are unavailable",
-      "Structured handoff for next-business-day follow-up",
+      "Immediate acknowledgment and fact capture when staff are unavailable",
+      "Human escalation for urgent, serious, or competitive matters",
       "Cleaner reporting on when and where intake leaks happen",
     ],
     workflow: [
       "Detect the unstaffed inquiry or missed call.",
-      "Start a safe qualification conversation.",
+      "Acknowledge the prospect and capture the essential facts.",
       "Capture incident, injury, treatment, insurance, and contact details.",
-      "Escalate urgent or high-value matters according to firm rules.",
-      "Send staff a concise summary before the next callback.",
+      "Trigger the on-call lawyer, intake closer, or live-transfer path when firm rules match.",
+      "Give the responding person a concise briefing before the human conversation.",
     ],
     proof: [
       "The outbound voice solution page already focuses on missed-call and after-hours response.",
@@ -124,7 +129,7 @@ export const piProblemPages: PiProblemPage[] = [
       {
         question: "Is this a replacement for human intake staff?",
         answer:
-          "No. It covers the moments when staff are not present or cannot answer fast enough, then hands off to people.",
+          "No. It covers the delay around unstaffed or overloaded moments, then brings in the right person. The product is designed to make human response faster, not make valuable prospects negotiate with a bot.",
       },
       {
         question: "Can it respond to web forms, missed calls, and chat inquiries at night?",
@@ -139,7 +144,7 @@ export const piProblemPages: PiProblemPage[] = [
       {
         question: "What should happen with urgent cases?",
         answer:
-          "Urgent cases should follow explicit escalation rules, such as sending an alert, routing to a live line, or marking the lead for immediate review.",
+          "Urgent, serious, or competitive matters should follow explicit escalation rules: alert the on-call person, route to a live line, or trigger an immediate lawyer or closer callback with the facts already organized.",
       },
       {
         question: "Can after-hours intake work in Spanish or other languages?",

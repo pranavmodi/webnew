@@ -40,13 +40,13 @@ const responseTimeline = [
   },
   {
     time: "00:36",
-    title: "Firm rules applied",
-    detail: "The matter is matched, routed, and checked for missing facts, conflicts, and escalation triggers.",
+    title: "Priority assessed",
+    detail: "Urgency, severity, competitive-shopping signals, conflicts, and firm-specific escalation triggers are checked.",
   },
   {
     time: "<01:00",
-    title: "Response ready",
-    detail: "A personalized message, booking step, retainer, and system updates are ready for human review.",
+    title: "Right human activated",
+    detail: "Priority matters alert the appropriate lawyer or intake closer with a call-ready briefing and next action.",
   },
 ];
 
@@ -68,16 +68,16 @@ const conversionSteps = [
   {
     number: "03",
     icon: GitMerge,
-    title: "Qualify and route",
+    title: "Recognize the decisive moment",
     body:
-      "Apply the firm's case criteria, urgency rules, jurisdiction logic, language preferences, and attorney-review thresholds.",
+      "Apply the firm's case criteria and detect urgency, serious injuries, competitive shopping, language needs, and attorney-review triggers.",
   },
   {
     number: "04",
     icon: MessageSquareText,
-    title: "Make the first response count",
+    title: "Activate the right human",
     body:
-      "Prepare a message that reflects the prospect's actual situation, shows that the firm listened, and gives one clear next step.",
+      "Alert the appropriate intake specialist, closer, or lawyer with the facts organized so they can call or text without making the prospect repeat the story.",
   },
   {
     number: "05",
@@ -96,25 +96,25 @@ const conversionSteps = [
 ];
 
 const prospectExperience = [
-  "An immediate sign that the firm is present",
-  "A response that reflects the facts they provided",
-  "A clear path to the right human when the matter is urgent",
+  "An immediate sign that a real firm is present",
+  "A human response that reflects the facts they provided",
+  "Direct access to the right person when the matter is serious",
   "One understandable next step: talk, book, review, or sign",
 ];
 
 const firmExperience = [
   "A structured intake record without re-keying the same facts",
   "Evidence, warnings, and proposed actions in one review workspace",
-  "The right intake specialist or attorney involved at the right time",
+  "The right intake specialist, closer, or lawyer involved at the right time",
   "A measurable trail from lead source to signed and accepted matter",
 ];
 
 const controls = [
   {
     icon: UserRoundCheck,
-    title: "Human approval by default",
+    title: "Human presence by design",
     body:
-      "The team reviews the facts, scope, message, agreement, and proposed external actions before consequential sends.",
+      "Serious and competitive matters are designed to reach a lawyer or intake closer. AI prepares the moment; a person builds the trust.",
   },
   {
     icon: ShieldCheck,
@@ -131,11 +131,11 @@ const controls = [
 ];
 
 const metrics = [
-  "Time to first response",
-  "Contact and qualification rate",
-  "Retainers sent, opened, and signed",
-  "Time from inquiry to signature",
-  "Wanted cases lost by reason",
+  "Time to meaningful human contact",
+  "Time to lawyer contact for priority matters",
+  "Priority leads reached within the firm's SLA",
+  "Qualified lead-to-human-conversation rate",
+  "Retainer conversion after human involvement",
   "Source-to-accepted-case conversion",
 ];
 
@@ -168,17 +168,17 @@ export function IntakeAutomationPage({
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
           <p className="mt-8 text-sm font-semibold uppercase text-primary">
-            Rapid intake response
+            AI-assisted, human-led intake
           </p>
           <h1 className="mt-4 max-w-4xl text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
             They were just in a crash. Your firm has one minute to make them
             feel taken care of.
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-7 text-white/80 sm:text-lg sm:leading-8">
-            A police report or inquiry arrives. Before the prospect calls the
-            next firm, Possible Minds can organize the facts, prepare a
-            personalized response, generate the right retainer, and give your
-            team one review screen to move the matter forward.
+            Within one minute, your team should know what happened, whether the
+            matter appears urgent or competitive, and who should respond.
+            Possible Minds prepares the brief, alerts the right person, and
+            puts the conversation in human hands while intent is still high.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild size="lg">
@@ -200,8 +200,8 @@ export function IntakeAutomationPage({
             </Button>
           </div>
           <p className="mt-6 text-xs leading-5 text-white/60">
-            Designed to work with Lead Docket, Filevine, Clio, email, forms,
-            scheduling, and e-signature. Human approval remains in the loop.
+            AI handles capture, organization, routing, and follow-through. Your
+            intake team and lawyers handle empathy, judgment, and the close.
           </p>
         </div>
       </section>
@@ -213,7 +213,7 @@ export function IntakeAutomationPage({
               The prospect&apos;s reality
             </p>
             <h2 className="mt-4 text-3xl font-semibold leading-tight text-white sm:text-4xl">
-              The intake race starts before anyone on your team opens the lead.
+              Automate the delay, not the relationship.
             </h2>
             <p className="mt-5 text-base leading-7 text-foreground/70 sm:text-lg">
               The person on the other side is not comparing software. They are
@@ -222,10 +222,10 @@ export function IntakeAutomationPage({
               firms.
             </p>
             <p className="mt-5 text-base leading-7 text-foreground/70 sm:text-lg">
-              The first useful response creates relief. It proves the firm is
-              paying attention and turns uncertainty into a concrete next step.
-              Speed matters because trust begins forming before the first legal
-              conversation.
+              The first meaningful human response creates relief. It proves the
+              firm is paying attention and turns uncertainty into a concrete
+              next step. AI should make that human available sooner, not stand
+              between the prospect and the firm.
             </p>
           </div>
 
@@ -276,7 +276,8 @@ export function IntakeAutomationPage({
             </div>
             <div className="border-t border-primary/20 bg-[#031009] px-5 py-4 text-sm text-foreground/70">
               <span className="font-semibold text-white">Next action:</span>{" "}
-              intake specialist reviews the exact package before send.
+              the right lawyer or intake closer receives a call-ready brief and
+              responds while the prospect is still engaged.
             </div>
           </div>
         </div>
@@ -288,8 +289,8 @@ export function IntakeAutomationPage({
             From inquiry to signed case
           </p>
           <h2 className="mt-4 text-3xl font-semibold leading-tight text-white sm:text-4xl">
-            Fast response is not one message. It is a connected conversion
-            system.
+            The system gets the right person into the conversation, then keeps
+            everything around them moving.
           </h2>
           <p className="mt-5 text-base leading-7 text-foreground/70 sm:text-lg">
             The product coordinates the work that usually gets spread across an
@@ -366,10 +367,10 @@ export function IntakeAutomationPage({
         <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr]">
           <div>
             <p className="text-sm font-semibold uppercase text-primary">
-              Fast, with boundaries
+              Human-led by design
             </p>
             <h2 className="mt-4 text-3xl font-semibold leading-tight text-white sm:text-4xl">
-              Automation wins time. People keep the consequential decisions.
+              AI creates the opening. Your people build the trust.
             </h2>
             <p className="mt-5 text-base leading-7 text-foreground/70">
               The goal is not to make a vulnerable prospect negotiate with a
@@ -452,10 +453,10 @@ export function IntakeAutomationPage({
               Know why a lead became a case, or where it disappeared.
             </h2>
             <p className="mt-5 text-base leading-7 text-foreground/70">
-              Faster response only matters if it improves contact,
-              qualification, signature, and final acceptance. The system keeps
-              the denominator visible so a conversion rate cannot improve by
-              quietly ignoring difficult leads.
+              Speed only matters if the prospect reaches a person who can build
+              trust and move the case forward. The system measures human access,
+              priority escalation, signature, and final acceptance instead of
+              celebrating an automated acknowledgment.
             </p>
           </div>
           <div className="grid gap-px bg-primary/15 sm:grid-cols-2">
@@ -495,9 +496,9 @@ export function IntakeAutomationPage({
                 cases.
               </h2>
               <p className="mt-5 text-base leading-7 text-foreground/70">
-                The implementation paired immediate outreach with structured
-                qualification and follow-up around the firm&apos;s existing
-                intake operation.
+                The implementation used automation to create immediate outreach,
+                structure qualification, and connect ready prospects to the
+                firm&apos;s human intake operation.
               </p>
               <Button asChild size="lg" variant="outline" className="mt-7 w-fit">
                 <Link href="/law-case-study">

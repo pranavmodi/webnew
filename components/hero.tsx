@@ -5,9 +5,9 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 const intakeSignals = [
-  "Missed and after-hours leads",
-  "Slow or inconsistent follow-up",
-  "Unsigned retainers and broken handoffs",
+  "Priority cases escalated in seconds",
+  "Your team gets context before responding",
+  "Retainers and follow-up keep moving",
 ];
 
 export function Hero() {
@@ -35,10 +35,10 @@ export function Hero() {
             Recover the PI cases your firm is already paying for.
           </h1>
           <p className="mt-6 max-w-2xl border-l-2 border-[#00ff41]/60 pl-5 text-base leading-7 text-foreground/85 sm:text-xl sm:leading-8">
-            Possible Minds identifies where intake leads are being lost, then
-            builds AI workflows that improve response, follow-up,
-            qualification, and retainer completion without replacing your
-            case-management system.
+            Possible Minds helps serious prospects reach the right person while
+            intent is still high. AI captures the inquiry, organizes the facts,
+            and alerts the appropriate lawyer or intake closer. Your people
+            build the relationship; the system removes the delay around them.
           </p>
 
           <div className="mt-7 hidden max-w-2xl gap-3 sm:grid sm:grid-cols-3">

@@ -127,7 +127,7 @@ const faqs = [
   {
     question: "Where is AI intake safest to start?",
     answer:
-      "The lowest-resistance starting point is usually the unstaffed moment: web leads, missed calls, after-hours inquiries, and overflow follow-up. The alternative is often voicemail or a slow callback, not a present human conversation.",
+      "The safest starting point is the delay around the human conversation: acknowledging web leads and missed calls, organizing facts, detecting urgency, and alerting the right person. Serious or competitive matters should move to a lawyer or intake closer; AI should not become the relationship.",
   },
   {
     question: "How do you reduce vendor risk?",

@@ -19,7 +19,7 @@ import { SITE_URL } from "@/lib/constants";
 
 const pageTitle = "AI Intake and Operating Systems for Personal Injury Firms";
 const pageDescription =
-  "Possible Minds helps PI firms recover intake revenue and build firm-owned AI workflows without replacing their existing case-management stack.";
+  "Possible Minds helps PI firms recover intake revenue by using AI to identify priority matters, brief the right human, and remove delays around response and follow-up.";
 const pageUrl = SITE_URL;
 
 const intakeLeaks = [
@@ -36,7 +36,7 @@ const intakeLeaks = [
   {
     title: "Inconsistent qualification",
     body:
-      "Case-fit facts, urgency, language needs, and attorney-review signals are captured unevenly.",
+      "Urgency, severity, shopping signals, and attorney-review triggers are captured unevenly.",
   },
   {
     title: "Weak follow-up",
@@ -74,7 +74,7 @@ const implementationSteps = [
   {
     number: "04",
     title: "Measure",
-    body: "Track response time, contact rate, qualification, retainers, and signed cases.",
+    body: "Track time to human contact, priority escalation, retainers, and signed cases.",
   },
   {
     number: "05",
@@ -290,7 +290,7 @@ export default function Home() {
             </Button>
             <Button asChild size="lg" variant="outline">
               <Link href="/personal-injury/intake-automation">
-                Explore intake automation
+                Explore rapid intake response
               </Link>
             </Button>
           </div>
@@ -333,15 +333,15 @@ export default function Home() {
             </h2>
             <p className="mt-5 text-base leading-7 text-foreground/70">
               A 15-attorney Southern California plaintiff firm was losing
-              prospects to competitors that responded faster. We deployed
-              queue-safe voice follow-up and email automation around the
-              existing operation.
+              prospects to competitors that responded faster. We deployed rapid
+              outreach and follow-up orchestration around the existing intake
+              team so qualified prospects reached people while intent was high.
             </p>
             <div className="mt-7 space-y-3">
               {[
-                "Leads were contacted while intent was still high.",
+                "Qualified prospects reached human intake while intent was high.",
                 "Follow-up no longer depended on staff memory.",
-                "Bad-fit cases were filtered before attorney review.",
+                "High-value matters were surfaced before the opportunity cooled.",
                 "Activity flowed back into the existing intake process.",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-3">
