@@ -26,21 +26,21 @@ const staticPages = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const blogPages = blogPosts.map((post) => ({
-    url: post.href,
-    changeFrequency: "yearly" as const,
-    priority: post.tags.includes("For PI Firms") ? 0.8 : 0.7,
+  const staticEntries: MetadataRoute.Sitemap = staticPages.map((page) => ({
+    ...page,
+    url: `${SITE_URL}${page.url}`,
   }));
-  const piPages = piProblemPages.map((page) => ({
-    url: `/personal-injury/${page.slug}`,
-    changeFrequency: "monthly" as const,
+  const piEntries: MetadataRoute.Sitemap = piProblemPages.map((page) => ({
+    url: `${SITE_URL}/personal-injury/${page.slug}`,
+    changeFrequency: "monthly",
     priority: 0.85,
   }));
-
-  return [...staticPages, ...piPages, ...blogPages].map((page) => ({
-    url: `${SITE_URL}${page.url}`,
-    lastModified: new Date(),
-    changeFrequency: page.changeFrequency,
-    priority: page.priority,
+  const blogEntries: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${SITE_URL}${post.href}`,
+    lastModified: new Date(post.date),
+    changeFrequency: "yearly",
+    priority: post.tags.includes("For PI Firms") ? 0.8 : 0.7,
   }));
+
+  return [...staticEntries, ...piEntries, ...blogEntries];
 }

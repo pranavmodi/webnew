@@ -1,10 +1,10 @@
 export const SITE_NAME = "Possible Minds";
 export const BRAND_SHORT = "PossibleMinds";
 export const SITE_DESCRIPTION =
-  "Diagnostic-led AI systems for personal injury firms: intake leakage, records, liens, AI visibility, and vendor-risk controls.";
+  "AI-assisted intake systems that help personal injury firms respond faster, escalate serious matters to the right person, and recover qualified opportunities.";
 
-// All "Book a Demo" / "Book a Call" CTAs across the site point at
-// /consult — our own 30-min booking page backed by the autocaller
+// Conversion CTAs across the site point at /consult, our intake-audit booking
+// page backed by the autocaller
 // (slot picker + Postgres-saved bookings + SMS + email confirm with
 // Meet link). Kept the `CALENDLY_URL` name because it's referenced
 // from many files; the value is now an internal route.

@@ -122,7 +122,7 @@ export const piProblemPages: PiProblemPage[] = [
     ],
     proof: [
       "The outbound voice solution page already focuses on missed-call and after-hours response.",
-      "The PI case study describes response-time improvements and signed-case lift.",
+      "The PI case study documents a transparent, sub-90-second automated response target and human escalation workflow.",
       "The consult page positions missed leads as a diagnostic category.",
     ],
     faqs: [

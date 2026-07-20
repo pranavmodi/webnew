@@ -489,16 +489,16 @@ export function IntakeAutomationPage({
             </div>
             <div className="flex flex-col justify-center bg-black p-7 sm:p-10">
               <p className="text-sm font-semibold uppercase text-primary">
-                Intake conversion proof
+                Anonymized deployment
               </p>
               <h2 className="mt-4 text-3xl font-semibold leading-tight text-white">
-                A PI firm cut lead response below 90 seconds and signed 34% more
-                cases.
+                A PI firm added a sub-90-second automated response target without
+                handing the client relationship to AI.
               </h2>
               <p className="mt-5 text-base leading-7 text-foreground/70">
-                The implementation used automation to create immediate outreach,
-                structure qualification, and connect ready prospects to the
-                firm&apos;s human intake operation.
+                The system identified itself, captured the essential facts, and
+                prepared the firm&apos;s human intake operation to respond with
+                context. Lawyers and intake staff retained judgment and the close.
               </p>
               <Button asChild size="lg" variant="outline" className="mt-7 w-fit">
                 <Link href="/law-case-study">

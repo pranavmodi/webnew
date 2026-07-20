@@ -1,89 +1,100 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 import { SITE_NAME } from "@/lib/constants";
 import { ConsultBookingForm } from "./consult-booking-form";
 
 export const metadata: Metadata = {
-  title: `Free diagnostic call for PI firms | ${SITE_NAME}`,
+  title: `Intake Revenue Audit for PI Firms | ${SITE_NAME}`,
   description:
-    "Book a free diagnostic call to identify the PI firm workflow where AI can safely improve intake, records, liens, follow-up, or vendor risk.",
+    "Book a focused intake revenue audit to identify where qualified PI leads wait, lose momentum, or disappear before reaching the right person.",
 };
 
-const outcomes = [
+const auditOutcomes = [
   {
-    stat: "Find the leak",
-    title: "Pinpoint the costly workflow",
+    number: "01",
+    title: "A visible intake baseline",
     description:
-      "We look at intake response, after-hours coverage, records chasing, lien follow-up, AI visibility, and client communication to find the highest-leverage starting point.",
+      "Establish how long leads wait, where handoffs break, and which follow-up steps depend on staff memory.",
   },
   {
-    stat: "Check readiness",
-    title: "Avoid automating a broken process",
+    number: "02",
+    title: "A prioritized revenue leak",
     description:
-      "Some workflows need cleaner data, better handoffs, policy, or vendor diligence first. We name that before recommending a build.",
+      "Identify the one delay most likely to cost qualified opportunities: after-hours capture, human escalation, follow-up, or retainer completion.",
   },
   {
-    stat: "Scope the first win",
-    title: "Start narrow and measurable",
+    number: "03",
+    title: "A bounded first workflow",
     description:
-      "The best first project is usually one measurable workflow: missed-call capture, records follow-up, lien tracking, or client update automation.",
+      "Define what to automate, what must remain human, which systems are involved, and how improvement will be measured.",
   },
+];
+
+const reviewPoints = [
+  "How inquiries enter the firm across calls, forms, chat, email, and referrals",
+  "Time from inquiry to meaningful human contact",
+  "How urgent or competitive matters reach a lawyer or intake closer",
+  "What happens after the first unsuccessful contact attempt",
+  "How retainers, signatures, and final case acceptance are tracked",
 ];
 
 export default function ConsultPage() {
   return (
     <div className="bg-black pb-24">
-      {/* Hero */}
-      <section className="relative overflow-hidden border-b border-primary/15">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(0,255,65,0.15),_rgba(0,0,0,0)_55%)]" />
-        <div className="relative mx-auto max-w-5xl px-4 py-20 sm:px-6">
-          <div className="space-y-6 text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-black/70 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-              Free diagnostic call for PI firms
-            </div>
-            <h1 className="text-4xl font-semibold leading-tight tracking-tight text-[#00ff41] sm:text-5xl lg:text-6xl">
-              Start with the leak, not the demo.
-            </h1>
-            <p className="mx-auto max-w-3xl text-base text-foreground/80 sm:text-lg">
-              In 30 minutes, we look for the workflow where AI can safely create
-              leverage for your PI firm: missed leads, records, liens, client
-              updates, AI visibility, or vendor-risk controls. No slides. We tell
-              you what fits, what does not, and what should come first.
-            </p>
-            <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-              <Link
-                href="#book"
-                className="inline-flex items-center rounded-full bg-[#00ff41] px-8 py-3 text-sm font-semibold text-[#04150d] transition hover:bg-[#00ff41]/90"
-              >
-                Book a time
-              </Link>
-              <Link
-                href="/healthcare-case-study"
-                className="inline-flex items-center rounded-full border border-primary/30 px-8 py-3 text-sm font-semibold text-primary transition hover:bg-primary/10"
-              >
-                See production proof →
-              </Link>
-            </div>
+      <section className="border-b border-primary/15 bg-[#031009]">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24">
+          <p className="text-sm font-semibold uppercase text-primary">
+            Intake Revenue Audit
+          </p>
+          <h1 className="mt-5 max-w-5xl text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
+            Find where qualified leads lose momentum before they reach the right
+            person.
+          </h1>
+          <p className="mt-6 max-w-3xl text-base leading-7 text-foreground/75 sm:text-lg sm:leading-8">
+            In 30 minutes, we map one intake path and isolate the delay most likely
+            to cost signed cases. No generic AI demo and no obligation to buy. You
+            leave with a concrete starting point, even when the right answer is to
+            fix the process before adding technology.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              href="#book"
+              className="inline-flex items-center bg-[#00ff41] px-6 py-3 text-sm font-semibold text-[#04150d] transition hover:bg-[#00ff41]/90"
+            >
+              Book the audit
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+            <Link
+              href="/law-case-study"
+              className="inline-flex items-center border border-primary/35 px-6 py-3 text-sm font-semibold text-primary transition hover:bg-primary/10"
+            >
+              Review the PI deployment
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Outcomes strip */}
-      <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
-        <div className="grid gap-6 sm:grid-cols-3">
-          {outcomes.map((item) => (
+      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24">
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold uppercase text-primary">
+            What you leave with
+          </p>
+          <h2 className="mt-4 text-3xl font-semibold leading-tight text-white sm:text-4xl">
+            A decision, not another software shortlist.
+          </h2>
+        </div>
+
+        <div className="mt-12 divide-y divide-primary/15 border-y border-primary/15">
+          {auditOutcomes.map((item) => (
             <div
-              key={item.title}
-              className="rounded-2xl border border-primary/25 bg-gradient-to-br from-[#04150d] to-[#0a2618] p-6"
+              key={item.number}
+              className="grid gap-3 py-7 sm:grid-cols-[64px_260px_1fr] sm:gap-6"
             >
-              <div className="text-sm font-semibold uppercase tracking-[0.2em] text-[#00ff41]">
-                {item.stat}
-              </div>
-              <h3 className="mt-2 text-lg font-semibold text-foreground">
-                {item.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-foreground/70">
+              <span className="font-mono text-sm text-primary">{item.number}</span>
+              <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+              <p className="text-sm leading-7 text-foreground/70">
                 {item.description}
               </p>
             </div>
@@ -91,39 +102,47 @@ export default function ConsultPage() {
         </div>
       </section>
 
-      {/* Credibility */}
-      <section className="mx-auto max-w-5xl px-4 pb-16 sm:px-6">
-        <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6 sm:p-8">
-          <h2 className="text-xl font-semibold text-primary">
-            This is not a speculative AI workshop.
-          </h2>
-          <p className="mt-3 text-sm leading-relaxed text-foreground/75 sm:text-base">
-            We operate the AI backend for a 60-location medical imaging
-            provider that PI firms send thousands of cases through. That same
-            operating pattern, with human review and clear workflow boundaries,
-            is what we adapt when a PI firm has a real, measurable leak.
-          </p>
-          <Link
-            href="/healthcare-case-study"
-            className="mt-4 inline-flex items-center text-sm font-semibold text-[#00ff41] transition hover:text-[#00ff41]/80"
-          >
-            Read the case study →
-          </Link>
+      <section className="border-y border-primary/15 bg-[#031009]">
+        <div className="mx-auto grid max-w-6xl gap-12 px-4 py-20 sm:px-6 sm:py-24 lg:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <p className="text-sm font-semibold uppercase text-primary">
+              The conversation
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold leading-tight text-white sm:text-4xl">
+              Bring one real intake path.
+            </h2>
+            <p className="mt-5 text-base leading-7 text-foreground/70">
+              A recent missed lead or delayed handoff is more useful than a deck.
+              We follow the inquiry from arrival to human contact and final
+              disposition.
+            </p>
+          </div>
+
+          <div className="divide-y divide-primary/15 border-y border-primary/15">
+            {reviewPoints.map((point) => (
+              <div key={point} className="flex items-start gap-3 py-5">
+                <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-primary" />
+                <p className="text-sm leading-7 text-foreground/75">{point}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Booking form */}
-      <section id="book" className="mx-auto max-w-5xl px-4 sm:px-6">
-        <div className="text-center">
-          <h2 className="text-3xl font-semibold text-primary sm:text-4xl">
-            Pick a time
+      <section id="book" className="mx-auto max-w-5xl px-4 py-20 sm:px-6 sm:py-24">
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold uppercase text-primary">
+            Book the audit
+          </p>
+          <h2 className="mt-4 text-3xl font-semibold leading-tight text-white sm:text-4xl">
+            Choose a 30-minute time.
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base text-foreground/70">
-            30-minute slots, Pacific Time, weekdays only. We&apos;ll send you a
-            confirmation and the meeting link by email.
+          <p className="mt-4 text-base leading-7 text-foreground/70">
+            Weekday appointments are shown in Pacific Time. Tell us which part of
+            intake you want to examine, and we will come prepared.
           </p>
         </div>
-        <div className="mt-8">
+        <div className="mt-10">
           <ConsultBookingForm />
         </div>
       </section>

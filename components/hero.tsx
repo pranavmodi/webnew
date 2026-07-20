@@ -1,4 +1,7 @@
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+"use client";
+
+import { useRef, useState } from "react";
+import { ArrowRight, CheckCircle2, Pause, Play } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,6 +14,20 @@ const intakeSignals = [
 ];
 
 export function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  const togglePlayback = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (video.paused) {
+      void video.play();
+    } else {
+      video.pause();
+    }
+  };
+
   return (
     <section className="relative -mt-4 overflow-hidden bg-black">
       <div className="absolute inset-0 bg-gradient-to-b from-[#04150d] via-black to-black" />
@@ -18,7 +35,7 @@ export function Hero() {
       <div className="relative mx-auto grid min-h-[72vh] max-w-6xl items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
         <div>
           <p className="text-sm font-semibold uppercase text-[#00ff41]">
-            AI operating systems for personal injury firms
+            AI-assisted intake for personal injury firms
           </p>
           <h1 className="mt-5 text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
             Recover the PI cases your firm is already paying for.
@@ -63,18 +80,19 @@ export function Hero() {
         {/* Live intake queue. Aspect matches the source exactly (1200x900), so
             object-cover crops nothing and the panel stays on the same grid as
             the copy at every breakpoint. */}
-        <div
-          className="overflow-hidden border border-primary/20 bg-[#031009]"
-          aria-hidden="true"
-        >
+        <div className="relative overflow-hidden border border-primary/20 bg-[#031009]">
           <video
+            ref={videoRef}
             autoPlay
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             poster="/video/hero-loop-poster.png"
             className="block aspect-[4/3] w-full object-cover motion-reduce:hidden"
+            aria-hidden="true"
+            onPlay={() => setIsPlaying(true)}
+            onPause={() => setIsPlaying(false)}
           >
             <source
               src="/video/hero-loop-sm.mp4"
@@ -93,6 +111,20 @@ export function Hero() {
             priority
             className="hidden aspect-[4/3] w-full object-cover motion-reduce:block"
           />
+
+          <button
+            type="button"
+            onClick={togglePlayback}
+            aria-label={isPlaying ? "Pause intake animation" : "Play intake animation"}
+            title={isPlaying ? "Pause animation" : "Play animation"}
+            className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center border border-white/25 bg-black/75 text-white transition hover:border-primary/60 hover:text-primary motion-reduce:hidden"
+          >
+            {isPlaying ? (
+              <Pause className="h-4 w-4" aria-hidden="true" />
+            ) : (
+              <Play className="h-4 w-4" aria-hidden="true" />
+            )}
+          </button>
         </div>
       </div>
     </section>

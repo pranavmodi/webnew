@@ -116,7 +116,7 @@ export function Navbar() {
         <div className="hidden items-center gap-2 md:flex">
           <Button asChild size="sm">
             <Link href={CALENDLY_URL} target="_blank" rel="noreferrer">
-              Diagnostic call
+              Intake audit
             </Link>
           </Button>
         </div>
@@ -177,7 +177,7 @@ export function Navbar() {
               <div className="flex flex-col gap-3">
                 <Button asChild size="lg">
                   <Link href={CALENDLY_URL} target="_blank" rel="noreferrer">
-                    Diagnostic call
+                    Intake audit
                   </Link>
                 </Button>
               </div>

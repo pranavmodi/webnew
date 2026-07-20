@@ -4,21 +4,17 @@ import Link from "next/link";
 import {
   ArrowRight,
   CheckCircle2,
-  FileCheck2,
   Gauge,
-  Layers3,
-  Network,
   PhoneCall,
-  ShieldCheck,
 } from "lucide-react";
 
 import { Hero } from "@/components/hero";
-import { IntakeLeakVideo } from "@/components/intake-leak-video";
+import { IntakeLeakStory } from "@/components/intake-leak-story";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Button } from "@/components/ui/button";
 import { SITE_URL } from "@/lib/constants";
 
-const pageTitle = "AI Intake and Operating Systems for Personal Injury Firms";
+const pageTitle = "AI-Assisted Intake for Personal Injury Firms";
 const pageDescription =
   "Possible Minds helps PI firms recover intake revenue by using AI to identify priority matters, brief the right human, and remove delays around response and follow-up.";
 const pageUrl = SITE_URL;
@@ -84,70 +80,6 @@ const implementationSteps = [
   },
 ];
 
-const lifecycle = [
-  "Intake",
-  "Case opening",
-  "Records and treatment",
-  "Client communication",
-  "Demand preparation",
-  "Settlement and liens",
-];
-
-const comparisonRows = [
-  {
-    topic: "Scope",
-    typical: "A feature inside one vendor product",
-    possible: "A workflow across the firm’s existing stack",
-  },
-  {
-    topic: "Behavior",
-    typical: "Defined by the vendor",
-    possible: "Defined by the firm’s rules and escalation standards",
-  },
-  {
-    topic: "Data",
-    typical: "Useful inside one application",
-    possible: "Controlled execution across authorized systems",
-  },
-  {
-    topic: "Implementation",
-    typical: "Generic configuration",
-    possible: "PI-specific workflow design and integration",
-  },
-  {
-    topic: "Learning",
-    typical: "Remains inside the product",
-    possible: "Preserved in firm-owned rules, review history, and logs",
-  },
-];
-
-const controls = [
-  {
-    icon: ShieldCheck,
-    title: "Least-privilege access",
-    body:
-      "Each workflow receives only the data and actions required for its job.",
-  },
-  {
-    icon: FileCheck2,
-    title: "Human-review thresholds",
-    body:
-      "Sensitive, consequential, or low-confidence actions return to staff.",
-  },
-  {
-    icon: Network,
-    title: "Explicit vendor boundaries",
-    body:
-      "The firm can see which systems receive data and where operational knowledge lives.",
-  },
-  {
-    icon: Layers3,
-    title: "Complete action history",
-    body:
-      "Inputs, outputs, exceptions, approvals, and automated actions remain traceable.",
-  },
-];
-
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
@@ -194,9 +126,9 @@ export default function Home() {
       "@context": "https://schema.org",
       "@type": "Service",
       "@id": `${pageUrl}/#intake-service`,
-      name: "AI intake and operating systems for personal injury firms",
+      name: "AI-assisted intake for personal injury firms",
       serviceType:
-        "Personal injury intake automation and firm-owned AI workflow systems",
+        "Personal injury intake response and conversion workflow automation",
       provider: {
         "@id": `${SITE_URL}/#organization`,
       },
@@ -213,7 +145,7 @@ export default function Home() {
     <div className="bg-black pb-24">
       <JsonLd data={structuredData} />
       <Hero />
-      <IntakeLeakVideo />
+      <IntakeLeakStory />
 
       <section className="border-b border-primary/15 bg-[#031009]">
         <div className="mx-auto grid max-w-6xl gap-12 px-4 py-20 sm:px-6 sm:py-24 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
@@ -311,8 +243,8 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
             <div className="absolute inset-x-0 bottom-0 grid grid-cols-2 gap-px bg-white/15">
               {[
-                ["34%", "More signed cases"],
-                ["<90s", "Lead response time"],
+                ["<90s", "Automated response target"],
+                ["24/7", "Inquiry coverage"],
               ].map(([value, label]) => (
                 <div key={label} className="bg-black/85 p-5 backdrop-blur-sm">
                   <p className="text-3xl font-semibold text-[#00ff41]">
@@ -334,16 +266,16 @@ export default function Home() {
               The firm had leads. It needed an intake system that could keep up.
             </h2>
             <p className="mt-5 text-base leading-7 text-foreground/70">
-              A 15-attorney Southern California plaintiff firm was losing
-              prospects to competitors that responded faster. We deployed rapid
-              outreach and follow-up orchestration around the existing intake
-              team so qualified prospects reached people while intent was high.
+              A Southern California plaintiff firm was losing after-hours web
+              leads before its intake team could respond. We added transparent
+              automated outreach, a call-ready brief, and human escalation around
+              the team it already trusted.
             </p>
             <div className="mt-7 space-y-3">
               {[
-                "Qualified prospects reached human intake while intent was high.",
-                "Follow-up no longer depended on staff memory.",
-                "High-value matters were surfaced before the opportunity cooled.",
+                "Every inquiry entered a timestamped response path.",
+                "The AI identified itself and captured only the essential facts.",
+                "Serious matters reached a human with context.",
                 "Activity flowed back into the existing intake process.",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-3">
@@ -358,169 +290,6 @@ export default function Home() {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-y border-primary/15 bg-[#031009]">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24">
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase text-primary">
-              The larger system
-            </p>
-            <h2 className="mt-4 text-3xl font-semibold leading-tight text-white sm:text-4xl">
-              Intake is where we start. It is not where the system ends.
-            </h2>
-            <p className="mt-5 text-base leading-7 text-foreground/70 sm:text-lg">
-              Each workflow teaches the system more about the firm&apos;s rules,
-              priorities, escalation standards, and exceptions. Over time,
-              isolated automation becomes a firm-owned execution layer across
-              the case lifecycle.
-            </p>
-          </div>
-
-          <div className="mt-12 grid gap-px bg-primary/15 sm:grid-cols-2 lg:grid-cols-6">
-            {lifecycle.map((stage, index) => (
-              <div key={stage} className="min-h-36 bg-black p-5">
-                <span className="font-mono text-xs text-primary">
-                  0{index + 1}
-                </span>
-                <p className="mt-5 text-base font-semibold leading-6 text-white">
-                  {stage}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-8">
-            <Link
-              href="/personal-injury"
-              className="inline-flex items-center text-sm font-semibold text-primary transition hover:text-[#00ff41]"
-            >
-              Explore PI systems across the case lifecycle
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24">
-        <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase text-primary">
-            The product difference
-          </p>
-          <h2 className="mt-4 text-3xl font-semibold leading-tight text-white sm:text-4xl">
-            Your firm needs an execution layer, not another isolated AI feature.
-          </h2>
-        </div>
-
-        <div className="mt-10 overflow-x-auto border-y border-primary/20">
-          <table className="min-w-[760px] w-full text-left">
-            <thead>
-              <tr className="border-b border-primary/20 text-sm text-primary">
-                <th className="px-4 py-4 font-semibold">Dimension</th>
-                <th className="px-4 py-4 font-semibold">Typical vendor AI</th>
-                <th className="px-4 py-4 font-semibold">Possible Minds</th>
-              </tr>
-            </thead>
-            <tbody>
-              {comparisonRows.map((row) => (
-                <tr key={row.topic} className="border-b border-primary/10">
-                  <td className="px-4 py-5 font-semibold text-white">
-                    {row.topic}
-                  </td>
-                  <td className="px-4 py-5 text-sm leading-6 text-foreground/60">
-                    {row.typical}
-                  </td>
-                  <td className="px-4 py-5 text-sm leading-6 text-foreground/80">
-                    {row.possible}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <section className="border-y border-primary/15 bg-[#031009]">
-        <div className="mx-auto grid max-w-6xl gap-12 px-4 py-20 sm:px-6 sm:py-24 lg:grid-cols-[0.8fr_1.2fr]">
-          <div>
-            <p className="text-sm font-semibold uppercase text-primary">
-              Automation with boundaries
-            </p>
-            <h2 className="mt-4 text-3xl font-semibold leading-tight text-white sm:text-4xl">
-              Move faster without handing the firm to a black box.
-            </h2>
-            <p className="mt-5 text-base leading-7 text-foreground/70">
-              PI files contain medical records, client confidences, settlement
-              details, and privileged strategy. The architecture must preserve
-              control as automation expands.
-            </p>
-            <Link
-              href="/personal-injury/vendor-risk-governance"
-              className="mt-6 inline-flex items-center text-sm font-semibold text-primary transition hover:text-[#00ff41]"
-            >
-              Review our vendor-risk approach
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </div>
-
-          <div className="grid gap-px bg-primary/15 sm:grid-cols-2">
-            {controls.map((control) => {
-              const Icon = control.icon;
-              return (
-                <div key={control.title} className="min-h-52 bg-black p-6">
-                  <Icon className="h-5 w-5 text-primary" />
-                  <h3 className="mt-5 text-lg font-semibold text-white">
-                    {control.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-7 text-foreground/65">
-                    {control.body}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24">
-        <div className="grid border border-primary/20 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-12">
-            <p className="text-sm font-semibold uppercase text-primary">
-              Production-scale proof
-            </p>
-            <h2 className="mt-4 text-3xl font-semibold leading-tight text-white sm:text-4xl">
-              The same operating pattern handles hundreds of daily workflows.
-            </h2>
-            <p className="mt-5 text-base leading-7 text-foreground/70">
-              Possible Minds runs the automation behind Precise Imaging&apos;s
-              operations. The system triages roughly 600 inbound emails a day,
-              auto-handles about 73% of the volume, and keeps reviewed workflow
-              knowledge inside the company.
-            </p>
-            <div className="mt-7 flex gap-8">
-              <div>
-                <p className="text-3xl font-semibold text-[#00ff41]">600</p>
-                <p className="mt-1 text-xs text-foreground/60">Emails per day</p>
-              </div>
-              <div>
-                <p className="text-3xl font-semibold text-[#00ff41]">73%</p>
-                <p className="mt-1 text-xs text-foreground/60">Auto-handled</p>
-              </div>
-            </div>
-            <Button asChild size="lg" variant="outline" className="mt-8 w-fit">
-              <Link href="/healthcare-case-study">Read the scale proof</Link>
-            </Button>
-          </div>
-          <div className="relative min-h-[340px] lg:min-h-[480px]">
-            <Image
-              src="/blog/precise-mri.jpg"
-              alt="Medical imaging operations"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
           </div>
         </div>
       </section>
@@ -540,7 +309,7 @@ export default function Home() {
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Button asChild size="lg">
               <Link href="/consult">
-                Request an intake audit
+                Request an intake revenue audit
                 <PhoneCall className="ml-2 h-4 w-4" />
               </Link>
             </Button>

@@ -160,7 +160,7 @@ export function ConsultBookingForm() {
       timeZoneName: "short",
     });
     return (
-      <div className="mx-auto max-w-2xl rounded-2xl border border-primary/40 bg-gradient-to-br from-[#04150d] to-[#0a2618] p-10 text-center">
+      <div className="mx-auto max-w-2xl border border-primary/40 bg-[#031009] p-10 text-center">
         <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-black/50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
           Booked
         </div>
@@ -179,7 +179,7 @@ export function ConsultBookingForm() {
   return (
     <form
       onSubmit={onSubmit}
-      className="space-y-8 rounded-2xl border border-primary/25 bg-gradient-to-br from-[#04150d] to-[#0a2618] p-6 sm:p-10"
+      className="space-y-8 border border-primary/25 bg-[#031009] p-6 sm:p-10"
     >
       {/* Step 1 — Time picker */}
       <div>
@@ -335,12 +335,12 @@ export function ConsultBookingForm() {
             />
           </Field>
           <div className="sm:col-span-2">
-            <Field id="notes" label="What do you want to focus on? (optional)">
+            <Field id="notes" label="Where is intake losing momentum? (optional)">
               <Textarea
                 id="notes"
                 value={form.notes}
                 onChange={(e) => setForm({ ...form, notes: e.target.value })}
-                placeholder="E.g. after-hours intake, records chasing, lien reduction..."
+                placeholder="E.g. overnight web leads wait until morning, or follow-up stops after one call."
                 rows={3}
               />
             </Field>
@@ -362,7 +362,7 @@ export function ConsultBookingForm() {
               : "cursor-not-allowed border border-primary/20 bg-black/30 text-foreground/40",
           )}
         >
-          {submitting ? "Booking…" : "Book the consult"}
+          {submitting ? "Booking…" : "Book the intake audit"}
         </button>
       </div>
     </form>

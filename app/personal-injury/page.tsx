@@ -156,7 +156,7 @@ const caseStudies = [
     href: "/law-case-study",
     title: "Personal Injury Law",
     description:
-      "How a 15-attorney plaintiff firm cut response time below 90 seconds and increased signed cases by 34%.",
+      "How an anonymized plaintiff firm added a transparent, sub-90-second automated response target and human escalation around its existing intake team.",
     tag: "Legal",
   },
   {

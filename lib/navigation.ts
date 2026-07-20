@@ -1,4 +1,4 @@
-import { CALENDLY_URL } from "./constants";
+import { LINKEDIN_URL } from "./constants";
 import { piProblemPages } from "./pi-pages";
 
 export const navLinks = [
@@ -60,7 +60,7 @@ export const footerLinks = [
       { label: "Our Thesis", href: "/thesis" },
       { label: "Security", href: "/security" },
       { label: "Email", href: "mailto:hello@possibleminds.ai" },
-      { label: "LinkedIn", href: "#" },
+      { label: "Pranav on LinkedIn", href: LINKEDIN_URL },
     ],
   },
 ];

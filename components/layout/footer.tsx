@@ -20,13 +20,13 @@ export function Footer() {
             </div>
           </div>
           <p className="max-w-md text-sm text-muted-foreground">
-            Diagnostic-led AI systems for personal injury firms: intake leakage,
-            records, liens, AI visibility, and vendor-risk controls.
+            AI-assisted intake systems that help PI firms respond faster and get
+            serious matters to the right person.
           </p>
           <div className="flex flex-wrap gap-3">
             <Button asChild size="sm" className="animate-glow">
               <Link href={CALENDLY_URL} target="_blank" rel="noreferrer">
-                Diagnostic call
+                Intake audit
               </Link>
             </Button>
             <Button asChild size="sm" variant="outline">
@@ -69,7 +69,7 @@ export function Footer() {
               Contact
             </Link>
             <Link href={CALENDLY_URL} className="hover:text-primary">
-              Diagnostic call
+              Intake audit
             </Link>
             <Link href={REPUTATION_TOOL_URL} target="_blank" rel="noreferrer" className="hover:text-primary">
               Reputation diagnostic
