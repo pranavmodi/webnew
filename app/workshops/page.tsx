@@ -7,7 +7,7 @@ import { SITE_URL } from "@/lib/constants";
 const pageTitle = "AI Working Sessions for Personal Injury Firm Teams";
 const metaTitle = "AI Workshops for PI Firm Teams";
 const pageDescription =
-  "Free, hands-on AI working sessions for personal injury firm staff - small cohorts, real workflows, no demos. Tracks for intake teams and case managers.";
+  "Free, hands-on AI working sessions for personal injury firm staff - small cohorts, real workflows, no demos. Tracks for intake teams, case managers, and litigation paralegals.";
 const pageUrl = `${SITE_URL}/workshops`;
 
 const workshops = [
@@ -22,6 +22,12 @@ const workshops = [
     audience: "Case managers & records staff",
     title: "AI for Personal Injury Case Managers on Filevine",
     body: "Sixty minutes, ten firms, sanitized sample files. Build reusable AI instructions for chronologies, treatment gaps, client updates, records chasing, and handoffs — and learn where Filevine's built-in AI helps and where it stops.",
+  },
+  {
+    slug: "ai-for-smartadvocate-litigation-paralegals",
+    audience: "Litigation paralegals & litigation support",
+    title: "AI for PI Litigation Paralegals Using SmartAdvocate",
+    body: "Sixty minutes, ten firms, and a sanitized litigation file. Build a discovery matrix, source-linked deposition digest, deadline exception sweep, evidence index, and attorney-ready status memo.",
   },
 ];
 

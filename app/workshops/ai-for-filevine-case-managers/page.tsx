@@ -376,6 +376,17 @@ export default function WorkshopPage() {
             management system, register anyway and say so; we group cohorts by
             stack when there&apos;s enough of one.
           </p>
+          <p>
+            If your work begins with pleadings, discovery, depositions, and
+            litigation deadlines, the{" "}
+            <Link
+              href="/workshops/ai-for-smartadvocate-litigation-paralegals"
+              className="text-primary underline-offset-4 hover:underline"
+            >
+              SmartAdvocate litigation-paralegal session
+            </Link>{" "}
+            is the better fit.
+          </p>
         </section>
 
         <section className="space-y-5" id="register">
