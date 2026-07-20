@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 
 import { Hero } from "@/components/hero";
+import { IntakeLeakVideo } from "@/components/intake-leak-video";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Button } from "@/components/ui/button";
 import { SITE_URL } from "@/lib/constants";
@@ -212,6 +213,7 @@ export default function Home() {
     <div className="bg-black pb-24">
       <JsonLd data={structuredData} />
       <Hero />
+      <IntakeLeakVideo />
 
       <section className="border-b border-primary/15 bg-[#031009]">
         <div className="mx-auto grid max-w-6xl gap-12 px-4 py-20 sm:px-6 sm:py-24 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
