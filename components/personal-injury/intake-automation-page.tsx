@@ -421,6 +421,14 @@ export function IntakeAutomationPage({
               Read our PI software interoperability review
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
+            <br />
+            <Link
+              href="/workshops/ai-for-lead-docket-intake-specialists"
+              className="mt-3 inline-flex items-center text-sm font-semibold text-primary transition hover:text-[#00ff41]"
+            >
+              Join the intake team working session
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
           </div>
 
           <div className="grid grid-cols-2 gap-px border border-primary/15 bg-primary/15">

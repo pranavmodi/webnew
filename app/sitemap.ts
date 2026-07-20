@@ -23,6 +23,7 @@ const staticPages = [
   { url: "/blog", changeFrequency: "weekly" as const, priority: 0.9 },
   { url: "/workshops", changeFrequency: "weekly" as const, priority: 0.85 },
   { url: "/workshops/ai-for-filevine-case-managers", changeFrequency: "weekly" as const, priority: 0.85 },
+  { url: "/workshops/ai-for-lead-docket-intake-specialists", changeFrequency: "weekly" as const, priority: 0.85 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

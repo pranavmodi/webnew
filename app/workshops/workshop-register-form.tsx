@@ -7,23 +7,23 @@ import { Label } from "@/components/ui/label";
 import { toast } from "@/components/ui/use-toast";
 import { cn } from "@/lib/utils";
 
-// Same backend the consult form and ClickBeacon use.
 const AUTOCALLER_API =
   process.env.NEXT_PUBLIC_AUTOCALLER_API_URL ||
   "https://autocaller.getpossibleminds.com";
 
-const ROLES = [
-  "Case manager",
-  "Senior case manager",
-  "Records specialist",
-  "Paralegal",
-  "Intake",
-  "Attorney",
-  "Firm leadership / operations",
-  "Other",
+const FIRM_SIZES = [
+  "1-5 attorneys",
+  "5-15 attorneys",
+  "15-30 attorneys",
+  "30+ attorneys",
 ];
 
-const FIRM_SIZES = ["1-5 attorneys", "5-15 attorneys", "15-30 attorneys", "30+ attorneys"];
+type WorkshopRegisterFormProps = {
+  product: string;
+  roles: string[];
+  defaultSystem: string;
+  systemLabel?: string;
+};
 
 function getPersistedParam(params: string[], storageKey: string) {
   try {
@@ -39,20 +39,23 @@ function getPersistedParam(params: string[], storageKey: string) {
   }
 }
 
-export function WorkshopRegisterForm() {
+export function WorkshopRegisterForm({
+  product,
+  roles,
+  defaultSystem,
+  systemLabel = "Primary system",
+}: WorkshopRegisterFormProps) {
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
   const [form, setForm] = useState({
     name: "",
     email: "",
     firm: "",
-    role: ROLES[0],
-    cms: "Filevine",
+    role: roles[0],
+    system: defaultSystem,
     firmSize: FIRM_SIZES[1],
   });
 
-  // Prefill from tracked-link params (same keys ClickBeacon persists), so
-  // invitees arriving from a possibleos email register in one click.
   useEffect(() => {
     const name = getPersistedParam(["contact_name", "name"], "pm_contact_name");
     const email = getPersistedParam(["contact_email", "email"], "pm_contact_email");
@@ -84,11 +87,12 @@ export function WorkshopRegisterForm() {
           name: form.name.trim(),
           email: form.email.trim(),
           firm: form.firm.trim() || undefined,
-          product: "workshop-filevine-case-managers",
+          product,
           source: "workshop_page_register",
-          link_code: getPersistedParam(["lc", "link_code"], "pm_link_code") || undefined,
+          link_code:
+            getPersistedParam(["lc", "link_code"], "pm_link_code") || undefined,
           role: form.role,
-          case_management_system: form.cms.trim() || undefined,
+          case_management_system: form.system.trim() || undefined,
           firm_size: form.firmSize,
         }),
       });
@@ -169,19 +173,19 @@ export function WorkshopRegisterForm() {
             onChange={(e) => setForm({ ...form, role: e.target.value })}
             className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           >
-            {ROLES.map((role) => (
+            {roles.map((role) => (
               <option key={role} value={role}>
                 {role}
               </option>
             ))}
           </select>
         </Field>
-        <Field id="ws-cms" label="Case management system">
+        <Field id="ws-system" label={systemLabel}>
           <Input
-            id="ws-cms"
-            value={form.cms}
-            onChange={(e) => setForm({ ...form, cms: e.target.value })}
-            placeholder="Filevine"
+            id="ws-system"
+            value={form.system}
+            onChange={(e) => setForm({ ...form, system: e.target.value })}
+            placeholder={defaultSystem}
           />
         </Field>
         <Field id="ws-size" label="Firm size">
@@ -215,7 +219,7 @@ export function WorkshopRegisterForm() {
               : "cursor-not-allowed border border-primary/20 bg-black/30 text-foreground/40",
           )}
         >
-          {submitting ? "Registering…" : "Reserve a seat"}
+          {submitting ? "Registering..." : "Reserve a seat"}
         </button>
       </div>
     </form>

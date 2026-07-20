@@ -4,14 +4,14 @@ import Link from "next/link";
 import ClickBeacon from "@/components/analytics/click-beacon";
 import RevealPanel from "@/components/analytics/reveal-panel";
 import { JsonLd } from "@/components/seo/json-ld";
-import { SITE_NAME, SITE_URL } from "@/lib/constants";
+import { SITE_URL } from "@/lib/constants";
 
-import { WorkshopRegisterForm } from "./workshop-register-form";
+import { WorkshopRegisterForm } from "../workshop-register-form";
 
 const slug = "ai-for-filevine-case-managers";
 const pageTitle =
   "AI for Personal Injury Case Managers on Filevine: A Working Session, Not a Webinar";
-const metaTitle = `AI for Filevine Case Managers — Free Working Session | ${SITE_NAME}`;
+const metaTitle = "AI for Filevine Case Managers - Free Working Session";
 const pageDescription =
   "A hands-on AI workshop for PI case managers on Filevine: medical chronologies, treatment gaps, and what Filevine's AI does and doesn't do. 10 firms per cohort.";
 const pageUrl = `${SITE_URL}/workshops/${slug}`;
@@ -386,7 +386,21 @@ export default function WorkshopPage() {
             Here from our email? Your details may already be filled in below —
             one click and you&apos;re done.
           </p>
-          <WorkshopRegisterForm />
+          <WorkshopRegisterForm
+            product="workshop-filevine-case-managers"
+            defaultSystem="Filevine"
+            systemLabel="Case management system"
+            roles={[
+              "Case manager",
+              "Senior case manager",
+              "Records specialist",
+              "Paralegal",
+              "Intake",
+              "Attorney",
+              "Firm leadership / operations",
+              "Other",
+            ]}
+          />
         </section>
 
         <section className="space-y-5">

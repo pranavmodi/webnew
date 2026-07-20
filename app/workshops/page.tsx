@@ -2,15 +2,21 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 import { JsonLd } from "@/components/seo/json-ld";
-import { SITE_NAME, SITE_URL } from "@/lib/constants";
+import { SITE_URL } from "@/lib/constants";
 
 const pageTitle = "AI Working Sessions for Personal Injury Firm Teams";
-const metaTitle = `AI Workshops for PI Firm Teams | ${SITE_NAME}`;
+const metaTitle = "AI Workshops for PI Firm Teams";
 const pageDescription =
-  "Free, hands-on AI working sessions for personal injury firm staff — small cohorts, real workflows, no demos. Current session: case managers on Filevine.";
+  "Free, hands-on AI working sessions for personal injury firm staff - small cohorts, real workflows, no demos. Tracks for intake teams and case managers.";
 const pageUrl = `${SITE_URL}/workshops`;
 
 const workshops = [
+  {
+    slug: "ai-for-lead-docket-intake-specialists",
+    audience: "Intake specialists & intake managers",
+    title: "AI for Personal Injury Intake Teams Using Lead Docket",
+    body: "Sixty minutes, ten firms, and a queue of sanitized PI leads. Practice hot-lead triage, attorney-ready handoffs, human escalation, stalled-lead recovery, and conversion auditing.",
+  },
   {
     slug: "ai-for-filevine-case-managers",
     audience: "Case managers & records staff",
@@ -96,8 +102,8 @@ export default function WorkshopsPage() {
         ))}
 
         <p className="pt-4 text-sm text-foreground/60">
-          Sessions for intake teams and firm leadership are in the works.
-          Registering for any session puts you on the list for new tracks.
+          A session for firm leadership is in development. Registering for any
+          working session puts you on the list for new tracks.
         </p>
       </div>
     </div>
