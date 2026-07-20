@@ -24,9 +24,9 @@ const workshops = [
     body: "Sixty minutes, ten firms, sanitized sample files. Build reusable AI instructions for chronologies, treatment gaps, client updates, records chasing, and handoffs — and learn where Filevine's built-in AI helps and where it stops.",
   },
   {
-    slug: "ai-for-smartadvocate-litigation-paralegals",
+    slug: "ai-for-casepeer-litigation-paralegals",
     audience: "Litigation paralegals & litigation support",
-    title: "AI for PI Litigation Paralegals Using SmartAdvocate",
+    title: "AI for PI Litigation Paralegals Using CASEpeer",
     body: "Sixty minutes, ten firms, and a sanitized litigation file. Build a discovery matrix, source-linked deposition digest, deadline exception sweep, evidence index, and attorney-ready status memo.",
   },
 ];

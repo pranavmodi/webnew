@@ -380,10 +380,10 @@ export default function WorkshopPage() {
             If your work begins with pleadings, discovery, depositions, and
             litigation deadlines, the{" "}
             <Link
-              href="/workshops/ai-for-smartadvocate-litigation-paralegals"
+              href="/workshops/ai-for-casepeer-litigation-paralegals"
               className="text-primary underline-offset-4 hover:underline"
             >
-              SmartAdvocate litigation-paralegal session
+              CASEpeer litigation-paralegal session
             </Link>{" "}
             is the better fit.
           </p>

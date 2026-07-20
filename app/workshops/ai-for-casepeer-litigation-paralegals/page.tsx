@@ -8,13 +8,13 @@ import { SITE_URL } from "@/lib/constants";
 
 import { WorkshopRegisterForm } from "../workshop-register-form";
 
-const slug = "ai-for-smartadvocate-litigation-paralegals";
+const slug = "ai-for-casepeer-litigation-paralegals";
 const pageTitle =
-  "AI for PI Litigation Paralegals Using SmartAdvocate: A Working Session, Not a Webinar";
+  "AI for PI Litigation Paralegals Using CASEpeer: A Working Session, Not a Webinar";
 const metaTitle =
-  "AI for SmartAdvocate Litigation Paralegals - Free Working Session";
+  "AI for CASEpeer Litigation Paralegals - Free Working Session";
 const pageDescription =
-  "A hands-on AI workshop for PI litigation paralegals using SmartAdvocate: discovery control, deposition digests, deadline exceptions, evidence indexes, and attorney-ready reporting.";
+  "A hands-on AI workshop for PI litigation paralegals using CASEpeer: discovery control, deposition digests, deadline exceptions, evidence indexes, and attorney-ready reporting.";
 const pageUrl = `${SITE_URL}/workshops/${slug}`;
 
 const roles = [
@@ -53,36 +53,36 @@ const exercises = [
 const systemMap = [
   {
     native: true,
-    title: "WorkPlans and automated procedures",
-    body: "SmartAdvocate can standardize litigation stages, assign responsibility, trigger tasks and communications, and expose where work is waiting.",
+    title: "Turnkey personal injury workflow",
+    body: "CASEpeer organizes PI matters from intake through settlement with preconfigured case stages, treatment information, tasks, notes, and responsibility in one operating record.",
   },
   {
     native: true,
-    title: "Deadlines, dashboards, and document control",
-    body: "Critical dates, staff activity, case data, documents, and reporting can live in the same operating view instead of separate calendars and private spreadsheets.",
+    title: "Tasks, calendars, and reporting",
+    body: "Assignments, priorities, due dates, events, client communications, and PI reporting can make stalled work and upcoming obligations visible across the team.",
   },
   {
     native: true,
-    title: "SmartIntelligence",
-    body: "Built-in AI can summarize cases, medical records, motions, briefs, and depositions; analyze multiple documents; transcribe recordings; and work with case information inside the platform.",
+    title: "8am IQ Writing Assistant",
+    body: "CASEpeer's built-in writing assistant can refine tone, simplify language, correct drafts, and translate communications inside notes, tasks, and text messages.",
   },
   {
     native: false,
-    title: "The review protocol your firm must define",
-    body: "Which source controls? What requires privilege review? Who confirms a deadline? Which drafts need attorney approval? AI can accelerate the work only after the firm defines verification, authority, and escalation.",
+    title: "The litigation intelligence layer your firm must define",
+    body: "Which source controls? What requires privilege review? Who confirms a deadline? Which approved tool handles transcript or document analysis? CASEpeer can remain the case authority while the firm defines verification, integrations, attorney approval, and escalation.",
   },
 ];
 
 const faqs = [
   {
-    question: "Do I need to use SmartAdvocate?",
+    question: "Do I need to use CASEpeer?",
     answer:
-      "No. SmartAdvocate gives the group a shared litigation vocabulary, but the methods apply to Filevine, CASEpeer, Litify, CloudLex, and comparable case-management systems. Tell us your system when you register so we can group compatible cohorts.",
+      "No. CASEpeer gives the group a shared PI workflow, but the methods apply to Filevine, SmartAdvocate, Litify, CloudLex, and comparable case-management systems. Tell us your system when you register so we can group compatible cohorts.",
   },
   {
-    question: "Doesn't SmartAdvocate already have built-in AI?",
+    question: "Doesn't CASEpeer already have built-in AI?",
     answer:
-      "Yes. SmartIntelligence includes case and document summaries, multi-document analysis, case chat, transcription, drafting assistance, and other built-in capabilities. The session focuses on using those capabilities with source control, verification, clear authority, and attorney escalation.",
+      "Yes. 8am IQ for CASEpeer can refine and translate writing inside notes, tasks, and text messages. CASEpeer also connects with specialist AI and workflow tools. The session focuses on the operating rules around them: source control, approved data paths, verification, clear authority, and attorney escalation.",
   },
   {
     question: "Will we use real case files?",
@@ -116,13 +116,13 @@ export const metadata: Metadata = {
   description: pageDescription,
   keywords: [
     "AI for litigation paralegals",
-    "SmartAdvocate AI training",
+    "CASEpeer AI training",
     "personal injury paralegal workshop",
     "AI discovery document review",
     "deposition summary AI",
     "litigation deadline workflow",
     "personal injury litigation automation",
-    "SmartIntelligence training",
+    "8am IQ CASEpeer training",
   ],
   alternates: {
     canonical: pageUrl,
@@ -182,7 +182,7 @@ export default function LitigationParalegalWorkshopPage() {
 
   return (
     <div className="bg-black pb-24">
-      <ClickBeacon page="workshop-smartadvocate-paralegals" />
+      <ClickBeacon page="workshop-casepeer-paralegals" />
       <JsonLd data={structuredData} />
 
       <section className="relative overflow-hidden bg-gradient-to-b from-[#04150d] to-black">
@@ -196,7 +196,7 @@ export default function LitigationParalegalWorkshopPage() {
               <span>For litigation paralegals</span>
             </div>
             <h1 className="text-4xl font-semibold leading-tight tracking-tight text-[#00ff41] sm:text-5xl">
-              AI for PI Litigation Paralegals Using SmartAdvocate: A Working
+              AI for PI Litigation Paralegals Using CASEpeer: A Working
               Session, Not a Webinar
             </h1>
             <p className="max-w-3xl text-base text-foreground/80 sm:text-lg">
@@ -276,13 +276,14 @@ export default function LitigationParalegalWorkshopPage() {
 
         <section className="space-y-5">
           <h2 className="text-2xl font-semibold text-[#00ff41]">
-            What SmartAdvocate can handle, and what your firm must define
+            What CASEpeer can handle, and what your firm must define
           </h2>
           <p>
-            SmartAdvocate already combines litigation workflows, document
-            control, reporting, and built-in AI. The session maps those
-            capabilities honestly, then concentrates on the review rules that
-            make the output reliable enough to use.
+            CASEpeer already gives PI firms a structured case workflow, team
+            accountability, reporting, communication tools, and built-in
+            writing assistance. The session maps those capabilities honestly,
+            then concentrates on the review and integration rules needed for
+            reliable litigation work.
           </p>
           <div className="grid gap-4">
             {systemMap.map((item) => (
@@ -302,7 +303,7 @@ export default function LitigationParalegalWorkshopPage() {
             ))}
           </div>
           <p className="text-sm text-foreground/60">
-            SmartAdvocate&apos;s feature set changes. We verify this map against
+            CASEpeer&apos;s feature set changes. We verify this map against
             current product documentation before every cohort.
           </p>
         </section>
@@ -391,8 +392,8 @@ export default function LitigationParalegalWorkshopPage() {
           <p>
             Litigation paralegals, senior litigation paralegals, litigation
             support specialists, paralegal managers, and attorneys who directly
-            supervise PI litigation work. SmartAdvocate users share the same
-            examples; firms on Filevine, CASEpeer, Litify, CloudLex, or a
+            supervise PI litigation work. CASEpeer users share the same
+            examples; firms on Filevine, SmartAdvocate, Litify, CloudLex, or a
             comparable case-management system are welcome.
           </p>
           <p>
@@ -417,9 +418,9 @@ export default function LitigationParalegalWorkshopPage() {
             Here from our email? Your details may already be filled in below.
           </p>
           <WorkshopRegisterForm
-            product="workshop-smartadvocate-litigation-paralegals"
+            product="workshop-casepeer-litigation-paralegals"
             roles={roles}
-            defaultSystem="SmartAdvocate"
+            defaultSystem="CASEpeer"
             systemLabel="Case management system"
           />
         </section>
