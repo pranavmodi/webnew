@@ -88,7 +88,7 @@ export function Hero() {
             loop
             playsInline
             preload="metadata"
-            poster="/video/hero-loop-poster.png"
+            poster="/video/hero-loop-poster.webp"
             className="block aspect-[4/3] w-full object-cover motion-reduce:hidden"
             aria-hidden="true"
             onPlay={() => setIsPlaying(true)}
@@ -104,7 +104,7 @@ export function Hero() {
 
           {/* Reduced-motion viewers get the still frame. */}
           <Image
-            src="/video/hero-loop-poster.png"
+            src="/video/hero-loop-poster.webp"
             alt=""
             width={1200}
             height={900}
