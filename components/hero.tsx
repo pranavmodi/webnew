@@ -32,7 +32,7 @@ export function Hero() {
     <section className="relative -mt-4 overflow-hidden bg-black">
       <div className="absolute inset-0 bg-gradient-to-b from-[#04150d] via-black to-black" />
 
-      <div className="relative mx-auto grid min-h-[72vh] max-w-6xl items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
+      <div className="relative mx-auto grid min-h-[72vh] max-w-6xl items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-2 lg:gap-12">
         <div>
           <p className="text-sm font-semibold uppercase text-[#00ff41]">
             AI-assisted intake for personal injury firms
