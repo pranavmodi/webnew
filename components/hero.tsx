@@ -13,16 +13,38 @@ const intakeSignals = [
 export function Hero() {
   return (
     <section className="relative -mt-4 overflow-hidden bg-black">
-      <div className="absolute inset-0">
+      <div className="absolute inset-0" aria-hidden="true">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/video/hero-loop-poster.png"
+          className="h-full w-full object-cover object-center motion-reduce:hidden"
+        >
+          <source
+            src="/video/hero-loop-720p.mp4"
+            media="(max-width: 768px)"
+            type="video/mp4"
+          />
+          <source src="/video/hero-loop-1080p.mp4" type="video/mp4" />
+        </video>
+
+        {/* Reduced-motion viewers get the still frame, same treatment. */}
         <Image
-          src="/blog/law-case-study.jpg"
-          alt="Personal injury law firm team"
+          src="/video/hero-loop-poster.png"
+          alt=""
           fill
           priority
-          className="object-cover object-center"
+          className="hidden object-cover object-center motion-reduce:block"
         />
-        <div className="absolute inset-0 bg-black/70" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-black/35" />
+
+        {/* Lighter than the photo treatment this replaced: the old black/70 plus
+            a via-black/85 gradient passed only ~13% of the video through on the
+            right, which erased the queue entirely. */}
+        <div className="absolute inset-0 bg-black/45" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/75 to-black/10" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/25" />
       </div>
 
