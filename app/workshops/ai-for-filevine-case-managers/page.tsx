@@ -1,5 +1,14 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import {
+  Award,
+  Check,
+  Clock3,
+  FileCheck2,
+  ShieldCheck,
+  Sparkles,
+  Users,
+} from "lucide-react";
 
 import ClickBeacon from "@/components/analytics/click-beacon";
 import RevealPanel from "@/components/analytics/reveal-panel";
@@ -16,82 +25,109 @@ const pageDescription =
   "A hands-on AI workshop for PI case managers on Filevine: medical chronologies, treatment gaps, and what Filevine's AI does and doesn't do. 10 firms per cohort.";
 const pageUrl = `${SITE_URL}/workshops/${slug}`;
 
-const exercises = [
+const sessionFormat = [
   {
-    title: "Records to treatment timeline",
-    body: "Turn a large sample record set into a treatment timeline that flags every gap in care over 30 days — the gaps an adjuster will find if you don't.",
+    time: "0-10 min",
+    title: "Set the safety boundary",
+    body: "See what may run inside firm-approved tools, what never belongs in a public chatbot, and where human review remains mandatory.",
   },
   {
-    title: "Facts vs. conclusions",
-    body: "Separate documented facts from provider conclusions, and generate the verification questions your attorney will ask anyway.",
+    time: "10-20 min",
+    title: "Build a serious instruction",
+    body: "Turn a vague request into a six-part instruction covering the task, context, judgment, constraints, deliverable, and verification.",
+  },
+  {
+    time: "20-50 min",
+    title: "Work the case-manager workflows",
+    body: "Use sanitized PI files to build, test, and improve instructions for chronologies, gaps, updates, records follow-up, and handoffs.",
+  },
+  {
+    time: "50-60 min",
+    title: "Make it reusable inside the firm",
+    body: "Compare results, identify failure points, and turn the strongest instructions into a repeatable Filevine-team playbook.",
+  },
+];
+
+const exercises = [
+  {
+    title: "Treatment chronology",
+    body: "Flag gaps in care, separate facts from conclusions, and identify missing records before an adjuster does.",
+  },
+  {
+    title: "Verification questions",
+    body: "Generate the factual questions a case manager should resolve before an attorney relies on the output.",
   },
   {
     title: "Client status update",
-    body: "Draft a plain-English update from case notes that never crosses into legal advice — and knows when to hand the question to a human.",
+    body: "Draft a plain-English update that stays out of legal advice and escalates judgment calls to a human.",
   },
   {
-    title: "Records-chase follow-up",
-    body: "Build the provider follow-up sequence from an outstanding-requests list, so the chase runs on a system instead of memory.",
+    title: "Records follow-up",
+    body: "Create a consistent provider follow-up sequence from an outstanding-requests list.",
   },
   {
-    title: "Pre-lit to lit handoff memo",
-    body: "Write the handoff summary with escalation flags, so the file moves without a week of clarification questions.",
+    title: "Pre-litigation handoff",
+    body: "Produce an attorney-ready handoff memo with open items, risks, and escalation flags.",
   },
 ];
 
 const filevineBoundaries = [
   {
-    covered: true,
     title: "AIFields",
-    body: "Prompt-driven extraction from uploaded documents into project fields. Good at pulling named facts out of a document you point it at.",
+    body: "Prompt-driven extraction from uploaded documents into project fields. Useful for pulling named facts from a document you select.",
   },
   {
-    covered: true,
     title: "MedChron",
-    body: "AI medical chronologies and record summaries inside the case file — key events, dates, and providers formatted consistently.",
+    body: "AI medical chronologies and record summaries inside the case file, including key events, dates, and providers.",
   },
   {
-    covered: true,
     title: "DemandsAI",
-    body: "Drafts demand letters from organized case material.",
+    body: "Demand-letter drafting from organized case material.",
   },
   {
-    covered: false,
-    title: "What nothing in the stack does",
-    body: "Cross-check the chronology against the billing. Tell you what is absent from the file — the missing MRI, the unexplained treatment break. Verify its own output before your attorney relies on it. That judgment layer is the work, and it stays with you. The session teaches you to run it deliberately.",
+    title: "The judgment layer still belongs to your team",
+    body: "No feature should be trusted to cross-check billing, identify everything absent from the file, or verify its own output. The workshop teaches case managers to run that review deliberately.",
   },
+];
+
+const deliverables = [
+  "Five reusable case-management instructions",
+  "A verification checklist for every instruction",
+  "A one-page team-standardization memo for firm leadership",
+  "A client-data and human-review safety framework",
+  "A personalized certificate of completion",
 ];
 
 const faqs = [
   {
-    question: "Does Filevine have AI built in?",
+    question: "What is the participant experience like?",
     answer:
-      "Yes. Filevine offers AIFields for prompt-driven document extraction, MedChron for AI medical chronologies and record summaries, and DemandsAI for demand letter drafting. What the built-in tools do not do is cross-check a chronology against billing, flag what is missing from a file, or verify their own output — that review layer still belongs to the case manager and attorney.",
+      "It is a working session, not a webinar. After a short safety and instruction-design briefing, participants work directly on sanitized PI case materials, compare results, improve their instructions, and leave with finished assets they can reuse inside approved tools.",
   },
   {
-    question: "Can case managers put medical records into ChatGPT?",
+    question: "Does Filevine already have AI built in?",
     answer:
-      "No. Medical records contain protected health information, and consumer AI tools are not an approved place for client PHI. The first thing this session teaches is the boundary: what stays inside firm-approved systems, and how to get AI leverage on records work without ever pasting client data into a public chatbot.",
+      "Yes. Filevine offers AIFields, MedChron, and DemandsAI. The workshop does not repeat a product demonstration. It focuses on the review and judgment layer around those tools: missing information, treatment gaps, verification, escalation, and repeatable team workflows.",
+  },
+  {
+    question: "Do participants use real client files?",
+    answer:
+      "No. Every exercise uses sanitized sample materials supplied for the session. The first lesson is what must remain inside firm-approved systems and what should never be pasted into a public chatbot.",
+  },
+  {
+    question: "How does this help the firm, not just one case manager?",
+    answer:
+      "Participants leave with reusable instructions, verification steps, and a one-page standardization memo. Team leads can use those materials to identify where a Filevine workflow can become more consistent across people, offices, and handoffs.",
+  },
+  {
+    question: "Is there a certificate?",
+    answer:
+      "Yes. Participants who complete the working session receive a personalized certificate of completion. It documents participation but is not CLE credit.",
   },
   {
     question: "Is the workshop free? What's the catch?",
     answer:
-      "The session is free and there is no product demo in it. The honest catch: if the working methods are useful, some firms ask us to go deeper on making them firm-owned systems — that is a separate conversation with your firm's leadership, and it is optional.",
-  },
-  {
-    question: "Will AI replace case managers?",
-    answer:
-      "No. AI can compress the mechanical parts of records review, drafting, and follow-up. It cannot negotiate, exercise judgment about a case, or reassure a frightened client — and it should not be trusted without verification. The case managers who learn to direct and verify AI output become more valuable, not less.",
-  },
-  {
-    question: "Do I need my firm's permission to attend?",
-    answer:
-      "The session uses sanitized sample files only, so there is no client data involved. Most attendees simply clear the hour with their manager. Every attendee leaves with a one-page summary written for your managing partner, so it is easy to show the firm what you got out of it.",
-  },
-  {
-    question: "What should a case manager never let AI decide alone?",
-    answer:
-      "Anything an attorney or client will rely on: case facts, medical causation, deadlines, settlement posture, and any communication that could be legal advice. The working rule taught in the session: AI drafts and organizes; humans verify facts, citations, and judgment before anything leaves the file.",
+      "The session is free and contains no product demo. If the methods prove useful, some firms later ask Possible Minds to help turn them into firm-owned systems. That is a separate and entirely optional conversation with firm leadership.",
   },
 ];
 
@@ -109,9 +145,7 @@ export const metadata: Metadata = {
     "case manager AI training",
     "personal injury case management AI",
   ],
-  alternates: {
-    canonical: pageUrl,
-  },
+  alternates: { canonical: pageUrl },
   openGraph: {
     title: pageTitle,
     description: pageDescription,
@@ -143,10 +177,7 @@ export default function WorkshopPage() {
       mainEntity: faqs.map((faq) => ({
         "@type": "Question",
         name: faq.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: faq.answer,
-        },
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
       })),
     },
     {
@@ -170,137 +201,68 @@ export default function WorkshopPage() {
       <ClickBeacon page="workshop-filevine-case-managers" />
       <JsonLd data={structuredData} />
 
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#04150d] to-black">
-        <div className="relative mx-auto max-w-4xl px-4 py-20 sm:px-6">
-          <div className="space-y-5">
+      <section className="relative overflow-hidden border-b border-white/5 bg-gradient-to-b from-[#04150d] via-[#020d08] to-black">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#00ff41]/60 to-transparent" />
+        <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
+          <div>
             <div className="flex items-center gap-3 text-xs text-muted-foreground">
               <Link href="/workshops" className="transition hover:text-primary">
                 Workshops
               </Link>
               <span className="text-primary/40">/</span>
-              <span>For case managers</span>
+              <span>Filevine case managers</span>
             </div>
-            <h1 className="text-4xl font-semibold leading-tight tracking-tight text-[#00ff41] sm:text-5xl">
-              AI for Personal Injury Case Managers on Filevine: A Working
-              Session, Not a Webinar
-            </h1>
-            <p className="max-w-3xl text-base text-foreground/80 sm:text-lg">
-              Sixty minutes, ten firms, sanitized sample files. You do the work
-              on real case-manager tasks — chronologies, gaps, updates, chases,
-              handoffs — and leave with a playbook you can use the next
-              morning. No demo. No pitch. Nothing to install.
+            <p className="mt-8 text-xs font-semibold uppercase tracking-[0.2em] text-[#00ff41]">
+              A working session, not a webinar
             </p>
-          </div>
-        </div>
-      </section>
+            <h1 className="mt-4 max-w-3xl text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl">
+              Build five AI workflows your Filevine team can use the next morning.
+            </h1>
+            <p className="mt-5 max-w-2xl text-base leading-7 text-foreground/75 sm:text-lg">
+              Work on sanitized PI case files, learn where Filevine&apos;s AI helps
+              and where human judgment takes over, then leave with a verified
+              prompt playbook your team can reuse.
+            </p>
 
-      <div className="mx-auto max-w-4xl space-y-12 px-4 pt-12 text-foreground/85 sm:px-6">
-        <section className="rounded-2xl border border-primary/25 bg-[#04150d] p-6 sm:p-8">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
-            In plain English
-          </h2>
-          <p className="mt-4 leading-relaxed text-foreground/75">
-            This is a free, hands-on session for case managers and records
-            staff at personal injury firms that run on Filevine. You&apos;ll
-            build real AI instructions for the work you do every day — medical
-            chronologies, treatment-gap checks, client updates, records
-            chasing — and learn exactly where Filevine&apos;s built-in AI helps
-            and where it stops. Ten firms per cohort, sample files provided,
-            and the first rule taught is what never goes into a public
-            chatbot.
-          </p>
-        </section>
-
-        <section className="space-y-5">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
-            What you&apos;ll actually do
-          </h2>
-          <p>
-            Every exercise runs on a sanitized sample file we provide — no
-            client data, nothing from your own cases needed. You leave each one
-            with a written instruction you can reuse.
-          </p>
-          <div className="grid gap-4">
-            {exercises.map((exercise, i) => (
-              <div
-                key={exercise.title}
-                className="flex gap-4 rounded-xl border border-primary/20 bg-black/50 p-5"
-              >
-                <div className="text-2xl font-bold text-[#00ff41]">{i + 1}</div>
-                <div>
-                  <h3 className="font-semibold text-foreground">
-                    {exercise.title}
-                  </h3>
-                  <p className="mt-1 text-sm text-foreground/70">
-                    {exercise.body}
-                  </p>
+            <div className="mt-7 grid max-w-2xl grid-cols-2 gap-2 sm:grid-cols-4">
+              {[
+                { icon: Clock3, label: "60 minutes" },
+                { icon: Users, label: "10 firms max" },
+                { icon: ShieldCheck, label: "Sanitized files" },
+                { icon: Award, label: "Certificate" },
+              ].map(({ icon: Icon, label }) => (
+                <div
+                  key={label}
+                  className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2.5 text-xs font-medium text-foreground/70"
+                >
+                  <Icon className="h-4 w-4 shrink-0 text-[#00ff41]" />
+                  {label}
                 </div>
-              </div>
-            ))}
-          </div>
-        </section>
+              ))}
+            </div>
 
-        <section className="space-y-5">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
-            What Filevine&apos;s AI does — and where it stops
-          </h2>
-          <p>
-            If your firm runs on Filevine, you already have AI in the building.
-            The session doesn&apos;t re-sell it to you; it maps it honestly.
-          </p>
-          <div className="grid gap-4">
-            {filevineBoundaries.map((item) => (
-              <div
-                key={item.title}
-                className={
-                  item.covered
-                    ? "rounded-xl border border-primary/20 bg-black/50 p-5"
-                    : "rounded-xl border border-amber-500/30 bg-amber-950/10 p-5"
-                }
-              >
-                <h3 className="font-semibold text-foreground">{item.title}</h3>
-                <p className="mt-1 text-sm text-foreground/70">{item.body}</p>
-              </div>
-            ))}
-          </div>
-          <p className="text-sm text-foreground/60">
-            Filevine&apos;s feature set changes; we verify this map against
-            their current documentation before every cohort. If something here
-            is out of date, tell us — that&apos;s the spirit of the session.
-          </p>
-        </section>
-
-        <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
-            The rule we teach first
-          </h2>
-          <p>
-            Medical records are protected health information. They never go
-            into a public chatbot — not to save an hour, not once, not
-            &quot;just this file.&quot; The session starts with the boundary
-            and then shows how much leverage is available inside it: what runs
-            in firm-approved tools, what a serious instruction looks like, and
-            what a human verifies before anyone relies on the output.
-          </p>
-          <p>
-            A serious instruction has six parts — task, background, judgment,
-            constraints, deliverable, verification. That framework, applied to
-            legal work, is laid out in{" "}
-            <Link
-              href="/blog/from-prompts-to-systems-law-firms-ai"
-              className="text-primary underline-offset-4 hover:underline"
+            <a
+              href="#format"
+              className="mt-7 inline-flex items-center text-sm font-semibold text-foreground/65 underline decoration-white/20 underline-offset-4 transition hover:text-[#00ff41]"
             >
-              From Prompts to Systems
-            </Link>
-            . Here&apos;s instruction one of the five — the one we send case
-            managers by email. Free, no registration required:
-          </p>
-          <RevealPanel buttonLabel="Show me instruction one">
+              See the 60-minute format ↓
+            </a>
+          </div>
+
+          <RevealPanel
+            buttonLabel="Reveal the chronology instruction"
+            eyebrow="Workshop preview"
+            description="See the difference between 'summarize these records' and an instruction a Filevine case manager can safely verify."
+            helperText="No email or registration required"
+            featured
+            showCopyButton
+            ctaHref="#register"
+          >
             <div
               id="instruction"
-              className="rounded-xl border border-primary/25 bg-[#04150d] p-5 font-mono text-sm leading-relaxed text-foreground/80"
+              className="rounded-xl border border-white/10 bg-black/45 p-5 font-mono text-sm leading-relaxed text-foreground/80"
             >
-              <p className="text-primary/70">
+              <p className="text-[#00ff41]">
                 # Instead of &quot;summarize these records&quot;:
               </p>
               <p className="mt-3">
@@ -315,88 +277,171 @@ export default function WorkshopPage() {
               </p>
             </div>
           </RevealPanel>
-          <p>
-            The difference between that and &quot;summarize these records&quot;
-            is the difference between a draft your attorney trusts and one
-            they quietly redo. Instruction one is yours either way. The
-            session is where you build the other four — client updates,
-            records chases, gap sweeps, handoff memos — tuned to your own
-            files, with the verification checklist for each.
+        </div>
+      </section>
+
+      <div className="mx-auto max-w-6xl space-y-16 px-4 pt-14 text-foreground/85 sm:px-6">
+        <section id="format" className="scroll-mt-24">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#00ff41]">
+            The participant experience
           </p>
+          <div className="mt-3 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <h2 className="text-3xl font-semibold text-foreground">
+                What happens during the hour
+              </h2>
+              <p className="mt-3 max-w-2xl text-foreground/65">
+                Participants do the work themselves. The session moves from safe
+                use to tested instructions to a repeatable team standard.
+              </p>
+            </div>
+            <span className="text-sm text-foreground/45">Live · small cohort · no product demo</span>
+          </div>
+          <div className="mt-7 grid gap-3 md:grid-cols-2">
+            {sessionFormat.map((item, index) => (
+              <div
+                key={item.time}
+                className="grid grid-cols-[auto_1fr] gap-4 rounded-xl border border-white/10 bg-white/[0.025] p-5"
+              >
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#00ff41]/10 text-sm font-bold text-[#00ff41]">
+                  {index + 1}
+                </div>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-[#00ff41]/80">
+                    {item.time}
+                  </p>
+                  <h3 className="mt-1 font-semibold text-foreground">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-foreground/60">{item.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </section>
 
-        <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
-            What you leave with
+        <section>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#00ff41]">
+            The practical work
+          </p>
+          <h2 className="mt-3 text-3xl font-semibold text-foreground">
+            Five Filevine workflows, built on sanitized PI materials
           </h2>
-          <p>
-            The <strong>Case Manager Prompt Playbook</strong>: the five
-            instructions you built, each with its verification checklist,
-            formatted to reuse on your own files inside your firm&apos;s
-            approved tools. Plus a one-page &quot;what our team could
-            standardize&quot; memo — that page is written for your managing
-            partner, so the hour you spent turns into credit, not just notes.
+          <p className="mt-3 max-w-3xl text-foreground/65">
+            No client data and nothing from your own matters is required. Each
+            exercise ends with a reusable instruction and an explicit human
+            verification step.
           </p>
-          <p className="text-sm text-foreground/60">
-            Related systems, if you want to go deeper before the session:{" "}
-            <Link
-              href="/personal-injury/records-chasing"
-              className="text-primary underline-offset-4 hover:underline"
-            >
-              records chasing and case development
-            </Link>
-            ,{" "}
-            <Link
-              href="/personal-injury/client-communication"
-              className="text-primary underline-offset-4 hover:underline"
-            >
-              client communication systems
-            </Link>
-            , and the broader{" "}
-            <Link
-              href="/personal-injury"
-              className="text-primary underline-offset-4 hover:underline"
-            >
-              AI systems for personal injury firms
-            </Link>{" "}
-            overview.
-          </p>
+          <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            {exercises.map((exercise, index) => (
+              <div
+                key={exercise.title}
+                className="rounded-xl border border-white/10 bg-white/[0.025] p-5"
+              >
+                <span className="text-sm font-bold text-[#00ff41]">0{index + 1}</span>
+                <h3 className="mt-3 font-semibold text-foreground">{exercise.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-foreground/60">{exercise.body}</p>
+              </div>
+            ))}
+          </div>
         </section>
 
-        <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
-            Who this is for
+        <section className="rounded-2xl border border-white/10 bg-[#04150d]/75 p-6 sm:p-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#00ff41]">
+            Why this matters inside a Filevine firm
+          </p>
+          <h2 className="mt-3 text-3xl font-semibold text-foreground">
+            Upskill the case manager. Strengthen the operating system.
           </h2>
-          <p>
-            Case managers, senior case managers, and records staff at personal
-            injury firms on Filevine. It is deliberately not a leadership
-            session — no owners in the room, so the questions stay honest —
-            and there is no product demo, because the session is about your
-            work, not our software. If you&apos;re on a different case
-            management system, register anyway and say so; we group cohorts by
-            stack when there&apos;s enough of one.
-          </p>
-          <p>
-            If your work begins with pleadings, discovery, depositions, and
-            litigation deadlines, the{" "}
-            <Link
-              href="/workshops/ai-for-casepeer-litigation-paralegals"
-              className="text-primary underline-offset-4 hover:underline"
-            >
-              CASEpeer litigation-paralegal session
-            </Link>{" "}
-            is the better fit.
-          </p>
+          <div className="mt-7 grid gap-4 md:grid-cols-3">
+            {[
+              {
+                icon: Sparkles,
+                title: "Better individual work",
+                body: "Case managers learn to direct AI precisely, catch weak output, and keep judgment with the people responsible for the file.",
+              },
+              {
+                icon: Users,
+                title: "More consistent teams",
+                body: "Team leads can turn the strongest instructions and review checks into shared standards across case managers and offices.",
+              },
+              {
+                icon: FileCheck2,
+                title: "Clearer Filevine boundaries",
+                body: "The firm sees which work belongs in native Filevine tools and where a human-owned verification layer is still required.",
+              },
+            ].map(({ icon: Icon, title, body }) => (
+              <div key={title} className="rounded-xl border border-white/10 bg-black/30 p-5">
+                <Icon className="h-5 w-5 text-[#00ff41]" />
+                <h3 className="mt-4 font-semibold text-foreground">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-foreground/60">{body}</p>
+              </div>
+            ))}
+          </div>
+
+          <details className="group mt-6 rounded-xl border border-white/10 bg-black/25 p-5">
+            <summary className="cursor-pointer list-none font-semibold text-foreground marker:hidden">
+              <span className="flex items-center justify-between gap-4">
+                What Filevine&apos;s AI does, and where it stops
+                <span className="text-[#00ff41] transition group-open:rotate-45">+</span>
+              </span>
+            </summary>
+            <div className="mt-5 grid gap-3 md:grid-cols-2">
+              {filevineBoundaries.map((item) => (
+                <div key={item.title} className="rounded-lg border border-white/10 bg-black/25 p-4">
+                  <h3 className="font-semibold text-foreground">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-foreground/60">{item.body}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-4 text-xs leading-5 text-foreground/45">
+              Filevine&apos;s feature set changes. We verify this map against its
+              current documentation before each cohort.
+            </p>
+          </details>
         </section>
 
-        <section className="space-y-5" id="register">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
-            Reserve a seat
-          </h2>
-          <p className="text-sm text-foreground/60">
-            Here from our email? Your details may already be filled in below —
-            one click and you&apos;re done.
-          </p>
+        <section className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#00ff41]">
+              What participants leave with
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold text-foreground">
+              Proof of learning, not another page of notes
+            </h2>
+            <p className="mt-4 leading-7 text-foreground/65">
+              The session produces working assets for the participant and a
+              concise standardization view for the firm. The certificate records
+              completion but does not represent CLE credit.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-6">
+            <ul className="space-y-4">
+              {deliverables.map((item) => (
+                <li key={item} className="flex gap-3 text-sm text-foreground/75">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#00ff41]/10">
+                    <Check className="h-3.5 w-3.5 text-[#00ff41]" />
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section
+          id="register"
+          className="scroll-mt-24 rounded-2xl border border-[#00ff41]/25 bg-[#04150d] p-6 sm:p-8"
+        >
+          <div className="mb-6 max-w-2xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#00ff41]">
+              Filevine cohort
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold text-foreground">Reserve a seat</h2>
+            <p className="mt-3 text-sm leading-6 text-foreground/60">
+              For case managers, senior case managers, records staff, and team
+              leads at personal injury firms using Filevine. Maximum ten firms
+              per working session.
+            </p>
+          </div>
           <WorkshopRegisterForm
             product="workshop-filevine-case-managers"
             defaultSystem="Filevine"
@@ -414,38 +459,29 @@ export default function WorkshopPage() {
           />
         </section>
 
-        <section className="space-y-5">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
-            Frequently asked questions
+        <section>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#00ff41]">
+            Questions answered
+          </p>
+          <h2 className="mt-3 text-3xl font-semibold text-foreground">
+            What to know before reserving a seat
           </h2>
-          <div className="space-y-4">
+          <div className="mt-7 grid gap-3 md:grid-cols-2">
             {faqs.map((faq) => (
-              <div
+              <details
                 key={faq.question}
-                className="rounded-xl border border-primary/20 bg-black/50 p-5"
+                className="group rounded-xl border border-white/10 bg-white/[0.025] p-5"
               >
-                <h3 className="font-semibold text-foreground">
-                  {faq.question}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-foreground/70">
-                  {faq.answer}
-                </p>
-              </div>
+                <summary className="cursor-pointer list-none font-semibold text-foreground marker:hidden">
+                  <span className="flex items-start justify-between gap-4">
+                    {faq.question}
+                    <span className="shrink-0 text-[#00ff41] transition group-open:rotate-45">+</span>
+                  </span>
+                </summary>
+                <p className="mt-3 text-sm leading-6 text-foreground/60">{faq.answer}</p>
+              </details>
             ))}
           </div>
-        </section>
-
-        <section className="rounded-2xl border border-primary/25 bg-[#04150d] p-6 text-center sm:p-8">
-          <p className="text-foreground/80">
-            Running the firm, not the files? The leadership version of this
-            conversation starts with a diagnostic, not a demo.
-          </p>
-          <Link
-            href="/consult"
-            className="mt-4 inline-flex items-center rounded-full bg-[#00ff41] px-8 py-3 text-sm font-semibold text-[#04150d] transition hover:bg-[#00ff41]/90"
-          >
-            Book a diagnostic call
-          </Link>
         </section>
       </div>
     </div>
