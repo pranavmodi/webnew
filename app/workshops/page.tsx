@@ -179,8 +179,8 @@ export default function WorkshopsPage() {
               Want to build your own internal tool?
             </h2>
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-foreground/65">
-              The six-month AI Builder Program teaches PI owners to build with
-              Claude Code, Codex, or a similar coding agent.
+              The AI Builder Program teaches PI owners to build internal tools
+              with Claude Code, Codex, or a similar coding agent.
             </p>
           </div>
           <Link

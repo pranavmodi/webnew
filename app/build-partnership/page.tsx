@@ -19,11 +19,10 @@ import { BuildPartnershipForm } from "./build-partnership-form";
 
 const pageTitle = "AI Builder Program for PI Firm Owners";
 const pageDescription =
-  "A six-month, small-cohort program that helps personal injury firm owners build useful internal tools with AI coding agents such as Claude Code.";
+  "A small-cohort program that helps personal injury firm owners build useful internal tools with AI coding agents such as Claude Code.";
 const pageUrl = `${SITE_URL}/build-partnership`;
 
 const facts = [
-  ["6 months", "From first prompt to a deployed internal tool"],
   ["4 firms", "Direct feedback on every build"],
   ["No coding required", "Learn by directing an AI coding agent"],
   ["1 real tool", "Built around a problem inside your firm"],
@@ -108,7 +107,7 @@ const vendorComparison = [
 
 const stages = [
   {
-    period: "Month 1",
+    period: "Stage 1",
     title: "Choose a problem small enough to finish",
     body:
       "Bring one recurring annoyance from your firm. We turn it into a precise description of the inputs, rules, output, and examples of what “correct” looks like.",
@@ -116,7 +115,7 @@ const stages = [
       "A local prototype using sanitized sample data: usually a CSV, spreadsheet, PDF set, or copied folder.",
   },
   {
-    period: "Month 2",
+    period: "Stage 2",
     title: "Learn to direct the coding agent",
     body:
       "Use Claude Code, Codex, or a similar agent to inspect files, propose a plan, make changes, explain what changed, and run tests. You learn what to approve and when to push back.",
@@ -124,7 +123,7 @@ const stages = [
       "A versioned tool that can repeat the first task on a fresh set of sample files.",
   },
   {
-    period: "Month 3",
+    period: "Stage 3",
     title: "Turn firm knowledge into rules",
     body:
       "Add your actual definitions: what counts as a treatment gap, when a lead needs the owner, which documents make a demand ready, and which exceptions must never be automated.",
@@ -132,7 +131,7 @@ const stages = [
       "Firm-specific rules, test cases, source links, and a visible exception list.",
   },
   {
-    period: "Month 4",
+    period: "Stage 4",
     title: "Connect it without replacing your case system",
     body:
       "Start with exports, email, or a watched folder. Use an API only when the vendor supports it and the access is justified. Document every system and field the tool can touch.",
@@ -140,7 +139,7 @@ const stages = [
       "A repeatable data path from the firm's current system into the tool and back to a person.",
   },
   {
-    period: "Month 5",
+    period: "Stage 5",
     title: "Let one person use it on real work",
     body:
       "Pilot with one owner, paralegal, case manager, or intake specialist. Record wrong answers, missing information, confusing screens, and the steps people still do manually.",
@@ -148,7 +147,7 @@ const stages = [
       "A corrected pilot version with an audit trail and a short list of known limitations.",
   },
   {
-    period: "Month 6",
+    period: "Stage 6",
     title: "Deploy it and learn how to change it",
     body:
       "Put the tool somewhere the firm can reliably use it. Practice adding one field, changing one rule, fixing one error, and rolling back a bad change with the coding agent.",
@@ -223,9 +222,9 @@ const faqs = [
       "Not at the start. Early versions use synthetic, sanitized, or redacted data. Before a real-data pilot, we review the AI vendor, hosting, retention, access, logging, and the minimum fields the tool actually needs.",
   },
   {
-    question: "How much time does the owner need?",
+    question: "How involved does the owner need to be?",
     answer:
-      "Plan on two live build sessions each month plus two to three hours a week during active building. You can involve an operations leader or technically curious staff member, but the owner should choose the problem and approve the rules.",
+      "You can involve an operations leader or technically curious staff member, but the owner should choose the problem, define what correct looks like, and approve the rules.",
   },
   {
     question: "Who owns the tool?",
@@ -235,7 +234,7 @@ const faqs = [
   {
     question: "What if I do not have a tool idea yet?",
     answer:
-      "Bring a recurring task, spreadsheet, report, handoff, or question that consumes time. In month one we compare a few candidates and choose the smallest tool with a clear user and visible result.",
+      "Bring a recurring task, spreadsheet, report, handoff, or question that consumes time. We compare a few candidates and choose the smallest tool with a clear user and visible result.",
   },
 ];
 
@@ -323,10 +322,10 @@ export default function BuildPartnershipPage() {
               into working software with AI coding agents.
             </p>
             <p className="mt-6 max-w-3xl text-base leading-relaxed text-foreground/75 sm:text-lg">
-              A six-month, four-firm program for owners who want to build
-              internal tools themselves using Claude Code, Codex, or similar
-              agents. No programming background required. Bring one real
-              problem; leave with a deployed tool and the ability to improve it.
+              A four-firm program for owners who want to build internal tools
+              themselves using Claude Code, Codex, or similar agents. No
+              programming background required. Bring one real problem; leave
+              with a deployed tool and the ability to improve it.
             </p>
             <Link
               href="#apply"
@@ -337,7 +336,7 @@ export default function BuildPartnershipPage() {
             </Link>
           </div>
 
-          <div className="mt-12 grid border-y border-primary/20 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid border-y border-primary/20 sm:grid-cols-3">
             {facts.map(([value, label]) => (
               <div
                 key={value}
@@ -541,14 +540,15 @@ export default function BuildPartnershipPage() {
           <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr]">
             <div className="lg:sticky lg:top-24 lg:self-start">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/65">
-                Six-month path
+                Build path
               </p>
               <h2 className="mt-4 text-3xl font-semibold text-primary sm:text-4xl">
                 Build one tool. Learn a method you can repeat.
               </h2>
               <p className="mt-5 text-sm leading-relaxed text-foreground/65">
-                Every month ends with working software, written instructions, or
-                a decision. You do not spend six months watching presentations.
+                Every stage ends with working software, written instructions,
+                or a decision. This is a working build, not a presentation
+                series.
               </p>
             </div>
             <div className="border-t border-primary/20">
@@ -602,11 +602,10 @@ export default function BuildPartnershipPage() {
         </div>
         <div className="divide-y divide-primary/15 border-y border-primary/15">
           {[
-            "Two live build sessions each month",
-            "One 1:1 tool review each month",
+            "Live build sessions",
+            "1:1 tool reviews",
             "Short self-paced exercises using your own sample workflow",
             "A shared library of build briefs, tests, and review checklists",
-            "Two to three hours a week during active building",
             "Source code, tests, and setup instructions stay with your firm",
           ].map((item) => (
             <div
