@@ -22,10 +22,11 @@ const ROLES = [
 ];
 
 const FIRM_SIZES = [
-  "1-5 attorneys",
-  "6-15 attorneys",
-  "16-30 attorneys",
-  "31+ attorneys",
+  "Solo",
+  "2-5 attorneys",
+  "6-10 attorneys",
+  "11-20 attorneys",
+  "21+ attorneys",
 ];
 
 const WORKFLOWS = [
