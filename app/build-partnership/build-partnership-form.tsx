@@ -12,23 +12,6 @@ const AUTOCALLER_API =
   process.env.NEXT_PUBLIC_AUTOCALLER_API_URL ||
   "https://autocaller.getpossibleminds.com";
 
-const ROLES = [
-  "Owner or managing partner",
-  "COO or firm administrator",
-  "Intake leader",
-  "Operations leader",
-  "Attorney sponsor",
-  "Other",
-];
-
-const FIRM_SIZES = [
-  "Solo",
-  "2-5 attorneys",
-  "6-10 attorneys",
-  "11-20 attorneys",
-  "21+ attorneys",
-];
-
 const WORKFLOWS = [
   "Intake or lead follow-up",
   "Records and treatment tracking",
@@ -61,11 +44,8 @@ export function BuildPartnershipForm() {
     name: "",
     email: "",
     firm: "",
-    role: ROLES[0],
-    firmSize: FIRM_SIZES[1],
     systems: "",
     workflow: WORKFLOWS[0],
-    readiness: 5,
   });
 
   useEffect(() => {
@@ -107,9 +87,8 @@ export function BuildPartnershipForm() {
             source: "ai_builder_program_eoi",
             link_code:
               getPersistedParam(["lc", "link_code"], "pm_link_code") || undefined,
-            role: `${form.role} | Tool idea: ${form.workflow}`,
+            role: `PI firm owner | Tool idea: ${form.workflow}`,
             case_management_system: form.systems.trim() || undefined,
-            firm_size: `${form.firmSize} | Readiness ${form.readiness}/10`,
           }),
         },
       );
@@ -192,37 +171,7 @@ export function BuildPartnershipForm() {
             placeholder="Law firm name"
           />
         </Field>
-        <Field id="bp-role" label="Your role">
-          <select
-            id="bp-role"
-            value={form.role}
-            onChange={(event) => setForm({ ...form, role: event.target.value })}
-            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-          >
-            {ROLES.map((role) => (
-              <option key={role} value={role}>
-                {role}
-              </option>
-            ))}
-          </select>
-        </Field>
-        <Field id="bp-size" label="Firm size">
-          <select
-            id="bp-size"
-            value={form.firmSize}
-            onChange={(event) =>
-              setForm({ ...form, firmSize: event.target.value })
-            }
-            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-          >
-            {FIRM_SIZES.map((size) => (
-              <option key={size} value={size}>
-                {size}
-              </option>
-            ))}
-          </select>
-        </Field>
-        <Field id="bp-systems" label="Primary systems">
+        <Field id="bp-systems" label="Current systems">
           <Input
             id="bp-systems"
             value={form.systems}
@@ -253,35 +202,6 @@ export function BuildPartnershipForm() {
               </option>
             ))}
           </select>
-        </div>
-        <div className="space-y-3 sm:col-span-2">
-          <div className="flex items-end justify-between gap-4">
-            <Label
-              htmlFor="bp-readiness"
-              className="text-xs uppercase tracking-wider text-primary/70"
-            >
-              How ready are you to spend 2-3 hours a week building?
-            </Label>
-            <span className="text-sm font-semibold text-[#00ff41]">
-              {form.readiness}/10
-            </span>
-          </div>
-          <input
-            id="bp-readiness"
-            type="range"
-            min="1"
-            max="10"
-            step="1"
-            value={form.readiness}
-            onChange={(event) =>
-              setForm({ ...form, readiness: Number(event.target.value) })
-            }
-            className="h-2 w-full cursor-pointer accent-[#00ff41]"
-          />
-          <div className="flex justify-between text-xs text-foreground/45">
-            <span>Just exploring</span>
-            <span>Ready to start</span>
-          </div>
         </div>
       </div>
 
