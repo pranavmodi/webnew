@@ -17,78 +17,78 @@ import { BuildPartnershipForm } from "./build-partnership-form";
 
 const pageTitle = "PI AI Build Partnership";
 const pageDescription =
-  "A selective build partnership for owner-led personal injury firms ready to recover signed cases or staff time by fixing one measurable workflow.";
+  "A six-month working engagement for owner-led PI firms that want to fix slow intake response, incomplete follow-up, and unclear lead attribution.";
 const pageUrl = `${SITE_URL}/build-partnership`;
 
 const facts = [
-  ["Month 1", "Baseline and stop-or-build decision"],
-  ["4 firms", "A deliberately small cohort"],
-  ["1 workflow", "Narrow enough to measure"],
-  ["Built for you", "We do the implementation"],
+  ["Up to 30 leads", "Reviewed in month one"],
+  ["2 calls", "45 minutes each month"],
+  ["1 lead source", "The first pilot, not the whole firm"],
+  ["Your current tools", "No required software replacement"],
 ];
 
 const stages = [
   {
     period: "Month 1",
-    title: "Find the constraint",
+    title: "Test the intake you have",
     body:
-      "Map one workflow end to end, establish its baseline, and identify where revenue, time, or trust is actually being lost.",
-    output: "Workflow map, baseline, owner, and first-build decision.",
+      "We submit one controlled after-hours inquiry and review up to 30 recent leads. For each lead, we compare arrival time, first call or text, follow-up attempts, consultation status, signed status, and marketing source.",
+    output: "A response-time report, a list of missed handoffs, and a written stop-or-build recommendation.",
   },
   {
     period: "Month 2",
-    title: "Set the rules and handoffs",
+    title: "Agree exactly what should happen",
     body:
-      "Write down what should happen, what information can be used, when a person steps in, and what each vendor can access.",
-    output: "Plain-language build plan and safeguards.",
+      "You choose who gets a hot-lead alert, which facts appear in the brief, when the owner is called, how follow-up continues, and what the AI says about itself.",
+    output: "Approved messages, escalation rules, follow-up schedule, and a list of permitted data and vendors.",
   },
   {
     period: "Months 3-4",
-    title: "Build inside your current tools",
+    title: "Connect the tools you already use",
     body:
-      "Connect the workflow to the tools and people already doing the work. You see exceptions; AI handles repeatable execution.",
-    output: "Working workflow, integrations, and a clear review queue.",
+      "We connect web forms, missed calls, email, and text with Lead Docket, Filevine, CASEpeer, or the intake inbox you already use. We build alerts, call-ready briefs, tasks, follow-up, and activity logging.",
+    output: "A tested intake flow and a daily list of leads that still need human attention.",
   },
   {
     period: "Month 5",
-    title: "Pilot under real conditions",
+    title: "Turn it on for one lead source",
     body:
-      "Run with a limited lead source, user group, or case set. Measure performance, adoption, edge cases, and failure modes.",
-    output: "Pilot results and a clear rollout decision.",
+      "The new flow handles one source, such as after-hours website inquiries. Your team still owns the conversation and the close; we inspect every delay, failed handoff, and stopped follow-up.",
+    output: "A 30-day dashboard showing response time, attempts, consultations, signed status, and failures.",
   },
   {
     period: "Month 6",
-    title: "Put it into daily use",
+    title: "Keep it, expand it, or stop",
     body:
-      "Document what to watch, train anyone whose work changes, and establish a simple rhythm for review and improvement.",
-    output: "Live workflow and practical owner playbook.",
+      "If the pilot improves the agreed numbers, we add the next lead source and train anyone whose work changes. If it does not, we fix the specific failure or retire the flow.",
+    output: "The live configuration, written instructions, access list, and monthly review report.",
   },
 ];
 
 const outcomes = [
   {
     icon: GitBranch,
-    title: "One working workflow",
+    title: "One live intake path",
     body:
-      "A system your team can use in the flow of work, not a prototype that lives outside it.",
+      "A web form or missed call becomes an alert, a call-ready brief, assigned follow-up, and a complete activity record.",
   },
   {
     icon: CircleGauge,
-    title: "A measurable result",
+    title: "A before-and-after dashboard",
     body:
-      "A before-and-after view of response time, conversion, cycle time, staff load, or risk.",
+      "Response time, number of attempts, consultations, signed status, source attribution, and failed handoffs in one report.",
   },
   {
     icon: ShieldCheck,
-    title: "Controls the firm understands",
+    title: "Written messages and escalation rules",
     body:
-      "Documented data boundaries, human review gates, vendor responsibilities, and escalation rules.",
+      "The exact AI disclosure, approved questions, follow-up schedule, hot-lead criteria, and conditions that require a person.",
   },
   {
     icon: Users,
-    title: "A clear view of what happens",
+    title: "A vendor and data map",
     body:
-      "You know what the workflow does, where people step in, what to monitor, and how to improve it after launch.",
+      "A plain list of which systems receive client information, what each can do, who has access, and how to turn access off.",
   },
 ];
 
@@ -96,7 +96,7 @@ const faqs = [
   {
     question: "Is this an AI course?",
     answer:
-      "No. Working sessions support the build, but the output is a live, measured workflow inside your firm.",
+      "No. There is no curriculum or software demo. We inspect recent leads, configure the workflow, connect the tools, and run the pilot.",
   },
   {
     question: "Do we need to replace our current software?",
@@ -106,7 +106,7 @@ const faqs = [
   {
     question: "Does the first build have to be intake?",
     answer:
-      "No, but intake is often the best first build because response time and signed-case conversion are visible and attributable. A different workflow can lead when its constraint and economics are clearer.",
+      "This partnership defaults to intake because the timestamps, follow-up attempts, consultations, and signed cases can be compared. If the first review shows that records, client updates, demands, or liens are the more expensive problem, we recommend that path before quoting a build.",
   },
   {
     question: "Will AI replace intake staff or legal judgment?",
@@ -116,17 +116,17 @@ const faqs = [
   {
     question: "Will this consume my calendar?",
     answer:
-      "No. We do the process mapping, implementation, integration, and testing. You join two short working sessions a month and make the decisions only the firm owner can make. If you have staff, we involve them only where their workflow changes.",
+      "Plan on two 45-minute working calls a month. You explain what qualifies as a good lead, choose who gets alerted, and approve messages and escalation rules. We handle the lead review, configuration, integrations, testing, and pilot monitoring.",
   },
   {
     question: "Do we commit to six months before seeing evidence?",
     answer:
-      "No. Month one establishes the baseline and ends with a stop-or-build decision. Every later stage has the same proceed, narrow, or stop gate. Six months is the full path when the evidence supports continuing.",
+      "No. Month one ends with the lead-by-lead timestamp report and a written stop-or-build recommendation. You decide whether to continue. The full path takes six months only when each stage justifies the next one.",
   },
   {
     question: "How is the investment structured?",
     answer:
-      "Month one is a bounded diagnostic with an agreed cost and deliverable. Only after the baseline and break-even logic are clear do we scope the build. There is no obligation to proceed into implementation.",
+      "Month one has a fixed scope and an agreed price: one controlled inquiry, review of up to 30 recent leads, a baseline report, and a written recommendation. We quote implementation only after you see that report. There is no obligation to continue.",
   },
   {
     question: "What happens if the pilot does not perform?",
@@ -219,11 +219,11 @@ export default function BuildPartnershipPage() {
               them.
             </p>
             <p className="mt-6 max-w-3xl text-base leading-relaxed text-foreground/75 sm:text-lg">
-              A selective six-month partnership for lean personal injury firms
-              ready to recover signed cases or staff time by fixing one
-              recurring breakdown. We map it, build around the tools you
-              already use, test it on a small slice of real work, and measure
-              whether it earns the right to continue.
+              A six-month working engagement for PI firms where website leads
+              sit after hours, follow-up stops too soon, or nobody can connect
+              the advertising source to the signed case. We inspect one lead
+              source, connect the tools you already use, and run the new intake
+              flow for 30 days before anything expands.
             </p>
             <Link
               href="#apply"
@@ -233,9 +233,10 @@ export default function BuildPartnershipPage() {
               <ArrowDown className="h-4 w-4" aria-hidden="true" />
             </Link>
             <p className="mt-5 max-w-3xl border-l-2 border-primary/50 pl-4 text-sm leading-relaxed text-foreground/65">
-              No six-month leap of faith. Month one is a bounded diagnostic with
-              an agreed cost and a stop-or-build decision. If we cannot find a
-              narrow workflow worth testing, we stop.
+              Month one has a fixed scope and agreed price: one after-hours test
+              inquiry, review of up to 30 recent leads, a baseline report, and a
+              written recommendation. If the numbers do not justify a build, we
+              stop.
             </p>
           </div>
 
@@ -258,29 +259,42 @@ export default function BuildPartnershipPage() {
       <section className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:py-20">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/65">
-            Your head start
+            What we inspect
           </p>
           <h2 className="mt-4 text-3xl font-semibold leading-tight text-primary sm:text-4xl">
-            You know where the work breaks.
+            Three ordinary ways a paid lead disappears.
           </h2>
         </div>
-        <div className="space-y-5 text-base leading-relaxed text-foreground/75">
-          <p>
-            You have watched good leads go cold between a form fill and a phone
-            call. You know which handoffs produce repeated work, which records
-            requests stall, why clients call for updates, and where a settlement
-            waits for one missing action.
-          </p>
-          <p>
-            You already know what should happen. The gap is making it happen
-            every time: the right person gets alerted, follow-up continues,
-            exceptions are visible, and nothing depends on you remembering one
-            more thing between cases.
-          </p>
-          <p className="font-medium text-foreground">
-            We build that repeatability around the firm you actually have, then
-            measure it against a result you can see.
-          </p>
+        <div className="divide-y divide-primary/15 border-y border-primary/15">
+          {[
+            {
+              time: "9:18 PM",
+              text:
+                "A website inquiry receives a form confirmation. The first human text goes out the next morning.",
+            },
+            {
+              time: "Call 1",
+              text:
+                "The caller says they are speaking with two other firms. The note is saved, but the owner is never alerted.",
+            },
+            {
+              time: "Day 3",
+              text:
+                "Two calls went unanswered. The lead is still marked “new,” but no person or task owns the next attempt.",
+            },
+          ].map((example) => (
+            <div
+              key={example.time}
+              className="grid gap-2 py-5 sm:grid-cols-[96px_1fr] sm:gap-5"
+            >
+              <span className="font-mono text-sm font-semibold text-primary">
+                {example.time}
+              </span>
+              <p className="text-sm leading-relaxed text-foreground/75">
+                {example.text}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -294,11 +308,10 @@ export default function BuildPartnershipPage() {
               Every paid inquiry has a clock on it.
             </h2>
             <p className="mt-5 text-base leading-relaxed text-foreground/75">
-              An after-hours inquiry that sits until morning may already belong
-              to the firm that answered first. Before we build anything, we
-              trace what happens to a real lead: when it arrives, when a human
-              responds, how many follow-ups occur, and whether anyone can connect
-              the marketing source to the signed case.
+              We export up to 30 recent inquiries from Lead Docket, Filevine,
+              CASEpeer, a spreadsheet, or the inbox your firm uses today. We do
+              not score the quality of your lawyers. We reconstruct what
+              happened to each lead after it arrived.
             </p>
             <p className="mt-4 text-base font-medium leading-relaxed text-foreground">
               Your acquisition cost and case economics set the break-even point,
@@ -324,13 +337,22 @@ export default function BuildPartnershipPage() {
             </div>
             <div className="bg-[#03110b] p-6">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/65">
-                When evidence points elsewhere
+                The month-one report
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-foreground/70">
-                Case development, client communication, demand preparation,
-                liens, or vendor governance can lead when the constraint is
-                clearer and the outcome is measurable.
-              </p>
+              <ul className="mt-3 space-y-3 text-sm leading-relaxed text-foreground/70">
+                {[
+                  "Arrival to first automated response",
+                  "Arrival to first human call or text",
+                  "Attempts during the first seven days",
+                  "Consultation and signed-case status",
+                  "Known or missing marketing source",
+                ].map((item) => (
+                  <li key={item} className="flex gap-2">
+                    <Check className="mt-1 h-3.5 w-3.5 shrink-0 text-primary" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
@@ -348,13 +370,14 @@ export default function BuildPartnershipPage() {
         <div className="space-y-5 text-base leading-relaxed text-foreground/75">
           <p>
             This partnership is built for owner-led PI firms, from solo
-            practices to roughly 20 attorneys, where one bottleneck is visibly
-            costing signed cases, staff time, or client trust.
+            practices to roughly 20 attorneys, that receive enough phone or web
+            inquiries to review 20 to 30 recent leads.
           </p>
           <p>
-            You do not need an innovation committee or a technical team. A
-            founder who knows the workflow and can make a decision is often the
-            fastest firm to pilot, learn, and see a result.
+            You need one person who can explain what a good lead looks like,
+            approve the messages, and answer when a serious lead is escalated.
+            That person can be the owner. You do not need an innovation
+            committee or a technical team.
           </p>
         </div>
       </section>
@@ -476,30 +499,51 @@ export default function BuildPartnershipPage() {
             The working model
           </p>
           <h2 className="mt-4 text-3xl font-semibold text-primary sm:text-4xl">
-            Built around the person running the firm.
+            We do the setup. You make four decisions.
           </h2>
           <p className="mt-5 text-base leading-relaxed text-foreground/70">
-            You are the sponsor, the workflow owner, or both. That is fine. We
-            work around your caseload, not the other way around, and do the
-            implementation work between decisions.
+            Plan on two 45-minute calls each month. Work happens between those
+            calls, not on your calendar.
           </p>
         </div>
-        <div className="space-y-4">
-          {[
-            "Two short working sessions a month, scheduled around your calendar",
-            "We map, build, integrate, and test; you make the calls only the owner can make",
-            "If you have staff, we involve them only where their work changes",
-            "If you do not have staff, we build for the firm you actually are",
-            "One lead source or workflow is tested before anything expands",
-          ].map((item) => (
-            <div
-              key={item}
-              className="flex gap-3 border-b border-primary/15 pb-4 text-sm text-foreground/75"
-            >
-              <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-              <span>{item}</span>
-            </div>
-          ))}
+        <div className="grid gap-px border border-primary/20 bg-primary/20 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+          <div className="bg-[#03110b] p-6">
+            <h3 className="text-lg font-semibold text-[#00ff41]">
+              Possible Minds
+            </h3>
+            <ul className="mt-5 space-y-4 text-sm leading-relaxed text-foreground/70">
+              {[
+                "Run the after-hours inquiry test",
+                "Review timestamps and outcomes for up to 30 leads",
+                "Configure alerts, briefs, tasks, follow-up, and logging",
+                "Connect the current intake, phone, email, and case systems",
+                "Monitor every failure during the 30-day pilot",
+              ].map((item) => (
+                <li key={item} className="flex gap-2">
+                  <Check className="mt-1 h-3.5 w-3.5 shrink-0 text-primary" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="bg-[#03110b] p-6">
+            <h3 className="text-lg font-semibold text-[#00ff41]">
+              Firm owner
+            </h3>
+            <ul className="mt-5 space-y-4 text-sm leading-relaxed text-foreground/70">
+              {[
+                "Define what qualifies as a lead worth immediate attention",
+                "Choose who receives the hot-lead alert",
+                "Approve the disclosure, messages, and follow-up schedule",
+                "Approve which systems and client fields can be used",
+              ].map((item) => (
+                <li key={item} className="flex gap-2">
+                  <Check className="mt-1 h-3.5 w-3.5 shrink-0 text-primary" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -513,17 +557,18 @@ export default function BuildPartnershipPage() {
               Expression of interest
             </p>
             <h2 className="mt-4 text-3xl font-semibold text-primary sm:text-4xl">
-              Tell us what should move.
+              Tell us where new leads arrive.
             </h2>
             <p className="mt-5 text-base leading-relaxed text-foreground/70">
-              Places are limited because each firm gets direct build capacity.
               Solo owners and firms up to roughly 20 attorneys are welcome.
-              We&apos;ll review your workflow, current stack, and readiness, then
-              respond within three working days.
+              Tell us which system receives new leads and whether the first
+              problem is after-hours response, repeated follow-up, attorney
+              escalation, or source attribution.
             </p>
             <p className="mt-5 text-sm leading-relaxed text-foreground/55">
-              Selection is mutual. The first conversation is about whether one
-              important workflow is ready for a measurable build.
+              We&apos;ll respond within three working days. The first call is to
+              confirm that the lead volume and available timestamps are enough
+              for a useful month-one review.
             </p>
           </div>
           <BuildPartnershipForm />

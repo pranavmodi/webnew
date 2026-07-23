@@ -30,12 +30,12 @@ const FIRM_SIZES = [
 ];
 
 const WORKFLOWS = [
-  "Intake response and follow-up",
-  "Case development and records",
-  "Client communication",
-  "Demand preparation",
-  "Liens and disbursement",
-  "AI governance and vendor risk",
+  "After-hours response",
+  "Slow first human call or text",
+  "Lead qualification and attorney escalation",
+  "Follow-up stops too soon",
+  "Source-to-signed-case attribution",
+  "Intake team reporting",
   "Not sure yet",
 ];
 
@@ -146,9 +146,9 @@ export function BuildPartnershipForm() {
           We have your application.
         </h3>
         <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-foreground/75">
-          We&apos;ll review the workflow, team, and current stack, then contact{" "}
-          {form.email} within three working days. The first conversation is to
-          decide whether the fit is right in both directions.
+          We&apos;ll review the intake problem, lead volume, and systems you
+          listed, then contact {form.email} within three working days. The first
+          conversation is to confirm that month one can produce a useful report.
         </p>
       </div>
     );
@@ -236,7 +236,7 @@ export function BuildPartnershipForm() {
             htmlFor="bp-workflow"
             className="text-xs uppercase tracking-wider text-primary/70"
           >
-            Where should the first build start?
+            Which intake problem is most visible?
           </Label>
           <select
             id="bp-workflow"
@@ -259,7 +259,7 @@ export function BuildPartnershipForm() {
               htmlFor="bp-readiness"
               className="text-xs uppercase tracking-wider text-primary/70"
             >
-              Ready to assign an owner and pilot a real workflow?
+              Could you run a 30-day pilot on one lead source?
             </Label>
             <span className="text-sm font-semibold text-[#00ff41]">
               {form.readiness}/10
