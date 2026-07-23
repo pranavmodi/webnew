@@ -44,7 +44,6 @@ export function BuildPartnershipForm() {
     name: "",
     email: "",
     firm: "",
-    systems: "",
     workflow: WORKFLOWS[0],
   });
 
@@ -88,7 +87,6 @@ export function BuildPartnershipForm() {
             link_code:
               getPersistedParam(["lc", "link_code"], "pm_link_code") || undefined,
             role: `PI firm owner | Tool idea: ${form.workflow}`,
-            case_management_system: form.systems.trim() || undefined,
           }),
         },
       );
@@ -126,9 +124,9 @@ export function BuildPartnershipForm() {
           We have your application.
         </h3>
         <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-foreground/75">
-          We&apos;ll review the tool idea and systems you listed, then contact{" "}
-          {form.email} within three working days. The first conversation is to
-          narrow the idea into something useful and buildable.
+          We&apos;ll review the tool idea, then contact {form.email} within
+          three working days. The first conversation is to narrow it into
+          something useful and buildable.
         </p>
       </div>
     );
@@ -169,16 +167,6 @@ export function BuildPartnershipForm() {
             value={form.firm}
             onChange={(event) => setForm({ ...form, firm: event.target.value })}
             placeholder="Law firm name"
-          />
-        </Field>
-        <Field id="bp-systems" label="Current systems">
-          <Input
-            id="bp-systems"
-            value={form.systems}
-            onChange={(event) =>
-              setForm({ ...form, systems: event.target.value })
-            }
-            placeholder="Lead Docket, Filevine, CASEpeer..."
           />
         </Field>
         <div className="space-y-2 sm:col-span-2">

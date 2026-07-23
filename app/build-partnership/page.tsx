@@ -13,38 +13,11 @@ const pageDescription =
   "Build a useful internal tool for your personal injury firm with AI coding agents. No programming background required.";
 const pageUrl = `${SITE_URL}/build-partnership`;
 
-const examples = [
-  {
-    title: "Intake monitor",
-    body: "Flag serious leads waiting for a human response or a clear next step.",
-  },
-  {
-    title: "Case chase list",
-    body: "Find treatment gaps, missing records, and stalled provider requests.",
-  },
-  {
-    title: "Demand checker",
-    body: "Identify missing records, bills, photos, and wage documents before drafting.",
-  },
-  {
-    title: "Owner dashboard",
-    body: "See response time, aging work, case movement, and exceptions in one place.",
-  },
-];
-
-const buildReasons = [
-  {
-    label: "Your rules",
-    body: "Encode your escalation rules, checklists, and exceptions instead of accepting a generic workflow.",
-  },
-  {
-    label: "Your control",
-    body: "Keep the source code, tests, and instructions. Change the tool when the firm changes.",
-  },
-  {
-    label: "Your stack",
-    body: "Work across approved exports and APIs without replacing the systems your team already uses.",
-  },
+const toolIdeas = [
+  ["Intake monitor", "Flag serious leads waiting for a human response."],
+  ["Case chase list", "Find treatment gaps, missing records, and stalled work."],
+  ["Demand checker", "Catch missing documents before drafting begins."],
+  ["Owner dashboard", "Surface aging work and cases that need attention."],
 ];
 
 const steps = [
@@ -55,18 +28,13 @@ const steps = [
   },
   {
     number: "02",
-    title: "Build with sample data",
-    body: "Direct the coding agent while we help scope, test, and review the work.",
+    title: "Build and test",
+    body: "Direct the coding agent while we help scope and review the work.",
   },
   {
     number: "03",
-    title: "Pilot with one person",
-    body: "Use the tool on a narrow workflow and record every error and exception.",
-  },
-  {
-    number: "04",
-    title: "Deploy and own it",
-    body: "Leave with working software, source code, tests, and setup instructions.",
+    title: "Pilot and own it",
+    body: "Deploy a narrow tool with source code, tests, and instructions.",
   },
 ];
 
@@ -105,7 +73,7 @@ export default function BuildPartnershipPage() {
       provider: { "@id": `${SITE_URL}/#organization` },
       occupationalCategory: "Personal injury law firm owner",
       teaches:
-        "How to build, test, deploy, and maintain internal law-firm tools with AI coding agents",
+        "How to build, test, and deploy internal law-firm tools with AI coding agents",
     },
     {
       "@context": "https://schema.org",
@@ -136,12 +104,11 @@ export default function BuildPartnershipPage() {
             Build the tools your firm keeps waiting for.
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-foreground/75 sm:text-xl">
-            Bring one workflow your software does not handle well. Learn to turn
-            it into a working internal tool with Claude Code, Codex, or a
-            similar coding agent.
+            Turn one PI workflow into a working internal tool with an AI coding
+            agent. No programming background required.
           </p>
           <div className="mt-7 flex flex-wrap gap-x-6 gap-y-2 text-sm text-foreground/65">
-            {["No coding required", "One real tool", "Source code stays with your firm"].map(
+            {["One real tool", "Works with your current stack", "Your firm keeps the code"].map(
               (item) => (
                 <span key={item} className="inline-flex items-center gap-2">
                   <Check className="h-4 w-4 text-primary" aria-hidden="true" />
@@ -160,78 +127,37 @@ export default function BuildPartnershipPage() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:py-16">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/65">
-            Why this works now
-          </p>
-          <h2 className="mt-4 text-3xl font-semibold leading-tight text-primary sm:text-4xl">
-            You know the workflow. The agent can write the code.
-          </h2>
-        </div>
-        <div className="space-y-4 text-base leading-relaxed text-foreground/70">
-          <p>
-            PI firms run on rules vendors cannot see: when a lead needs the
-            owner, what makes a demand ready, and which stalled case needs
-            attention.
-          </p>
-          <p>
-            AI coding agents make small, firm-specific tools practical. You
-            define what correct looks like. The agent builds it. We help you
-            scope the tool, test it, and deploy it safely.
-          </p>
-        </div>
-      </section>
-
-      <section className="border-y border-primary/15 bg-[#04150d]/55">
-        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:py-16">
-          <div className="max-w-3xl">
+      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:py-16">
+        <div className="grid gap-9 lg:grid-cols-[0.85fr_1.15fr]">
+          <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/65">
-              What you could build
+              Why build
             </p>
-            <h2 className="mt-4 text-3xl font-semibold text-primary sm:text-4xl">
-              Start with one narrow operational gap.
+            <h2 className="mt-4 text-3xl font-semibold leading-tight text-primary sm:text-4xl">
+              Vendors build the common workflow. Your advantage is in the
+              exceptions.
             </h2>
           </div>
-          <div className="mt-9 grid gap-px border border-primary/20 bg-primary/20 sm:grid-cols-2 lg:grid-cols-4">
-            {examples.map((example) => (
-              <article key={example.title} className="bg-[#03110b] p-5">
-                <h3 className="text-lg font-semibold text-[#00ff41]">
-                  {example.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-foreground/65">
-                  {example.body}
-                </p>
-              </article>
-            ))}
+          <div className="space-y-4 text-base leading-relaxed text-foreground/70">
+            <p>
+              You know when a lead needs the owner, what makes a demand ready,
+              and which stalled case needs attention. A generic product does
+              not know those rules.
+            </p>
+            <p>
+              AI coding agents make narrow, firm-specific software practical.
+              Keep your core systems. Build the missing layer around them, using
+              your rules, with code you can inspect and change.
+            </p>
           </div>
         </div>
-      </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:py-16">
-        <div className="max-w-4xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/65">
-            Why not wait for a vendor?
-          </p>
-          <h2 className="mt-4 text-3xl font-semibold text-primary sm:text-4xl">
-            Buy the core system. Build the gap that makes your firm different.
-          </h2>
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-foreground/70">
-            Vendors must serve the common workflow. Your highest-value rules
-            often live in the exceptions they will not prioritize.
-          </p>
-        </div>
-        <div className="mt-9 grid border-y border-primary/20 md:grid-cols-3">
-          {buildReasons.map((reason) => (
-            <article
-              key={reason.label}
-              className="border-b border-primary/15 py-6 md:border-b-0 md:border-r md:px-6 first:pl-0 last:border-r-0"
-            >
-              <h3 className="text-lg font-semibold text-[#00ff41]">
-                {reason.label}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-foreground/65">
-                {reason.body}
+        <div className="mt-10 grid gap-px border border-primary/20 bg-primary/20 sm:grid-cols-2">
+          {toolIdeas.map(([title, body]) => (
+            <article key={title} className="bg-[#03110b] p-5">
+              <h3 className="text-lg font-semibold text-[#00ff41]">{title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-foreground/65">
+                {body}
               </p>
             </article>
           ))}
@@ -244,9 +170,9 @@ export default function BuildPartnershipPage() {
             How it works
           </p>
           <h2 className="mt-4 text-3xl font-semibold text-primary sm:text-4xl">
-            One tool. Four steps.
+            One tool. Three steps.
           </h2>
-          <div className="mt-9 grid gap-px border border-primary/20 bg-primary/20 md:grid-cols-4">
+          <div className="mt-9 grid gap-px border border-primary/20 bg-primary/20 md:grid-cols-3">
             {steps.map((step) => (
               <article key={step.number} className="bg-[#04150d] p-5">
                 <span className="text-xs font-semibold text-primary/55">
@@ -267,9 +193,9 @@ export default function BuildPartnershipPage() {
               aria-hidden="true"
             />
             <p className="text-sm leading-relaxed text-foreground/65">
-              Start with synthetic or sanitized data. Introduce client data only
-              after access, retention, logging, and human review are defined.
-              Legal judgment stays with people.
+              Start with synthetic or sanitized data. Add client data only after
+              access, retention, logging, and human review are defined. Legal
+              judgment stays with people.
             </p>
           </div>
         </div>
@@ -288,14 +214,12 @@ export default function BuildPartnershipPage() {
               What tool does your firm wish existed?
             </h2>
             <p className="mt-5 text-sm leading-relaxed text-foreground/65">
-              A specific idea is not required. One recurring task is enough to
-              start.
+              A specific idea is not required. One recurring task is enough.
             </p>
           </div>
           <BuildPartnershipForm />
         </div>
       </section>
-
     </div>
   );
 }
