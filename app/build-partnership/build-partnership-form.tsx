@@ -30,12 +30,13 @@ const FIRM_SIZES = [
 ];
 
 const WORKFLOWS = [
-  "After-hours response",
-  "Slow first human call or text",
-  "Lead qualification and attorney escalation",
-  "Follow-up stops too soon",
-  "Source-to-signed-case attribution",
-  "Intake team reporting",
+  "Intake or lead follow-up",
+  "Records and treatment tracking",
+  "Client updates",
+  "Demand preparation",
+  "Liens and disbursement",
+  "Firm reporting or dashboard",
+  "Another internal tool",
   "Not sure yet",
 ];
 
@@ -102,11 +103,11 @@ export function BuildPartnershipForm() {
             name: form.name.trim(),
             email: form.email.trim(),
             firm: form.firm.trim(),
-            product: "pi-ai-build-partnership",
-            source: "build_partnership_eoi",
+            product: "pi-owner-ai-builder-program",
+            source: "ai_builder_program_eoi",
             link_code:
               getPersistedParam(["lc", "link_code"], "pm_link_code") || undefined,
-            role: `${form.role} | First workflow: ${form.workflow}`,
+            role: `${form.role} | Tool idea: ${form.workflow}`,
             case_management_system: form.systems.trim() || undefined,
             firm_size: `${form.firmSize} | Readiness ${form.readiness}/10`,
           }),
@@ -146,9 +147,9 @@ export function BuildPartnershipForm() {
           We have your application.
         </h3>
         <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-foreground/75">
-          We&apos;ll review the intake problem, lead volume, and systems you
-          listed, then contact {form.email} within three working days. The first
-          conversation is to confirm that month one can produce a useful report.
+          We&apos;ll review the tool idea and systems you listed, then contact{" "}
+          {form.email} within three working days. The first conversation is to
+          narrow the idea into something useful and buildable.
         </p>
       </div>
     );
@@ -236,7 +237,7 @@ export function BuildPartnershipForm() {
             htmlFor="bp-workflow"
             className="text-xs uppercase tracking-wider text-primary/70"
           >
-            Which intake problem is most visible?
+            What would you most like to build?
           </Label>
           <select
             id="bp-workflow"
@@ -259,7 +260,7 @@ export function BuildPartnershipForm() {
               htmlFor="bp-readiness"
               className="text-xs uppercase tracking-wider text-primary/70"
             >
-              Could you run a 30-day pilot on one lead source?
+              How ready are you to spend 2-3 hours a week building?
             </Label>
             <span className="text-sm font-semibold text-[#00ff41]">
               {form.readiness}/10
@@ -278,8 +279,8 @@ export function BuildPartnershipForm() {
             className="h-2 w-full cursor-pointer accent-[#00ff41]"
           />
           <div className="flex justify-between text-xs text-foreground/45">
-            <span>Still exploring</span>
-            <span>Ready to build</span>
+            <span>Just exploring</span>
+            <span>Ready to start</span>
           </div>
         </div>
       </div>

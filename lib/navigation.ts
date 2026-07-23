@@ -58,7 +58,7 @@ export const footerLinks = [
     links: [
       { label: "AI Reputation Tool", href: "https://reputable.getpossibleminds.com" },
       { label: "AI Readiness Audit", href: "https://aiaudit.getpossibleminds.com" },
-      { label: "PI AI Build Partnership", href: "/build-partnership" },
+      { label: "PI Owner AI Builder Program", href: "/build-partnership" },
       { label: "Our Thesis", href: "/thesis" },
       { label: "Security", href: "/security" },
       { label: "Email", href: "mailto:hello@possibleminds.ai" },

@@ -112,15 +112,15 @@ export default function WorkshopsPage() {
             For firm leadership
           </p>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-foreground/65">
-            Ready to move beyond a working session? The PI AI Build Partnership
-            takes one measurable workflow from bottleneck to governed
-            production over six months.
+            Ready to build instead of only using prompts? The PI Owner AI
+            Builder Program helps firm owners create and deploy an internal tool
+            with Claude Code, Codex, or a similar coding agent.
           </p>
           <Link
             href="/build-partnership"
             className="mt-4 inline-block text-sm font-semibold text-primary"
           >
-            Explore the build partnership →
+            Explore the AI builder program →
           </Link>
         </div>
       </div>
