@@ -68,6 +68,44 @@ const exampleTools = [
   },
 ];
 
+const vendorComparison = [
+  {
+    issue: "Whose workflow wins?",
+    vendor:
+      "The feature must work for thousands of firms, so it follows the common workflow.",
+    owner:
+      "The tool can use your definitions, escalation rules, checklists, and exceptions.",
+  },
+  {
+    issue: "How fast can it change?",
+    vendor:
+      "Your request enters a product roadmap and competes with every other customer's priorities.",
+    owner:
+      "You can ask the coding agent to change one field, rule, or screen, test it, and deploy a new version.",
+  },
+  {
+    issue: "Can you inspect the logic?",
+    vendor:
+      "The scoring, automation, and model behavior may be configurable without being fully visible.",
+    owner:
+      "Your instructions, code, tests, logs, and known limitations are available for review.",
+  },
+  {
+    issue: "Where can it work?",
+    vendor:
+      "A feature usually lives inside one vendor's product and sees only the data stored there.",
+    owner:
+      "A small tool can combine approved exports or APIs from intake, case management, phone, email, and marketing systems.",
+  },
+  {
+    issue: "What happens if the vendor changes?",
+    vendor:
+      "Pricing, APIs, ownership, product direction, or availability can change outside your control.",
+    owner:
+      "You retain the source code, tests, and instructions, and can replace one dependency without discarding the entire tool.",
+  },
+];
+
 const stages = [
   {
     period: "Month 1",
@@ -376,6 +414,98 @@ export default function BuildPartnershipPage() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="border-y border-primary/15 bg-[#03110b]">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-20">
+          <div className="max-w-4xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/65">
+              Why build instead of waiting for a vendor?
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold text-primary sm:text-4xl">
+              Vendors build the common denominator. Your advantage lives in the
+              exceptions.
+            </h2>
+            <p className="mt-5 max-w-3xl text-base leading-relaxed text-foreground/75">
+              Keep the case-management, intake, phone, and accounting products
+              that already do their jobs. Build the narrow layer they are
+              unlikely to prioritize: your escalation rule, your demand
+              checklist, your owner dashboard, or the handoff between two
+              systems.
+            </p>
+          </div>
+
+          <div className="mt-10 space-y-3 md:hidden">
+            {vendorComparison.map((row) => (
+              <article
+                key={row.issue}
+                className="border border-primary/20 bg-[#04150d] p-5"
+              >
+                <h3 className="font-semibold text-primary">{row.issue}</h3>
+                <div className="mt-4">
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/45">
+                    Rely on the vendor
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-foreground/60">
+                    {row.vendor}
+                  </p>
+                </div>
+                <div className="mt-4 border-t border-primary/15 pt-4">
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#00ff41]">
+                    Build a narrow tool
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-foreground/80">
+                    {row.owner}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-10 hidden overflow-x-auto border border-primary/20 md:block">
+            <table className="min-w-[820px] border-collapse text-left text-sm">
+              <thead className="border-b border-primary/20 bg-[#04150d]">
+                <tr>
+                  <th className="w-[22%] px-5 py-4 font-semibold text-primary">
+                    Question
+                  </th>
+                  <th className="w-[39%] px-5 py-4 font-semibold text-foreground/65">
+                    Rely on the vendor
+                  </th>
+                  <th className="w-[39%] px-5 py-4 font-semibold text-[#00ff41]">
+                    Build a narrow tool
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-primary/15">
+                {vendorComparison.map((row) => (
+                  <tr key={row.issue}>
+                    <th
+                      scope="row"
+                      className="px-5 py-5 align-top font-semibold text-primary"
+                    >
+                      {row.issue}
+                    </th>
+                    <td className="px-5 py-5 align-top leading-relaxed text-foreground/60">
+                      {row.vendor}
+                    </td>
+                    <td className="px-5 py-5 align-top leading-relaxed text-foreground/80">
+                      {row.owner}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <p className="mt-5 max-w-4xl text-sm leading-relaxed text-foreground/55">
+            Building is not automatically better. Buy commodity capabilities
+            such as billing, telephony, document storage, and a system of
+            record. Build when the workflow is specific to your firm, the input
+            and output are clear, and owning the rule creates enough value to
+            justify maintaining it.
+          </p>
         </div>
       </section>
 
