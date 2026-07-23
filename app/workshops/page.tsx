@@ -107,10 +107,22 @@ export default function WorkshopsPage() {
           </Link>
         ))}
 
-        <p className="pt-4 text-sm text-foreground/60">
-          A session for firm leadership is in development. Registering for any
-          working session puts you on the list for new tracks.
-        </p>
+        <div className="border-t border-primary/20 pt-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/65">
+            For firm leadership
+          </p>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-foreground/65">
+            Ready to move beyond a working session? The PI AI Build Partnership
+            takes one measurable workflow from bottleneck to governed
+            production over six months.
+          </p>
+          <Link
+            href="/build-partnership"
+            className="mt-4 inline-block text-sm font-semibold text-primary"
+          >
+            Explore the build partnership →
+          </Link>
+        </div>
       </div>
     </div>
   );

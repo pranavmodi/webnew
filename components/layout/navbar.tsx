@@ -73,7 +73,7 @@ export function Navbar() {
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-3 md:flex lg:gap-5">
+        <nav className="hidden items-center gap-3 xl:flex xl:gap-5">
           {dropdownGroups.map((group) => (
             <div key={group.label} className="relative group">
               <button
@@ -113,7 +113,7 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-2 md:flex">
+        <div className="hidden items-center gap-2 xl:flex">
           <Button asChild size="sm">
             <Link href={CALENDLY_URL} target="_blank" rel="noreferrer">
               Intake audit
@@ -121,7 +121,7 @@ export function Navbar() {
           </Button>
         </div>
 
-        <div className="flex items-center md:hidden">
+        <div className="flex items-center xl:hidden">
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon" aria-label="Open navigation">
