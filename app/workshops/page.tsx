@@ -8,7 +8,7 @@ import { SITE_URL } from "@/lib/constants";
 
 const pageTitle = "AI Workshops for Personal Injury Firm Teams";
 const pageDescription =
-  "Free, hands-on AI workshops for PI teams using Lead Docket, Filevine, CASEpeer, or SmartAdvocate.";
+  "Free, hands-on AI workshops for PI teams using Lead Docket, Filevine, CASEpeer, SmartAdvocate, or Litify.";
 const pageUrl = `${SITE_URL}/workshops`;
 
 const workshops = [
@@ -60,6 +60,18 @@ const workshops = [
       "WorkPlan escalation map",
     ],
   },
+  {
+    vendor: "Litify",
+    role: "For PI operations leaders",
+    href: "/workshops/ai-for-litify-pi-operations-teams",
+    summary:
+      "Design governed Salesforce-based workflows across intake, matters, documents, and reporting.",
+    outputs: [
+      "Agent action map",
+      "Human approval matrix",
+      "Exception dashboard spec",
+    ],
+  },
 ];
 
 export const metadata: Metadata = {
@@ -70,6 +82,7 @@ export const metadata: Metadata = {
     "Filevine AI workshop",
     "CASEpeer AI workshop",
     "SmartAdvocate AI workshop",
+    "Litify AI workshop",
     "personal injury law firm AI training",
   ],
   alternates: { canonical: pageUrl },
@@ -144,11 +157,13 @@ export default function WorkshopsPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
-        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          {workshops.map((workshop) => (
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
+          {workshops.map((workshop, index) => (
             <article
               key={workshop.vendor}
-              className="flex min-h-full flex-col border border-primary/25 bg-[#04150d] p-6"
+              className={`flex min-h-full flex-col border border-primary/25 bg-[#04150d] p-6 lg:col-span-2 ${
+                index === 3 ? "lg:col-start-2" : ""
+              }`}
             >
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-foreground/50">
                 {workshop.role}
