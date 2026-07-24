@@ -8,7 +8,7 @@ import { SITE_URL } from "@/lib/constants";
 
 const pageTitle = "AI Workshops for Personal Injury Firm Teams";
 const pageDescription =
-  "Free, hands-on AI workshops for PI teams using Lead Docket, Filevine, or CASEpeer.";
+  "Free, hands-on AI workshops for PI teams using Lead Docket, Filevine, CASEpeer, or SmartAdvocate.";
 const pageUrl = `${SITE_URL}/workshops`;
 
 const workshops = [
@@ -48,6 +48,18 @@ const workshops = [
       "Deadline checks",
     ],
   },
+  {
+    vendor: "SmartAdvocate",
+    role: "For PI paralegals",
+    href: "/workshops/ai-for-smartadvocate-paralegals",
+    summary:
+      "Turn case data and documents into verified work queues and attorney-ready reviews.",
+    outputs: [
+      "Case review brief",
+      "Document exception list",
+      "WorkPlan escalation map",
+    ],
+  },
 ];
 
 export const metadata: Metadata = {
@@ -57,6 +69,7 @@ export const metadata: Metadata = {
     "Lead Docket AI workshop",
     "Filevine AI workshop",
     "CASEpeer AI workshop",
+    "SmartAdvocate AI workshop",
     "personal injury law firm AI training",
   ],
   alternates: { canonical: pageUrl },
@@ -131,7 +144,7 @@ export default function WorkshopsPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
-        <div className="grid gap-4 lg:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {workshops.map((workshop) => (
             <article
               key={workshop.vendor}
@@ -140,7 +153,13 @@ export default function WorkshopsPage() {
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-foreground/50">
                 {workshop.role}
               </p>
-              <h2 className="mt-4 text-3xl font-semibold text-[#00ff41] sm:text-4xl">
+              <h2
+                className={`mt-4 whitespace-nowrap font-semibold text-[#00ff41] ${
+                  workshop.vendor === "SmartAdvocate"
+                    ? "text-2xl"
+                    : "text-3xl"
+                }`}
+              >
                 {workshop.vendor}
               </h2>
               <p className="mt-5 text-sm leading-relaxed text-foreground/70">
