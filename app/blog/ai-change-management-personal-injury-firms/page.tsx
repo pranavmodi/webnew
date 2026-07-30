@@ -164,8 +164,8 @@ export default function BlogPostPage() {
         <div className="absolute inset-0 bg-black/70" />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.88)_0%,rgba(0,0,0,0.72)_48%,rgba(0,0,0,0.35)_100%)]" />
 
-        <div className="relative mx-auto flex min-h-[600px] max-w-6xl flex-col justify-end px-4 pb-16 pt-24 sm:min-h-[660px] sm:px-6 sm:pb-20">
-          <div className="max-w-4xl">
+        <div className="relative mx-auto flex min-h-[600px] max-w-4xl flex-col justify-end px-4 pb-16 pt-24 sm:min-h-[660px] sm:px-6 sm:pb-20">
+          <div>
             <div className="flex items-center gap-3 text-xs text-foreground/65">
               <Link href="/blog" className="transition hover:text-primary">
                 Blog
@@ -207,7 +207,7 @@ export default function BlogPostPage() {
         </div>
       </header>
 
-      <article className="mx-auto max-w-3xl px-4 pt-14 text-[1.0625rem] leading-8 text-foreground/80 sm:px-6 sm:pt-16">
+      <article className="mx-auto max-w-4xl px-4 pt-14 text-[1.0625rem] leading-8 text-foreground/80 sm:px-6 sm:pt-16">
         <section className="space-y-6">
           <p className="text-xl leading-9 text-foreground/90">
             If you run a personal injury firm, this may sound familiar. You buy
@@ -687,7 +687,7 @@ export default function BlogPostPage() {
       </article>
 
       <section className="mt-20 border-y border-primary/20 bg-[#03110b]">
-        <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
+        <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/65">
             Start with the workflow
           </p>
