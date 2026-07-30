@@ -12,6 +12,18 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    href: "/blog/ai-change-management-personal-injury-firms",
+    slug: "ai-change-management-personal-injury-firms",
+    title: "The Fastest AI Still Moves at the Speed of the Firm",
+    description:
+      "AI transformation fails when firms install tools without changing behavior. A practical change-management framework for personal injury firms.",
+    author: "Pranav Modi",
+    date: "July 30, 2026",
+    readTime: "11 min read",
+    category: "AI Strategy",
+    tags: ["Legal AI", "AI Strategy", "For PI Firms"],
+  },
+  {
     href: "/blog/headless-legal-software-pi-vendor-rankings",
     slug: "headless-legal-software-pi-vendor-rankings",
     title: "Headless Legal Software: Which PI Vendors Are Ready for AI Agents?",

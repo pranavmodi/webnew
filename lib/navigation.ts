@@ -29,6 +29,10 @@ export const caseStudiesLinks = [
 
 export const blogLinks = [
   {
+    href: "/blog/ai-change-management-personal-injury-firms",
+    label: "AI Change Management",
+  },
+  {
     href: "/blog/headless-legal-software-pi-vendor-rankings",
     label: "Headless PI Software",
   },

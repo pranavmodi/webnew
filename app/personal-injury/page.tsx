@@ -170,6 +170,11 @@ const caseStudies = [
 
 const blogPosts = [
   {
+    href: "/blog/ai-change-management-personal-injury-firms",
+    title: "The Fastest AI Still Moves at the Speed of the Firm",
+    tag: "AI Transformation",
+  },
+  {
     href: "/blog/headless-legal-software-pi-vendor-rankings",
     title: "Headless Legal Software: Which PI Vendors Are Ready for AI Agents?",
     tag: "Vendor Strategy",
