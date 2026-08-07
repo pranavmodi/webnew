@@ -107,6 +107,15 @@ const guideSteps = [
   { id: "protect-relationship", label: "Protect the relationship and its data" },
 ];
 
+const acquisitionStages = [
+  { label: "Source", detail: "Campaign or channel" },
+  { label: "Inquiry", detail: "Call, form, or chat" },
+  { label: "Contact", detail: "Human response" },
+  { label: "Wanted", detail: "Fits firm criteria" },
+  { label: "Signed", detail: "Retainer complete" },
+  { label: "Fee", detail: "Case economics" },
+];
+
 export const metadata: Metadata = {
   title: metaTitle,
   description: pageDescription,
@@ -392,19 +401,36 @@ export default function BlogPostPage() {
             may produce poor-fit inquiries; a costly campaign may produce the
             firm&apos;s best cases. You cannot know at the lead stage.
           </p>
-          <div className="my-8 border-y border-primary/20 py-7">
-            <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-6">
-              {["Source", "Inquiry", "Contact", "Wanted", "Signed", "Fee"].map(
-                (stage, index) => (
-                  <div key={stage} className="text-center">
-                    <p className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-primary/60">
+          <div className="my-8 border-y border-primary/30 py-8 sm:py-10">
+            <div className="relative">
+              <div
+                aria-hidden="true"
+                className="absolute bottom-7 left-7 top-7 w-px bg-primary/45 lg:bottom-auto lg:left-[8.333%] lg:right-[8.333%] lg:top-7 lg:h-px lg:w-auto"
+              />
+              <ol className="relative grid gap-5 lg:grid-cols-6 lg:gap-0">
+                {acquisitionStages.map((stage, index) => (
+                  <li
+                    key={stage.label}
+                    className="flex min-h-16 items-center gap-5 lg:min-h-0 lg:flex-col lg:gap-4 lg:px-2 lg:text-center"
+                  >
+                    <span className="relative z-10 flex size-14 shrink-0 items-center justify-center border-2 border-primary bg-black text-sm font-bold text-primary">
                       {String(index + 1).padStart(2, "0")}
-                    </p>
-                    <p className="mt-2 font-semibold text-foreground">{stage}</p>
-                  </div>
-                ),
-              )}
+                    </span>
+                    <span>
+                      <span className="block text-lg font-semibold leading-6 text-foreground">
+                        {stage.label}
+                      </span>
+                      <span className="mt-1 block text-sm leading-5 text-foreground/65">
+                        {stage.detail}
+                      </span>
+                    </span>
+                  </li>
+                ))}
+              </ol>
             </div>
+            <p className="mt-8 border-t border-primary/15 pt-5 text-center text-sm font-medium text-primary sm:mt-10">
+              One record from first touch to case economics
+            </p>
           </div>
           <p>
             Keep one record across all six moments. cj Advertising&apos;s{" "}
