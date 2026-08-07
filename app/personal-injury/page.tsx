@@ -170,6 +170,11 @@ const caseStudies = [
 
 const blogPosts = [
   {
+    href: "/blog/personal-injury-intake-marketing-system",
+    title: "Marketing Does Not End When the Phone Rings",
+    tag: "Intake Operations",
+  },
+  {
     href: "/blog/ai-change-management-personal-injury-firms",
     title: "The Fastest AI Still Moves at the Speed of the Firm",
     tag: "AI Transformation",

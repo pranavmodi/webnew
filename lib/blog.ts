@@ -12,6 +12,18 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    href: "/blog/personal-injury-intake-marketing-system",
+    slug: "personal-injury-intake-marketing-system",
+    title: "Marketing Does Not End When the Phone Rings",
+    description:
+      "PI firms lose marketing value when intake is slow or disconnected. A practical system for response, qualification, attribution, and human follow-up.",
+    author: "Pranav Modi",
+    date: "August 7, 2026",
+    readTime: "12 min read",
+    category: "Intake Operations",
+    tags: ["Intake", "For PI Firms", "AI Strategy"],
+  },
+  {
     href: "/blog/ai-change-management-personal-injury-firms",
     slug: "ai-change-management-personal-injury-firms",
     title: "The Fastest AI Still Moves at the Speed of the Firm",
