@@ -14,12 +14,12 @@ export const blogPosts: BlogPost[] = [
   {
     href: "/blog/personal-injury-intake-marketing-system",
     slug: "personal-injury-intake-marketing-system",
-    title: "Marketing Does Not End When the Phone Rings",
+    title: "How to Build a Personal Injury Intake System That Converts",
     description:
-      "PI firms lose marketing value when intake is slow or disconnected. A practical system for response, qualification, attribution, and human follow-up.",
+      "A step-by-step guide for PI firm owners to improve intake response, qualification, follow-up, attribution, and signed-case conversion.",
     author: "Pranav Modi",
     date: "August 7, 2026",
-    readTime: "12 min read",
+    readTime: "8 min read",
     category: "Intake Operations",
     tags: ["Intake", "For PI Firms", "AI Strategy"],
   },

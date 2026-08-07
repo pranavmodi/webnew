@@ -30,7 +30,7 @@ export const caseStudiesLinks = [
 export const blogLinks = [
   {
     href: "/blog/personal-injury-intake-marketing-system",
-    label: "Intake Is Marketing",
+    label: "PI Intake Guide",
   },
   {
     href: "/blog/ai-change-management-personal-injury-firms",

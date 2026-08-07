@@ -171,7 +171,7 @@ const caseStudies = [
 const blogPosts = [
   {
     href: "/blog/personal-injury-intake-marketing-system",
-    title: "Marketing Does Not End When the Phone Rings",
+    title: "How to Build a Personal Injury Intake System That Converts",
     tag: "Intake Operations",
   },
   {

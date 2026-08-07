@@ -8,10 +8,10 @@ import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
 
 const slug = "personal-injury-intake-marketing-system";
-const pageTitle = "Marketing Does Not End When the Phone Rings";
-const metaTitle = `PI Intake Is Part of Marketing | ${SITE_NAME}`;
+const pageTitle = "How to Build a Personal Injury Intake System That Converts";
+const metaTitle = `PI Intake System: Step-by-Step Guide | ${SITE_NAME}`;
 const pageDescription =
-  "PI firms lose marketing value when intake is slow or disconnected. A practical system for response, qualification, attribution, and human follow-up.";
+  "A step-by-step guide for PI firm owners to improve intake response, qualification, follow-up, attribution, and signed-case conversion.";
 const pageUrl = `${SITE_URL}/blog/${slug}`;
 const heroImage = `${SITE_URL}/images/blog/pi-intake-marketing-system.png`;
 
@@ -62,6 +62,11 @@ const faqs = [
     answer:
       "Use AI to detect, structure, route, remind, monitor, and measure. Keep empathy, legal judgment, case acceptance, sensitive conversations, and consequential closing decisions with trained people.",
   },
+  {
+    question: "What does Possible Minds Intake Agent do?",
+    answer:
+      "Intake Agent responds to calls, website conversations, and forms around the clock; captures essential facts; flags urgent inquiries; and creates an organized lead with the transcript, recording, tasks, and review issues. It prepares the intake team to follow up personally rather than replacing staff or making legal decisions.",
+  },
 ];
 
 const scorecard = [
@@ -89,6 +94,17 @@ const scorecard = [
     label: "Economics",
     measure: "Source to signed case to eventual fee, not cost per lead alone",
   },
+];
+
+const guideSteps = [
+  { id: "audit-inquiries", label: "Audit 25 recent inquiries" },
+  { id: "map-source-to-fee", label: "Map every lead from source to fee" },
+  { id: "set-response-standard", label: "Set a human response standard" },
+  { id: "build-after-hours", label: "Build an after-hours workflow" },
+  { id: "remove-signup-friction", label: "Remove friction before signature" },
+  { id: "assign-ownership", label: "Assign ownership and measure it" },
+  { id: "add-ai", label: "Add AI at the right boundaries" },
+  { id: "protect-relationship", label: "Protect the relationship and its data" },
 ];
 
 export const metadata: Metadata = {
@@ -229,20 +245,19 @@ export default function BlogPostPage() {
               <span>Intake Operations</span>
             </div>
             <p className="mt-8 text-xs font-semibold uppercase tracking-[0.2em] text-[#00ff41]">
-              Personal injury intake
+              A guide for PI firm owners
             </p>
             <h1 className="mt-5 text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
-              Marketing Does Not End When the Phone Rings
+              How to Build a Personal Injury Intake System That Converts
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-foreground/85 sm:text-xl">
-              A lead is only potential value. Your firm realizes that value when
-              intake responds, earns trust, makes the right decision, and tells
-              marketing what happened next.
+              Eight practical steps to connect marketing, fast human response,
+              qualification, follow-up, signature, and case economics.
             </p>
             <div className="mt-7 flex flex-wrap gap-x-4 gap-y-2 text-xs text-foreground/65">
               <span>{post.author}</span>
               <span aria-hidden="true">/</span>
-              <span>{post.date}</span>
+              <time dateTime="2026-08-07">{post.date}</time>
               <span aria-hidden="true">/</span>
               <span>{post.readTime}</span>
             </div>
@@ -283,9 +298,9 @@ export default function BlogPostPage() {
           <p>
             That is the clearest lesson running through cj Advertising&apos;s
             intake writing: marketing and intake are not adjacent departments.
-            They are one acquisition system. This essay draws on that body of
-            work, then applies it to how a PI owner should design the operating
-            layer around people, automation, and AI.
+            They are one acquisition system. This guide turns that body of work
+            into a sequence a PI firm owner can use to diagnose the current
+            intake path, fix the operating model, and then add automation.
           </p>
         </section>
 
@@ -303,30 +318,85 @@ export default function BlogPostPage() {
           </p>
         </section>
 
-        <section className="space-y-6">
+        <nav
+          aria-labelledby="guide-contents"
+          className="my-12 border-y border-primary/20 py-8"
+        >
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/70">
+            Contents
+          </p>
+          <h2
+            id="guide-contents"
+            className="mt-3 text-2xl font-semibold leading-tight text-foreground"
+          >
+            Build the system in eight steps
+          </h2>
+          <ol className="mt-6 grid gap-x-10 sm:grid-cols-2">
+            {guideSteps.map((step, index) => (
+              <li key={step.id} className="border-t border-primary/15">
+                <a
+                  href={`#${step.id}`}
+                  className="group flex min-h-14 items-center gap-4 py-3 text-base leading-6 text-foreground/80 transition hover:text-primary"
+                >
+                  <span className="w-6 shrink-0 text-xs font-semibold text-primary/60 group-hover:text-primary">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span>{step.label}</span>
+                </a>
+              </li>
+            ))}
+          </ol>
+          <a
+            href="#faq"
+            className="mt-5 inline-flex text-sm font-medium text-primary underline decoration-primary/35 underline-offset-4 transition hover:decoration-primary"
+          >
+            Jump to common questions
+          </a>
+        </nav>
+
+        <section
+          id="audit-inquiries"
+          className="scroll-mt-24 space-y-5"
+        >
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/65">
+            Step 1
+          </p>
           <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
-            The lead is not the outcome
+            Audit 25 recent inquiries
           </h2>
           <p>
-            Many firms divide the work at the moment a phone rings or a form is
-            submitted. Marketing owns everything before that point. Intake owns
-            everything after it. Each team can hit its own numbers while the
-            firm loses the case between them.
+            Do not start with a vendor. Pull inquiries from different sources,
+            hours, and case types. For each one, record when it arrived, when a
+            person responded, whether facts were repeated, whether urgency was
+            escalated, why the lead did or did not sign, and whether it can be
+            traced to its eventual economics.
           </p>
           <p>
-            cj&apos;s more recent writing rejects that boundary. It argues that a PI
-            marketer needs visibility into contact speed, call handling, case
-            acceptance, and pre-signature drop-off. A campaign with an attractive
-            cost per lead may be producing cases your firm does not want. A
-            higher-cost campaign may be producing the matters that drive the
-            economics of the practice. You cannot tell at the lead stage.
+            The repeated failure is your first project. It may be an unmonitored
+            form, a slow attorney handoff, weak follow-up, or missing attribution.
           </p>
+        </section>
 
-          <div className="my-9 border-y border-primary/20 py-7">
-            <div className="grid gap-5 sm:grid-cols-3 lg:grid-cols-6">
+        <section
+          id="map-source-to-fee"
+          className="mt-14 scroll-mt-24 space-y-5"
+        >
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/65">
+            Step 2
+          </p>
+          <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
+            Map every lead from source to fee
+          </h2>
+          <p>
+            Marketing and intake are one acquisition system. A low-cost campaign
+            may produce poor-fit inquiries; a costly campaign may produce the
+            firm&apos;s best cases. You cannot know at the lead stage.
+          </p>
+          <div className="my-8 border-y border-primary/20 py-7">
+            <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-6">
               {["Source", "Inquiry", "Contact", "Wanted", "Signed", "Fee"].map(
                 (stage, index) => (
-                  <div key={stage} className="relative text-center">
+                  <div key={stage} className="text-center">
                     <p className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-primary/60">
                       {String(index + 1).padStart(2, "0")}
                     </p>
@@ -335,93 +405,77 @@ export default function BlogPostPage() {
                 ),
               )}
             </div>
-            <p className="mt-6 text-center text-sm text-foreground/60">
-              One acquisition record. Six operational moments. No departmental
-              handoff should break the evidence.
-            </p>
           </div>
-
           <p>
-            This is more than reporting hygiene. It changes budget decisions.
-            Your firm should be able to move from marketing source to inquiry,
-            contact, wanted or unwanted decision, signature, outcome, and fee.
-            cj&apos;s{" "}
+            Keep one record across all six moments. cj Advertising&apos;s{" "}
             <a
               href={sources.metrics}
               target="_blank"
               rel="noopener noreferrer"
               className={sourceLinkClass}
             >
-              published KPI guidance
+              KPI guidance
             </a>{" "}
-            makes the same point: track all leads, no-contact leads, wanted-lead
-            rate, wanted-lead conversion, cost per signed case, and case value,
-            not merely the top of the funnel.
+            similarly emphasizes wanted leads, signed cases, and case value over
+            lead volume alone.
           </p>
         </section>
 
-        <section className="mt-14 space-y-6">
+        <section
+          id="set-response-standard"
+          className="mt-14 scroll-mt-24 space-y-5"
+        >
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/65">
+            Step 3
+          </p>
           <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
-            Speed matters when it reaches a person
+            Set a human response standard
           </h2>
           <p>
-            cj&apos;s operating standards are deliberately concrete. Micki Love has
-            recommended answering calls within three rings, responding to web
-            inquiries immediately, and beginning outbound calls within two
-            minutes even when an automated acknowledgment fires first. These are
-            cj&apos;s management benchmarks, not universal legal standards.
+            An automated text acknowledges the inquiry. It does not replace the
+            reassurance of a prepared person. Micki Love has recommended three-ring
+            call answering and outbound calls within two minutes of a web inquiry.
+            Those are cj&apos;s benchmarks, not universal legal standards.
           </p>
           <p>
-            The useful distinction is between acknowledgment and response. An
-            automated text can confirm that the form arrived. It can say who will
-            call and what information to have ready. It can reduce uncertainty
-            during the wait. But it does not create the human reassurance that a
-            frightened prospect is testing for.
-          </p>
-          <p>
-            This is why our approach to{" "}
+            Use{" "}
             <Link
               href="/personal-injury/intake-automation"
               className={sourceLinkClass}
             >
               human-led AI intake automation
             </Link>{" "}
-            focuses on recognizing the inquiry, structuring the facts, detecting
-            urgency, and getting the right person into the conversation quickly.
-            The goal is not a faster chatbot conversation. It is faster,
-            better-prepared human contact.
-          </p>
-          <p>
-            That framing also fits cj&apos;s{" "}
+            to recognize the inquiry, structure the facts, flag urgency, and
+            prepare the right closer. The goal is faster human contact, not a
+            longer chatbot conversation. That matters because, as cj&apos;s{" "}
             <a
               href={sources.piMarketing}
               target="_blank"
               rel="noopener noreferrer"
               className={sourceLinkClass}
             >
-              description of PI buyers
-            </a>
-            . The person may be in pain, worried about medical bills, missing
-            work, and making a high-stakes decision for the first time. Speed
-            without concern feels transactional. Concern without speed loses to
-            the firm that showed both.
+              analysis of PI buyers
+            </a>{" "}
+            explains, the prospect is often in pain and making a high-stakes
+            decision for the first time.
           </p>
         </section>
 
-        <section className="mt-14 space-y-6">
+        <section
+          id="build-after-hours"
+          className="mt-14 scroll-mt-24 space-y-5"
+        >
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/65">
+            Step 4
+          </p>
           <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
-            After-hours intake must move the matter forward
+            Build an after-hours workflow
           </h2>
           <p>
-            A phone being answered at night is not the same as intake being
-            available at night. If the person on the line can only record a name
-            and promise a callback, the prospect is still waiting while other
-            firms are evaluating the case.
-          </p>
-          <p>
-            cj identifies two credible models: staff an internal team around the
-            clock, or use a provider that understands personal injury and can act
-            within the firm&apos;s rules. Its{" "}
+            Answering the phone is not enough. The night workflow should capture
+            decisive facts, apply firm criteria, escalate serious injuries, support
+            approved e-signature, and tell the morning team exactly what happened.
+            That is the standard in cj&apos;s{" "}
             <a
               href={sources.afterHours}
               target="_blank"
@@ -429,83 +483,67 @@ export default function BlogPostPage() {
               className={sourceLinkClass}
             >
               after-hours guidance
-            </a>{" "}
-            expects more than message taking. The service should use a
-            firm-specific script, ask a small set of decisive questions, apply
-            acceptance criteria, escalate serious injuries, support e-signature,
-            and report what happened.
+            </a>
+            .
           </p>
           <p>
-            Your own authority rules still matter. Which facts may trigger an
-            attorney alert? Who can authorize a retainer? Which matters require
-            immediate human review? What happens when the facts conflict? A
-            vendor or AI system should execute those decisions, not invent them.
-            Our guidance on{" "}
+            Define who receives urgent alerts, who may authorize a retainer, and
+            which facts require human review. A provider or AI system should
+            execute those rules, not invent them. Start with a documented{" "}
             <Link
               href="/personal-injury/after-hours-intake"
               className={sourceLinkClass}
             >
-              after-hours intake workflows
-            </Link>{" "}
-            starts with those boundaries.
+              after-hours intake workflow
+            </Link>
+            .
           </p>
         </section>
 
-        <section className="mt-14 space-y-6">
+        <section
+          id="remove-signup-friction"
+          className="mt-14 scroll-mt-24 space-y-5"
+        >
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/65">
+            Step 5
+          </p>
           <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
-            Reduce the distance between interest and signature
+            Remove friction before signature
           </h2>
           <p>
-            Every unnecessary step creates another place for a qualified
-            prospect to leave. Long forms, repeated questions, investigative
-            work before assignment, unclear next steps, and a retainer process
-            built for desktop all lengthen the distance between trust and action.
+            Long forms, repeated questions, unclear next steps, and desktop-only
+            retainers create places for a qualified prospect to leave. Ask only
+            what is needed to begin, explain what happens next, enable remote
+            signature, and move the signed file promptly.
           </p>
           <p>
-            cj&apos;s advice is consistent across website and intake design: ask for
-            only what you need to begin helping, make tap-to-call and contact
-            actions obvious, explain what happens next, keep the initial signup
-            packet short, allow remote signature, and move a signed file to the
-            attorney and case manager promptly. Its{" "}
+            Test it yourself: submit a mobile inquiry after hours and count every
+            delay and repeated question before a meaningful conversation. cj&apos;s{" "}
             <a
               href={sources.websites}
               target="_blank"
               rel="noopener noreferrer"
               className={sourceLinkClass}
             >
-              2026 website analysis
+              website analysis
             </a>{" "}
-            treats the website as the first serious evaluation point, not a
-            digital brochure.
-          </p>
-          <p>
-            The practical test is simple. Open your website on a phone after
-            hours and submit an inquiry as if you had never heard of the firm.
-            Count the decisions, delays, and repeated questions between that
-            moment and a meaningful conversation. The friction you feel is part
-            of your acquisition cost, even if it never appears on an invoice.
+            treats this experience as the first serious evaluation of the firm.
           </p>
         </section>
 
-        <section className="mt-14 space-y-6">
+        <section
+          id="assign-ownership"
+          className="mt-14 scroll-mt-24 space-y-6"
+        >
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/65">
+            Step 6
+          </p>
           <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
-            Intake failure is often a management-design failure
+            Assign ownership and measure it
           </h2>
           <p>
-            It is easy to respond to missed opportunities with more coaching or
-            more pressure. Sometimes that is appropriate. Often the intake
-            specialist is working inside a system that makes consistency
-            unlikely.
-          </p>
-          <p>
-            The same person may be answering new calls, processing mail,
-            updating unrelated files, monitoring several inboxes, and waiting
-            for an attorney who has no defined escalation duty. Leadership then
-            judges performance through total call volume instead of whether the
-            right prospects reached the right person.
-          </p>
-          <p>
-            cj&apos;s{" "}
+            Name an owner for every inquiry, a backup for every shift, and an
+            attorney for serious-case escalation. cj&apos;s{" "}
             <a
               href={sources.intake}
               target="_blank"
@@ -514,55 +552,18 @@ export default function BlogPostPage() {
             >
               intake operating guidance
             </a>{" "}
-            recommends specialized attention, a clear chain of command, a route
-            to an attorney, special handling for catastrophic injuries, and
-            regular call audits. Those are management choices. Software can
-            support them, but it cannot compensate indefinitely for unclear
-            ownership.
-          </p>
-        </section>
-
-        <section className="mt-14 space-y-6">
-          <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
-            Marketing and intake need one ledger
-          </h2>
-          <p>
-            The highest-leverage reporting change is to stop treating the lead
-            record as complete when it enters the CRM. Keep one trace from source
-            through case economics.
+            recommends the same clear chain of command and regular call review.
           </p>
           <p>
-            cj has published a 92.5% target for conversion of wanted leads and a
-            recommendation to continue pursuing no-contact leads for up to 90
-            days. Those are cj&apos;s benchmarks, not universal standards. Their
-            larger value is the discipline behind them: define what the firm
-            wants, preserve every lead, state how long follow-up continues, and
-            make loss reasons visible.
-          </p>
-          <p>
-            Without that shared ledger, marketing can blame intake for slow
-            response while intake blames marketing for poor quality. With it, an
-            owner can see whether a source produces the wrong cases, whether
-            strong prospects disappear at a particular handoff, and whether one
-            shift, channel, or script consistently performs differently.
-          </p>
-        </section>
-
-        <section className="mt-14 space-y-7">
-          <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
-            The owner&apos;s intake scorecard
-          </h2>
-          <p>
-            You do not need forty charts. You need a small set of measures that
-            lets you see the acquisition system from attention to economics.
+            One owner scorecard is enough:
           </p>
           <div className="divide-y divide-primary/20 border-y border-primary/20">
             {scorecard.map((item) => (
               <div
                 key={item.label}
-                className="grid gap-2 py-5 sm:grid-cols-[130px_1fr] sm:gap-6"
+                className="grid gap-1 py-4 sm:grid-cols-[130px_1fr] sm:gap-6"
               >
-                <h3 className="font-semibold text-primary">{item.label}</h3>
+                <p className="font-semibold text-primary">{item.label}</p>
                 <p className="text-base leading-7 text-foreground/75">
                   {item.measure}
                 </p>
@@ -570,42 +571,26 @@ export default function BlogPostPage() {
             ))}
           </div>
           <p>
-            Review the measures together. Faster response is not a win if call
-            quality falls. A higher wanted-lead conversion is not trustworthy if
-            the team changes the definition of wanted. A low-cost campaign is
-            not efficient if its signed matters produce little value.
+            Read the measures together. Speed is not a win if quality falls, and
+            low cost per lead is not efficiency if the source produces weak cases.
           </p>
         </section>
 
-        <section className="mt-14 space-y-6">
+        <section id="add-ai" className="mt-14 scroll-mt-24 space-y-5">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/65">
+            Step 7
+          </p>
           <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
-            AI should assist and observe, not impersonate care
+            Add AI at the right boundaries
           </h2>
           <p>
-            The most useful synthesis of cj&apos;s AI writing is not anti-AI. It is
-            pro-reliability. Its review of more than fifty legal-marketing AI
-            tools recommends starting with a defined workflow problem, favoring
-            reliable automation, demanding integration, testing narrowly, and
-            measuring an operational result.
+            AI can detect inquiries, structure facts, identify missing information,
+            flag urgency, assign response targets, maintain follow-up, and analyze
+            calls. People should own empathy, case acceptance, legal judgment,
+            consequential escalation, and the close.
           </p>
           <p>
-            That creates a clear role for AI inside intake. It can detect a new
-            inquiry across phone, form, chat, or email. It can structure the
-            facts, identify missing information, flag urgency, assign a response
-            target, prepare the closer, maintain follow-up, and analyze calls for
-            missed questions or coaching opportunities. It can connect the
-            interaction back to its source and preserve what happened.
-          </p>
-          <p>
-            People should still own empathy, legal judgment, case acceptance,
-            consequential escalation, and sensitive closing conversations. That
-            boundary is not a concession to weak technology. It reflects what an
-            injured person is evaluating when several firms appear equally
-            qualified: who understood the situation, who responded, and who felt
-            trustworthy.
-          </p>
-          <p>
-            Start narrowly. The sequence in cj&apos;s{" "}
+            Follow the sequence in cj&apos;s{" "}
             <a
               href={sources.ai}
               target="_blank"
@@ -613,28 +598,50 @@ export default function BlogPostPage() {
               className={sourceLinkClass}
             >
               AI evaluation guidance
-            </a>{" "}
-            is sound: choose one workflow, test in a limited scope, measure,
-            refine, and scale only after the behavior is reliable. This is also
-            why vendor access, source traceability, permissions, and human review
-            belong in the design from the beginning.
+            </a>
+            : choose one failure, test narrowly, measure the operational result,
+            and scale only after the behavior is reliable.
           </p>
+          <div className="border-l-2 border-primary/50 pl-5 sm:pl-6">
+            <h3 className="text-xl font-semibold text-foreground">
+              Where Intake Agent fits
+            </h3>
+            <p className="mt-3 text-base leading-7 text-foreground/75">
+              Possible Minds{" "}
+              <Link
+                href="/personal-injury/intake-automation"
+                className={sourceLinkClass}
+              >
+                Intake Agent
+              </Link>{" "}
+              responds to calls, website conversations, and forms around the
+              clock, especially after hours. It captures essential facts, flags
+              urgent or promising inquiries, acknowledges the prospect, and
+              creates an organized lead with the transcript, call recording,
+              follow-up tasks, and issues requiring human attention.
+            </p>
+            <p className="mt-3 text-base leading-7 text-foreground/75">
+              It does not accept cases or replace the intake team. It gives staff
+              a prepared record so they can follow up personally and win the
+              client.
+            </p>
+          </div>
         </section>
 
-        <section className="mt-14 space-y-6">
+        <section
+          id="protect-relationship"
+          className="mt-14 scroll-mt-24 space-y-5"
+        >
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/65">
+            Step 8
+          </p>
           <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
-            The relationship starts before signature and compounds after it
+            Protect the relationship and its data
           </h2>
           <p>
-            Intake receives information before a formal attorney-client
-            relationship may exist. That data can include injury details,
-            medical information, insurance facts, financial pressure, and the
-            prospect&apos;s account of the incident. Speed cannot come at the cost of
-            consent, access control, retention discipline, or careful vendor
-            review.
-          </p>
-          <p>
-            cj&apos;s{" "}
+            Intake may collect injury, medical, insurance, and financial details
+            before an attorney-client relationship exists. Treat that information
+            as sensitive from the start, as cj&apos;s{" "}
             <a
               href={sources.privacy}
               target="_blank"
@@ -643,56 +650,37 @@ export default function BlogPostPage() {
             >
               privacy guidance for PI firms
             </a>{" "}
-            treats initial intake and lead information as sensitive from the
-            start. Firms should evaluate current requirements with qualified
-            counsel; an article or vendor promise is not legal advice. Our{" "}
+            recommends. Set access, retention, consent, and vendor controls with
+            qualified counsel and a practical{" "}
             <Link
               href="/personal-injury/vendor-risk-governance"
               className={sourceLinkClass}
             >
-              AI governance and vendor-risk framework
-            </Link>{" "}
-            focuses on turning that obligation into concrete controls.
+              vendor-risk framework
+            </Link>
+            .
           </p>
           <p>
-            The same continuity applies when the firm declines a matter. A
-            rejected caller is still a person with a problem and a future
-            opinion of the firm. cj recommends clear non-engagement, useful
-            guidance where appropriate, careful referral practices, and respect
-            for applicable ethics rules. After signature, prompt onboarding and
-            strong case service create the reviews, referrals, and reputation
-            that feed the next acquisition cycle.
-          </p>
-        </section>
-
-        <section className="mt-14 space-y-6">
-          <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
-            Start by auditing the last twenty-five inquiries
-          </h2>
-          <p>
-            Do not begin with a new vendor. Pull the last twenty-five inquiries
-            from different sources, hours, and case types. Reconstruct what each
-            prospect experienced.
-          </p>
-          <p>
-            When did the inquiry arrive? When did a person respond? Was the
-            responder prepared? Did the prospect repeat information? Was a
-            serious matter escalated? Did the firm record why a wanted lead did
-            not sign? Can you connect the signed case to its source and later
-            economics?
-          </p>
-          <p>
-            You will usually find the first useful automation inside those
-            answers. It may be detecting an unmonitored form, creating a serious
-            injury alert, preparing a short brief, assigning a human owner,
-            continuing approved follow-up, or joining marketing data to case
-            outcomes.
-          </p>
-          <p>
-            Marketing creates familiarity and earns the inquiry. Intake carries
-            that promise into a human relationship. Treat them as one system and
-            you can finally see whether your acquisition spend is creating
-            activity or valuable cases.
+            Preserve trust when the firm declines a matter through clear
+            non-engagement and careful referrals, consistent with cj&apos;s guidance on{" "}
+            <a
+              href={sources.rejected}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={sourceLinkClass}
+            >
+              rejected leads
+            </a>
+            . After signature, prompt onboarding and strong{" "}
+            <a
+              href={sources.caseManagement}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={sourceLinkClass}
+            >
+              case management
+            </a>{" "}
+            create the reviews and referrals that feed the next acquisition cycle.
           </p>
         </section>
 
@@ -734,9 +722,9 @@ export default function BlogPostPage() {
             Find where qualified inquiries lose momentum.
           </h2>
           <p className="mt-4 max-w-2xl leading-7 text-foreground/70">
-            Possible Minds maps the path from inquiry to human response,
-            signature, and source attribution, then identifies the narrowest
-            useful place for automation.
+            We map the path from inquiry to human response and signature, then
+            show where Intake Agent can recover missed opportunities without
+            replacing the people who close them.
           </p>
           <Link
             href="/consult"
