@@ -170,6 +170,11 @@ const caseStudies = [
 
 const blogPosts = [
   {
+    href: "/blog/personal-injury-marketing-attribution",
+    title: "Marketing Attribution for PI Firms: Follow the Case, Not the Click",
+    tag: "Intake Analytics",
+  },
+  {
     href: "/blog/personal-injury-intake-marketing-system",
     title: "How to Build a Personal Injury Intake System That Converts",
     tag: "Intake Operations",

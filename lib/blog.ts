@@ -12,6 +12,18 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    href: "/blog/personal-injury-marketing-attribution",
+    slug: "personal-injury-marketing-attribution",
+    title: "Marketing Attribution for PI Firms: Follow the Case, Not the Click",
+    description:
+      "A practical guide to connecting PI marketing sources with wanted, signed, and kept cases, including a Lead Docket attribution setup.",
+    author: "Pranav Modi",
+    date: "August 11, 2026",
+    readTime: "12 min read",
+    category: "Intake Operations",
+    tags: ["Intake", "For PI Firms", "Legal Marketing"],
+  },
+  {
     href: "/blog/personal-injury-intake-marketing-system",
     slug: "personal-injury-intake-marketing-system",
     title: "How to Build a Personal Injury Intake System That Converts",
