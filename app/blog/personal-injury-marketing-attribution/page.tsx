@@ -260,7 +260,7 @@ export default function BlogPostPage() {
       <ClickBeacon page="blog-pi-marketing-attribution" />
       <JsonLd data={structuredData} />
 
-      <header className="relative min-h-[590px] overflow-hidden border-b border-primary/15 sm:min-h-[650px]">
+      <header className="relative overflow-hidden border-b border-primary/15">
         <Image
           src="/images/blog/pi-intake-marketing-system.png"
           alt="A personal injury intake team reviewing lead sources and case outcomes"
@@ -272,7 +272,7 @@ export default function BlogPostPage() {
         <div className="absolute inset-0 bg-black/65" />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.97)_0%,rgba(0,0,0,0.87)_46%,rgba(0,0,0,0.28)_100%)]" />
 
-        <div className="relative mx-auto flex min-h-[590px] max-w-4xl flex-col justify-end px-4 pb-14 pt-24 sm:min-h-[650px] sm:px-6 sm:pb-20">
+        <div className="relative mx-auto grid max-w-6xl gap-10 px-4 pb-12 pt-10 sm:px-6 sm:pb-16 sm:pt-14 lg:min-h-[calc(100svh-4rem)] lg:grid-cols-[minmax(0,1fr)_360px] lg:items-center lg:gap-16 lg:py-16">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 text-xs text-foreground/70">
               <Link href="/blog" className="transition hover:text-primary">
@@ -281,46 +281,60 @@ export default function BlogPostPage() {
               <span className="text-primary/50">/</span>
               <span>Intake Operations</span>
             </div>
-            <p className="mt-8 text-xs font-semibold uppercase tracking-[0.2em] text-[#00ff41]">
+            <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-[#00ff41]">
               A guide for PI firm owners
             </p>
-            <h1 className="mt-5 text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
+            <h1 className="mt-4 text-4xl font-semibold leading-tight text-white sm:text-5xl">
               Marketing Attribution for PI Firms: Follow the Case, Not the Click
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-foreground/85 sm:text-xl">
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/85 sm:text-lg">
               Connect first touch, intake, signed cases, and fees without pretending
               that one channel deserves all the credit.
             </p>
-            <div className="mt-7 flex flex-wrap gap-x-4 gap-y-2 text-xs text-foreground/65">
+            <div className="mt-6 flex flex-wrap gap-x-4 gap-y-2 text-xs text-foreground/65">
               <span>{post.author}</span>
               <span aria-hidden="true">/</span>
               <time dateTime="2026-08-11">{post.date}</time>
               <span aria-hidden="true">/</span>
               <span>{post.readTime}</span>
             </div>
-            <p className="mt-5 max-w-2xl text-sm leading-6 text-foreground/70">
-              Drawn from PI intake and marketing podcast conversations, including
-              guidance from{" "}
-              <a
-                href="https://www.linkedin.com/in/yanismith"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-white underline decoration-primary/45 underline-offset-4 transition hover:text-primary"
-              >
-                Yani Smith
-              </a>{" "}
-              and{" "}
-              <a
-                href="https://www.linkedin.com/in/maria-monroy-1492ab356"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-white underline decoration-primary/45 underline-offset-4 transition hover:text-primary"
-              >
-                Maria Monroy
-              </a>
-              .
-            </p>
           </div>
+
+          <nav
+            aria-labelledby="article-contents"
+            className="border border-primary/30 bg-black/80 px-5 py-6 backdrop-blur-sm sm:px-6"
+          >
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/70">
+              Article navigation
+            </p>
+            <h2
+              id="article-contents"
+              className="mt-2 text-2xl font-semibold leading-tight text-foreground"
+            >
+              Table of contents
+            </h2>
+            <ol className="mt-4 divide-y divide-primary/15 border-y border-primary/15">
+              {contents.map((item, index) => (
+                <li key={item.id}>
+                  <a
+                    href={`#${item.id}`}
+                    className="group flex min-h-11 items-center gap-3 py-2.5 text-sm leading-5 text-foreground/80 transition hover:text-primary"
+                  >
+                    <span className="w-6 shrink-0 text-xs font-semibold text-primary/60 group-hover:text-primary">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span>{item.label}</span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+            <a
+              href="#faq"
+              className="mt-4 inline-flex text-sm font-medium text-primary underline decoration-primary/35 underline-offset-4 transition hover:decoration-primary"
+            >
+              Jump to common questions
+            </a>
+          </nav>
         </div>
       </header>
 
@@ -364,46 +378,6 @@ export default function BlogPostPage() {
             those cases eventually contribute.
           </p>
         </section>
-
-        <nav
-          aria-labelledby="article-contents"
-          className="my-12 border border-primary/25 bg-primary/[0.035] px-5 py-7 sm:px-8"
-        >
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/70">
-            Article navigation
-          </p>
-          <h2
-            id="article-contents"
-            className="mt-3 text-2xl font-semibold leading-tight text-foreground"
-          >
-            Table of contents
-          </h2>
-          <p className="mt-3 max-w-2xl text-base leading-7 text-foreground/65">
-            Follow the argument from source data through signed cases and collected
-            fees, then use the Lead Docket section as an implementation checklist.
-          </p>
-          <ol className="mt-6 grid gap-x-10 sm:grid-cols-2">
-            {contents.map((item, index) => (
-              <li key={item.id} className="border-t border-primary/15">
-                <a
-                  href={`#${item.id}`}
-                  className="group flex min-h-14 items-center gap-4 py-3 text-base leading-6 text-foreground/80 transition hover:text-primary"
-                >
-                  <span className="w-6 shrink-0 text-xs font-semibold text-primary/60 group-hover:text-primary">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span>{item.label}</span>
-                </a>
-              </li>
-            ))}
-          </ol>
-          <a
-            href="#faq"
-            className="mt-5 inline-flex text-sm font-medium text-primary underline decoration-primary/35 underline-offset-4 transition hover:decoration-primary"
-          >
-            Jump to common questions
-          </a>
-        </nav>
 
         <section
           id="why-attribution-matters"
