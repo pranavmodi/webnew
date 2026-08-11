@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowDownRight } from "lucide-react";
 
 import ClickBeacon from "@/components/analytics/click-beacon";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -269,11 +270,11 @@ export default function BlogPostPage() {
           sizes="100vw"
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-black/65" />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.97)_0%,rgba(0,0,0,0.87)_46%,rgba(0,0,0,0.28)_100%)]" />
+        <div className="absolute inset-0 bg-black/75" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.97)_0%,rgba(0,0,0,0.82)_62%,rgba(0,0,0,0.58)_100%)]" />
 
-        <div className="relative mx-auto grid max-w-6xl gap-10 px-4 pb-12 pt-10 sm:px-6 sm:pb-16 sm:pt-14 lg:min-h-[calc(100svh-4rem)] lg:grid-cols-[minmax(0,1fr)_360px] lg:items-center lg:gap-16 lg:py-16">
-          <div className="max-w-3xl">
+        <div className="relative mx-auto max-w-4xl px-4 pb-10 pt-8 sm:px-6 sm:pb-12 sm:pt-10 lg:min-h-[calc(100svh-4rem)] lg:py-12">
+          <div>
             <div className="flex items-center gap-3 text-xs text-foreground/70">
               <Link href="/blog" className="transition hover:text-primary">
                 Blog
@@ -281,17 +282,17 @@ export default function BlogPostPage() {
               <span className="text-primary/50">/</span>
               <span>Intake Operations</span>
             </div>
-            <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-[#00ff41]">
+            <p className="mt-5 text-xs font-semibold uppercase tracking-[0.2em] text-[#00ff41]">
               A guide for PI firm owners
             </p>
-            <h1 className="mt-4 text-4xl font-semibold leading-tight text-white sm:text-5xl">
+            <h1 className="mt-3 max-w-4xl text-4xl font-semibold leading-tight text-white sm:text-5xl">
               Marketing Attribution for PI Firms: Follow the Case, Not the Click
             </h1>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/85 sm:text-lg">
+            <p className="mt-4 max-w-3xl text-base leading-7 text-foreground/85 sm:text-lg">
               Connect first touch, intake, signed cases, and fees without pretending
               that one channel deserves all the credit.
             </p>
-            <div className="mt-6 flex flex-wrap gap-x-4 gap-y-2 text-xs text-foreground/65">
+            <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-xs text-foreground/65">
               <span>{post.author}</span>
               <span aria-hidden="true">/</span>
               <time dateTime="2026-08-11">{post.date}</time>
@@ -302,38 +303,52 @@ export default function BlogPostPage() {
 
           <nav
             aria-labelledby="article-contents"
-            className="border border-primary/30 bg-black/80 px-5 py-6 backdrop-blur-sm sm:px-6"
+            className="mt-7 border-y border-primary/30 bg-black/65 backdrop-blur-sm"
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/70">
-              Article navigation
-            </p>
-            <h2
-              id="article-contents"
-              className="mt-2 text-2xl font-semibold leading-tight text-foreground"
-            >
-              Table of contents
-            </h2>
-            <ol className="mt-4 divide-y divide-primary/15 border-y border-primary/15">
+            <div className="flex items-end justify-between gap-6 border-b border-primary/20 px-1 py-4 sm:px-4">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/70">
+                  Article navigation
+                </p>
+                <h2
+                  id="article-contents"
+                  className="mt-1 text-xl font-semibold leading-tight text-foreground sm:text-2xl"
+                >
+                  Table of contents
+                </h2>
+              </div>
+              <p className="hidden text-right text-xs text-foreground/50 sm:block">
+                7 sections
+              </p>
+            </div>
+            <ol className="divide-y divide-primary/15">
               {contents.map((item, index) => (
                 <li key={item.id}>
                   <a
                     href={`#${item.id}`}
-                    className="group flex min-h-11 items-center gap-3 py-2.5 text-sm leading-5 text-foreground/80 transition hover:text-primary"
+                    className="group grid min-h-9 grid-cols-[2.25rem_1fr_1.25rem] items-center gap-2 px-1 py-1.5 text-sm leading-5 text-foreground/80 transition hover:bg-primary/[0.045] hover:text-primary sm:px-4"
                   >
-                    <span className="w-6 shrink-0 text-xs font-semibold text-primary/60 group-hover:text-primary">
+                    <span className="text-xs font-semibold text-primary/60 group-hover:text-primary">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     <span>{item.label}</span>
+                    <ArrowDownRight
+                      aria-hidden="true"
+                      className="h-4 w-4 text-primary/35 transition group-hover:text-primary"
+                    />
                   </a>
                 </li>
               ))}
             </ol>
-            <a
-              href="#faq"
-              className="mt-4 inline-flex text-sm font-medium text-primary underline decoration-primary/35 underline-offset-4 transition hover:decoration-primary"
-            >
-              Jump to common questions
-            </a>
+            <div className="border-t border-primary/20 px-1 py-3 sm:px-4">
+              <a
+                href="#faq"
+                className="inline-flex items-center gap-2 text-sm font-medium text-primary underline decoration-primary/35 underline-offset-4 transition hover:decoration-primary"
+              >
+                Jump to common questions
+                <ArrowDownRight aria-hidden="true" className="h-4 w-4" />
+              </a>
+            </div>
           </nav>
         </div>
       </header>
