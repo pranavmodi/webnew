@@ -155,22 +155,29 @@ export default function ClickBeacon({
     let pointerTravel = 0;
     let lastPointer: { x: number; y: number } | null = null;
     const handlePointerMove = (moveEvent: PointerEvent | MouseEvent) => {
+      if (!moveEvent.isTrusted) return;
       const point = { x: moveEvent.clientX, y: moveEvent.clientY };
       if (lastPointer) {
         pointerTravel += Math.hypot(point.x - lastPointer.x, point.y - lastPointer.y);
       }
       lastPointer = point;
       // Require real cursor travel so a single synthetic event can't trip it.
-      if (pointerTravel >= 40) emitStep("first_pointer");
+      if (pointerTravel >= 40) emitStep("first_pointer", { interaction_trusted: 1 });
     };
-    const handleGesture = () => emitStep("first_pointer");
+    const handleGesture = (gestureEvent: Event) => {
+      if (gestureEvent.isTrusted) emitStep("first_pointer", { interaction_trusted: 1 });
+    };
 
-    const handleScroll = () => {
+    const handleScroll = (scrollEvent: Event) => {
+      if (!scrollEvent.isTrusted) return;
       const doc = document.documentElement;
       const scrollable = doc.scrollHeight - window.innerHeight;
       if (scrollable <= 0) return;
       const depth = (window.scrollY || doc.scrollTop) / scrollable;
-      if (depth >= 0.5) emitStep("scroll_50");
+      if (depth >= 0.25) emitStep("scroll_25", { interaction_trusted: 1 });
+      if (depth >= 0.5) emitStep("scroll_50", { interaction_trusted: 1 });
+      if (depth >= 0.75) emitStep("scroll_75", { interaction_trusted: 1 });
+      if (depth >= 0.9) emitStep("scroll_90", { interaction_trusted: 1 });
     };
 
     const handleFunnelStep = (funnelEvent: Event) => {
@@ -180,9 +187,13 @@ export default function ClickBeacon({
     };
 
     const handleClick = (clickEvent: MouseEvent) => {
+      if (!clickEvent.isTrusted) return;
       const details = clickDetails(clickEvent.target);
       if (!details) return;
-      sendWithFetch(makeBody("click", Date.now() - mountedAt, details));
+      sendWithFetch(makeBody("click", Date.now() - mountedAt, {
+        ...details,
+        interaction_trusted: 1,
+      }));
     };
 
     const sendLeave = () => {

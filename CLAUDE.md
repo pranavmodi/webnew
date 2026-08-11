@@ -68,7 +68,7 @@ import { heroHeadline } from "@/lib/content";
 ### Click-tracking beacon — REQUIRED on every tracked landing page
 
 Any landing page we drive **tracked email traffic** to (via possibleos short links
-`/a/`, `/c/`, `/s/` on `aiaudit.getpossibleminds.com`) **MUST render the human-session
+`/a/`, `/c/`, `/s/`, or campaign `/t/` links) **MUST render the human-session
 beacon**. Reason: the redirect click is logged server-side, but email-security
 scanners (Proofpoint, Microsoft Safe Links, Mimecast, Barracuda) fetch every URL in
 an email **without running page JS**, so raw clicks are bot-dominated. A `session_ready`
@@ -100,6 +100,10 @@ observation.)
   window event (`content_revealed`) that ClickBeacon relays. A human taps to
   read it; a scanner never does — so this is the strongest pre-registration
   human signal. Use it on any tracked page that gives something away for free.
+- `app/layout.tsx` mounts `ClickBeacon` globally, so every non-admin page can be
+  used as a campaign destination. `next.config.mjs` proxies `/t/:code*` to the
+  Possible OS resolver. Campaign destinations are allowlisted server-side to
+  HTTPS `getpossibleminds.com` pages and subdomains.
 
 ### Internal Tools
 
