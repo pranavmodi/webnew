@@ -273,7 +273,7 @@ export default function BlogPostPage() {
         <div className="absolute inset-0 bg-black/75" />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.97)_0%,rgba(0,0,0,0.82)_62%,rgba(0,0,0,0.58)_100%)]" />
 
-        <div className="relative mx-auto max-w-4xl px-4 pb-10 pt-8 sm:px-6 sm:pb-12 sm:pt-10 lg:min-h-[calc(100svh-4rem)] lg:py-12">
+        <div className="relative mx-auto max-w-4xl px-4 pb-6 pt-8 sm:px-6 sm:pb-8 sm:pt-10 lg:pt-12">
           <div>
             <div className="flex items-center gap-3 text-xs text-foreground/70">
               <Link href="/blog" className="transition hover:text-primary">
@@ -353,7 +353,7 @@ export default function BlogPostPage() {
         </div>
       </header>
 
-      <article className="mx-auto max-w-4xl px-4 pt-14 text-[1.0625rem] leading-8 text-foreground/80 sm:px-6 sm:pt-16">
+      <article className="mx-auto max-w-4xl px-4 pt-10 text-[1.0625rem] leading-8 text-foreground/80 sm:px-6 sm:pt-12">
         <section className="space-y-6">
           <p className="text-xl leading-9 text-foreground/95">
             Marketing attribution matters because the decisions built on it are
