@@ -151,6 +151,20 @@ Every post should have:
 For AEO, write answerable sections. Add a concise answer box near the top when
 the topic is educational or definitional.
 
+Add a visible table of contents near the top of every substantive post. Place it
+after the opening thesis or answer box and before the first main H2 section. The
+table of contents should:
+
+- Use the explicit heading `Table of contents`.
+- Link to the post's principal H2 sections with stable, descriptive IDs.
+- Follow the same order as the article.
+- Use concise labels that describe the question or decision each section covers.
+- Include an FAQ jump link when the post contains visible FAQs.
+- Remain readable on mobile and avoid sticky behavior that obscures content.
+
+Do not use a table of contents for a very short announcement or update where it
+would add more interface than value.
+
 Recommended answer-box pattern:
 
 ```text
@@ -271,10 +285,11 @@ When creating a new post:
    - FAQPage if there is FAQ content
    - BreadcrumbList
 8. Use semantic headings.
-9. Use accessible, readable tables if needed.
-10. Make tables mobile-safe with horizontal overflow or responsive layout.
-11. Avoid empty headings and vague link text.
-12. Ensure CTAs use existing routes, usually `/consult`.
+9. Add a linked table of contents near the top for substantive posts.
+10. Use accessible, readable tables if needed.
+11. Make tables mobile-safe with horizontal overflow or responsive layout.
+12. Avoid empty headings and vague link text.
+13. Ensure CTAs use existing routes, usually `/consult`.
 
 ## Writing Quality Checklist
 
@@ -302,6 +317,7 @@ Before publishing, verify:
 - The primary keyword appears naturally.
 - Important secondary keywords appear naturally, not mechanically.
 - The article includes concise answerable passages.
+- A linked table of contents appears near the top when the post is substantive.
 - The article includes FAQ content when appropriate.
 - FAQ schema is added when FAQ is visible.
 - BlogPosting schema is present.

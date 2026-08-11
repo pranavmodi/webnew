@@ -367,17 +367,21 @@ export default function BlogPostPage() {
 
         <nav
           aria-labelledby="article-contents"
-          className="my-12 border-y border-primary/20 py-8"
+          className="my-12 border border-primary/25 bg-primary/[0.035] px-5 py-7 sm:px-8"
         >
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/70">
-            Contents
+            Article navigation
           </p>
           <h2
             id="article-contents"
             className="mt-3 text-2xl font-semibold leading-tight text-foreground"
           >
-            Build a source-to-fee view
+            Table of contents
           </h2>
+          <p className="mt-3 max-w-2xl text-base leading-7 text-foreground/65">
+            Follow the argument from source data through signed cases and collected
+            fees, then use the Lead Docket section as an implementation checklist.
+          </p>
           <ol className="mt-6 grid gap-x-10 sm:grid-cols-2">
             {contents.map((item, index) => (
               <li key={item.id} className="border-t border-primary/15">
