@@ -115,6 +115,7 @@ export function MiraConsultant({ invite }: { invite: string }) {
   const [feedback, setFeedback] = useState<"helpful" | "not_helpful" | "">("");
   const [feedbackComment, setFeedbackComment] = useState("");
   const session = useRef<{ id: string; token: string } | null>(null);
+  const activeInvite = useRef(invite);
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
   const transcriptEnd = useRef<HTMLDivElement | null>(null);
   const runtime = useRef<AudioRuntime>({
@@ -133,8 +134,10 @@ export function MiraConsultant({ invite }: { invite: string }) {
   const identityResolved = !preview?.personalization.personalized || identity !== "pending";
 
   useEffect(() => {
+    const retainedInvite = invite || sessionStorage.getItem("pm_link_code") || "";
+    activeInvite.current = retainedInvite;
     const url = new URL(`${API}/v1/sites/possible-minds/preview`);
-    if (invite) url.searchParams.set("invite", invite);
+    if (retainedInvite) url.searchParams.set("invite", retainedInvite);
     fetch(url, { cache: "no-store" })
       .then((response) => {
         if (!response.ok) throw new Error("Could not prepare Mira");
@@ -281,7 +284,7 @@ export function MiraConsultant({ invite }: { invite: string }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           browser_session_id: browserSessionId,
-          invite: invite || null,
+          invite: activeInvite.current || null,
           identity_confirmed: personalized,
           consent_version: preview?.consent_version || CONSENT_VERSION,
           attribution: attribution(),
