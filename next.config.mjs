@@ -3,6 +3,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/admin/advisor",
+        destination: "https://advisor.getpossibleminds.com/admin",
+        permanent: false,
+      },
+      {
         source: "/workshops/ai-for-smartadvocate-litigation-paralegals",
         destination: "/workshops/ai-for-casepeer-litigation-paralegals",
         permanent: true,
