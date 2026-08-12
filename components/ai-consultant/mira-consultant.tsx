@@ -595,6 +595,11 @@ export function MiraConsultant({ invite }: { invite: string }) {
                     <button onClick={() => saveFeedback("not_helpful")} aria-label="Not helpful" className={`flex h-9 w-9 items-center justify-center rounded-md border ${feedback === "not_helpful" ? "border-primary bg-primary/10 text-primary" : "border-border text-muted-foreground"}`}><ThumbsDown className="h-4 w-4" /></button>
                   </div>
                   <textarea value={feedbackComment} onChange={(event) => setFeedbackComment(event.target.value)} placeholder="Optional comment" rows={2} className="mt-3 w-full resize-none rounded-md border border-border bg-background px-3 py-2 text-sm" />
+                  {feedback ? (
+                    <button type="button" onClick={() => saveFeedback(feedback)} className="mt-2 rounded-md border border-border px-3 py-2 text-xs font-semibold text-foreground/70 hover:text-primary">
+                      Save feedback
+                    </button>
+                  ) : null}
                 </div>
               </div>
             )}

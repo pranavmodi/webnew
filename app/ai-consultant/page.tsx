@@ -68,6 +68,22 @@ export default function AiConsultantPage({
     <>
       <JsonLd data={structuredData} />
       <MiraConsultant invite={searchParams?.lc || ""} />
+      <section className="border-t border-primary/15 bg-black px-4 py-14 sm:px-6">
+        <div className="mx-auto max-w-4xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/65">
+            Common questions
+          </p>
+          <h2 className="mt-3 text-3xl font-semibold text-primary">About Mira</h2>
+          <div className="mt-8 divide-y divide-border border-y border-border">
+            {faq.map((item) => (
+              <div key={item.question} className="grid gap-3 py-6 md:grid-cols-[0.8fr_1.2fr] md:gap-10">
+                <h3 className="text-base font-semibold text-primary">{item.question}</h3>
+                <p className="text-sm leading-relaxed text-foreground/65">{item.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }

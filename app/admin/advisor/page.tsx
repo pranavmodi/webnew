@@ -14,6 +14,7 @@ type Session = {
   summary?: string;
   email?: string;
   report_state: string;
+  client_ip?: string;
   feedback_value?: string;
   transcript_count: number;
 };
@@ -94,6 +95,7 @@ export default function AdvisorAdminPage() {
                   </div>
                   <div className="mt-1 truncate text-xs text-muted-foreground">{row.personalization?.firm_name || row.email || "Unknown firm"}</div>
                   <div className="mt-2 flex justify-between text-xs text-muted-foreground"><span>{formatDate(row.created_at)}</span><span>{row.transcript_count} turns</span></div>
+                  {row.client_ip ? <div className="mt-1 font-mono text-[11px] text-muted-foreground/70">{row.client_ip}</div> : null}
                 </button>
               ))}
               {!sessions.length ? <div className="p-6 text-sm text-muted-foreground">{loading ? "Loading..." : "No consultations yet."}</div> : null}
