@@ -32,7 +32,7 @@ type Preview = {
 };
 
 type TranscriptRow = { speaker: "visitor" | "mira"; text: string };
-type Source = { title: string; url: string };
+type Source = { title: string; url?: string | null };
 type Summary = { summary: string; next_actions: string[] };
 
 type AudioRuntime = {
@@ -175,7 +175,7 @@ export function MiraConsultant({ invite }: { invite: string }) {
   }, []);
 
   const sourceMap = useMemo(
-    () => Array.from(new Map(sources.map((source) => [source.url, source])).values()),
+    () => Array.from(new Map(sources.map((source) => [`${source.url || "note"}:${source.title}`, source])).values()),
     [sources],
   );
 
@@ -507,10 +507,14 @@ export function MiraConsultant({ invite }: { invite: string }) {
                       <BookOpen className="h-4 w-4" /> Sources
                     </div>
                     <div className="mt-4 space-y-3">
-                      {sourceMap.length ? sourceMap.map((source) => (
-                        <a key={source.url} href={source.url} target="_blank" rel="noreferrer" className="block border-l-2 border-primary/40 pl-3 text-xs leading-relaxed text-foreground/70 hover:text-primary">
+                      {sourceMap.length ? sourceMap.map((source) => source.url ? (
+                        <a key={`${source.url}:${source.title}`} href={source.url} target="_blank" rel="noreferrer" className="block border-l-2 border-primary/40 pl-3 text-xs leading-relaxed text-foreground/70 hover:text-primary">
                           {source.title}
                         </a>
+                      ) : (
+                        <div key={`note:${source.title}`} className="border-l-2 border-primary/40 pl-3 text-xs leading-relaxed text-foreground/70">
+                          {source.title}
+                        </div>
                       )) : <p className="text-xs leading-relaxed text-muted-foreground">Sources appear as Mira consults the approved Possible Minds material.</p>}
                     </div>
                   </aside>
