@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  ArrowRight,
   BookOpen,
   Check,
   Clock3,
@@ -9,11 +8,9 @@ import {
   Mic,
   MicOff,
   Send,
-  ShieldCheck,
   Square,
   ThumbsDown,
   ThumbsUp,
-  Volume2,
 } from "lucide-react";
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 
@@ -413,84 +410,62 @@ export function MiraConsultant({ invite }: { invite: string }) {
   }
 
   return (
-    <div className="min-h-[calc(100vh-5rem)] bg-black pb-20">
-      <section className="border-b border-primary/20 bg-[#03110b]">
-        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:py-16">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/70">
-              Free operational consultation
-            </p>
-            <h1 className="mt-4 text-4xl font-semibold leading-tight text-primary sm:text-5xl">
-              Talk through your firm&apos;s AI decisions with Mira.
+    <div className="min-h-[calc(100vh-5rem)] bg-black">
+      {state === "intro" || state === "connecting" ? (
+        <section className="flex min-h-[calc(100vh-5rem)] items-center justify-center px-4 py-10 sm:px-6">
+          <div className="mx-auto flex w-full max-w-2xl flex-col items-center text-center">
+            <p className="text-sm font-semibold text-primary">Mira</p>
+            <h1 className="mt-4 max-w-xl text-3xl font-semibold leading-tight text-primary sm:text-5xl">
+              Talk through your firm&apos;s next AI decision.
             </h1>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-foreground/70 sm:text-lg">
-              Get practical guidance on intake performance, where to start with AI,
-              team adoption, or vendor risk. Mira asks about your operation before
-              recommending a next step.
+            <p className="mt-4 max-w-lg text-sm leading-relaxed text-foreground/65 sm:text-base">
+              A free voice consultation for personal injury firm owners and operators.
             </p>
-            <div className="mt-7 grid gap-3 text-sm text-foreground/65 sm:grid-cols-2">
-              {["PI intake performance", "First AI workflow", "Change management", "Vendor governance"].map((item) => (
-                <div key={item} className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-primary" />
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
 
-          <div className="border border-primary/25 bg-black shadow-[0_24px_80px_rgba(0,0,0,0.45)]">
-            {state === "intro" || state === "connecting" ? (
-              <div className="p-6 sm:p-8">
-                <div className="flex items-center gap-4 border-b border-border pb-6">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-primary/40 bg-primary/10">
-                    <Volume2 className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <h2 className="text-xl font-semibold text-primary">Mira</h2>
-                    <p className="text-sm text-muted-foreground">Possible Minds AI Advisor</p>
-                  </div>
+            {preview?.personalization.personalized && identity === "pending" ? (
+              <div className="mt-10 w-full max-w-lg border-y border-border py-7">
+                <p className="text-base leading-relaxed text-foreground/85">
+                  Are you {preview.personalization.first_name} from {preview.personalization.firm_name}?
+                </p>
+                <div className="mt-5 flex flex-wrap justify-center gap-3">
+                  <button onClick={() => setIdentity("yes")} className="rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground">Yes</button>
+                  <button onClick={() => setIdentity("no")} className="rounded-md border border-border px-5 py-2.5 text-sm font-semibold text-foreground/80">Start fresh</button>
                 </div>
-
-                {preview?.personalization.personalized && identity === "pending" ? (
-                  <div className="py-8">
-                    <p className="text-lg leading-relaxed text-foreground/85">
-                      This consultation was prepared for {preview.personalization.first_name} at {preview.personalization.firm_name}.
-                    </p>
-                    <p className="mt-2 text-sm text-muted-foreground">Is that you?</p>
-                    <div className="mt-5 flex gap-3">
-                      <button onClick={() => setIdentity("yes")} className="rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground">Yes</button>
-                      <button onClick={() => setIdentity("no")} className="rounded-md border border-border px-5 py-2.5 text-sm font-semibold text-foreground/80">No, start fresh</button>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="py-7">
-                    {personalized ? (
-                      <p className="mb-5 text-base text-foreground/80">
-                        Mira will use the approved context prepared for {preview?.personalization.firm_name} and confirm important details with you.
-                      </p>
-                    ) : null}
-                    <div className="flex gap-3 border border-primary/20 bg-primary/[0.06] p-4 text-sm leading-relaxed text-foreground/70">
-                      <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                      <p>{preview?.recording_notice || "Preparing the consultation terms..."}</p>
-                    </div>
-                    {error ? <p className="mt-4 text-sm text-red-400">{error}</p> : null}
-                    <button
-                      type="button"
-                      onClick={begin}
-                      disabled={!preview || !identityResolved || state === "connecting"}
-                      className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-md bg-primary px-5 py-3.5 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-50"
-                    >
-                      {state === "connecting" ? "Connecting..." : "Agree and start conversation"}
-                      {state !== "connecting" ? <ArrowRight className="h-4 w-4" /> : null}
-                    </button>
-                    <p className="mt-4 text-center text-xs leading-relaxed text-muted-foreground">
-                      Operational guidance only. Mira does not provide legal advice or assess cases.
-                    </p>
-                  </div>
-                )}
               </div>
-            ) : state === "active" ? (
-              <div className="grid min-h-[610px] grid-rows-[auto_1fr_auto]">
+            ) : (
+              <>
+                {personalized ? (
+                  <p className="mt-7 text-sm text-foreground/65">
+                    Prepared with context for {preview?.personalization.firm_name}.
+                  </p>
+                ) : null}
+                <p className="mt-9 max-w-lg text-xs leading-relaxed text-muted-foreground sm:text-sm">
+                  {preview?.recording_notice || "Preparing the consultation..."}
+                </p>
+                <button
+                  type="button"
+                  onClick={begin}
+                  disabled={!preview || !identityResolved || state === "connecting"}
+                  aria-label="Agree and start conversation"
+                  title="Agree and start conversation"
+                  className="mt-6 flex h-40 w-40 items-center justify-center rounded-full border-2 border-primary bg-primary text-primary-foreground shadow-[0_0_0_10px_rgba(16,185,129,0.08),0_0_64px_rgba(16,185,129,0.22)] transition duration-200 hover:scale-[1.03] hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-50 sm:h-44 sm:w-44"
+                >
+                  <Mic className={`h-16 w-16 sm:h-20 sm:w-20 ${state === "connecting" ? "animate-pulse" : ""}`} strokeWidth={1.6} />
+                </button>
+                <p className="mt-5 text-sm font-semibold text-foreground">
+                  {state === "connecting" ? "Connecting..." : "Agree and start conversation"}
+                </p>
+                <p className="mt-3 text-xs text-muted-foreground">
+                  Operational guidance only. Not legal advice.
+                </p>
+                {error ? <p className="mt-4 text-sm text-red-400">{error}</p> : null}
+              </>
+            )}
+          </div>
+        </section>
+      ) : state === "active" ? (
+        <section className="mx-auto w-full max-w-5xl px-4 py-8 sm:px-6 sm:py-12">
+          <div className="grid min-h-[650px] grid-rows-[auto_1fr_auto] border border-border bg-[#050806]">
                 <div className="flex items-center justify-between gap-4 border-b border-border px-5 py-4">
                   <div className="flex items-center gap-3">
                     <span className="relative flex h-3 w-3">
@@ -508,7 +483,7 @@ export function MiraConsultant({ invite }: { invite: string }) {
                 </div>
 
                 <div className="grid min-h-0 lg:grid-cols-[1fr_220px]">
-                  <div className="max-h-[450px] overflow-y-auto border-b border-border p-5 lg:border-b-0 lg:border-r">
+                  <div className="max-h-[470px] overflow-y-auto border-b border-border p-5 sm:p-7 lg:border-b-0 lg:border-r">
                     {transcript.length ? (
                       <div className="space-y-5">
                         {transcript.map((row, index) => (
@@ -558,9 +533,11 @@ export function MiraConsultant({ invite }: { invite: string }) {
                   {summary ? <button onClick={finish} type="button" className="mt-3 w-full rounded-md bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground">View consultation summary</button> : null}
                   {error ? <p className="mt-3 text-xs text-red-400">{error}</p> : null}
                 </div>
-              </div>
-            ) : (
-              <div className="p-6 sm:p-8">
+          </div>
+        </section>
+      ) : (
+        <section className="mx-auto w-full max-w-2xl px-4 py-10 sm:px-6 sm:py-16">
+          <div className="border border-border bg-[#050806] p-6 sm:p-8">
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary/70">Your consultation summary</p>
                 <h2 className="mt-3 text-2xl font-semibold text-primary">A practical place to start.</h2>
                 <p className="mt-5 text-sm leading-relaxed text-foreground/75">{summary?.summary || "Your conversation has been saved for review."}</p>
@@ -601,28 +578,9 @@ export function MiraConsultant({ invite }: { invite: string }) {
                     </button>
                   ) : null}
                 </div>
-              </div>
-            )}
           </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-        <div className="grid gap-8 md:grid-cols-3">
-          <div>
-            <h2 className="text-lg font-semibold text-primary">Grounded, not generic</h2>
-            <p className="mt-3 text-sm leading-relaxed text-foreground/65">Mira uses only operator-approved Possible Minds material and shows the sources behind its guidance.</p>
-          </div>
-          <div>
-            <h2 className="text-lg font-semibold text-primary">Operational, not legal</h2>
-            <p className="mt-3 text-sm leading-relaxed text-foreground/65">The conversation stays on workflow, adoption, controls, and intake operations. It does not assess claims or give legal advice.</p>
-          </div>
-          <div>
-            <h2 className="text-lg font-semibold text-primary">A useful next step</h2>
-            <p className="mt-3 text-sm leading-relaxed text-foreground/65">End with a concise diagnosis and three concrete actions your firm can review with its team.</p>
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
     </div>
   );
 }
