@@ -20,7 +20,7 @@ import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
 
 const API =
   process.env.NEXT_PUBLIC_ADVISOR_API_URL ||
-  "https://intakeos.getpossibleminds.com/advisor";
+  "https://advisor.getpossibleminds.com";
 const CONSENT_VERSION = "mira-recording-v1";
 
 type Preview = {

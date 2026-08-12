@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 const ADVISOR_API =
   process.env.ADVISOR_ADMIN_API_URL ||
   process.env.NEXT_PUBLIC_ADVISOR_API_URL ||
-  "https://intakeos.getpossibleminds.com/advisor";
+  "https://advisor.getpossibleminds.com";
 
 export async function GET(req: NextRequest) {
   const limit = Math.max(1, Math.min(500, Number(req.nextUrl.searchParams.get("limit") || 100)));
