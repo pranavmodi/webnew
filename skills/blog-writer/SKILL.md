@@ -162,6 +162,10 @@ table of contents should:
 - Include an FAQ jump link when the post contains visible FAQs.
 - Remain readable on mobile and avoid sticky behavior that obscures content.
 
+Use the shared `components/blog/table-of-contents.tsx` component so every post
+keeps the same numbered, single-column design. Pass an explicit ordered item
+list and give each linked H2 or containing section the matching stable ID.
+
 Do not use a table of contents for a very short announcement or update where it
 would add more interface than value.
 

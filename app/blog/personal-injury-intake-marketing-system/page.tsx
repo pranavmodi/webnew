@@ -6,6 +6,7 @@ import ClickBeacon from "@/components/analytics/click-beacon";
 import { JsonLd } from "@/components/seo/json-ld";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
+import { BlogTableOfContents } from "@/components/blog/table-of-contents";
 
 const slug = "personal-injury-intake-marketing-system";
 const pageTitle = "How to Build a Personal Injury Intake System That Converts";
@@ -286,6 +287,8 @@ export default function BlogPostPage() {
         </div>
       </header>
 
+      <BlogTableOfContents items={guideSteps} faqHref="#faq" />
+
       <article className="mx-auto max-w-4xl px-4 pt-14 text-[1.0625rem] leading-8 text-foreground/80 sm:px-6 sm:pt-16">
         <section className="space-y-6">
           <p className="text-xl leading-9 text-foreground/95">
@@ -326,42 +329,6 @@ export default function BlogPostPage() {
             judgment, escalation, and the close.
           </p>
         </section>
-
-        <nav
-          aria-labelledby="guide-contents"
-          className="my-12 border-y border-primary/20 py-8"
-        >
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/70">
-            Contents
-          </p>
-          <h2
-            id="guide-contents"
-            className="mt-3 text-2xl font-semibold leading-tight text-foreground"
-          >
-            Build the system in eight steps
-          </h2>
-          <ol className="mt-6 grid gap-x-10 sm:grid-cols-2">
-            {guideSteps.map((step, index) => (
-              <li key={step.id} className="border-t border-primary/15">
-                <a
-                  href={`#${step.id}`}
-                  className="group flex min-h-14 items-center gap-4 py-3 text-base leading-6 text-foreground/80 transition hover:text-primary"
-                >
-                  <span className="w-6 shrink-0 text-xs font-semibold text-primary/60 group-hover:text-primary">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span>{step.label}</span>
-                </a>
-              </li>
-            ))}
-          </ol>
-          <a
-            href="#faq"
-            className="mt-5 inline-flex text-sm font-medium text-primary underline decoration-primary/35 underline-offset-4 transition hover:decoration-primary"
-          >
-            Jump to common questions
-          </a>
-        </nav>
 
         <section
           id="audit-inquiries"

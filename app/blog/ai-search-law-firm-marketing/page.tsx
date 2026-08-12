@@ -5,6 +5,16 @@ import { Button } from "@/components/ui/button";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
 import WaitlistForm from "./waitlist-form";
+import { BlogTableOfContents } from "@/components/blog/table-of-contents";
+
+const contents = [
+  { id: "the-invisible-layer-nobody-is-measuring", label: "The Invisible Layer Nobody Is Measuring" },
+  { id: "why-personal-injury-firms-feel-this-most", label: "Why Personal Injury Firms Feel This Most" },
+  { id: "the-competitor-hiding-in-plain-sight", label: "The Competitor Hiding in Plain Sight" },
+  { id: "the-local-pack-is-changing-too", label: "The Local Pack Is Changing Too" },
+  { id: "what-good-measurement-actually-looks-like", label: "What Good Measurement Actually Looks Like" },
+  { id: "the-tools-that-exist-and-what-they-miss", label: "The Tools That Exist - and What They Miss" },
+];
 
 export const metadata: Metadata = {
   title: `Your Rankings Held. Your Calls Didn't. | ${SITE_NAME}`,
@@ -50,10 +60,13 @@ export default function BlogPostPage() {
         </div>
       </section>
 
+      <BlogTableOfContents items={contents} />
+
+
       <article className="mx-auto max-w-4xl space-y-12 px-4 pt-12 text-foreground/85 sm:px-6">
         {/* Section: The Invisible Layer Nobody Is Measuring */}
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-invisible-layer-nobody-is-measuring">
             The Invisible Layer Nobody Is Measuring
           </h2>
           <p>
@@ -116,7 +129,7 @@ export default function BlogPostPage() {
 
         {/* Section: Why Personal Injury Firms Feel This Most */}
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="why-personal-injury-firms-feel-this-most">
             Why Personal Injury Firms Feel This Most
           </h2>
           <p>
@@ -145,7 +158,7 @@ export default function BlogPostPage() {
 
         {/* Section: The Competitor Hiding in Plain Sight */}
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-competitor-hiding-in-plain-sight">
             The Competitor Hiding in Plain Sight
           </h2>
           <p>
@@ -171,7 +184,7 @@ export default function BlogPostPage() {
 
         {/* Section: The Local Pack Is Changing Too */}
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-local-pack-is-changing-too">
             The Local Pack Is Changing Too
           </h2>
           <p>
@@ -187,7 +200,7 @@ export default function BlogPostPage() {
 
         {/* Section: What Good Measurement Actually Looks Like */}
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="what-good-measurement-actually-looks-like">
             What Good Measurement Actually Looks Like
           </h2>
           <p>
@@ -209,7 +222,7 @@ export default function BlogPostPage() {
 
         {/* Competitive Landscape */}
         <section className="space-y-6">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-tools-that-exist-and-what-they-miss">
             The Tools That Exist &mdash; and What They Miss
           </h2>
           <p>

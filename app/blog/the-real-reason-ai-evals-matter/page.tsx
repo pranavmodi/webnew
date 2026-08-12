@@ -4,6 +4,17 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
+import { BlogTableOfContents } from "@/components/blog/table-of-contents";
+
+const contents = [
+  { id: "evals-101", label: "Evals 101" },
+  { id: "learning-loops-the-secret-weapon-of-winning-organizations", label: "Learning Loops: The Secret Weapon of Winning Organizations" },
+  { id: "the-anatomy-of-a-learning-loop", label: "The Anatomy of a Learning Loop" },
+  { id: "learning-loops-the-new-moat-in-the-age-of-ai", label: "Learning Loops: The New Moat in the Age of AI" },
+  { id: "why-traditional-companies-struggle", label: "Why Traditional Companies Struggle" },
+  { id: "building-your-learning-loop-advantage", label: "Building Your Learning Loop Advantage" },
+  { id: "the-winner-take-all-future", label: "The Winner-Take-All Future" },
+];
 
 export const metadata: Metadata = {
   title: `The Real Reason AI Evals Matter for Your Business | ${SITE_NAME}`,
@@ -51,6 +62,9 @@ export default function BlogPostPage() {
         </div>
       </section>
 
+      <BlogTableOfContents items={contents} />
+
+
       <article className="mx-auto max-w-4xl space-y-12 px-4 pt-12 sm:px-6">
         {/* Intro */}
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
@@ -64,7 +78,7 @@ export default function BlogPostPage() {
 
         {/* Evals 101 */}
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
-          <h2 className="text-2xl font-semibold text-primary">Evals 101</h2>
+          <h2 className="text-2xl font-semibold text-primary scroll-mt-24" id="evals-101">Evals 101</h2>
           <p className="mt-4 text-base text-foreground/80">
             AI evaluations&mdash;or &ldquo;evals&rdquo;&mdash;are systematic processes
             for validating and testing the outputs that machine learning applications
@@ -112,7 +126,7 @@ export default function BlogPostPage() {
 
         {/* Learning Loops */}
         <div className="rounded-2xl border border-primary/25 bg-gradient-to-br from-[#04150d] to-[#0a2618] p-6">
-          <h2 className="text-2xl font-semibold text-primary">
+          <h2 className="text-2xl font-semibold text-primary scroll-mt-24" id="learning-loops-the-secret-weapon-of-winning-organizations">
             Learning Loops: The Secret Weapon of Winning Organizations
           </h2>
           <p className="mt-4 text-base text-foreground/80">
@@ -139,7 +153,7 @@ export default function BlogPostPage() {
 
         {/* Anatomy of a Learning Loop */}
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
-          <h2 className="text-2xl font-semibold text-primary">
+          <h2 className="text-2xl font-semibold text-primary scroll-mt-24" id="the-anatomy-of-a-learning-loop">
             The Anatomy of a Learning Loop
           </h2>
           <p className="mt-4 text-base text-foreground/80">
@@ -213,7 +227,7 @@ export default function BlogPostPage() {
 
         {/* The New Moat */}
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
-          <h2 className="text-2xl font-semibold text-primary">
+          <h2 className="text-2xl font-semibold text-primary scroll-mt-24" id="learning-loops-the-new-moat-in-the-age-of-ai">
             Learning Loops: The New Moat in the Age of AI
           </h2>
           <p className="mt-4 text-base text-foreground/80">
@@ -272,7 +286,7 @@ export default function BlogPostPage() {
 
         {/* Traditional vs AI-Native */}
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
-          <h2 className="text-2xl font-semibold text-primary">
+          <h2 className="text-2xl font-semibold text-primary scroll-mt-24" id="why-traditional-companies-struggle">
             Why Traditional Companies Struggle
           </h2>
           <p className="mt-4 text-base text-foreground/80">
@@ -290,7 +304,7 @@ export default function BlogPostPage() {
 
         {/* Building Your Advantage */}
         <div className="rounded-2xl border border-primary/25 bg-gradient-to-br from-[#04150d] to-[#0a2618] p-6">
-          <h2 className="text-2xl font-semibold text-primary">
+          <h2 className="text-2xl font-semibold text-primary scroll-mt-24" id="building-your-learning-loop-advantage">
             Building Your Learning Loop Advantage
           </h2>
           <p className="mt-4 text-base text-foreground/80">
@@ -352,7 +366,7 @@ export default function BlogPostPage() {
 
         {/* Winner-Take-All */}
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
-          <h2 className="text-2xl font-semibold text-primary">
+          <h2 className="text-2xl font-semibold text-primary scroll-mt-24" id="the-winner-take-all-future">
             The Winner-Take-All Future
           </h2>
           <p className="mt-4 text-base text-foreground/80">

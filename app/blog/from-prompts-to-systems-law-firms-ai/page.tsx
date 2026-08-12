@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { Button } from "@/components/ui/button";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { CALENDLY_URL, SITE_NAME, SITE_URL } from "@/lib/constants";
+import { BlogTableOfContents } from "@/components/blog/table-of-contents";
 
 const slug = "from-prompts-to-systems-law-firms-ai";
 const pageTitle = "From Prompts to Systems: How Law Firms Should Absorb AI";
@@ -150,6 +151,16 @@ const faqs = [
   },
 ];
 
+const contents = [
+  { id: "generic-prompts-create-generic-work", label: "Generic prompts create generic work" },
+  { id: "the-six-part-anatomy-of-a-serious-legal-ai-instruction", label: "The six-part anatomy of a serious legal AI instruction" },
+  { id: "good-prompting-is-good-delegation", label: "Good prompting is good delegation" },
+  { id: "the-prompt-layer-is-useful-but-it-is-not-the-firm-level-answer", label: "The prompt layer is useful, but it is not the firm-level answer" },
+  { id: "from-prompts-to-systems", label: "From prompts to systems" },
+  { id: "where-pi-firms-should-start", label: "Where PI firms should start" },
+  { id: "what-firm-leaders-should-do-next", label: "What firm leaders should do next" },
+];
+
 export const metadata: Metadata = {
   title: metaTitle,
   description: pageDescription,
@@ -283,6 +294,9 @@ export default function BlogPostPage() {
         </div>
       </section>
 
+      <BlogTableOfContents items={contents} faqHref="#faq" />
+
+
       <article className="mx-auto max-w-4xl space-y-12 px-4 pt-12 text-foreground/85 sm:px-6">
         <section className="space-y-4">
           <p>
@@ -326,7 +340,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="generic-prompts-create-generic-work">
             Generic prompts create generic work
           </h2>
           <p>
@@ -363,7 +377,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-6">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-six-part-anatomy-of-a-serious-legal-ai-instruction">
             The six-part anatomy of a serious legal AI instruction
           </h2>
           <p>
@@ -417,7 +431,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="good-prompting-is-good-delegation">
             Good prompting is good delegation
           </h2>
           <p>
@@ -445,7 +459,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-prompt-layer-is-useful-but-it-is-not-the-firm-level-answer">
             The prompt layer is useful, but it is not the firm-level answer
           </h2>
           <p>
@@ -477,7 +491,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-5">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="from-prompts-to-systems">
             From prompts to systems
           </h2>
           <p>
@@ -538,7 +552,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="where-pi-firms-should-start">
             Where PI firms should start
           </h2>
           <p>
@@ -563,7 +577,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="what-firm-leaders-should-do-next">
             What firm leaders should do next
           </h2>
           <ol className="list-decimal space-y-3 pl-6 text-foreground/75">

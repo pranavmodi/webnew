@@ -4,6 +4,19 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
+import { BlogTableOfContents } from "@/components/blog/table-of-contents";
+
+const contents = [
+  { id: "what-building-systems-actually-means", label: "What \"building systems\" actually means" },
+  { id: "why-this-matters-more-for-pi-than-almost-any-other-legal-vertical", label: "Why this matters more for PI than almost any other legal vertical" },
+  { id: "three-places-where-the-tools-vs-systems-distinction-shows-up-most-starkly", label: "Three places where the tools-vs-systems distinction shows up most starkly" },
+  { id: "1-client-communication-and-case-updates", label: "1. Client communication and case updates" },
+  { id: "2-intake-and-lead-qualification", label: "2. Intake and lead qualification" },
+  { id: "3-lien-resolution", label: "3. Lien resolution" },
+  { id: "the-compounding-moat", label: "The compounding moat" },
+  { id: "the-guardrails-matter-too", label: "The guardrails matter too" },
+  { id: "what-to-do-with-this", label: "What to do with this" },
+];
 
 export const metadata: Metadata = {
   title: `Tools vs. Systems: Why Most PI Firms Will Get the AI Era Wrong | ${SITE_NAME}`,
@@ -49,6 +62,9 @@ export default function BlogPostPage() {
         </div>
       </section>
 
+      <BlogTableOfContents items={contents} />
+
+
       <article className="mx-auto max-w-4xl space-y-12 px-4 pt-12 text-foreground/85 sm:px-6">
         <section className="space-y-4">
           <p>
@@ -66,7 +82,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="what-building-systems-actually-means">
             What &quot;building systems&quot; actually means
           </h2>
           <p>
@@ -93,7 +109,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="why-this-matters-more-for-pi-than-almost-any-other-legal-vertical">
             Why this matters more for PI than almost any other legal vertical
           </h2>
           <p>
@@ -114,13 +130,13 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="three-places-where-the-tools-vs-systems-distinction-shows-up-most-starkly">
             Three places where the tools-vs-systems distinction shows up most starkly
           </h2>
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="1-client-communication-and-case-updates">
             1. Client communication and case updates
           </h2>
           <p>
@@ -146,7 +162,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="2-intake-and-lead-qualification">
             2. Intake and lead qualification
           </h2>
           <p>
@@ -172,7 +188,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="3-lien-resolution">
             3. Lien resolution
           </h2>
           <p>
@@ -201,7 +217,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-compounding-moat">
             The compounding moat
           </h2>
           <p>
@@ -219,7 +235,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-guardrails-matter-too">
             The guardrails matter too
           </h2>
           <p>
@@ -228,7 +244,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="what-to-do-with-this">
             What to do with this
           </h2>
           <p>

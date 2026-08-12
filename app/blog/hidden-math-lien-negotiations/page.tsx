@@ -4,9 +4,20 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
+import { BlogTableOfContents } from "@/components/blog/table-of-contents";
 
 const pageTitle = "The Hidden Math of Lien Negotiations: What 563 Cases Reveal";
 const pageDescription = "We analyzed 563 real medical lien negotiations between a diagnostic imaging provider and PI law firms. The data reveals striking patterns in reduction demands, settlement timing, and firm behavior that neither side is tracking.";
+
+const contents = [
+  { id: "the-dataset", label: "The Dataset" },
+  { id: "what-the-numbers-say", label: "What the Numbers Say" },
+  { id: "the-settlement-size-effect", label: "The Settlement Size Effect" },
+  { id: "the-firm-pattern-problem", label: "The Firm Pattern Problem" },
+  { id: "can-intelligence-close-the-gap", label: "Can Intelligence Close the Gap?" },
+  { id: "what-this-means-for-providers-and-firms", label: "What This Means for Providers and Firms" },
+  { id: "the-bigger-picture", label: "The Bigger Picture" },
+];
 
 export const metadata: Metadata = {
   title: `${pageTitle} | ${SITE_NAME}`,
@@ -64,6 +75,9 @@ export default function BlogPostPage() {
         </div>
       </section>
 
+      <BlogTableOfContents items={contents} />
+
+
       <article className="mx-auto max-w-4xl space-y-12 px-4 pt-12 text-foreground/85 sm:px-6">
         {/* ── Opening Hook ── */}
         <section className="space-y-5">
@@ -96,7 +110,7 @@ export default function BlogPostPage() {
 
         {/* ── The Dataset ── */}
         <section className="space-y-5">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-dataset">
             The Dataset
           </h2>
           <p className="leading-relaxed">
@@ -117,7 +131,7 @@ export default function BlogPostPage() {
 
         {/* ── What the Numbers Say ── */}
         <section className="space-y-5">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="what-the-numbers-say">
             What the Numbers Say
           </h2>
           <p className="leading-relaxed">
@@ -178,7 +192,7 @@ export default function BlogPostPage() {
 
         {/* ── The Settlement Size Effect ── */}
         <section className="space-y-5">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-settlement-size-effect">
             The Settlement Size Effect
           </h2>
           <p className="leading-relaxed">
@@ -240,7 +254,7 @@ export default function BlogPostPage() {
 
         {/* ── The Firm Pattern Problem ── */}
         <section className="space-y-5">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-firm-pattern-problem">
             The Firm Pattern Problem
           </h2>
           <p className="leading-relaxed">
@@ -274,7 +288,7 @@ export default function BlogPostPage() {
 
         {/* ── Can AI Close the Gap? ── */}
         <section className="space-y-5">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="can-intelligence-close-the-gap">
             Can Intelligence Close the Gap?
           </h2>
           <p className="leading-relaxed">
@@ -302,7 +316,7 @@ export default function BlogPostPage() {
 
         {/* ── What This Means ── */}
         <section className="space-y-5">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="what-this-means-for-providers-and-firms">
             What This Means for Providers and Firms
           </h2>
           <p className="leading-relaxed font-medium">For providers:</p>
@@ -343,7 +357,7 @@ export default function BlogPostPage() {
 
         {/* ── The Bigger Picture ── */}
         <section className="space-y-5">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-bigger-picture">
             The Bigger Picture
           </h2>
           <p className="leading-relaxed">

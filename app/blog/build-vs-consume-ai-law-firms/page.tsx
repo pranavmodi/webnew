@@ -4,6 +4,16 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
+import { BlogTableOfContents } from "@/components/blog/table-of-contents";
+
+const contents = [
+  { id: "the-economics-renting-forever-vs-owning-once", label: "The Economics: Renting Forever vs. Owning Once" },
+  { id: "building-does-not-mean-software-development", label: "\"Building\" Does Not Mean Software Development" },
+  { id: "the-first-mover-window-is-real-and-closing", label: "The First-Mover Window Is Real and Closing" },
+  { id: "the-real-barrier-is-psychological-not-technical", label: "The Real Barrier Is Psychological, Not Technical" },
+  { id: "what-to-do-in-the-next-30-days", label: "What to Do in the Next 30 Days" },
+  { id: "the-compounding-future", label: "The Compounding Future" },
+];
 
 export const metadata: Metadata = {
   title: `Build vs. Consume: The AI Choice That Will Define Your Firm | ${SITE_NAME}`,
@@ -52,6 +62,9 @@ export default function BlogPostPage() {
         </div>
       </section>
 
+      <BlogTableOfContents items={contents} />
+
+
       <article className="mx-auto max-w-4xl space-y-12 px-4 pt-12 text-foreground/85 sm:px-6">
         <section className="space-y-4">
           <p>
@@ -78,7 +91,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-economics-renting-forever-vs-owning-once">
             The Economics: Renting Forever vs. Owning Once
           </h2>
           <p>
@@ -108,7 +121,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="building-does-not-mean-software-development">
             &quot;Building&quot; Does Not Mean Software Development
           </h2>
           <p>
@@ -157,7 +170,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-first-mover-window-is-real-and-closing">
             The First-Mover Window Is Real and Closing
           </h2>
           <p>
@@ -186,7 +199,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-real-barrier-is-psychological-not-technical">
             The Real Barrier Is Psychological, Not Technical
           </h2>
           <p>
@@ -212,7 +225,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="what-to-do-in-the-next-30-days">
             What to Do in the Next 30 Days
           </h2>
           <p>
@@ -254,7 +267,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-compounding-future">
             The Compounding Future
           </h2>
           <p>

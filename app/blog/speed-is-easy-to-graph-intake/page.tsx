@@ -4,6 +4,15 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
+import { BlogTableOfContents } from "@/components/blog/table-of-contents";
+
+const contents = [
+  { id: "the-administrative-model-problem", label: "The administrative model problem" },
+  { id: "speed-gets-credit-while-stability-does-the-work", label: "Speed gets credit while stability does the work" },
+  { id: "one-caller-five-records", label: "One caller, five records" },
+  { id: "what-this-means-for-ai-intake-and-most-vendors-get-it-backwards", label: "What this means for AI intake (and most vendors get it backwards)" },
+  { id: "the-quarter-beats-the-day", label: "The quarter beats the day" },
+];
 
 export const metadata: Metadata = {
   title: `Speed Is Easy to Graph: The Intake Metric PI Firms Keep Optimizing Wrong | ${SITE_NAME}`,
@@ -46,6 +55,9 @@ export default function BlogPostPage() {
         </div>
       </section>
 
+      <BlogTableOfContents items={contents} />
+
+
       <article className="mx-auto max-w-4xl space-y-12 px-4 pt-12 text-foreground/85 sm:px-6">
         <section className="space-y-4">
           <p>
@@ -69,7 +81,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-administrative-model-problem">
             The administrative model problem
           </h2>
           <p>
@@ -90,7 +102,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="speed-gets-credit-while-stability-does-the-work">
             Speed gets credit while stability does the work
           </h2>
           <p>
@@ -120,7 +132,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="one-caller-five-records">
             One caller, five records
           </h2>
           <p>
@@ -141,7 +153,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="what-this-means-for-ai-intake-and-most-vendors-get-it-backwards">
             What this means for AI intake (and most vendors get it backwards)
           </h2>
           <p>
@@ -165,7 +177,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-quarter-beats-the-day">
             The quarter beats the day
           </h2>
           <p>

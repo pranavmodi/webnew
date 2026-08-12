@@ -4,6 +4,17 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
+import { BlogTableOfContents } from "@/components/blog/table-of-contents";
+
+const contents = [
+  { id: "the-350-000-question-nobody-s-asking", label: "The $350,000 Question Nobody's Asking" },
+  { id: "two-firms-same-tools-opposite-outcomes", label: "Two Firms, Same Tools, Opposite Outcomes" },
+  { id: "the-hamster-wheel-of-testing-cool-tools", label: "The Hamster Wheel of \"Testing Cool Tools\"" },
+  { id: "you-can-t-automate-what-you-haven-t-documented", label: "You Can't Automate What You Haven't Documented" },
+  { id: "the-33-problem-when-automation-destroys-your-brand", label: "The 33% Problem: When Automation Destroys Your Brand" },
+  { id: "what-a-chief-ai-officer-actually-does", label: "What a Chief AI Officer Actually Does" },
+  { id: "the-uncomfortable-truth", label: "The Uncomfortable Truth" },
+];
 
 export const metadata: Metadata = {
   title: `Nobody Owns AI at Your Firm (And That's Why It's Failing) | ${SITE_NAME}`,
@@ -61,9 +72,12 @@ export default function BlogPostPage() {
         </div>
       </section>
 
+      <BlogTableOfContents items={contents} />
+
+
       <article className="mx-auto max-w-4xl space-y-12 px-4 pt-12 text-foreground/85 sm:px-6">
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-350-000-question-nobody-s-asking">
             The $350,000 Question Nobody&apos;s Asking
           </h2>
           <p>
@@ -81,7 +95,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="two-firms-same-tools-opposite-outcomes">
             Two Firms, Same Tools, Opposite Outcomes
           </h2>
           <p>
@@ -102,7 +116,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-hamster-wheel-of-testing-cool-tools">
             The Hamster Wheel of &quot;Testing Cool Tools&quot;
           </h2>
           <p>
@@ -117,7 +131,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="you-can-t-automate-what-you-haven-t-documented">
             You Can&apos;t Automate What You Haven&apos;t Documented
           </h2>
           <p>
@@ -140,7 +154,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-33-problem-when-automation-destroys-your-brand">
             The 33% Problem: When Automation Destroys Your Brand
           </h2>
           <p>
@@ -166,7 +180,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="what-a-chief-ai-officer-actually-does">
             What a Chief AI Officer Actually Does
           </h2>
           <p>
@@ -187,7 +201,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-uncomfortable-truth">
             The Uncomfortable Truth
           </h2>
           <p>

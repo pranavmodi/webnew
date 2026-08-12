@@ -4,6 +4,25 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
+import { BlogTableOfContents } from "@/components/blog/table-of-contents";
+
+const contents = [
+  { id: "case-system", label: "Where does most case information live today?" },
+  { id: "field-quality", label: "How complete are the key fields your team depends on?" },
+  { id: "system-modernity", label: "How modern and connectable is your core stack?" },
+  { id: "phone-docs", label: "How do phones, documents, signatures, and accounting connect?" },
+  { id: "intake-repeatability", label: "How repeatable is intake?" },
+  { id: "case-workflows", label: "How documented are records, treatment, demand, and lien workflows?" },
+  { id: "funnel-metrics", label: "Which intake and funnel numbers do you track?" },
+  { id: "case-metrics", label: "How well do you know where cases stall or leak value?" },
+  { id: "shadow-ai", label: "How is staff use of AI tools governed today?" },
+  { id: "vendor-diligence", label: "How do you evaluate vendors that touch client data?" },
+  { id: "leadership", label: "How bought in is leadership?" },
+  { id: "adoption-history", label: "How did the last new tool rollout go?" },
+  { id: "target-problem", label: "What problem would AI solve first?" },
+  { id: "budget-expectations", label: "How clear are budget and expectations?" },
+  { id: "the-point-of-the-audit", label: "The point of the audit" },
+];
 
 export const metadata: Metadata = {
   title: `Why AI Readiness Starts Before AI | ${SITE_NAME}`,
@@ -45,6 +64,9 @@ export default function BlogPostPage() {
           </div>
         </div>
       </section>
+
+      <BlogTableOfContents items={contents} />
+
 
       <article className="mx-auto max-w-4xl space-y-12 px-4 pt-12 text-foreground/85 sm:px-6">
         <section className="space-y-4">
@@ -363,7 +385,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-point-of-the-audit">
             The point of the audit
           </h2>
           <p>

@@ -5,6 +5,16 @@ import { Button } from "@/components/ui/button";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
 import WaitlistForm from "./waitlist-form";
+import { BlogTableOfContents } from "@/components/blog/table-of-contents";
+
+const contents = [
+  { id: "a-thursday-afternoon-in-april", label: "A Thursday Afternoon in April" },
+  { id: "what-david-saw-when-he-googled-himself", label: "What David Saw When He Googled Himself" },
+  { id: "the-layer-between-you-and-your-next-client", label: "The Layer Between You and Your Next Client" },
+  { id: "why-personal-injury-firms-feel-this-first", label: "Why Personal Injury Firms Feel This First" },
+  { id: "what-david-did-next", label: "What David Did Next" },
+  { id: "what-the-firms-that-are-winning-do-differently", label: "What the Firms That Are Winning Do Differently" },
+];
 
 export const metadata: Metadata = {
   title: `The $200,000 Answer Your Clients Never Called About | ${SITE_NAME}`,
@@ -50,10 +60,13 @@ export default function BlogPostPage() {
         </div>
       </section>
 
+      <BlogTableOfContents items={contents} />
+
+
       <article className="mx-auto max-w-4xl space-y-12 px-4 pt-12 text-foreground/85 sm:px-6">
         {/* Section: David's Thursday Afternoon */}
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="a-thursday-afternoon-in-april">
             A Thursday Afternoon in April
           </h2>
           <p>
@@ -72,7 +85,7 @@ export default function BlogPostPage() {
 
         {/* Section: The Experiment */}
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="what-david-saw-when-he-googled-himself">
             What David Saw When He Googled Himself
           </h2>
           <p>
@@ -104,7 +117,7 @@ export default function BlogPostPage() {
 
         {/* Section: The Invisible Layer */}
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-layer-between-you-and-your-next-client">
             The Layer Between You and Your Next Client
           </h2>
           <p>
@@ -123,7 +136,7 @@ export default function BlogPostPage() {
 
         {/* Section: Why PI Gets Hit Hardest */}
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="why-personal-injury-firms-feel-this-first">
             Why Personal Injury Firms Feel This First
           </h2>
           <p>
@@ -172,7 +185,7 @@ export default function BlogPostPage() {
 
         {/* Section: What David Did Next */}
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="what-david-did-next">
             What David Did Next
           </h2>
           <p>
@@ -194,7 +207,7 @@ export default function BlogPostPage() {
 
         {/* What smart firms are doing */}
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="what-the-firms-that-are-winning-do-differently">
             What the Firms That Are Winning Do Differently
           </h2>
           <p>

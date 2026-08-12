@@ -4,6 +4,19 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
+import { BlogTableOfContents } from "@/components/blog/table-of-contents";
+
+const contents = [
+  { id: "the-five-minute-window-that-determines-everything", label: "The Five-Minute Window That Determines Everything" },
+  { id: "the-after-hours-problem-no-one-talks-about", label: "The After-Hours Problem No One Talks About" },
+  { id: "the-chase-sequence-why-one-touch-is-never-enough", label: "The Chase Sequence: Why One Touch Is Never Enough" },
+  { id: "case-quality-screening-speed-without-selectivity-is-waste", label: "Case Quality Screening: Speed Without Selectivity Is Waste" },
+  { id: "the-last-mile-closing-the-digital-retainer-gap", label: "The Last Mile: Closing the Digital Retainer Gap" },
+  { id: "the-kpis-that-define-intake-health", label: "The KPIs That Define Intake Health" },
+  { id: "reactive-vs-proactive-two-models-one-market", label: "Reactive vs. Proactive: Two Models, One Market" },
+  { id: "how-ai-is-changing-the-calculus", label: "How AI Is Changing the Calculus" },
+  { id: "intake-is-the-return-on-your-marketing-investment", label: "Intake Is the Return on Your Marketing Investment" },
+];
 
 export const metadata: Metadata = {
   title: `The Science of Client Intake and Lead Conversion | ${SITE_NAME}`,
@@ -51,6 +64,9 @@ export default function BlogPostPage() {
         </div>
       </section>
 
+      <BlogTableOfContents items={contents} />
+
+
       <article className="mx-auto max-w-4xl space-y-12 px-4 pt-12 sm:px-6">
         {/* Intro */}
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
@@ -73,7 +89,7 @@ export default function BlogPostPage() {
 
         {/* The Speed Imperative */}
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
-          <h2 className="text-2xl font-semibold text-primary">
+          <h2 className="text-2xl font-semibold text-primary scroll-mt-24" id="the-five-minute-window-that-determines-everything">
             The Five-Minute Window That Determines Everything
           </h2>
           <p className="mt-4 text-base text-foreground/80">
@@ -147,7 +163,7 @@ export default function BlogPostPage() {
 
         {/* After-Hours */}
         <div className="rounded-2xl border border-primary/25 bg-gradient-to-br from-[#04150d] to-[#0a2618] p-6">
-          <h2 className="text-2xl font-semibold text-primary">
+          <h2 className="text-2xl font-semibold text-primary scroll-mt-24" id="the-after-hours-problem-no-one-talks-about">
             The After-Hours Problem No One Talks About
           </h2>
           <p className="mt-4 text-base text-foreground/80">
@@ -212,7 +228,7 @@ export default function BlogPostPage() {
 
         {/* Chase Sequence */}
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
-          <h2 className="text-2xl font-semibold text-primary">
+          <h2 className="text-2xl font-semibold text-primary scroll-mt-24" id="the-chase-sequence-why-one-touch-is-never-enough">
             The Chase Sequence: Why One Touch Is Never Enough
           </h2>
           <p className="mt-4 text-base text-foreground/80">
@@ -289,7 +305,7 @@ export default function BlogPostPage() {
 
         {/* Case Quality Screening */}
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
-          <h2 className="text-2xl font-semibold text-primary">
+          <h2 className="text-2xl font-semibold text-primary scroll-mt-24" id="case-quality-screening-speed-without-selectivity-is-waste">
             Case Quality Screening: Speed Without Selectivity Is Waste
           </h2>
           <p className="mt-4 text-base text-foreground/80">
@@ -349,7 +365,7 @@ export default function BlogPostPage() {
 
         {/* Digital Retainer */}
         <div className="rounded-2xl border border-primary/25 bg-gradient-to-br from-[#04150d] to-[#0a2618] p-6">
-          <h2 className="text-2xl font-semibold text-primary">
+          <h2 className="text-2xl font-semibold text-primary scroll-mt-24" id="the-last-mile-closing-the-digital-retainer-gap">
             The Last Mile: Closing the Digital Retainer Gap
           </h2>
           <p className="mt-4 text-base text-foreground/80">
@@ -380,7 +396,7 @@ export default function BlogPostPage() {
 
         {/* KPIs */}
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
-          <h2 className="text-2xl font-semibold text-primary">
+          <h2 className="text-2xl font-semibold text-primary scroll-mt-24" id="the-kpis-that-define-intake-health">
             The KPIs That Define Intake Health
           </h2>
           <p className="mt-4 text-base text-foreground/80">
@@ -441,7 +457,7 @@ export default function BlogPostPage() {
 
         {/* Reactive vs Proactive */}
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
-          <h2 className="text-2xl font-semibold text-primary">
+          <h2 className="text-2xl font-semibold text-primary scroll-mt-24" id="reactive-vs-proactive-two-models-one-market">
             Reactive vs. Proactive: Two Models, One Market
           </h2>
           <p className="mt-4 text-base text-foreground/80">
@@ -508,7 +524,7 @@ export default function BlogPostPage() {
 
         {/* AI */}
         <div className="rounded-2xl border border-primary/25 bg-gradient-to-br from-[#04150d] to-[#0a2618] p-6">
-          <h2 className="text-2xl font-semibold text-primary">
+          <h2 className="text-2xl font-semibold text-primary scroll-mt-24" id="how-ai-is-changing-the-calculus">
             How AI Is Changing the Calculus
           </h2>
           <p className="mt-4 text-base text-foreground/80">
@@ -579,7 +595,7 @@ export default function BlogPostPage() {
 
         {/* Closing argument */}
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
-          <h2 className="text-2xl font-semibold text-primary">
+          <h2 className="text-2xl font-semibold text-primary scroll-mt-24" id="intake-is-the-return-on-your-marketing-investment">
             Intake Is the Return on Your Marketing Investment
           </h2>
           <p className="mt-4 text-base text-foreground/80">

@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { Button } from "@/components/ui/button";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { CALENDLY_URL, SITE_NAME, SITE_URL } from "@/lib/constants";
+import { BlogTableOfContents } from "@/components/blog/table-of-contents";
 
 const slug = "headless-legal-software-pi-vendor-rankings";
 const pageTitle =
@@ -204,6 +205,22 @@ const faqs = [
   },
 ];
 
+const contents = [
+  { id: "legal-software-is-becoming-infrastructure-for-agents", label: "Legal software is becoming infrastructure for agents" },
+  { id: "what-headless-legal-software-means", label: "What \"headless legal software\" means" },
+  { id: "api-vs-mcp-what-is-the-difference", label: "API vs. MCP: what is the difference?" },
+  { id: "why-the-cli-matters-in-the-agent-era", label: "Why the CLI matters in the agent era" },
+  { id: "the-economics-interface-work-is-labor", label: "The economics: interface work is labor" },
+  { id: "how-we-rated-pi-legal-tech-vendors", label: "How we rated PI legal-tech vendors" },
+  { id: "pi-vendor-rankings-for-external-ai-agent-readiness", label: "PI vendor rankings for external AI-agent readiness" },
+  { id: "what-the-rankings-reveal", label: "What the rankings reveal" },
+  { id: "which-vendors-are-publishing-on-the-shift", label: "Which vendors are publishing on the shift?" },
+  { id: "the-procurement-questions-pi-firms-should-ask-now", label: "The procurement questions PI firms should ask now" },
+  { id: "what-a-headless-pi-operating-layer-could-do", label: "What a headless PI operating layer could do" },
+  { id: "the-operating-principle-automate-action-preserve-judgment", label: "The operating principle: automate action, preserve judgment" },
+  { id: "bottom-line", label: "Bottom line" },
+];
+
 export const metadata: Metadata = {
   title: metaTitle,
   description: pageDescription,
@@ -337,12 +354,15 @@ export default function BlogPostPage() {
         </div>
       </section>
 
+      <BlogTableOfContents items={contents} faqHref="#faq" />
+
+
       <article className="mx-auto max-w-4xl space-y-12 px-4 pt-12 text-foreground/85 sm:px-6">
         <section className="rounded-lg border border-primary/25 bg-[#04150d] p-6 sm:p-8">
           <p className="text-xs font-semibold uppercase text-primary">
             The answer in 30 seconds
           </p>
-          <h2 className="mt-3 text-2xl font-semibold text-[#00ff41]">
+          <h2 className="mt-3 text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="legal-software-is-becoming-infrastructure-for-agents">
             Legal software is becoming infrastructure for agents
           </h2>
           <p className="mt-4 leading-relaxed text-foreground/75">
@@ -397,7 +417,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="what-headless-legal-software-means">
             What &quot;headless legal software&quot; means
           </h2>
           <p>
@@ -431,7 +451,7 @@ export default function BlogPostPage() {
 
         <section className="space-y-6">
           <div>
-            <h2 className="text-2xl font-semibold text-[#00ff41]">
+            <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="api-vs-mcp-what-is-the-difference">
               API vs. MCP: what is the difference?
             </h2>
             <p className="mt-4">
@@ -529,7 +549,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-6">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="why-the-cli-matters-in-the-agent-era">
             Why the CLI matters in the agent era
           </h2>
           <p>
@@ -592,7 +612,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-6">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-economics-interface-work-is-labor">
             The economics: interface work is labor
           </h2>
           <p>
@@ -694,7 +714,7 @@ export default function BlogPostPage() {
 
         <section className="space-y-6">
           <div>
-            <h2 className="text-2xl font-semibold text-[#00ff41]">
+            <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="how-we-rated-pi-legal-tech-vendors">
               How we rated PI legal-tech vendors
             </h2>
             <p className="mt-4">
@@ -735,7 +755,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-6">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="pi-vendor-rankings-for-external-ai-agent-readiness">
             PI vendor rankings for external AI-agent readiness
           </h2>
           <div className="overflow-x-auto rounded-lg border border-primary/20">
@@ -789,7 +809,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-8">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="what-the-rankings-reveal">
             What the rankings reveal
           </h2>
 
@@ -989,7 +1009,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-6">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="which-vendors-are-publishing-on-the-shift">
             Which vendors are publishing on the shift?
           </h2>
           <p>
@@ -1081,7 +1101,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-6">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-procurement-questions-pi-firms-should-ask-now">
             The procurement questions PI firms should ask now
           </h2>
           <p>
@@ -1121,7 +1141,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-6">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="what-a-headless-pi-operating-layer-could-do">
             What a headless PI operating layer could do
           </h2>
           <p>
@@ -1179,7 +1199,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-6">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-operating-principle-automate-action-preserve-judgment">
             The operating principle: automate action, preserve judgment
           </h2>
           <p>
@@ -1204,7 +1224,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-6">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="bottom-line">
             Bottom line
           </h2>
           <p>

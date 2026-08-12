@@ -4,6 +4,23 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
+import { BlogTableOfContents } from "@/components/blog/table-of-contents";
+
+const contents = [
+  { id: "tuesday-night-on-i-95", label: "Tuesday Night on I-95" },
+  { id: "what-just-happened-to-google-maps", label: "What Just Happened to Google Maps" },
+  { id: "the-unstructured-data-shift", label: "The Unstructured Data Shift" },
+  { id: "the-death-of-structured-seo-inside-maps", label: "The Death of Structured SEO Inside Maps" },
+  { id: "why-pi-firms-have-the-richest-unstructured-data-potential-of-any-practice-area", label: "Why PI Firms Have the Richest Unstructured Data Potential of Any Practice Area" },
+  { id: "reviews-as-the-new-content-strategy", label: "Reviews as the New Content Strategy" },
+  { id: "q-a-your-faq-that-gemini-actually-reads", label: "Q&A: Your FAQ That Gemini Actually Reads" },
+  { id: "the-freshness-decay-problem", label: "The Freshness Decay Problem" },
+  { id: "multimodal-data-gemini-sees-your-photos-too", label: "Multimodal Data: Gemini Sees Your Photos Too" },
+  { id: "this-is-geo-for-maps-and-the-stakes-are-higher", label: "This Is GEO for Maps - and the Stakes Are Higher" },
+  { id: "what-this-means-for-the-pi-marketing-industry", label: "What This Means for the PI Marketing Industry" },
+  { id: "the-window-that-won-t-stay-open", label: "The Window That Won't Stay Open" },
+  { id: "one-question-for-your-agency-monday-morning", label: "One Question for Your Agency Monday Morning" },
+];
 
 export const metadata: Metadata = {
   title: `Google Just Put Gemini in Maps. Here's What PI Firms Need to Do Now. | ${SITE_NAME}`,
@@ -49,9 +66,12 @@ export default function BlogPostPage() {
         </div>
       </section>
 
+      <BlogTableOfContents items={contents} />
+
+
       <article className="mx-auto max-w-4xl space-y-12 px-4 pt-12 text-foreground/85 sm:px-6">
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="tuesday-night-on-i-95">
             Tuesday Night on I-95
           </h2>
           <p>
@@ -78,7 +98,7 @@ export default function BlogPostPage() {
         </div>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="what-just-happened-to-google-maps">
             What Just Happened to Google Maps
           </h2>
           <p>
@@ -96,7 +116,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-unstructured-data-shift">
             The Unstructured Data Shift
           </h2>
           <p>
@@ -134,7 +154,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-death-of-structured-seo-inside-maps">
             The Death of Structured SEO Inside Maps
           </h2>
           <p>
@@ -155,7 +175,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="why-pi-firms-have-the-richest-unstructured-data-potential-of-any-practice-area">
             Why PI Firms Have the Richest Unstructured Data Potential of Any Practice Area
           </h2>
           <p>
@@ -176,7 +196,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="reviews-as-the-new-content-strategy">
             Reviews as the New Content Strategy
           </h2>
           <p>
@@ -203,7 +223,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="q-a-your-faq-that-gemini-actually-reads">
             Q&amp;A: Your FAQ That Gemini Actually Reads
           </h2>
           <p>
@@ -221,7 +241,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-freshness-decay-problem">
             The Freshness Decay Problem
           </h2>
           <p>
@@ -239,7 +259,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="multimodal-data-gemini-sees-your-photos-too">
             Multimodal Data: Gemini Sees Your Photos Too
           </h2>
           <p>
@@ -266,7 +286,7 @@ export default function BlogPostPage() {
         </div>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="this-is-geo-for-maps-and-the-stakes-are-higher">
             This Is GEO for Maps &mdash; and the Stakes Are Higher
           </h2>
           <p>
@@ -325,7 +345,7 @@ export default function BlogPostPage() {
         </div>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="what-this-means-for-the-pi-marketing-industry">
             What This Means for the PI Marketing Industry
           </h2>
           <p>
@@ -343,7 +363,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-window-that-won-t-stay-open">
             The Window That Won&apos;t Stay Open
           </h2>
           <p>
@@ -361,7 +381,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="one-question-for-your-agency-monday-morning">
             One Question for Your Agency Monday Morning
           </h2>
           <p>

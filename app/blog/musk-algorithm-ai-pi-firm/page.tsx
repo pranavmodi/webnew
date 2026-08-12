@@ -4,6 +4,23 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
+import { BlogTableOfContents } from "@/components/blog/table-of-contents";
+
+const contents = [
+  { id: "where-the-algorithm-came-from", label: "Where the algorithm came from" },
+  { id: "musk-s-algorithm-in-5-steps", label: "Musk's algorithm, in 5 steps" },
+  { id: "make-the-requirements-less-dumb", label: "Make the requirements less dumb" },
+  { id: "delete-the-part-or-process", label: "Delete the part or process" },
+  { id: "simplify-and-optimize-what-s-left", label: "Simplify and optimize what's left" },
+  { id: "accelerate-cycle-time", label: "Accelerate cycle time" },
+  { id: "automate", label: "Automate" },
+  { id: "13-operational-areas-current-vs-redesigned", label: "13 operational areas: current vs. redesigned" },
+  { id: "the-10-agent-architecture", label: "The 10-agent architecture" },
+  { id: "what-this-looks-like-in-the-p-l", label: "What this looks like in the P&L" },
+  { id: "common-pushbacks-and-crisp-answers", label: "Common pushbacks (and crisp answers)" },
+  { id: "the-guardrails-matter", label: "The guardrails matter" },
+  { id: "what-to-do-with-this-on-monday", label: "What to do with this on Monday" },
+];
 
 export const metadata: Metadata = {
   title: `Elon Musk's Algorithm Applied to AI Transformation for a PI Law Firm | ${SITE_NAME}`,
@@ -48,6 +65,9 @@ export default function BlogPostPage() {
           </div>
         </div>
       </section>
+
+      <BlogTableOfContents items={contents} />
+
 
       <article className="mx-auto max-w-4xl space-y-12 px-4 pt-12 text-foreground/85 sm:px-6">
         <section className="rounded-2xl border border-[#00ff41]/30 bg-[#04150d]/70 p-6 sm:p-8">
@@ -106,7 +126,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="where-the-algorithm-came-from">
             Where the algorithm came from
           </h2>
           <p>
@@ -127,7 +147,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="musk-s-algorithm-in-5-steps">
             Musk&apos;s algorithm, in 5 steps
           </h2>
           <ol className="list-decimal space-y-3 pl-6 text-foreground/80">
@@ -150,7 +170,7 @@ export default function BlogPostPage() {
             <span className="text-5xl font-bold leading-none text-[#00ff41]/40 sm:text-6xl">
               01
             </span>
-            <h2 className="text-2xl font-semibold text-[#00ff41] sm:text-3xl">
+            <h2 className="text-2xl font-semibold text-[#00ff41] sm:text-3xl scroll-mt-24" id="make-the-requirements-less-dumb">
               Make the requirements less dumb
             </h2>
           </div>
@@ -175,7 +195,7 @@ export default function BlogPostPage() {
             <span className="text-5xl font-bold leading-none text-[#00ff41]/40 sm:text-6xl">
               02
             </span>
-            <h2 className="text-2xl font-semibold text-[#00ff41] sm:text-3xl">
+            <h2 className="text-2xl font-semibold text-[#00ff41] sm:text-3xl scroll-mt-24" id="delete-the-part-or-process">
               Delete the part or process
             </h2>
           </div>
@@ -204,7 +224,7 @@ export default function BlogPostPage() {
             <span className="text-5xl font-bold leading-none text-[#00ff41]/40 sm:text-6xl">
               03
             </span>
-            <h2 className="text-2xl font-semibold text-[#00ff41] sm:text-3xl">
+            <h2 className="text-2xl font-semibold text-[#00ff41] sm:text-3xl scroll-mt-24" id="simplify-and-optimize-what-s-left">
               Simplify and optimize what&apos;s left
             </h2>
           </div>
@@ -231,7 +251,7 @@ export default function BlogPostPage() {
             <span className="text-5xl font-bold leading-none text-[#00ff41]/40 sm:text-6xl">
               04
             </span>
-            <h2 className="text-2xl font-semibold text-[#00ff41] sm:text-3xl">
+            <h2 className="text-2xl font-semibold text-[#00ff41] sm:text-3xl scroll-mt-24" id="accelerate-cycle-time">
               Accelerate cycle time
             </h2>
           </div>
@@ -257,7 +277,7 @@ export default function BlogPostPage() {
             <span className="text-5xl font-bold leading-none text-[#00ff41]/40 sm:text-6xl">
               05
             </span>
-            <h2 className="text-2xl font-semibold text-[#00ff41] sm:text-3xl">
+            <h2 className="text-2xl font-semibold text-[#00ff41] sm:text-3xl scroll-mt-24" id="automate">
               Automate
             </h2>
           </div>
@@ -284,7 +304,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="13-operational-areas-current-vs-redesigned">
             13 operational areas: current vs. redesigned
           </h2>
           <p>
@@ -385,7 +405,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-10-agent-architecture">
             The 10-agent architecture
           </h2>
           <p>
@@ -603,7 +623,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="what-this-looks-like-in-the-p-l">
             What this looks like in the P&amp;L
           </h2>
           <p>
@@ -621,7 +641,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="common-pushbacks-and-crisp-answers">
             Common pushbacks (and crisp answers)
           </h2>
           <p>
@@ -664,7 +684,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-guardrails-matter">
             The guardrails matter
           </h2>
           <p>
@@ -676,7 +696,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="what-to-do-with-this-on-monday">
             What to do with this on Monday
           </h2>
           <p>

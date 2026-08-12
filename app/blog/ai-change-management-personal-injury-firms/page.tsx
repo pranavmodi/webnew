@@ -6,6 +6,7 @@ import ClickBeacon from "@/components/analytics/click-beacon";
 import { JsonLd } from "@/components/seo/json-ld";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
+import { BlogTableOfContents } from "@/components/blog/table-of-contents";
 
 const slug = "ai-change-management-personal-injury-firms";
 const pageTitle = "The Fastest AI Still Moves at the Speed of the Firm";
@@ -37,6 +38,18 @@ const faqs = [
     answer:
       "People should retain legal advice, case acceptance, strategy, valuation, settlement authority, final deadline responsibility, sensitive client conversations, and review of uncertain or consequential outputs.",
   },
+];
+
+const contents = [
+  { id: "the-technology-system-and-the-human-system", label: "The technology system and the human system" },
+  { id: "pi-firms-have-an-incentive-advantage-but-not-a-human-exemption", label: "PI firms have an incentive advantage, but not a human exemption" },
+  { id: "the-second-mismatch-is-professional-identity", label: "The second mismatch is professional identity" },
+  { id: "co-design-produces-adoption-that-training-cannot", label: "Co-design produces adoption that training cannot" },
+  { id: "safe-experimentation-is-a-management-decision", label: "Safe experimentation is a management decision" },
+  { id: "roi-matters-but-it-is-not-your-first-test", label: "ROI matters, but it is not your first test" },
+  { id: "a-practical-operating-model-for-pi-firms", label: "A practical operating model for PI firms" },
+  { id: "what-this-looks-like-in-serious-lead-response", label: "What this looks like in serious-lead response" },
+  { id: "the-durable-asset-is-adaptability", label: "The durable asset is adaptability" },
 ];
 
 export const metadata: Metadata = {
@@ -207,6 +220,9 @@ export default function BlogPostPage() {
         </div>
       </header>
 
+      <BlogTableOfContents items={contents} faqHref="#faq" />
+
+
       <article className="mx-auto max-w-4xl px-4 pt-14 text-[1.0625rem] leading-8 text-foreground/80 sm:px-6 sm:pt-16">
         <section className="space-y-6">
           <p className="text-xl leading-9 text-foreground/90">
@@ -256,7 +272,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-6">
-          <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
+          <h2 className="text-3xl font-semibold leading-tight text-[#00ff41] scroll-mt-24" id="the-technology-system-and-the-human-system">
             The technology system and the human system
           </h2>
           <p>
@@ -304,7 +320,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="mt-14 space-y-6">
-          <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
+          <h2 className="text-3xl font-semibold leading-tight text-[#00ff41] scroll-mt-24" id="pi-firms-have-an-incentive-advantage-but-not-a-human-exemption">
             PI firms have an incentive advantage, but not a human exemption
           </h2>
           <p>
@@ -337,7 +353,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="mt-14 space-y-6">
-          <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
+          <h2 className="text-3xl font-semibold leading-tight text-[#00ff41] scroll-mt-24" id="the-second-mismatch-is-professional-identity">
             The second mismatch is professional identity
           </h2>
           <p>
@@ -385,7 +401,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="mt-14 space-y-6">
-          <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
+          <h2 className="text-3xl font-semibold leading-tight text-[#00ff41] scroll-mt-24" id="co-design-produces-adoption-that-training-cannot">
             Co-design produces adoption that training cannot
           </h2>
           <p>
@@ -429,7 +445,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="mt-14 space-y-6">
-          <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
+          <h2 className="text-3xl font-semibold leading-tight text-[#00ff41] scroll-mt-24" id="safe-experimentation-is-a-management-decision">
             Safe experimentation is a management decision
           </h2>
           <p>
@@ -462,7 +478,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="mt-14 space-y-6">
-          <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
+          <h2 className="text-3xl font-semibold leading-tight text-[#00ff41] scroll-mt-24" id="roi-matters-but-it-is-not-your-first-test">
             ROI matters, but it is not your first test
           </h2>
           <p>
@@ -531,7 +547,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="mt-14 space-y-7">
-          <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
+          <h2 className="text-3xl font-semibold leading-tight text-[#00ff41] scroll-mt-24" id="a-practical-operating-model-for-pi-firms">
             A practical operating model for PI firms
           </h2>
           <p>
@@ -597,7 +613,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="mt-14 space-y-6">
-          <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
+          <h2 className="text-3xl font-semibold leading-tight text-[#00ff41] scroll-mt-24" id="what-this-looks-like-in-serious-lead-response">
             What this looks like in serious-lead response
           </h2>
           <p>
@@ -632,7 +648,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="mt-14 space-y-6">
-          <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
+          <h2 className="text-3xl font-semibold leading-tight text-[#00ff41] scroll-mt-24" id="the-durable-asset-is-adaptability">
             The durable asset is adaptability
           </h2>
           <p>

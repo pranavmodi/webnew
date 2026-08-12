@@ -4,6 +4,12 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
+import { BlogTableOfContents } from "@/components/blog/table-of-contents";
+
+const contents = [
+  { id: "what-makes-a-pilot-succeed", label: "What Makes a Pilot Succeed" },
+  { id: "example-pi-intake-that-writes-its-own-case-memos", label: "Example: PI Intake That Writes Its Own Case Memos" },
+];
 
 export const metadata: Metadata = {
   title: `How Agentic Ops Actually Launch Inside Regulated Teams | ${SITE_NAME}`,
@@ -66,6 +72,9 @@ export default function BlogPostPage() {
         </div>
       </section>
 
+      <BlogTableOfContents items={contents} />
+
+
       <article className="mx-auto max-w-4xl space-y-10 px-4 pt-12 sm:px-6">
         <div className="rounded-2xl border border-primary/25 bg-black/40 p-6">
           <p className="text-base text-foreground/80">
@@ -77,7 +86,7 @@ export default function BlogPostPage() {
         </div>
 
         <div className="rounded-2xl border border-primary/25 bg-gradient-to-br from-[#050315] to-black p-6">
-          <h2 className="text-2xl font-semibold text-primary">What Makes a Pilot Succeed</h2>
+          <h2 className="text-2xl font-semibold text-primary scroll-mt-24" id="what-makes-a-pilot-succeed">What Makes a Pilot Succeed</h2>
           <p className="mt-4 text-base text-foreground/80">
             Below is the quick checklist we now run through with every legal, health, or
             life-sciences client before we deploy an agent. Skip any step and the pilot
@@ -97,7 +106,7 @@ export default function BlogPostPage() {
         </div>
 
         <div className="rounded-2xl border border-primary/25 bg-black/40 p-6">
-          <h2 className="text-2xl font-semibold text-primary">
+          <h2 className="text-2xl font-semibold text-primary scroll-mt-24" id="example-pi-intake-that-writes-its-own-case-memos">
             Example: PI Intake That Writes Its Own Case Memos
           </h2>
           <p className="mt-4 text-base text-foreground/80">

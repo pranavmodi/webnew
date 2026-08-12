@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDownRight } from "lucide-react";
 
 import ClickBeacon from "@/components/analytics/click-beacon";
+import { BlogTableOfContents } from "@/components/blog/table-of-contents";
 import { JsonLd } from "@/components/seo/json-ld";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
@@ -301,55 +301,12 @@ export default function BlogPostPage() {
             </div>
           </div>
 
-          <nav
-            aria-labelledby="article-contents"
-            className="mt-7 border-y border-primary/30 bg-black/65 backdrop-blur-sm"
-          >
-            <div className="flex items-end justify-between gap-6 border-b border-primary/20 px-1 py-4 sm:px-4">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/70">
-                  Article navigation
-                </p>
-                <h2
-                  id="article-contents"
-                  className="mt-1 text-xl font-semibold leading-tight text-foreground sm:text-2xl"
-                >
-                  Table of contents
-                </h2>
-              </div>
-              <p className="hidden text-right text-xs text-foreground/50 sm:block">
-                7 sections
-              </p>
-            </div>
-            <ol className="divide-y divide-primary/15">
-              {contents.map((item, index) => (
-                <li key={item.id}>
-                  <a
-                    href={`#${item.id}`}
-                    className="group grid min-h-9 grid-cols-[2.25rem_1fr_1.25rem] items-center gap-2 px-1 py-1.5 text-sm leading-5 text-foreground/80 transition hover:bg-primary/[0.045] hover:text-primary sm:px-4"
-                  >
-                    <span className="text-xs font-semibold text-primary/60 group-hover:text-primary">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <span>{item.label}</span>
-                    <ArrowDownRight
-                      aria-hidden="true"
-                      className="h-4 w-4 text-primary/35 transition group-hover:text-primary"
-                    />
-                  </a>
-                </li>
-              ))}
-            </ol>
-            <div className="border-t border-primary/20 px-1 py-3 sm:px-4">
-              <a
-                href="#faq"
-                className="inline-flex items-center gap-2 text-sm font-medium text-primary underline decoration-primary/35 underline-offset-4 transition hover:decoration-primary"
-              >
-                Jump to common questions
-                <ArrowDownRight aria-hidden="true" className="h-4 w-4" />
-              </a>
-            </div>
-          </nav>
+          <BlogTableOfContents
+            items={contents}
+            faqHref="#faq"
+            className="mt-7"
+            contained={false}
+          />
         </div>
       </header>
 

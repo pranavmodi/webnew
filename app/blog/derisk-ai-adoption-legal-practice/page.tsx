@@ -4,6 +4,17 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
+import { BlogTableOfContents } from "@/components/blog/table-of-contents";
+
+const contents = [
+  { id: "the-core-risk-systems-that-are-mostly-right", label: "The Core Risk: Systems That Are Mostly Right" },
+  { id: "derisking-starts-with-defining-the-handoff", label: "Derisking Starts With Defining the Handoff" },
+  { id: "be-honest-about-internal-readiness", label: "Be Honest About Internal Readiness" },
+  { id: "readiness-is-a-process-problem-not-a-technology-problem", label: "Readiness Is a Process Problem, Not a Technology Problem" },
+  { id: "put-lawyers-and-technologists-in-the-same-room", label: "Put Lawyers and Technologists in the Same Room" },
+  { id: "warning-signs-to-watch-for", label: "Warning Signs to Watch For" },
+  { id: "the-derisking-playbook-start-where-you-know-the-work-best", label: "The Derisking Playbook: Start Where You Know the Work Best" },
+];
 
 export const metadata: Metadata = {
   title: `How to Derisk AI Adoption in Your Legal Practice | ${SITE_NAME}`,
@@ -49,6 +60,9 @@ export default function BlogPostPage() {
         </div>
       </section>
 
+      <BlogTableOfContents items={contents} />
+
+
       <article className="mx-auto max-w-4xl space-y-12 px-4 pt-12 text-foreground/85 sm:px-6">
         <section className="space-y-4">
           <p>
@@ -63,7 +77,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-core-risk-systems-that-are-mostly-right">
             The Core Risk: Systems That Are Mostly Right
           </h2>
           <p>
@@ -84,7 +98,7 @@ export default function BlogPostPage() {
         </div>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="derisking-starts-with-defining-the-handoff">
             Derisking Starts With Defining the Handoff
           </h2>
           <p>
@@ -108,7 +122,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="be-honest-about-internal-readiness">
             Be Honest About Internal Readiness
           </h2>
           <p>
@@ -126,7 +140,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="readiness-is-a-process-problem-not-a-technology-problem">
             Readiness Is a Process Problem, Not a Technology Problem
           </h2>
           <p>
@@ -141,7 +155,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="put-lawyers-and-technologists-in-the-same-room">
             Put Lawyers and Technologists in the Same Room
           </h2>
           <p>
@@ -156,7 +170,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="warning-signs-to-watch-for">
             Warning Signs to Watch For
           </h2>
           <p>
@@ -177,7 +191,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-derisking-playbook-start-where-you-know-the-work-best">
             The Derisking Playbook: Start Where You Know the Work Best
           </h2>
           <p>

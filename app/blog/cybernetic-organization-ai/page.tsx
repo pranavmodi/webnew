@@ -4,6 +4,22 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
+import { BlogTableOfContents } from "@/components/blog/table-of-contents";
+
+const contents = [
+  { id: "most-companies-are-still-designed-like-empires", label: "Most companies are still designed like empires" },
+  { id: "norbert-wiener-had-a-better-frame-cybernetics", label: "Norbert Wiener had a better frame: cybernetics" },
+  { id: "the-ai-opportunity-is-not-just-productivity-it-is-organizational-redesign", label: "The AI opportunity is not just productivity. It is organizational redesign." },
+  { id: "sense-the-world", label: "Sense the world" },
+  { id: "decide-through-policy-not-chaos", label: "Decide through policy, not chaos" },
+  { id: "act-through-tools", label: "Act through tools" },
+  { id: "measure-outcomes-and-learn", label: "Measure outcomes and learn" },
+  { id: "the-real-task-is-making-company-knowledge-legible", label: "The real task is making company knowledge legible" },
+  { id: "software-becomes-more-disposable-context-becomes-more-valuable", label: "Software becomes more disposable. Context becomes more valuable." },
+  { id: "what-humans-are-still-for", label: "What humans are still for" },
+  { id: "why-this-matters-for-professional-services-firms", label: "Why this matters for professional services firms" },
+  { id: "the-question-every-founder-should-ask-now", label: "The question every founder should ask now" },
+];
 
 export const metadata: Metadata = {
   title: `The Cybernetic Organization: What Norbert Wiener Saw Before the AI Era | ${SITE_NAME}`,
@@ -49,6 +65,9 @@ export default function BlogPostPage() {
         </div>
       </section>
 
+      <BlogTableOfContents items={contents} />
+
+
       <article className="mx-auto max-w-4xl space-y-12 px-4 pt-12 text-foreground/85 sm:px-6">
         <section className="rounded-2xl border border-[#00ff41]/30 bg-[#04150d]/70 p-6 sm:p-8">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-[#00ff41]">
@@ -83,7 +102,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="most-companies-are-still-designed-like-empires">
             Most companies are still designed like empires
           </h2>
           <p>
@@ -98,7 +117,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="norbert-wiener-had-a-better-frame-cybernetics">
             Norbert Wiener had a better frame: cybernetics
           </h2>
           <p>
@@ -118,7 +137,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-ai-opportunity-is-not-just-productivity-it-is-organizational-redesign">
             The AI opportunity is not just productivity. It is organizational redesign.
           </h2>
           <p>
@@ -137,7 +156,7 @@ export default function BlogPostPage() {
             <span className="text-5xl font-bold leading-none text-[#00ff41]/40 sm:text-6xl">
               01
             </span>
-            <h2 className="text-2xl font-semibold text-[#00ff41] sm:text-3xl">
+            <h2 className="text-2xl font-semibold text-[#00ff41] sm:text-3xl scroll-mt-24" id="sense-the-world">
               Sense the world
             </h2>
           </div>
@@ -154,7 +173,7 @@ export default function BlogPostPage() {
             <span className="text-5xl font-bold leading-none text-[#00ff41]/40 sm:text-6xl">
               02
             </span>
-            <h2 className="text-2xl font-semibold text-[#00ff41] sm:text-3xl">
+            <h2 className="text-2xl font-semibold text-[#00ff41] sm:text-3xl scroll-mt-24" id="decide-through-policy-not-chaos">
               Decide through policy, not chaos
             </h2>
           </div>
@@ -171,7 +190,7 @@ export default function BlogPostPage() {
             <span className="text-5xl font-bold leading-none text-[#00ff41]/40 sm:text-6xl">
               03
             </span>
-            <h2 className="text-2xl font-semibold text-[#00ff41] sm:text-3xl">
+            <h2 className="text-2xl font-semibold text-[#00ff41] sm:text-3xl scroll-mt-24" id="act-through-tools">
               Act through tools
             </h2>
           </div>
@@ -188,7 +207,7 @@ export default function BlogPostPage() {
             <span className="text-5xl font-bold leading-none text-[#00ff41]/40 sm:text-6xl">
               04
             </span>
-            <h2 className="text-2xl font-semibold text-[#00ff41] sm:text-3xl">
+            <h2 className="text-2xl font-semibold text-[#00ff41] sm:text-3xl scroll-mt-24" id="measure-outcomes-and-learn">
               Measure outcomes and learn
             </h2>
           </div>
@@ -201,7 +220,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-real-task-is-making-company-knowledge-legible">
             The real task is making company knowledge legible
           </h2>
           <p>
@@ -222,7 +241,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="software-becomes-more-disposable-context-becomes-more-valuable">
             Software becomes more disposable. Context becomes more valuable.
           </h2>
           <p>
@@ -234,7 +253,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="what-humans-are-still-for">
             What humans are still for
           </h2>
           <p>
@@ -260,7 +279,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="why-this-matters-for-professional-services-firms">
             Why this matters for professional services firms
           </h2>
           <p>
@@ -272,7 +291,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-question-every-founder-should-ask-now">
             The question every founder should ask now
           </h2>
           <p>

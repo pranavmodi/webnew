@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { JsonLd } from "@/components/seo/json-ld";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { CALENDLY_URL, SITE_NAME, SITE_URL } from "@/lib/constants";
+import { BlogTableOfContents } from "@/components/blog/table-of-contents";
 
 const slug = "sb-623-rideshare-injury-pi-firms";
 const pageTitle =
@@ -100,6 +101,17 @@ const faqs = [
     answer:
       "The biggest operational change is that rideshare lien cases need earlier classification and valuation. Firms should know, before demand preparation, whether the case is covered, whether treatment is lien based, whether the lien has been transferred, and what benchmark or transfer-price cap may apply.",
   },
+];
+
+const contents = [
+  { id: "yes-sb-623-has-major-implications-but-the-implications-are-concentrated", label: "Yes, SB 623 has major implications. But the implications are concentrated." },
+  { id: "what-happened", label: "What Happened" },
+  { id: "the-core-legal-operations-shift", label: "The Core Legal-Operations Shift" },
+  { id: "what-changes-in-case-value", label: "What Changes in Case Value" },
+  { id: "what-does-not-change", label: "What Does Not Change" },
+  { id: "a-covered-uber-crash-with-lien-based-treatment", label: "A Covered Uber Crash with Lien-Based Treatment" },
+  { id: "the-90-day-firm-response", label: "The 90-Day Firm Response" },
+  { id: "why-this-is-a-systems-problem", label: "Why This Is a Systems Problem" },
 ];
 
 export const metadata: Metadata = {
@@ -220,12 +232,15 @@ export default function BlogPostPage() {
         </div>
       </section>
 
+      <BlogTableOfContents items={contents} faqHref="#faq" />
+
+
       <article className="mx-auto max-w-4xl space-y-12 px-4 pt-12 text-foreground/85 sm:px-6">
         <section className="rounded-2xl border border-primary/25 bg-[#04150d] p-6 sm:p-8">
           <div className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
             TL;DR for PI owners
           </div>
-          <h2 className="mt-4 text-2xl font-semibold text-[#00ff41]">
+          <h2 className="mt-4 text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="yes-sb-623-has-major-implications-but-the-implications-are-concentrated">
             Yes, SB 623 has major implications. But the implications are concentrated.
           </h2>
           <p className="mt-4 leading-relaxed text-foreground/75">
@@ -255,7 +270,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-5">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="what-happened">
             What Happened
           </h2>
           <p className="leading-relaxed">
@@ -306,7 +321,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-5">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-core-legal-operations-shift">
             The Core Legal-Operations Shift
           </h2>
           <p className="leading-relaxed">
@@ -342,7 +357,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-5">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="what-changes-in-case-value">
             What Changes in Case Value
           </h2>
           <p className="leading-relaxed">
@@ -398,7 +413,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-5">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="what-does-not-change">
             What Does Not Change
           </h2>
           <p className="leading-relaxed">
@@ -422,7 +437,7 @@ export default function BlogPostPage() {
             <div className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
               Case Example
             </div>
-            <h2 className="mt-3 text-2xl font-semibold text-[#00ff41]">
+            <h2 className="mt-3 text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="a-covered-uber-crash-with-lien-based-treatment">
               A Covered Uber Crash with Lien-Based Treatment
             </h2>
           </div>
@@ -506,7 +521,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-5">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-90-day-firm-response">
             The 90-Day Firm Response
           </h2>
           <p className="leading-relaxed">
@@ -528,7 +543,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-5">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="why-this-is-a-systems-problem">
             Why This Is a Systems Problem
           </h2>
           <p className="leading-relaxed">

@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { Button } from "@/components/ui/button";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { CALENDLY_URL, SITE_NAME, SITE_URL } from "@/lib/constants";
+import { BlogTableOfContents } from "@/components/blog/table-of-contents";
 
 const slug = "insurance-ai-claims-pi-firms";
 const pageTitle =
@@ -136,6 +137,17 @@ const faqs = [
     answer:
       "Claims AI often touches medical records, client facts, liens, settlement data, and strategy. Firms need controls for confidentiality, retention, training use, access, audit logs, human review, and whether the system is firm-owned or vendor-owned.",
   },
+];
+
+const contents = [
+  { id: "what-insurer-ai-is-actually-doing", label: "What insurer AI is actually doing" },
+  { id: "the-insurer-ai-playbook-and-the-pi-counter-system", label: "The insurer AI playbook, and the PI counter-system" },
+  { id: "why-this-changes-the-economics-of-claims-work", label: "Why this changes the economics of claims work" },
+  { id: "seven-workflows-pi-firms-should-build-now", label: "Seven workflows PI firms should build now" },
+  { id: "the-demand-package-has-to-be-built-for-humans-and-machines", label: "The demand package has to be built for humans and machines" },
+  { id: "fraud-detection-is-a-workflow-risk-not-just-a-client-risk", label: "Fraud detection is a workflow risk, not just a client risk" },
+  { id: "the-governance-lesson-cuts-both-ways", label: "The governance lesson cuts both ways" },
+  { id: "where-to-start", label: "Where to start" },
 ];
 
 export const metadata: Metadata = {
@@ -281,6 +293,9 @@ export default function BlogPostPage() {
         </div>
       </section>
 
+      <BlogTableOfContents items={contents} faqHref="#faq" />
+
+
       <article className="mx-auto max-w-4xl space-y-12 px-4 pt-12 text-foreground/85 sm:px-6">
         <section className="space-y-4">
           <p>
@@ -344,7 +359,7 @@ export default function BlogPostPage() {
         </figure>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="what-insurer-ai-is-actually-doing">
             What insurer AI is actually doing
           </h2>
           <p>
@@ -382,7 +397,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-6">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-insurer-ai-playbook-and-the-pi-counter-system">
             The insurer AI playbook, and the PI counter-system
           </h2>
           <p>
@@ -422,7 +437,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="why-this-changes-the-economics-of-claims-work">
             Why this changes the economics of claims work
           </h2>
           <p>
@@ -448,7 +463,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-5">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="seven-workflows-pi-firms-should-build-now">
             Seven workflows PI firms should build now
           </h2>
           <div className="grid gap-4 md:grid-cols-2">
@@ -469,7 +484,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-demand-package-has-to-be-built-for-humans-and-machines">
             The demand package has to be built for humans and machines
           </h2>
           <p>
@@ -505,7 +520,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="fraud-detection-is-a-workflow-risk-not-just-a-client-risk">
             Fraud detection is a workflow risk, not just a client risk
           </h2>
           <p>
@@ -534,7 +549,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="the-governance-lesson-cuts-both-ways">
             The governance lesson cuts both ways
           </h2>
           <p>
@@ -563,7 +578,7 @@ export default function BlogPostPage() {
         </section>
 
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-[#00ff41]">
+          <h2 className="text-2xl font-semibold text-[#00ff41] scroll-mt-24" id="where-to-start">
             Where to start
           </h2>
           <p>

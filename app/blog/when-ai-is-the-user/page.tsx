@@ -4,6 +4,21 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
+import { BlogTableOfContents } from "@/components/blog/table-of-contents";
+
+const contents = [
+  { id: "the-model-we-know-software-as-a-tool-for-people", label: "The Model We Know: Software as a Tool for People" },
+  { id: "the-inversion-when-the-agent-becomes-the-user", label: "The Inversion: When the Agent Becomes the User" },
+  { id: "five-economic-shifts-that-follow", label: "Five Economic Shifts That Follow" },
+  { id: "what-this-means-for-product-design", label: "What This Means for Product Design" },
+  { id: "a-concrete-example-the-silent-case-auditor", label: "A Concrete Example: The Silent Case Auditor" },
+  { id: "why-the-risk-profile-is-better-than-you-think", label: "Why the Risk Profile Is Better Than You Think" },
+  { id: "the-bigger-picture-machines-as-customers", label: "The Bigger Picture: Machines as Customers" },
+  { id: "who-is-already-building-this-way", label: "Who Is Already Building This Way" },
+  { id: "what-this-means-if-you-build-software", label: "What This Means If You Build Software" },
+  { id: "what-this-means-if-you-buy-software", label: "What This Means If You Buy Software" },
+  { id: "the-transition-is-now", label: "The Transition Is Now" },
+];
 
 export const metadata: Metadata = {
   title: `When AI Is the User: The New Economics of Software | ${SITE_NAME}`,
@@ -54,6 +69,9 @@ export default function BlogPostPage() {
         </div>
       </section>
 
+      <BlogTableOfContents items={contents} />
+
+
       <article className="mx-auto max-w-4xl space-y-12 px-4 pt-12 sm:px-6">
         {/* Intro */}
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
@@ -80,7 +98,7 @@ export default function BlogPostPage() {
 
         {/* Part 1: The Old Model */}
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
-          <h2 className="text-2xl font-semibold text-primary">
+          <h2 className="text-2xl font-semibold text-primary scroll-mt-24" id="the-model-we-know-software-as-a-tool-for-people">
             The Model We Know: Software as a Tool for People
           </h2>
           <p className="mt-4 text-base text-foreground/80">
@@ -113,7 +131,7 @@ export default function BlogPostPage() {
 
         {/* Part 2: The Inversion */}
         <div className="rounded-2xl border border-primary/25 bg-gradient-to-br from-[#04150d] to-[#0a2618] p-6">
-          <h2 className="text-2xl font-semibold text-primary">
+          <h2 className="text-2xl font-semibold text-primary scroll-mt-24" id="the-inversion-when-the-agent-becomes-the-user">
             The Inversion: When the Agent Becomes the User
           </h2>
           <p className="mt-4 text-base text-foreground/80">
@@ -170,7 +188,7 @@ export default function BlogPostPage() {
 
         {/* Part 3: Five Economic Shifts */}
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
-          <h2 className="text-2xl font-semibold text-primary">
+          <h2 className="text-2xl font-semibold text-primary scroll-mt-24" id="five-economic-shifts-that-follow">
             Five Economic Shifts That Follow
           </h2>
           <p className="mt-4 text-base text-foreground/80">
@@ -427,7 +445,7 @@ export default function BlogPostPage() {
 
         {/* The Product Design Implications */}
         <div className="rounded-2xl border border-primary/25 bg-gradient-to-br from-[#04150d] to-[#0a2618] p-6">
-          <h2 className="text-2xl font-semibold text-primary">
+          <h2 className="text-2xl font-semibold text-primary scroll-mt-24" id="what-this-means-for-product-design">
             What This Means for Product Design
           </h2>
           <p className="mt-4 text-base text-foreground/80">
@@ -473,7 +491,7 @@ export default function BlogPostPage() {
 
         {/* A Concrete Example */}
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
-          <h2 className="text-2xl font-semibold text-primary">
+          <h2 className="text-2xl font-semibold text-primary scroll-mt-24" id="a-concrete-example-the-silent-case-auditor">
             A Concrete Example: The Silent Case Auditor
           </h2>
           <p className="mt-4 text-base text-foreground/80">
@@ -552,7 +570,7 @@ export default function BlogPostPage() {
 
         {/* The Risk Profile */}
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
-          <h2 className="text-2xl font-semibold text-primary">
+          <h2 className="text-2xl font-semibold text-primary scroll-mt-24" id="why-the-risk-profile-is-better-than-you-think">
             Why the Risk Profile Is Better Than You Think
           </h2>
           <p className="mt-4 text-base text-foreground/80">
@@ -596,7 +614,7 @@ export default function BlogPostPage() {
 
         {/* The Gartner Custobot Framework */}
         <div className="rounded-2xl border border-primary/25 bg-gradient-to-br from-[#04150d] to-[#0a2618] p-6">
-          <h2 className="text-2xl font-semibold text-primary">
+          <h2 className="text-2xl font-semibold text-primary scroll-mt-24" id="the-bigger-picture-machines-as-customers">
             The Bigger Picture: Machines as Customers
           </h2>
           <p className="mt-4 text-base text-foreground/80">
@@ -650,7 +668,7 @@ export default function BlogPostPage() {
 
         {/* Who is building this */}
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
-          <h2 className="text-2xl font-semibold text-primary">
+          <h2 className="text-2xl font-semibold text-primary scroll-mt-24" id="who-is-already-building-this-way">
             Who Is Already Building This Way
           </h2>
           <p className="mt-4 text-base text-foreground/80">
@@ -698,7 +716,7 @@ export default function BlogPostPage() {
 
         {/* What to do about it */}
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
-          <h2 className="text-2xl font-semibold text-primary">
+          <h2 className="text-2xl font-semibold text-primary scroll-mt-24" id="what-this-means-if-you-build-software">
             What This Means If You Build Software
           </h2>
           <p className="mt-4 text-base text-foreground/80">
@@ -760,7 +778,7 @@ export default function BlogPostPage() {
 
         {/* What it means if you buy software */}
         <div className="rounded-2xl border border-primary/25 bg-gradient-to-br from-[#04150d] to-[#0a2618] p-6">
-          <h2 className="text-2xl font-semibold text-primary">
+          <h2 className="text-2xl font-semibold text-primary scroll-mt-24" id="what-this-means-if-you-buy-software">
             What This Means If You Buy Software
           </h2>
           <p className="mt-4 text-base text-foreground/80">
@@ -785,7 +803,7 @@ export default function BlogPostPage() {
 
         {/* Closing */}
         <div className="rounded-2xl border border-primary/25 bg-[#04150d] p-6">
-          <h2 className="text-2xl font-semibold text-primary">
+          <h2 className="text-2xl font-semibold text-primary scroll-mt-24" id="the-transition-is-now">
             The Transition Is Now
           </h2>
           <p className="mt-4 text-base text-foreground/80">
