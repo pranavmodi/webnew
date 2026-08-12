@@ -23,6 +23,10 @@ export function Footer() {
             AI-assisted intake systems that help PI firms respond faster and get
             serious matters to the right person.
           </p>
+          <p className="max-w-md text-xs leading-relaxed text-muted-foreground/80">
+            Voice conversations with Mira are recorded and transcribed for
+            personalized guidance, follow-up, and service improvement.
+          </p>
           <div className="flex flex-wrap gap-3">
             <Button asChild size="sm" className="animate-glow">
               <Link href={CALENDLY_URL} target="_blank" rel="noreferrer">

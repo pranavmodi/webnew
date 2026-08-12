@@ -2,6 +2,7 @@ import { LINKEDIN_URL } from "./constants";
 import { piProblemPages } from "./pi-pages";
 
 export const navLinks = [
+  { href: "/ai-consultant", label: "Ask Mira" },
   { href: "/engagement-process", label: "Process" },
   { href: "/build-partnership", label: "Build" },
   { href: "/thesis", label: "Thesis" },
@@ -70,6 +71,7 @@ export const footerLinks = [
     links: [
       { label: "AI Reputation Tool", href: "https://reputable.getpossibleminds.com" },
       { label: "AI Readiness Audit", href: "https://aiaudit.getpossibleminds.com" },
+      { label: "Ask Mira", href: "/ai-consultant" },
       { label: "PI Owner AI Builder Program", href: "/build-partnership" },
       { label: "Our Thesis", href: "/thesis" },
       { label: "Security", href: "/security" },

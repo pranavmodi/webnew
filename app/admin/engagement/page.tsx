@@ -1,7 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { Activity, Clock, Globe2, MousePointerClick, RefreshCcw, UserRound } from "lucide-react";
+import { Activity, Clock, Globe2, MessageCircle, MousePointerClick, RefreshCcw, UserRound } from "lucide-react";
+import Link from "next/link";
 
 type PageRow = {
   page: string;
@@ -163,6 +164,13 @@ export default function EngagementAdminPage() {
             <h1 className="mt-2 text-3xl font-semibold tracking-tight">Engagement analytics</h1>
           </div>
           <div className="flex flex-wrap gap-2">
+            <Link
+              href="/admin/advisor"
+              className="inline-flex items-center gap-2 rounded-md border border-primary/40 bg-primary/10 px-3 py-2 text-sm font-semibold text-primary"
+            >
+              <MessageCircle className="h-4 w-4" />
+              Mira consultations
+            </Link>
             {[7, 30, 90].map((days) => (
               <button
                 key={days}
