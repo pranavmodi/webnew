@@ -364,6 +364,62 @@ export default function BlogPostPage() {
               </div>
             </li>
           </ol>
+
+          <div className="mt-10 border-y border-primary/30 py-8 sm:py-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/70">
+              Worked example
+            </p>
+            <h3 className="mt-3 text-2xl font-semibold leading-tight text-foreground sm:text-3xl">
+              Serious web lead to human contact
+            </h3>
+            <p className="mt-4 max-w-3xl">
+              A strong first workflow is the delay between a promising web form,
+              chat, or missed call arriving and the right person responding. It has
+              visible economic value, requires limited integration, and keeps the
+              final relationship with people.
+            </p>
+
+            <ol className="mt-7 divide-y divide-primary/15 border-t border-primary/15">
+              <li className="grid gap-2 py-5 sm:grid-cols-[5rem_1fr] sm:gap-6">
+                <strong className="text-sm font-semibold text-primary">Week 1</strong>
+                <p>
+                  Pull 25 recent after-hours forms, chats, and missed calls. Record
+                  when each arrived, when a person responded, whether the inquiry was
+                  wanted, and whether it signed. Choose the repeated delay to fix.
+                </p>
+              </li>
+              <li className="grid gap-2 py-5 sm:grid-cols-[5rem_1fr] sm:gap-6">
+                <strong className="text-sm font-semibold text-primary">Week 2</strong>
+                <p>
+                  Map the path from inquiry to human contact: acknowledgment, basic
+                  fact collection, intake-system entry, staff alert, lawyer escalation,
+                  callback, and final outcome.
+                </p>
+              </li>
+              <li className="grid gap-2 py-5 sm:grid-cols-[5rem_1fr] sm:gap-6">
+                <strong className="text-sm font-semibold text-primary">Week 3</strong>
+                <p>
+                  Test AI on availability, organization, and routing. It can respond,
+                  collect essential facts, create the lead, and flag urgency. People
+                  retain empathy, qualification, case acceptance, and the close.
+                </p>
+              </li>
+              <li className="grid gap-2 py-5 sm:grid-cols-[5rem_1fr] sm:gap-6">
+                <strong className="text-sm font-semibold text-primary">Week 4</strong>
+                <p>
+                  Run the workflow after hours with one intake team. Compare time to
+                  acknowledgment, time to human contact, wanted leads reached, signed
+                  cases, missed escalations, and staff corrections with the baseline.
+                </p>
+              </li>
+            </ol>
+
+            <p className="mt-6 text-sm leading-7 text-foreground/65">
+              The goal is not an AI-conducted legal intake. The goal is to prevent a
+              valuable inquiry from waiting unseen and give the right person enough
+              context to respond well.
+            </p>
+          </div>
         </section>
 
         <section className="mt-14 space-y-5">
