@@ -23,11 +23,18 @@ const sources = {
     "https://www.hklaw.com/en/news/pressreleases/2026/05/holland-and-knight-advises-uplift-investors-orion-legal-mso",
   legalTechTransactions:
     "https://assets.ctfassets.net/xpbu77rkft4z/5gHc17PZ2N6h7F6ivFfqmt/b0be232926f99b8fff935b9b29398750/TECH_BS_Sector_Brief_Legal_Tech_1H_2025_FINAL__1_.pdf",
+  aiIntakeTriage: "https://mission.getpossibleminds.com/podcasts/4349",
+  aiWorkflowTrust: "https://mission.getpossibleminds.com/podcasts/4547",
+  aiIntakeTesting: "https://mission.getpossibleminds.com/podcasts/3862",
+  connectedFirmData: "https://mission.getpossibleminds.com/podcasts/6301",
+  aiPrivacyAndReview: "https://mission.getpossibleminds.com/podcasts/7212",
+  aiOwnership: "https://mission.getpossibleminds.com/podcasts/15",
 };
 
 const contents = [
   { id: "first-mover", label: "What first-mover advantage really means" },
   { id: "consolidation", label: "Consolidation is already starting" },
+  { id: "why-intake", label: "Why start with AI intake" },
   { id: "thirty-days", label: "What to do in the next 30 days" },
   { id: "good-start", label: "What a good start looks like" },
 ];
@@ -41,7 +48,7 @@ const faqs = [
   {
     question: "Which AI workflow should a PI firm start with?",
     answer:
-      "Choose a repetitive workflow with a visible delay or cost, such as serious-lead response, records follow-up, or routine client updates. Avoid beginning with a high-risk legal judgment.",
+      "For most PI firms, intake is the strongest first workflow. It is repetitive, time-sensitive, economically important, and easy to measure. AI can acknowledge, collect, organize, and route an inquiry while people retain empathy, qualification, legal judgment, case acceptance, and the close.",
   },
   {
     question: "How should a PI firm measure an AI pilot?",
@@ -303,6 +310,38 @@ export default function BlogPostPage() {
           </p>
         </section>
 
+        <section className="mt-14 space-y-5">
+          <h2
+            id="why-intake"
+            className="scroll-mt-24 text-3xl font-semibold leading-tight text-[#00ff41]"
+          >
+            Why AI intake is the right first step
+          </h2>
+          <p>
+            Intake sits where urgency, revenue, and repetitive work meet. A promising
+            inquiry can arrive at night, while staff are busy, or while the caller is
+            contacting several firms. Every minute before a useful response matters.
+          </p>
+          <p>
+            It is also unusually measurable. You can track when an inquiry arrived,
+            when it was acknowledged, when a person made contact, whether the firm
+            wanted the case, and whether it signed. That gives an owner a clear
+            baseline and a fast answer about whether the pilot helped.
+          </p>
+          <p>
+            Most importantly, the boundary between AI and people can remain clear.
+            AI handles availability, basic fact collection, intake-system entry,
+            follow-up tasks, and routing. Your team handles empathy, ambiguity,
+            qualification, legal judgment, case acceptance, and the close.
+          </p>
+          <div className="border-y border-primary/30 py-6">
+            <p className="text-xl font-semibold leading-8 text-foreground sm:text-2xl sm:leading-9">
+              Start where speed can create revenue, the work repeats, and a human can
+              take over before judgment or trust is at risk.
+            </p>
+          </div>
+        </section>
+
         <section className="mt-14 space-y-6">
           <h2
             id="thirty-days"
@@ -310,17 +349,24 @@ export default function BlogPostPage() {
           >
             What to do in the next 30 days
           </h2>
+          <p>
+            Do not spend the month comparing general AI tools. Use it to run one
+            controlled AI intake pilot on after-hours or overflow inquiries.
+          </p>
           <ol className="divide-y divide-primary/20 border-y border-primary/20">
             <li className="grid gap-3 py-6 sm:grid-cols-[5rem_1fr] sm:gap-6">
               <strong className="text-sm font-semibold uppercase tracking-[0.12em] text-primary">
                 Week 1
               </strong>
               <div>
-                <h3 className="font-semibold text-foreground">Choose one leak</h3>
+                <h3 className="font-semibold text-foreground">
+                  Name an owner and establish the baseline
+                </h3>
                 <p className="mt-2">
-                  Pick a repetitive problem with a visible cost: slow serious-lead
-                  response, records follow-up, or routine client updates. Record the
-                  current response time, backlog, errors, and staff effort.
+                  Give one person responsibility for the workflow, vendor, staff
+                  adoption, and result. Pull 25 recent after-hours forms, chats, and
+                  missed calls. Record when each arrived, when a person responded,
+                  whether the firm wanted it, and whether it signed.
                 </p>
               </div>
             </li>
@@ -329,11 +375,14 @@ export default function BlogPostPage() {
                 Week 2
               </strong>
               <div>
-                <h3 className="font-semibold text-foreground">Map how work happens</h3>
+                <h3 className="font-semibold text-foreground">
+                  Map the handoff and set the rules
+                </h3>
                 <p className="mt-2">
-                  Follow the workflow from trigger to completion. Identify every
-                  system, handoff, decision, delay, and exception. Ask the person who
-                  does the work, not only the person who manages it.
+                  Follow the inquiry from phone, form, or chat into the intake system
+                  and on to the human closer. Decide what AI may collect, where data
+                  is stored, when it must escalate, and what requires human review.
+                  Fix missing connections before adding another isolated tool.
                 </p>
               </div>
             </li>
@@ -342,11 +391,15 @@ export default function BlogPostPage() {
                 Week 3
               </strong>
               <div>
-                <h3 className="font-semibold text-foreground">Test a narrow system</h3>
+                <h3 className="font-semibold text-foreground">
+                  Test the intake agent on real PI calls
+                </h3>
                 <p className="mt-2">
-                  Let AI prepare or route the routine work. Keep people responsible
-                  for legal judgment, sensitive communication, uncertain cases, and
-                  final approval. Test good, bad, and ambiguous examples.
+                  Let it acknowledge the inquiry, collect essential facts, create the
+                  lead, and alert the right person. Then try to break it with emotional
+                  callers, contradictory facts, multiple incidents, urgent deadlines,
+                  other languages, poor-fit matters, and people shopping for counsel.
+                  Judge the live handoff, not the polished demo.
                 </p>
               </div>
             </li>
@@ -355,71 +408,64 @@ export default function BlogPostPage() {
                 Week 4
               </strong>
               <div>
-                <h3 className="font-semibold text-foreground">Run it with a small team</h3>
+                <h3 className="font-semibold text-foreground">
+                  Run one channel, measure, and decide
+                </h3>
                 <p className="mt-2">
-                  Compare the new result with the baseline. Review every exception.
-                  Decide whether to improve, expand, or stop. A stopped pilot that
-                  reveals the wrong workflow is still useful learning.
+                  Use the system after hours or for overflow with one intake team.
+                  Review every transcript and escalation. Compare time to acknowledgment,
+                  time to human contact, wanted leads reached, signed cases, missed
+                  escalations, corrections, and staff time with the Week 1 baseline.
                 </p>
               </div>
             </li>
           </ol>
 
-          <div className="mt-10 border-y border-primary/30 py-8 sm:py-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/70">
-              Worked example
-            </p>
-            <h3 className="mt-3 text-2xl font-semibold leading-tight text-foreground sm:text-3xl">
-              Serious web lead to human contact
-            </h3>
-            <p className="mt-4 max-w-3xl">
-              A strong first workflow is the delay between a promising web form,
-              chat, or missed call arriving and the right person responding. It has
-              visible economic value, requires limited integration, and keeps the
-              final relationship with people.
-            </p>
-
-            <ol className="mt-7 divide-y divide-primary/15 border-t border-primary/15">
-              <li className="grid gap-2 py-5 sm:grid-cols-[5rem_1fr] sm:gap-6">
-                <strong className="text-sm font-semibold text-primary">Week 1</strong>
-                <p>
-                  Pull 25 recent after-hours forms, chats, and missed calls. Record
-                  when each arrived, when a person responded, whether the inquiry was
-                  wanted, and whether it signed. Choose the repeated delay to fix.
-                </p>
-              </li>
-              <li className="grid gap-2 py-5 sm:grid-cols-[5rem_1fr] sm:gap-6">
-                <strong className="text-sm font-semibold text-primary">Week 2</strong>
-                <p>
-                  Map the path from inquiry to human contact: acknowledgment, basic
-                  fact collection, intake-system entry, staff alert, lawyer escalation,
-                  callback, and final outcome.
-                </p>
-              </li>
-              <li className="grid gap-2 py-5 sm:grid-cols-[5rem_1fr] sm:gap-6">
-                <strong className="text-sm font-semibold text-primary">Week 3</strong>
-                <p>
-                  Test AI on availability, organization, and routing. It can respond,
-                  collect essential facts, create the lead, and flag urgency. People
-                  retain empathy, qualification, case acceptance, and the close.
-                </p>
-              </li>
-              <li className="grid gap-2 py-5 sm:grid-cols-[5rem_1fr] sm:gap-6">
-                <strong className="text-sm font-semibold text-primary">Week 4</strong>
-                <p>
-                  Run the workflow after hours with one intake team. Compare time to
-                  acknowledgment, time to human contact, wanted leads reached, signed
-                  cases, missed escalations, and staff corrections with the baseline.
-                </p>
-              </li>
-            </ol>
-
-            <p className="mt-6 text-sm leading-7 text-foreground/65">
-              The goal is not an AI-conducted legal intake. The goal is to prevent a
-              valuable inquiry from waiting unseen and give the right person enough
-              context to respond well.
-            </p>
-          </div>
+          <p className="text-sm leading-7 text-foreground/65">
+            Introduce the pilot to staff as a capacity and response system, not a
+            headcount exercise. Keep client data inside approved tools, avoid a long
+            commitment before the workflow is proven, and do not expand until the
+            intake system, phone, forms, and reporting share reliable data.
+          </p>
+          <p className="text-sm leading-7 text-foreground/60">
+            This plan draws on PI operator discussions about{" "}
+            <a
+              href={sources.aiIntakeTriage}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary underline decoration-primary/35 underline-offset-4"
+            >
+              beginning with intake triage
+            </a>
+            ,{" "}
+            <a
+              href={sources.aiIntakeTesting}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary underline decoration-primary/35 underline-offset-4"
+            >
+              testing real PI edge cases
+            </a>
+            ,{" "}
+            <a
+              href={sources.connectedFirmData}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary underline decoration-primary/35 underline-offset-4"
+            >
+              connecting firm data
+            </a>
+            , and{" "}
+            <a
+              href={sources.aiPrivacyAndReview}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary underline decoration-primary/35 underline-offset-4"
+            >
+              privacy, human review, and staff adoption
+            </a>
+            .
+          </p>
         </section>
 
         <section className="mt-14 space-y-5">
@@ -431,9 +477,9 @@ export default function BlogPostPage() {
           </h2>
           <p>
             After 30 days, you do not need an AI strategy deck or a firm-wide rollout.
-            You need one mapped workflow, a baseline, a small set of real tests, clear
-            human-review rules, and evidence about whether the system improved the
-            work.
+            You need a named owner, one mapped intake workflow, a baseline, a set of
+            difficult test calls, clear human-review rules, and evidence about whether
+            qualified prospects reached the right person faster.
           </p>
           <p>
             That is enough to begin compounding. It also gives you something more
