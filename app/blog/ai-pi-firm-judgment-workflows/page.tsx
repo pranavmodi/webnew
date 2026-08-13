@@ -195,7 +195,7 @@ export default function BlogPostPage() {
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.96)_0%,rgba(0,0,0,0.87)_43%,rgba(0,0,0,0.28)_100%)]" />
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black to-transparent" />
 
-        <div className="relative mx-auto flex min-h-[650px] max-w-5xl flex-col justify-end px-4 pb-14 pt-28 sm:min-h-[720px] sm:px-6 sm:pb-20">
+        <div className="relative mx-auto flex min-h-[650px] max-w-4xl flex-col justify-end px-4 pb-14 pt-28 sm:min-h-[720px] sm:px-6 sm:pb-20">
           <div className="max-w-4xl">
             <div className="flex items-center gap-3 text-xs text-foreground/70">
               <Link href="/blog" className="transition hover:text-primary">
