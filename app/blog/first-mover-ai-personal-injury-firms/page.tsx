@@ -35,7 +35,7 @@ const contents = [
   { id: "first-mover", label: "What first-mover advantage really means" },
   { id: "consolidation", label: "Consolidation is already starting" },
   { id: "why-intake", label: "Why start with AI intake" },
-  { id: "thirty-days", label: "What to do in the next 30 days" },
+  { id: "thirty-days", label: "Try AI intake in 30 days" },
   { id: "good-start", label: "What a good start looks like" },
 ];
 
@@ -347,11 +347,11 @@ export default function BlogPostPage() {
             id="thirty-days"
             className="scroll-mt-24 text-3xl font-semibold leading-tight text-[#00ff41]"
           >
-            What to do in the next 30 days
+            Try AI intake in 30 days
           </h2>
           <p>
-            Do not spend the month comparing general AI tools. Use it to run one
-            controlled AI intake pilot on after-hours or overflow inquiries.
+            Start small. Use AI only for after-hours or overflow inquiries, where
+            faster response can make an immediate difference.
           </p>
           <ol className="divide-y divide-primary/20 border-y border-primary/20">
             <li className="grid gap-3 py-6 sm:grid-cols-[5rem_1fr] sm:gap-6">
@@ -360,13 +360,12 @@ export default function BlogPostPage() {
               </strong>
               <div>
                 <h3 className="font-semibold text-foreground">
-                  Name an owner and establish the baseline
+                  Find the missed opportunities
                 </h3>
                 <p className="mt-2">
-                  Give one person responsibility for the workflow, vendor, staff
-                  adoption, and result. Pull 25 recent after-hours forms, chats, and
-                  missed calls. Record when each arrived, when a person responded,
-                  whether the firm wanted it, and whether it signed.
+                  Review recent after-hours calls and web inquiries. How long did
+                  people wait? How many promising leads could not be reached or
+                  chose another firm?
                 </p>
               </div>
             </li>
@@ -376,13 +375,12 @@ export default function BlogPostPage() {
               </strong>
               <div>
                 <h3 className="font-semibold text-foreground">
-                  Map the handoff and set the rules
+                  Set up one simple workflow
                 </h3>
                 <p className="mt-2">
-                  Follow the inquiry from phone, form, or chat into the intake system
-                  and on to the human closer. Decide what AI may collect, where data
-                  is stored, when it must escalate, and what requires human review.
-                  Fix missing connections before adding another isolated tool.
+                  Let AI respond immediately, collect basic information, and alert
+                  your intake team. Keep qualification, legal decisions, and signing
+                  the client with people.
                 </p>
               </div>
             </li>
@@ -392,14 +390,12 @@ export default function BlogPostPage() {
               </strong>
               <div>
                 <h3 className="font-semibold text-foreground">
-                  Test the intake agent on real PI calls
+                  Test it yourself
                 </h3>
                 <p className="mt-2">
-                  Let it acknowledge the inquiry, collect essential facts, create the
-                  lead, and alert the right person. Then try to break it with emotional
-                  callers, contradictory facts, multiple incidents, urgent deadlines,
-                  other languages, poor-fit matters, and people shopping for counsel.
-                  Judge the live handoff, not the polished demo.
+                  Call the system with realistic situations: an emotional caller, an
+                  incomplete story, an unusual accident, and another language. Make
+                  sure it knows when to involve a person.
                 </p>
               </div>
             </li>
@@ -409,60 +405,44 @@ export default function BlogPostPage() {
               </strong>
               <div>
                 <h3 className="font-semibold text-foreground">
-                  Run one channel, measure, and decide
+                  Run it after hours
                 </h3>
                 <p className="mt-2">
-                  Use the system after hours or for overflow with one intake team.
-                  Review every transcript and escalation. Compare time to acknowledgment,
-                  time to human contact, wanted leads reached, signed cases, missed
-                  escalations, corrections, and staff time with the Week 1 baseline.
+                  Use it with a small group of leads. Compare response times,
+                  promising leads reached, and signed cases with what happened before.
                 </p>
               </div>
             </li>
           </ol>
 
-          <p className="text-sm leading-7 text-foreground/65">
-            Introduce the pilot to staff as a capacity and response system, not a
-            headcount exercise. Keep client data inside approved tools, avoid a long
-            commitment before the workflow is proven, and do not expand until the
-            intake system, phone, forms, and reporting share reliable data.
-          </p>
+          <div className="border-y border-primary/30 py-6">
+            <h3 className="font-semibold text-foreground">
+              After 30 days, make one decision
+            </h3>
+            <p className="mt-2">
+              Did the system help your team reach good prospects faster? If yes,
+              improve it and expand gradually. If not, fix the workflow before buying
+              more AI.
+            </p>
+          </div>
           <p className="text-sm leading-7 text-foreground/60">
-            This plan draws on PI operator discussions about{" "}
+            Based on PI operator discussions about{" "}
             <a
               href={sources.aiIntakeTriage}
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary underline decoration-primary/35 underline-offset-4"
             >
-              beginning with intake triage
+              starting with intake triage
             </a>
-            ,{" "}
+            {" "}and{" "}
             <a
               href={sources.aiIntakeTesting}
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary underline decoration-primary/35 underline-offset-4"
             >
-              testing real PI edge cases
-            </a>
-            ,{" "}
-            <a
-              href={sources.connectedFirmData}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary underline decoration-primary/35 underline-offset-4"
-            >
-              connecting firm data
-            </a>
-            , and{" "}
-            <a
-              href={sources.aiPrivacyAndReview}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary underline decoration-primary/35 underline-offset-4"
-            >
-              privacy, human review, and staff adoption
+              testing it on real PI calls
             </a>
             .
           </p>
