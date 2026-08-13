@@ -170,6 +170,11 @@ const caseStudies = [
 
 const blogPosts = [
   {
+    href: "/blog/ai-pi-firm-judgment-workflows",
+    title: "AI Will Make Intelligence Cheap. Your PI Firm's Judgment Is the Moat.",
+    tag: "AI Strategy",
+  },
+  {
     href: "/blog/personal-injury-marketing-attribution",
     title: "Marketing Attribution for PI Firms: Follow the Case, Not the Click",
     tag: "Intake Analytics",

@@ -12,6 +12,18 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    href: "/blog/ai-pi-firm-judgment-workflows",
+    slug: "ai-pi-firm-judgment-workflows",
+    title: "AI Will Make Intelligence Cheap. Your PI Firm's Judgment Is the Moat.",
+    description:
+      "Every firm will have access to capable AI. The advantage is turning earned judgment, workflows, and relationships into governed systems.",
+    author: "Pranav Modi",
+    date: "August 13, 2026",
+    readTime: "12 min read",
+    category: "AI Strategy",
+    tags: ["Legal AI", "AI Strategy", "For PI Firms"],
+  },
+  {
     href: "/blog/personal-injury-marketing-attribution",
     slug: "personal-injury-marketing-attribution",
     title: "Marketing Attribution for PI Firms: Follow the Case, Not the Click",

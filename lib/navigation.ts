@@ -30,6 +30,10 @@ export const caseStudiesLinks = [
 
 export const blogLinks = [
   {
+    href: "/blog/ai-pi-firm-judgment-workflows",
+    label: "Your Firm's Judgment Is the Moat",
+  },
+  {
     href: "/blog/personal-injury-marketing-attribution",
     label: "PI Marketing Attribution",
   },
