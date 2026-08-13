@@ -30,6 +30,10 @@ export const caseStudiesLinks = [
 
 export const blogLinks = [
   {
+    href: "/blog/first-mover-ai-personal-injury-firms",
+    label: "The AI First-Mover Advantage",
+  },
+  {
     href: "/blog/ai-pi-firm-judgment-workflows",
     label: "Your Firm's Judgment Is the Moat",
   },

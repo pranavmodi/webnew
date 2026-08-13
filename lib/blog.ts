@@ -12,6 +12,18 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    href: "/blog/first-mover-ai-personal-injury-firms",
+    slug: "first-mover-ai-personal-injury-firms",
+    title: "The First-Mover Advantage in AI Is Real",
+    description:
+      "Why PI firms should start one AI workflow now, how consolidation changes the market, and a practical 30-day plan for nontechnical owners.",
+    author: "Pranav Modi",
+    date: "August 13, 2026",
+    readTime: "6 min read",
+    category: "AI Strategy",
+    tags: ["Legal AI", "AI Strategy", "For PI Firms"],
+  },
+  {
     href: "/blog/ai-pi-firm-judgment-workflows",
     slug: "ai-pi-firm-judgment-workflows",
     title: "AI Will Make Intelligence Cheap. Your PI Firm's Judgment Is the Moat.",

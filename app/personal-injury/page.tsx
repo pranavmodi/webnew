@@ -170,6 +170,11 @@ const caseStudies = [
 
 const blogPosts = [
   {
+    href: "/blog/first-mover-ai-personal-injury-firms",
+    title: "The First-Mover Advantage in AI Is Real",
+    tag: "30-Day AI Plan",
+  },
+  {
     href: "/blog/ai-pi-firm-judgment-workflows",
     title: "AI Will Make Intelligence Cheap. Your PI Firm's Judgment Is the Moat.",
     tag: "AI Strategy",
