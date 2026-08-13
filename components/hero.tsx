@@ -72,7 +72,7 @@ export function Hero() {
               variant="outline"
               className="hidden sm:inline-flex"
             >
-              <Link href="/law-case-study">See the results</Link>
+              <Link href="/solutions/intake-agent">Meet Intake Agent</Link>
             </Button>
           </div>
         </div>
