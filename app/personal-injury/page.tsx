@@ -170,6 +170,11 @@ const caseStudies = [
 
 const blogPosts = [
   {
+    href: "/blog/why-pi-firms-need-bespoke-ai-agents",
+    title: "Your Legal AI Vendor Will Not Build the Last Mile",
+    tag: "Bespoke AI Agents",
+  },
+  {
     href: "/blog/first-mover-ai-personal-injury-firms",
     title: "The First-Mover Advantage in AI Is Real",
     tag: "30-Day AI Plan",

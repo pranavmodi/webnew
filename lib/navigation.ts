@@ -35,6 +35,10 @@ export const caseStudiesLinks = [
 
 export const blogLinks = [
   {
+    href: "/blog/why-pi-firms-need-bespoke-ai-agents",
+    label: "Why PI Firms Need Bespoke AI",
+  },
+  {
     href: "/blog/first-mover-ai-personal-injury-firms",
     label: "The AI First-Mover Advantage",
   },
