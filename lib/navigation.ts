@@ -18,6 +18,10 @@ export const piSystemsLinks = piProblemPages.map((page) => ({
 
 export const solutionsLinks = [
   { href: "/solutions/intake-agent", label: "Intake Agent" },
+  {
+    href: "/services/case-management-migration",
+    label: "Case Management Migration",
+  },
   { href: "/solutions/email-automation", label: "Email Automation" },
   { href: "/solutions/support-agent", label: "Support Agent" },
   { href: "/solutions/outbound-voice-ai", label: "Outbound Voice AI" },
@@ -82,6 +86,10 @@ export const footerLinks = [
       { label: "AI Readiness Audit", href: "https://aiaudit.getpossibleminds.com" },
       { label: "Ask Mira", href: "/ai-consultant" },
       { label: "Intake Agent", href: "/solutions/intake-agent" },
+      {
+        label: "Case Management Migration",
+        href: "/services/case-management-migration",
+      },
       { label: "PI Owner AI Builder Program", href: "/build-partnership" },
       { label: "Our Thesis", href: "/thesis" },
       { label: "Security", href: "/security" },
