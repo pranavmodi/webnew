@@ -3,6 +3,9 @@ export type MigrationConcern = {
   body: string;
 };
 
+export const MIGRATION_CONSULTATION_HREF =
+  "mailto:pranav@possiblemindshq.com?subject=Case%20management%20migration%20consultation";
+
 export type MigrationPhase = {
   step: string;
   title: string;

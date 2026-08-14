@@ -13,12 +13,10 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { Button } from "@/components/ui/button";
 import { SITE_URL } from "@/lib/constants";
 import {
+  MIGRATION_CONSULTATION_HREF,
   migrationSystems,
   type MigrationSourcePage as MigrationSourcePageData,
 } from "@/lib/migration-services";
-
-const consultationHref =
-  "mailto:hello@possibleminds.ai?subject=Case%20management%20migration%20consultation";
 
 export function MigrationSourcePage({
   data,
@@ -125,7 +123,7 @@ export function MigrationSourcePage({
                   size="lg"
                   className="h-auto min-h-12 max-w-full whitespace-normal px-5 py-3 text-center"
                 >
-                  <Link href={consultationHref}>
+                  <Link href={MIGRATION_CONSULTATION_HREF}>
                     Discuss your {data.sourceName} migration
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </Link>
@@ -352,7 +350,7 @@ export function MigrationSourcePage({
             size="lg"
             className="mt-7 h-auto min-h-12 max-w-full whitespace-normal px-5 py-3 text-center"
           >
-            <Link href={consultationHref}>
+            <Link href={MIGRATION_CONSULTATION_HREF}>
               Request a migration consultation
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>

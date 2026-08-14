@@ -14,15 +14,15 @@ import Link from "next/link";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Button } from "@/components/ui/button";
 import { SITE_URL } from "@/lib/constants";
-import { migrationSystems } from "@/lib/migration-services";
+import {
+  MIGRATION_CONSULTATION_HREF,
+  migrationSystems,
+} from "@/lib/migration-services";
 
 const pageTitle = "Case-Management Migration for Personal Injury Firms";
 const pageDescription =
   "Possible Minds helps PI firms plan, extract, clean, map, test, validate, and complete migrations between legal case-management systems.";
 const pageUrl = `${SITE_URL}/services/case-management-migration`;
-const consultationHref =
-  "mailto:hello@possibleminds.ai?subject=Case%20management%20migration%20consultation";
-
 const scopeAreas = [
   {
     title: "Matters and workflow",
@@ -262,7 +262,7 @@ export default function CaseManagementMigrationPage() {
                   size="lg"
                   className="h-auto min-h-12 max-w-full whitespace-normal px-5 py-3 text-center"
                 >
-                  <Link href={consultationHref}>
+                  <Link href={MIGRATION_CONSULTATION_HREF}>
                     Request a migration consultation
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </Link>
@@ -493,7 +493,7 @@ export default function CaseManagementMigrationPage() {
           size="lg"
           className="mt-7 h-auto min-h-12 max-w-full whitespace-normal px-5 py-3 text-center"
         >
-          <Link href={consultationHref}>
+          <Link href={MIGRATION_CONSULTATION_HREF}>
             Discuss your migration
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Link>
