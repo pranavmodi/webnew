@@ -21,6 +21,7 @@ const sources = {
   entegrata: "https://support.entegrata.com/",
   netdocuments: "https://www.netdocuments.com/en-gb/legal-context-graph/",
   deepjudge: "https://www.deepjudge.ai/product",
+  diggerEarles: "https://mission.getpossibleminds.com/podcasts/3170",
 };
 
 const contents = [
@@ -80,7 +81,7 @@ export const metadata: Metadata = {
     type: "article",
     url: pageUrl,
     publishedTime: "2026-08-14",
-    modifiedTime: "2026-08-14",
+    modifiedTime: "2026-08-16",
     authors: ["Pranav Modi"],
     images: [
       {
@@ -111,7 +112,7 @@ export default function BlogPostPage() {
       url: pageUrl,
       image: heroImage,
       datePublished: "2026-08-14",
-      dateModified: "2026-08-14",
+      dateModified: "2026-08-16",
       author: {
         "@type": "Person",
         name: post.author,
@@ -410,6 +411,44 @@ export default function BlogPostPage() {
             context, complete bounded steps, and place the exception in front of the
             right person.
           </p>
+          <div className="border-y border-primary/30 py-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary/70">
+              A PI firm example
+            </p>
+            <h3 className="mt-3 text-2xl font-semibold leading-9 text-foreground">
+              Digger Earles started in the mail room
+            </h3>
+            <p className="mt-4">
+              On <em>Personal Injury Mastermind</em>, Digger Earles of Laborde
+              Earles said his firm tested several AI products, then hired an in-house
+              AI and data specialist to work with the firm&apos;s own data and workflows.
+              The specialist&apos;s first project was a mail-room workflow that
+              automatically populated case files as mail arrived. Earles called it a
+              &quot;huge home run&quot; and said it moved faster than the firm&apos;s prior
+              software implementations.
+            </p>
+            <p className="mt-4">
+              The lesson is not that every PI firm needs an AI researcher on staff.
+              It is that the useful work was specific to Laborde Earles. A general
+              product can classify a document. To complete the workflow, the system
+              must also know how that firm identifies the matter, names and stores the
+              document, updates the file, assigns responsibility, and handles an
+              uncertain match. That firm-specific layer is where bespoke AI earns its
+              cost.
+            </p>
+            <p className="mt-4 text-sm leading-7 text-foreground/60">
+              Source: {` `}
+              <a
+                href={sources.diggerEarles}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary underline decoration-primary/35 underline-offset-4"
+              >
+                Digger Earles on building custom AI at Laborde Earles
+              </a>
+              .
+            </p>
+          </div>
           <p>
             For a deeper explanation, see our guide to{` `}
             <Link

@@ -19,7 +19,7 @@ export const blogPosts: BlogPost[] = [
       "Why PI firms need bespoke AI agents for the workflows, data, handoffs, and controls that off-the-shelf legal AI products are not designed to own.",
     author: "Pranav Modi",
     date: "August 14, 2026",
-    readTime: "9 min read",
+    readTime: "10 min read",
     category: "AI Strategy",
     tags: ["Legal AI", "AI Strategy", "For PI Firms"],
   },
