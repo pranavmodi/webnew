@@ -170,6 +170,11 @@ const caseStudies = [
 
 const blogPosts = [
   {
+    href: "/blog/claude-ai-watermarks-law-firm-review",
+    title: "Before a Claude-Assisted Draft Leaves Your Firm",
+    tag: "AI Governance",
+  },
+  {
     href: "/blog/why-pi-firms-need-bespoke-ai-agents",
     title: "Your Legal AI Vendor Will Not Build the Last Mile",
     tag: "Bespoke AI Agents",

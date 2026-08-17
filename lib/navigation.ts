@@ -35,6 +35,10 @@ export const caseStudiesLinks = [
 
 export const blogLinks = [
   {
+    href: "/blog/claude-ai-watermarks-law-firm-review",
+    label: "Claude Draft Preflight",
+  },
+  {
     href: "/blog/why-pi-firms-need-bespoke-ai-agents",
     label: "Why PI Firms Need Bespoke AI",
   },

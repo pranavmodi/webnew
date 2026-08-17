@@ -12,6 +12,18 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    href: "/blog/claude-ai-watermarks-law-firm-review",
+    slug: "claude-ai-watermarks-law-firm-review",
+    title: "Before a Claude-Assisted Draft Leaves Your Firm",
+    description:
+      "Claude's watermark is not the main risk for law firms. Use this five-point preflight before any AI-assisted legal document leaves the firm.",
+    author: "Pranav Modi",
+    date: "August 17, 2026",
+    readTime: "8 min read",
+    category: "AI Governance",
+    tags: ["Legal AI", "AI Strategy"],
+  },
+  {
     href: "/blog/why-pi-firms-need-bespoke-ai-agents",
     slug: "why-pi-firms-need-bespoke-ai-agents",
     title: "Your Legal AI Vendor Will Not Build the Last Mile",
