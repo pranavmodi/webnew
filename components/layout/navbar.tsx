@@ -87,7 +87,7 @@ export function Navbar() {
               </button>
               <div
                 className={cn(
-                  "pointer-events-none absolute left-0 top-full z-20 mt-2 translate-y-2 opacity-0 transition duration-200 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100",
+                  "pointer-events-none absolute left-0 top-full z-20 pt-2 opacity-0 transition duration-200 group-focus-within:pointer-events-auto group-focus-within:opacity-100 group-hover:pointer-events-auto group-hover:opacity-100",
                   group.width,
                 )}
               >
