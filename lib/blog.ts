@@ -14,9 +14,9 @@ export const blogPosts: BlogPost[] = [
   {
     href: "/blog/ai-for-small-personal-injury-law-firms",
     slug: "ai-for-small-personal-injury-law-firms",
-    title: "What a Small PI Firm Can Build With AI Today",
+    title: "How a Small PI Firm Built Its Own AI Advantage Without Giving Up Control",
     description:
-      "How small PI firms can safely use AI for court documents, medical summaries, demands, and expert research while keeping lawyers in control.",
+      "How one PI lawyer used Claude skills and a protected medical-record system to save time, move cases faster, and keep lawyers in control.",
     author: "Pranav Modi",
     date: "August 25, 2026",
     readTime: "9 min read",

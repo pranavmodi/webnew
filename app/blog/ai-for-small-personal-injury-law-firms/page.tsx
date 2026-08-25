@@ -10,10 +10,11 @@ import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { SITE_URL } from "@/lib/constants";
 
 const slug = "ai-for-small-personal-injury-law-firms";
-const pageTitle = "What a Small PI Firm Can Build With AI Today";
-const metaTitle = "AI for Small Personal Injury Law Firms: What to Build";
+const pageTitle =
+  "How a Small PI Firm Built Its Own AI Advantage Without Giving Up Control";
+const metaTitle = "How a Small PI Firm Built Its Own AI Advantage";
 const pageDescription =
-  "How small PI firms can safely use AI for court documents, medical summaries, demands, and expert research while keeping lawyers in control.";
+  "How one PI lawyer used Claude skills and a protected medical-record system to save time, move cases faster, and keep lawyers in control.";
 const pageUrl = `${SITE_URL}/blog/${slug}`;
 const heroImage = `${SITE_URL}/images/blog/small-pi-firm-ai-workflows.webp`;
 
@@ -27,12 +28,12 @@ const sources = {
 };
 
 const contents = [
-  { id: "owner-appeal", label: "Why this matters to a small-firm owner" },
-  { id: "possible-workflows", label: "Four workflows already within reach" },
-  { id: "small-firm-advantage", label: "The small-firm advantage" },
-  { id: "safe-boundary", label: "A safer two-lane architecture" },
-  { id: "first-system", label: "How to build the first system" },
-  { id: "human-control", label: "What must remain human" },
+  { id: "owner-appeal", label: "More work reaches lawyer review" },
+  { id: "possible-workflows", label: "Hours of assembly collapse into minutes" },
+  { id: "small-firm-advantage", label: "The firm's best work becomes reusable" },
+  { id: "safe-boundary", label: "Medical records stay in a protected lane" },
+  { id: "first-system", label: "Value arrives before a firm-wide rollout" },
+  { id: "human-control", label: "Clients get speed without losing judgment" },
 ];
 
 const faqs = [
@@ -195,14 +196,16 @@ export default function BlogPostPage() {
               <span>AI Strategy</span>
             </div>
             <p className="mt-8 text-xs font-semibold uppercase tracking-[0.2em] text-[#00ff41]">
-              A practical view for small PI firms
+              A small firm case study
             </p>
             <h1 className="mt-5 max-w-3xl text-4xl font-semibold leading-[1.08] text-white sm:text-5xl lg:text-6xl">
-              What a Small PI Firm Can Build With AI Today
+              How a Small PI Firm Built Its Own AI Advantage Without Giving Up
+              Control
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-foreground/85 sm:text-xl">
-              Not a robot lawyer. A repeatable system that gives your team a
-              better first draft and gives you more time for judgment.
+              More review-ready documents. Faster demands. Deeper expert
+              research. Protected medical data. The lawyer still decides what
+              leaves the firm.
             </p>
             <div className="mt-7 flex flex-wrap gap-x-4 gap-y-2 text-xs text-foreground/65">
               <span>{post.author}</span>
@@ -221,12 +224,12 @@ export default function BlogPostPage() {
             In plain English
           </p>
           <p className="mt-4 text-xl leading-9 text-foreground/95 sm:text-2xl sm:leading-10">
-            A small PI firm can already use AI to assemble routine court
-            documents, structure medical histories, draft demand sections, and
-            search an expert&apos;s prior statements. The advantage comes from
-            turning the firm&apos;s own methods into reusable workflows, separating
-            sensitive data from ordinary drafting, and requiring a lawyer to
-            approve the result.
+            A San Antonio trial lawyer turned his firm&apos;s recurring work into
+            reusable Claude workflows. Routine court documents reached review
+            sooner, medical records became structured summaries, demands moved
+            faster, and public expert statements became searchable. A separate
+            protected application handled identifiable medical data, while the
+            lawyer retained final control.
           </p>
         </div>
       </section>
@@ -237,7 +240,7 @@ export default function BlogPostPage() {
         <section className="space-y-6">
           <p className="text-xl leading-9 text-foreground/95">
             The most persuasive part of a recent AI walkthrough was not the
-            technology. It was the reason the lawyer cared about it.
+            model. It was how quickly the technology disappeared into the work.
           </p>
           <p>
             He runs a small personal injury litigation firm in San Antonio. He
@@ -247,15 +250,15 @@ export default function BlogPostPage() {
             every file.
           </p>
           <p>
-            That is the practical AI question for a small-firm owner: can the
-            same people produce more review-ready work without lowering the
-            standard or surrendering control?
+            His goal was straightforward: help the same team produce more
+            review-ready work, move cases sooner, and preserve the judgment and
+            client responsibility that belong with the lawyer.
           </p>
         </section>
 
         <section id="owner-appeal" className="mt-14 scroll-mt-24 space-y-5">
           <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
-            The appeal is leverage, not novelty
+            More review-ready work from the same team
           </h2>
           <p>
             Large firms can assign an innovation team to experiment for a year.
@@ -265,11 +268,12 @@ export default function BlogPostPage() {
             records already contain.
           </p>
           <p>
-            The lawyer in the walkthrough was not asking AI to choose cases,
-            advise clients, or negotiate on his behalf. He was using it to move
-            the first draft closer to the standard he expected. His assistants
-            could produce more; he could spend his time reviewing substance
-            instead of recreating structure.
+            The lawyer reported that his assistants previously produced roughly
+            five to seven documents for review on a typical day. With the new
+            workflows, he was seeing roughly 12 to 15. That is a self-reported
+            result from one firm, not a universal benchmark. But it captures the
+            value clearly: staff spend less time assembling, and the lawyer
+            spends more time reviewing substance.
           </p>
           <p>
             That distinction matters. The small-firm opportunity is not to remove
@@ -281,12 +285,12 @@ export default function BlogPostPage() {
         <section id="possible-workflows" className="mt-14 scroll-mt-24 space-y-8">
           <div className="space-y-5">
             <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
-              Four workflows already within reach
+              Hours of assembly collapse into minutes
             </h2>
             <p>
-              The video showed four useful patterns. None requires training a
-              new foundation model. Each combines existing case material, a
-              reusable set of firm instructions, and a human review gate.
+              The firm did not build one giant autonomous agent. It built several
+              bounded workflows, each with known inputs, a useful first output,
+              and a clear human review point.
             </p>
           </div>
 
@@ -294,23 +298,23 @@ export default function BlogPostPage() {
             {[
               {
                 number: "01",
-                title: "Turn filed pleadings into a scheduling packet",
-                body: "The firm supplies the petition, the defendant's answer, and trial-date availability. A saved workflow prepares the proposed docket control order, agreed motion, and notice of hearing. The lawyer checks every deadline before filing.",
+                title: "About 10 minutes to a first scheduling packet",
+                body: "The firm supplies the petition, the defendant's answer, and trial-date availability. The lawyer said a saved Claude skill can prepare the proposed docket control order, agreed motion, and notice of hearing in about 10 minutes. He still checks every deadline before filing.",
               },
               {
                 number: "02",
-                title: "Turn medical records into a usable chronology",
-                body: "A protected application reads the record set, organizes dates of service, diagnoses, procedures, complaints, and recommendations, and produces a reviewable treatment summary. Staff verify it against the source records.",
+                title: "A medical chronology without rebuilding every record",
+                body: "The custom portal can accept a multi-file record set, organize dates of service, diagnoses, procedures, complaints, and recommendations, and produce a reviewable treatment summary. In the demonstration, a small mock packet processed in about five minutes; larger files can take longer. Staff verify the result against the records.",
               },
               {
                 number: "03",
-                title: "Turn the case file into a structured demand",
-                body: "A reusable skill combines the crash report, petition, photographs, witness material, damages information, applicable rules, adjuster details, and an approved medical summary. It drafts the sections and formatting the firm normally builds by hand.",
+                title: "Demand packages reach lawyer review sooner",
+                body: "A reusable skill combines the crash report, petition, photographs, witness material, damages information, applicable rules, adjuster details, and an approved medical summary. Faster assembly can help the firm send demands and resolve appropriate cases sooner, while creating capacity for more clients and referral matters.",
               },
               {
                 number: "04",
-                title: "Turn public expert content into deposition research",
-                body: "The system compares an opposing doctor's report and prior testimony with public videos and transcripts. It identifies possible inconsistencies and exact timestamps for the lawyer to verify before deciding whether to use them.",
+                title: "Expert preparation becomes broader and faster",
+                body: "The system compares an opposing doctor's report and prior testimony with public videos and transcripts. It identifies possible inconsistencies and exact timestamps, giving the lawyer a practical research lead to verify before the deposition.",
               },
             ].map((workflow) => (
               <div
@@ -333,7 +337,7 @@ export default function BlogPostPage() {
 
         <section id="small-firm-advantage" className="mt-14 scroll-mt-24 space-y-5">
           <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
-            A small firm owns something the model does not
+            The firm&apos;s best work becomes reusable
           </h2>
           <p>
             The model supplies general capability. The firm supplies the valuable
@@ -365,12 +369,13 @@ export default function BlogPostPage() {
         <section id="safe-boundary" className="mt-14 scroll-mt-24 space-y-7">
           <div className="space-y-5">
             <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
-              Build two lanes, not one giant prompt box
+              Medical records stay inside a protected lane
             </h2>
             <p>
-              The safest lesson from the demonstration is to separate ordinary
-              drafting from protected data processing. Do not make every tool in
-              the firm eligible to receive every kind of information.
+              The firm&apos;s productivity gain would not be worth much if it exposed
+              client medical information. The safer design separates ordinary
+              drafting from protected data processing instead of making every
+              tool eligible to receive every kind of information.
             </p>
           </div>
 
@@ -473,7 +478,7 @@ export default function BlogPostPage() {
         <section id="first-system" className="mt-14 scroll-mt-24 space-y-7">
           <div className="space-y-5">
             <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
-              Build one useful system before an AI strategy
+              Value arrives before a firm-wide AI rollout
             </h2>
             <p>
               A small firm does not need to begin with a platform migration or an
@@ -521,7 +526,7 @@ export default function BlogPostPage() {
 
         <section id="human-control" className="mt-14 scroll-mt-24 space-y-5">
           <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
-            The lawyer becomes the control point
+            Clients get faster movement without losing lawyer judgment
           </h2>
           <p>
             In every useful example from the walkthrough, AI performs preparation

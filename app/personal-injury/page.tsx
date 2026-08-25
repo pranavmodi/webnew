@@ -171,7 +171,7 @@ const caseStudies = [
 const blogPosts = [
   {
     href: "/blog/ai-for-small-personal-injury-law-firms",
-    title: "What a Small PI Firm Can Build With AI Today",
+    title: "How a Small PI Firm Built Its Own AI Advantage Without Giving Up Control",
     tag: "Practical AI Systems",
   },
   {

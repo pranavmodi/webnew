@@ -36,7 +36,7 @@ export const caseStudiesLinks = [
 export const blogLinks = [
   {
     href: "/blog/ai-for-small-personal-injury-law-firms",
-    label: "AI for Small PI Firms",
+    label: "A Small PI Firm's AI Advantage",
   },
   {
     href: "/blog/claude-ai-watermarks-law-firm-review",
