@@ -14,11 +14,12 @@ const pageTitle =
   "How a Small PI Firm Built Its Own AI Advantage Without Giving Up Control";
 const metaTitle = "How a Small PI Firm Built Its Own AI Advantage";
 const pageDescription =
-  "How one PI lawyer used Claude skills and a protected medical-record system to save time, move cases faster, and keep lawyers in control.";
+  "How Jacob Cukjati's PI firm used Claude skills to move from roughly 5-7 documents per day to 12-15 while keeping lawyer review in place.";
 const pageUrl = `${SITE_URL}/blog/${slug}`;
 const heroImage = `${SITE_URL}/images/blog/small-pi-firm-ai-workflows.webp`;
 
 const sources = {
+  jacobCukjati: "https://www.linkedin.com/in/jacob-cukjati-630a7a8a",
   anthropicBaa:
     "https://privacy.claude.com/en/articles/8114513-business-associate-agreements-baa-for-commercial-customers",
   awsHipaa: "https://aws.amazon.com/compliance/hipaa-eligible-services-reference/",
@@ -28,40 +29,12 @@ const sources = {
 };
 
 const contents = [
-  { id: "owner-appeal", label: "More work reaches lawyer review" },
-  { id: "possible-workflows", label: "Hours of assembly collapse into minutes" },
-  { id: "small-firm-advantage", label: "The firm's best work becomes reusable" },
-  { id: "safe-boundary", label: "Medical records stay in a protected lane" },
-  { id: "first-system", label: "Value arrives before a firm-wide rollout" },
-  { id: "human-control", label: "Clients get speed without losing judgment" },
-];
-
-const faqs = [
-  {
-    question: "What is the best first AI workflow for a small PI firm?",
-    answer:
-      "Start with a frequent, repetitive document workflow that has clear inputs, a known good output, and mandatory lawyer review. A scheduling packet, standard motion, or structured demand section is usually easier to govern than an autonomous client-facing workflow.",
-  },
-  {
-    question: "Can a small PI firm use AI to summarize medical records?",
-    answer:
-      "Yes, but identifiable medical records should be processed only inside an appropriately contracted and configured environment. The firm must control access, retention, logging, vendors, and human review rather than assuming that the model alone is HIPAA compliant.",
-  },
-  {
-    question: "Can medical summaries be moved from Bedrock into Claude Cowork?",
-    answer:
-      "Only when the summary has been properly de-identified and the firm has approved that use. Removing a name or birth date alone may not be enough because treatment dates and distinctive facts can still identify the client.",
-  },
-  {
-    question: "Does a small firm need to train its own AI model?",
-    answer:
-      "Usually not. Most firms need a reusable workflow around an existing model: approved source documents, clear instructions, a required output format, review gates, and a record of what the system did.",
-  },
-  {
-    question: "What should a lawyer review before using AI-generated work?",
-    answer:
-      "The lawyer should verify facts, citations, dates, deadlines, calculations, omissions, strategic choices, confidentiality, and whether the document accurately reflects the record and the firm's professional judgment.",
-  },
+  { id: "owner-appeal", label: "From 5-7 documents a day to 12-15" },
+  { id: "possible-workflows", label: "A scheduling packet in about 10 minutes" },
+  { id: "small-firm-advantage", label: "The firm's own work became reusable" },
+  { id: "safe-boundary", label: "A separate lane for medical records" },
+  { id: "first-system", label: "The team changed its mind by using it" },
+  { id: "human-control", label: "The faster workflow still ended with the lawyer" },
 ];
 
 export const metadata: Metadata = {
@@ -131,19 +104,6 @@ export default function BlogPostPage() {
     },
     {
       "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "@id": `${pageUrl}#faq`,
-      mainEntity: faqs.map((faq) => ({
-        "@type": "Question",
-        name: faq.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: faq.answer,
-        },
-      })),
-    },
-    {
-      "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
         {
@@ -203,9 +163,9 @@ export default function BlogPostPage() {
               Control
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-foreground/85 sm:text-xl">
-              More review-ready documents. Faster demands. Deeper expert
-              research. Protected medical data. The lawyer still decides what
-              leaves the firm.
+              His assistants went from roughly 5-7 documents a day to 12-15.
+              Demands moved sooner, medical records stayed separate, and every
+              consequential output still came back to the lawyer.
             </p>
             <div className="mt-7 flex flex-wrap gap-x-4 gap-y-2 text-xs text-foreground/65">
               <span>{post.author}</span>
@@ -224,73 +184,77 @@ export default function BlogPostPage() {
             In plain English
           </p>
           <p className="mt-4 text-xl leading-9 text-foreground/95 sm:text-2xl sm:leading-10">
-            A San Antonio trial lawyer turned his firm&apos;s recurring work into
-            reusable Claude workflows. Routine court documents reached review
-            sooner, medical records became structured summaries, demands moved
-            faster, and public expert statements became searchable. A separate
-            protected application handled identifiable medical data, while the
-            lawyer retained final control.
+            Jacob Cukjati&apos;s assistants went from preparing roughly five to seven
+            documents a day for his review to roughly 12 to 15. The same system
+            assembled scheduling papers, helped build demands, and searched public
+            expert statements. Medical records moved through a separate protected
+            application. Jacob remained the final reviewer.
           </p>
         </div>
       </section>
 
-      <BlogTableOfContents items={contents} faqHref="#faq" />
+      <BlogTableOfContents items={contents} />
 
       <article className="mx-auto max-w-4xl px-4 pt-14 text-[1.0625rem] leading-8 text-foreground/80 sm:px-6 sm:pt-16">
         <section className="space-y-6">
           <p className="text-xl leading-9 text-foreground/95">
-            The most persuasive part of a recent AI walkthrough was not the
-            model. It was how quickly the technology disappeared into the work.
+            In a recent video walkthrough, San Antonio personal injury trial
+            lawyer{` `}
+            <a
+              href={sources.jacobCukjati}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary underline decoration-primary/35 underline-offset-4"
+            >
+              Jacob Cukjati
+            </a>{` `}
+            opened with a completed piece of work: a proposed docket control
+            order, an agreed motion, and a notice of hearing.
           </p>
           <p>
-            He runs a small personal injury litigation firm in San Antonio. He
-            has a lean team, a trial practice, and four young children at home.
-            His scarce resource is not access to legal intelligence. It is the
-            time required to turn that intelligence into finished work across
-            every file.
+            His assistants had supplied the petition, the defendant&apos;s answer,
+            and the available trial dates. A Claude Cowork skill assembled the
+            first packet in about 10 minutes. Jacob then adjusted the deadlines
+            and reviewed the documents before they went any further.
           </p>
           <p>
-            His goal was straightforward: help the same team produce more
-            review-ready work, move cases sooner, and preserve the judgment and
-            client responsibility that belong with the lawyer.
+            Cukjati Law Firm is small: a couple of paralegals and several lawyers
+            working of counsel. Jacob also has four children under three at home.
+            The video is a close look at what happened when that firm applied AI
+            to the work already passing through its desks.
           </p>
         </section>
 
         <section id="owner-appeal" className="mt-14 scroll-mt-24 space-y-5">
           <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
-            More review-ready work from the same team
+            From five to seven documents a day to 12 to 15
           </h2>
           <p>
-            Large firms can assign an innovation team to experiment for a year.
-            A small PI firm needs value to appear inside the work week. A motion
-            should reach review sooner. A demand should stop waiting on a blank
-            page. A paralegal should spend less time rebuilding a chronology the
-            records already contain.
+            Before the new workflows, Jacob said his assistants would typically
+            send him about five to seven documents to review in a day. After they
+            began using the saved skills, the daily volume was roughly 12 to 15.
           </p>
+          <blockquote className="border-l-2 border-primary pl-6 text-xl leading-9 text-foreground/95">
+            &ldquo;Now I&apos;m getting 12 to 15 documents a day to review ...
+            because they&apos;re able to just crush these tasks.&rdquo;
+          </blockquote>
           <p>
-            The lawyer reported that his assistants previously produced roughly
-            five to seven documents for review on a typical day. With the new
-            workflows, he was seeing roughly 12 to 15. That is a self-reported
-            result from one firm, not a universal benchmark. But it captures the
-            value clearly: staff spend less time assembling, and the lawyer
-            spends more time reviewing substance.
-          </p>
-          <p>
-            That distinction matters. The small-firm opportunity is not to remove
-            the lawyer. It is to stop making the lawyer and staff repeat work the
-            firm has already learned how to do.
+            The figures are Jacob&apos;s account of his own firm, not a controlled
+            benchmark. What changed is visible: the assistants assembled more
+            work, while the documents still arrived at the lawyer&apos;s desk for
+            review.
           </p>
         </section>
 
         <section id="possible-workflows" className="mt-14 scroll-mt-24 space-y-8">
           <div className="space-y-5">
             <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
-              Hours of assembly collapse into minutes
+              A scheduling packet in about 10 minutes
             </h2>
             <p>
-              The firm did not build one giant autonomous agent. It built several
-              bounded workflows, each with known inputs, a useful first output,
-              and a clear human review point.
+              The scheduling workflow was one of four examples shown in the
+              walkthrough. Each began with material the firm already used and
+              ended with something a lawyer or paralegal could inspect.
             </p>
           </div>
 
@@ -337,25 +301,25 @@ export default function BlogPostPage() {
 
         <section id="small-firm-advantage" className="mt-14 scroll-mt-24 space-y-5">
           <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
-            The firm&apos;s best work becomes reusable
+            The firm&apos;s own work became reusable
           </h2>
           <p>
-            The model supplies general capability. The firm supplies the valuable
-            part: the petition it trusts, the demand structure that has survived
-            negotiation, the questions an attorney asks before filing, and the
-            exceptions an experienced paralegal notices.
+            Jacob began as a conventional chat user. After seeing another lawyer
+            prepare bench-trial briefs with Cowork, he learned to turn recurring
+            work into saved skills. With help on the first workflows, he began
+            creating his own.
           </p>
           <p>
-            A reusable AI skill is simply a way to preserve those instructions.
-            It tells the system which sources to read, what order to follow, how
-            the output should look, what it must never assume, and where it must
-            stop for human review.
+            The demand workflow drew from the firm&apos;s petition, crash report,
+            photographs, damages checklist, witness material, Texas rules and
+            transportation law, adjuster information, and its existing demand
+            form. The output carried the firm&apos;s letterhead and familiar structure
+            because those materials were already part of the workflow.
           </p>
           <p>
-            This is why a narrow system can be more valuable than giving every
-            employee an empty chat window. The firm is not buying another place
-            to type. It is encoding one proven way of working. That is the same
-            distinction we make in our essay on{` `}
+            The reusable asset was not a generic prompt. It was a working record
+            of how this particular firm assembled a document. That is the same
+            distinction explored in our essay on{` `}
             <Link
               href="/blog/why-pi-firms-need-bespoke-ai-agents"
               className="text-primary underline decoration-primary/35 underline-offset-4"
@@ -369,13 +333,13 @@ export default function BlogPostPage() {
         <section id="safe-boundary" className="mt-14 scroll-mt-24 space-y-7">
           <div className="space-y-5">
             <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
-              Medical records stay inside a protected lane
+              A separate lane handled medical records
             </h2>
             <p>
-              The firm&apos;s productivity gain would not be worth much if it exposed
-              client medical information. The safer design separates ordinary
-              drafting from protected data processing instead of making every
-              tool eligible to receive every kind of information.
+              The firm did not place identifiable medical records into its normal
+              Cowork workflow. The walkthrough showed a separate portal that
+              processed the record packet and produced a structured summary for
+              review.
             </p>
           </div>
 
@@ -425,19 +389,20 @@ export default function BlogPostPage() {
           </div>
 
           <p>
-            One possible protected architecture uses a private portal, AWS
-            services covered by an executed BAA, and a Claude model accessed
-            through Amazon Bedrock. Amazon lists Bedrock as HIPAA eligible. If
-            Vercel receives or transmits PHI, the relevant Vercel deployment must
-            also be covered and configured for that use.
+            The architecture described in the walkthrough used a private portal,
+            AWS services covered by an executed BAA, and a Claude model accessed
+            through Amazon Bedrock. Amazon lists Bedrock as HIPAA eligible. Any
+            Vercel deployment that receives or transmits PHI would also need the
+            appropriate agreement and configuration.
           </p>
           <p>
-            The boundary must continue through the output. Anthropic currently
-            excludes Cowork from its BAA coverage. A medical chronology should
-            therefore remain in the protected system unless it has been properly
-            de-identified. HHS recognizes Safe Harbor and Expert Determination as
-            the two de-identification methods; deleting a name and birth date is
-            not, by itself, enough.
+            In the demonstration, a synthetic record packet reached &ldquo;ready for
+            review&rdquo; in about five minutes. Larger packets could take longer. The
+            team could inspect the chronology, add notes, export it, and confirm
+            the final document. Anthropic currently excludes Cowork from its BAA
+            coverage, so moving an output into Cowork depends on proper
+            de-identification. HHS recognizes Safe Harbor and Expert Determination
+            as the two methods; removing only a name and birth date is not enough.
           </p>
           <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
             <a
@@ -478,99 +443,57 @@ export default function BlogPostPage() {
         <section id="first-system" className="mt-14 scroll-mt-24 space-y-7">
           <div className="space-y-5">
             <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
-              Value arrives before a firm-wide AI rollout
+              The team changed its mind by using it
             </h2>
             <p>
-              A small firm does not need to begin with a platform migration or an
-              autonomous agent. Begin with a workflow your team performs every
-              week and whose quality you already know how to judge.
+              Jacob described some initial discomfort when Cowork first reached
+              the rest of the team. The change did not come from a policy memo or
+              a firm-wide transformation program. It came when staff saw familiar
+              documents appear faster.
             </p>
           </div>
-
-          <ol className="divide-y divide-primary/20 border-y border-primary/25">
-            {[
-              ["Choose the recurring work", "Pick a document or research task that consumes real time and follows a recognizable pattern."],
-              ["Collect good examples", "Use several completed matters to identify the stable structure and the exceptions that require judgment."],
-              ["Define the contract", "Specify approved inputs, required sections, prohibited assumptions, output format, and the person who signs off."],
-              ["Test ugly cases", "Use missing records, inconsistent dates, unusual facts, poor scans, and other conditions that expose false confidence."],
-              ["Measure the handoff", "Track time to first draft, correction rate, omissions, staff effort, and whether the reviewer trusts the output."],
-            ].map(([title, body], index) => (
-              <li
-                key={title}
-                className="grid gap-3 py-6 sm:grid-cols-[4rem_1fr] sm:gap-6"
-              >
-                <span className="text-sm font-semibold text-primary/65">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <div>
-                  <h3 className="text-lg font-semibold text-foreground">{title}</h3>
-                  <p className="mt-2">{body}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
-
           <p>
-            The first success should be boring and observable. A trusted draft
-            arriving sooner is more valuable than a dramatic demo nobody is
-            willing to use. Our guide to{` `}
-            <Link
-              href="/blog/derisk-ai-adoption-legal-practice"
-              className="text-primary underline decoration-primary/35 underline-offset-4"
-            >
-              derisking AI adoption in a legal practice
-            </Link>{` `}
-            explains how to set the review and escalation boundaries.
+            Once the assistants saw the output, Jacob said they began finding
+            other uses within their paralegal work. Adoption followed the work:
+            the skills reduced assembly time on tasks the team already understood,
+            and the results were immediately visible in the review queue.
+          </p>
+          <p>
+            The faster demands also changed the range of matters the firm could
+            handle. Jacob said quicker medical summaries and demand preparation
+            let the litigation-focused practice move cases sooner and created
+            more capacity for pre-litigation and referral matters.
           </p>
         </section>
 
         <section id="human-control" className="mt-14 scroll-mt-24 space-y-5">
           <h2 className="text-3xl font-semibold leading-tight text-[#00ff41]">
-            Clients get faster movement without losing lawyer judgment
+            The faster workflow still ended with the lawyer
           </h2>
           <p>
-            In every useful example from the walkthrough, AI performs preparation
-            and a person remains accountable. The lawyer changes scheduling
-            deadlines, verifies the medical summary, edits the demand, checks the
-            expert quotation, and decides what leaves the firm.
+            Every example in the walkthrough stopped at a review point. Jacob
+            changed scheduling deadlines, checked the medical chronology against
+            the records, edited the demand, verified expert material, and decided
+            what left the firm.
           </p>
           <p>
-            Case selection, legal advice, strategy, settlement authority,
-            deadline responsibility, and sensitive client conversations should
-            not disappear behind automation. The system should make judgment less
-            expensive to exercise, not pretend judgment is no longer required.
+            His referral-heavy intake process remained deliberately human. He did
+            not want AI sending messages without permission. The automation sat
+            behind the client relationship, preparing the material on which legal
+            judgment could operate.
           </p>
           <p className="text-xl leading-9 text-foreground/95">
-            For a small PI firm, that is the real promise: not fewer lawyers, but
-            fewer hours spent reconstructing work the firm already knows how to do.
+            The result was not a lawyerless firm. It was the same small team
+            putting more finished work in front of its lawyer each day.
           </p>
-        </section>
-
-        <section id="faq" className="mt-16 scroll-mt-24 border-t border-primary/25 pt-12">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/70">
-            Common questions
-          </p>
-          <h2 className="mt-3 text-3xl font-semibold leading-tight text-[#00ff41]">
-            AI for small personal injury law firms
-          </h2>
-          <div className="mt-8 divide-y divide-primary/20 border-y border-primary/25">
-            {faqs.map((faq) => (
-              <div key={faq.question} className="py-6">
-                <h3 className="text-lg font-semibold text-foreground">
-                  {faq.question}
-                </h3>
-                <p className="mt-3">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
         </section>
 
         <section className="mt-16 border-y border-primary/30 py-10">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/70">
-            Start with one workflow
+            The Possible Minds approach
           </p>
           <h2 className="mt-3 max-w-2xl text-3xl font-semibold leading-tight text-foreground">
-            Find the work your firm should stop rebuilding by hand.
+            The work already happening becomes the system.
           </h2>
           <p className="mt-4 max-w-2xl">
             Possible Minds maps the workflow, data boundary, exceptions, review

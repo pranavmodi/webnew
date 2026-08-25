@@ -16,10 +16,10 @@ export const blogPosts: BlogPost[] = [
     slug: "ai-for-small-personal-injury-law-firms",
     title: "How a Small PI Firm Built Its Own AI Advantage Without Giving Up Control",
     description:
-      "How one PI lawyer used Claude skills and a protected medical-record system to save time, move cases faster, and keep lawyers in control.",
+      "How Jacob Cukjati's PI firm used Claude skills to move from roughly 5-7 documents per day to 12-15 while keeping lawyer review in place.",
     author: "Pranav Modi",
     date: "August 25, 2026",
-    readTime: "9 min read",
+    readTime: "7 min read",
     category: "AI Strategy",
     tags: ["Legal AI", "AI Strategy", "For PI Firms"],
   },
