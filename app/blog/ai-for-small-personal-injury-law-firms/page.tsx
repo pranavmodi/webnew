@@ -283,9 +283,12 @@ export default function BlogPostPage() {
             ].map((workflow) => (
               <div
                 key={workflow.number}
-                className="grid gap-3 py-7 sm:grid-cols-[4rem_1fr] sm:gap-6"
+                className="grid grid-cols-[3.75rem_minmax(0,1fr)] gap-4 py-8 sm:grid-cols-[5rem_minmax(0,1fr)] sm:gap-7"
               >
-                <span className="text-sm font-semibold text-primary/65">
+                <span
+                  aria-hidden="true"
+                  className="pt-0.5 text-3xl font-semibold leading-none text-[#00ff41] sm:text-4xl"
+                >
                   {workflow.number}
                 </span>
                 <div>
