@@ -12,6 +12,18 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    href: "/blog/ai-for-small-personal-injury-law-firms",
+    slug: "ai-for-small-personal-injury-law-firms",
+    title: "What a Small PI Firm Can Build With AI Today",
+    description:
+      "How small PI firms can safely use AI for court documents, medical summaries, demands, and expert research while keeping lawyers in control.",
+    author: "Pranav Modi",
+    date: "August 25, 2026",
+    readTime: "9 min read",
+    category: "AI Strategy",
+    tags: ["Legal AI", "AI Strategy", "For PI Firms"],
+  },
+  {
     href: "/blog/claude-ai-watermarks-law-firm-review",
     slug: "claude-ai-watermarks-law-firm-review",
     title: "Before a Claude-Assisted Draft Leaves Your Firm",

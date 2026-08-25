@@ -170,6 +170,11 @@ const caseStudies = [
 
 const blogPosts = [
   {
+    href: "/blog/ai-for-small-personal-injury-law-firms",
+    title: "What a Small PI Firm Can Build With AI Today",
+    tag: "Practical AI Systems",
+  },
+  {
     href: "/blog/claude-ai-watermarks-law-firm-review",
     title: "Before a Claude-Assisted Draft Leaves Your Firm",
     tag: "AI Governance",
