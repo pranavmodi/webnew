@@ -20,6 +20,8 @@ const heroImage = `${SITE_URL}/images/blog/small-pi-firm-ai-workflows.webp`;
 
 const sources = {
   jacobCukjati: "https://www.linkedin.com/in/jacob-cukjati-630a7a8a",
+  cowork:
+    "https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork",
   anthropicBaa:
     "https://privacy.claude.com/en/articles/8114513-business-associate-agreements-baa-for-commercial-customers",
   awsHipaa: "https://aws.amazon.com/compliance/hipaa-eligible-services-reference/",
@@ -213,9 +215,20 @@ export default function BlogPostPage() {
           </p>
           <p>
             His assistants had supplied the petition, the defendant&apos;s answer,
-            and the available trial dates. A Claude Cowork skill assembled the
-            first packet in about 10 minutes. Jacob then adjusted the deadlines
-            and reviewed the documents before they went any further.
+            and the available trial dates. A{` `}
+            <a
+              href={sources.cowork}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary underline decoration-primary/35 underline-offset-4"
+            >
+              Claude Cowork
+            </a>{` `}
+            skill assembled the first packet in about 10 minutes. Cowork is
+            Anthropic&apos;s agentic work interface for multi-step tasks; it is
+            distinct from Claude Projects and is not a third-party product. Jacob
+            then adjusted the deadlines and reviewed the documents before they
+            went any further.
           </p>
           <p>
             Cukjati Law Firm is small: a couple of paralegals and several lawyers
@@ -405,7 +418,11 @@ export default function BlogPostPage() {
             the final document. Anthropic currently excludes Cowork from its BAA
             coverage, so moving an output into Cowork depends on proper
             de-identification. HHS recognizes Safe Harbor and Expert Determination
-            as the two methods; removing only a name and birth date is not enough.
+            as the two methods. Under Safe Harbor, identifiers can also include
+            detailed dates, contact and account numbers, smaller-than-state
+            geographic data, medical-record identifiers, full-face images, and
+            other unique identifiers. The complete HHS standard, not this short
+            list of examples, controls the analysis.
           </p>
           <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
             <a
@@ -499,8 +516,15 @@ export default function BlogPostPage() {
             The work already happening becomes the system.
           </h2>
           <p className="mt-4 max-w-2xl">
-            Possible Minds maps the workflow, data boundary, exceptions, review
-            gate, and measurable outcome before recommending what to build.
+            Jacob&apos;s system worked because it was not one undifferentiated AI
+            tool. Routine document work and protected medical information
+            followed different paths, with review points before anything
+            consequential left the firm.
+          </p>
+          <p className="mt-4 max-w-2xl">
+            Possible Minds helps PI firms map and build these firm-specific
+            workflows, data boundaries, and review controls around the way their
+            teams already work.
           </p>
           <Link
             href="/consult"
