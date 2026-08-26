@@ -1,0 +1,59 @@
+name: Extract Claude legal video frames
+
+on:
+  push:
+    paths:
+      - ".github/workflows/extract-claude-legal-video-frames.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install media tools
+        run: |
+          python -m pip install --upgrade yt-dlp
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      - name: Download source video
+        run: |
+          yt-dlp \
+            --no-playlist \
+            --merge-output-format mp4 \
+            -f "bv*[height<=1080]+ba/b[height<=1080]" \
+            -o /tmp/claude-legal-video.mp4 \
+            "https://www.youtube.com/watch?v=B04_OEqqN3I"
+
+      - name: Extract selected frames
+        run: |
+          mkdir -p public/images/blog/claude-legal-setup
+          while IFS='|' read -r name timestamp; do
+            ffmpeg -y -ss "$timestamp" -i /tmp/claude-legal-video.mp4 \
+              -frames:v 1 -vf "scale='min(1600,iw)':-2" -q:v 2 \
+              "public/images/blog/claude-legal-setup/${name}.jpg"
+          done <<'EOF'
+          download|00:00:55
+          get-started|00:01:16
+          chat-cowork|00:02:54
+          account-settings|00:05:25
+          claude-instructions|00:05:34
+          generated-instructions|00:08:08
+          cross-request|00:10:52
+          cross-outline|00:11:31
+          EOF
+
+      - name: Commit frames
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/images/blog/claude-legal-setup
+          git commit -m "Add Claude legal setup video frames"
+          git push
