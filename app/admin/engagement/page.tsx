@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Activity, Clock, Globe2, MessageCircle, MousePointerClick, RefreshCcw, UserRound } from "lucide-react";
 import Link from "next/link";
 
@@ -72,6 +72,7 @@ type Analytics = {
 
 const countryFilters = [
   { value: "all", label: "All" },
+  { value: "non_in", label: "Non-India" },
   { value: "US", label: "US" },
   { value: "IN", label: "India" },
   { value: "other", label: "Other" },
@@ -123,7 +124,7 @@ function locationLabel(row: {
 }
 
 export default function EngagementAdminPage() {
-  const [sinceDays, setSinceDays] = useState(30);
+  const [sinceDays, setSinceDays] = useState(7);
   const [countryFilter, setCountryFilter] = useState("all");
   const [data, setData] = useState<Analytics | null>(null);
   const [loading, setLoading] = useState(true);
@@ -135,7 +136,7 @@ export default function EngagementAdminPage() {
     try {
       const params = new URLSearchParams({
         since_days: String(sinceDays),
-        limit: "100",
+        limit: "500",
         country: countryFilter,
       });
       const res = await fetch(`/api/admin/engagement?${params.toString()}`, {
@@ -155,6 +156,15 @@ export default function EngagementAdminPage() {
     load();
   }, [load]);
 
+  const recentSessions = useMemo(
+    () => [...(data?.sessions || [])].sort((left, right) => {
+      const leftTime = left.last_seen_at ? new Date(left.last_seen_at).getTime() : 0;
+      const rightTime = right.last_seen_at ? new Date(right.last_seen_at).getTime() : 0;
+      return rightTime - leftTime;
+    }),
+    [data?.sessions],
+  );
+
   return (
     <main className="min-h-screen bg-background px-4 py-10 text-foreground">
       <div className="mx-auto grid w-full max-w-7xl gap-6">
@@ -163,7 +173,7 @@ export default function EngagementAdminPage() {
             <div className="text-sm font-semibold text-primary">Possible Minds</div>
             <h1 className="mt-2 text-3xl font-semibold tracking-tight">Engagement analytics</h1>
           </div>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap items-end gap-3">
             <Link
               href="https://advisor.getpossibleminds.com/admin"
               className="inline-flex items-center gap-2 rounded-md border border-primary/40 bg-primary/10 px-3 py-2 text-sm font-semibold text-primary"
@@ -171,34 +181,44 @@ export default function EngagementAdminPage() {
               <MessageCircle className="h-4 w-4" />
               Mira consultations
             </Link>
-            {[7, 30, 90].map((days) => (
-              <button
-                key={days}
-                type="button"
-                onClick={() => setSinceDays(days)}
-                className={`rounded-md border px-3 py-2 text-sm font-semibold transition ${
-                  sinceDays === days
-                    ? "border-primary bg-primary text-primary-foreground"
-                    : "border-border bg-card text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {days}d
-              </button>
-            ))}
-            {countryFilters.map((item) => (
-              <button
-                key={item.value}
-                type="button"
-                onClick={() => setCountryFilter(item.value)}
-                className={`rounded-md border px-3 py-2 text-sm font-semibold transition ${
-                  countryFilter === item.value
-                    ? "border-primary bg-primary text-primary-foreground"
-                    : "border-border bg-card text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
+            <div>
+              <div className="mb-1 text-[11px] font-semibold uppercase text-muted-foreground">Period</div>
+              <div className="flex gap-1" aria-label="Analytics period">
+                {[7, 30, 90].map((days) => (
+                  <button
+                    key={days}
+                    type="button"
+                    onClick={() => setSinceDays(days)}
+                    className={`rounded-md border px-3 py-2 text-sm font-semibold transition ${
+                      sinceDays === days
+                        ? "border-primary bg-primary text-primary-foreground"
+                        : "border-border bg-card text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    {days}d
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div>
+              <div className="mb-1 text-[11px] font-semibold uppercase text-muted-foreground">Location</div>
+              <div className="flex flex-wrap gap-1" aria-label="Visitor location">
+                {countryFilters.map((item) => (
+                  <button
+                    key={item.value}
+                    type="button"
+                    onClick={() => setCountryFilter(item.value)}
+                    className={`rounded-md border px-3 py-2 text-sm font-semibold transition ${
+                      countryFilter === item.value
+                        ? "border-primary bg-primary text-primary-foreground"
+                        : "border-border bg-card text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+            </div>
             <button
               type="button"
               onClick={load}
@@ -215,6 +235,12 @@ export default function EngagementAdminPage() {
           <section className="rounded-lg border border-destructive/40 bg-destructive/10 p-4 text-sm text-destructive">
             {error}
           </section>
+        ) : null}
+
+        {countryFilter === "non_in" ? (
+          <div className="text-xs text-muted-foreground">
+            Showing all traffic except sessions geolocated to India. Sessions with an unknown location are included.
+          </div>
         ) : null}
 
         <section className="grid gap-3 md:grid-cols-4">
@@ -262,9 +288,12 @@ export default function EngagementAdminPage() {
           </div>
 
           <div className="rounded-lg border border-border bg-card p-4">
-            <h2 className="text-sm font-semibold">Recent visitor journeys</h2>
+            <div className="flex items-center justify-between gap-3">
+              <h2 className="text-sm font-semibold">Recent visitor journeys</h2>
+              <span className="text-xs text-muted-foreground">Newest first</span>
+            </div>
             <div className="mt-4 grid gap-4">
-              {data?.sessions?.length ? data.sessions.map((session) => (
+              {recentSessions.length ? recentSessions.map((session) => (
                 <article key={session.session_id} className="rounded-md border border-border bg-background p-4">
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <div>

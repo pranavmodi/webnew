@@ -13,7 +13,7 @@ function cleanInt(value: string | null, fallback: number, min: number, max: numb
 
 export async function GET(req: NextRequest) {
   const params = req.nextUrl.searchParams;
-  const sinceDays = cleanInt(params.get("since_days"), 30, 0, 3650);
+  const sinceDays = cleanInt(params.get("since_days"), 7, 0, 3650);
   const limit = cleanInt(params.get("limit"), 100, 1, 500);
   const country = (params.get("country") || "all").slice(0, 32);
 
