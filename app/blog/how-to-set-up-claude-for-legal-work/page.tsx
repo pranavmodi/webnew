@@ -24,7 +24,7 @@ const metaTitle = "How to Set Up Claude for Legal Work";
 const pageDescription =
   "Install and configure Claude for legal work with clear data boundaries, matter separation, legal instructions, and lawyer review.";
 const pageUrl = `${SITE_URL}/blog/${slug}`;
-const heroImage = `${SITE_URL}/images/blog/claude-legal-setup/first-claude-session.webp`;
+const heroImage = `${SITE_URL}/images/blog/claude-legal-setup/claude-download.webp`;
 
 const sources = {
   video: "https://www.youtube.com/watch?v=B04_OEqqN3I",
@@ -102,9 +102,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: heroImage,
-        width: 1280,
-        height: 720,
-        alt: "Trial lawyer Yaya Ford and Masai Brown-Andrews in a first Claude setup session",
+        width: 1600,
+        height: 1006,
+        alt: "Claude download page with the Download for Windows button",
       },
     ],
   },
@@ -213,8 +213,8 @@ export default function BlogPostPage() {
               aria-label="Watch A Trial Attorney's First Claude Session on YouTube"
             >
               <Image
-                src="/images/blog/claude-legal-setup/first-claude-session.webp"
-                alt="Trial lawyer Yaya Ford and Masai Brown-Andrews in a first Claude setup session"
+                src="/images/blog/claude-legal-setup/claude-download.webp"
+                alt="Claude download page with the Download for Windows button"
                 fill
                 priority
                 sizes="(min-width: 1024px) 896px, 100vw"
@@ -227,8 +227,8 @@ export default function BlogPostPage() {
               </span>
             </a>
             <figcaption className="mt-3 text-xs leading-5 text-foreground/50">
-              Video and frames: Masai Brown-Andrews, “A Trial Attorney&apos;s First
-              Claude Session: Full Trial Prep,” YouTube.
+              Claude download step shown in Masai Brown-Andrews&apos; walkthrough,
+              “A Trial Attorney&apos;s First Claude Session: Full Trial Prep.”
             </figcaption>
           </figure>
         </section>
@@ -280,19 +280,19 @@ export default function BlogPostPage() {
               expert&apos;s qualifications for voir dire.
             </p>
 
-            <figure className="mx-auto max-w-2xl py-4">
+            <figure className="py-4">
               <Image
-                src="/images/blog/claude-legal-setup/first-session-frame.webp"
-                alt="Masai Brown-Andrews and trial lawyer Yaya Ford during the Claude setup session"
-                width={960}
-                height={540}
+                src="/images/blog/claude-legal-setup/legal-assistant-intro.webp"
+                alt="Claude responding after Yaya Ford asks it to act as her legal assistant"
+                width={1600}
+                height={824}
                 loading="eager"
                 sizes="(min-width: 1024px) 896px, 100vw"
                 className="h-auto w-full rounded-md border border-white/10"
               />
               <figcaption className="mt-3 text-xs leading-5 text-foreground/50">
-                Brown-Andrews and Ford work through her first Claude session.
-                Frame from the source video.
+                Ford begins with a plain-language description of the role she wants
+                Claude to play. Frame from the source video.
               </figcaption>
             </figure>
 
@@ -314,6 +314,21 @@ export default function BlogPostPage() {
               desired features. A law firm has another question to answer first:
               what information will this account be allowed to process?
             </p>
+            <figure className="py-4">
+              <Image
+                src="/images/blog/claude-legal-setup/claude-plan-selection.webp"
+                alt="Claude plan selection screen showing Free, Pro, and Max options"
+                width={1600}
+                height={872}
+                loading="eager"
+                sizes="(min-width: 1024px) 896px, 100vw"
+                className="h-auto w-full rounded-md border border-white/10"
+              />
+              <figcaption className="mt-3 text-xs leading-5 text-foreground/50">
+                The walkthrough compares Claude plans. A firm should define its data
+                boundary before choosing an account. Plans and prices can change.
+              </figcaption>
+            </figure>
             <div className="divide-y divide-white/10 border-y border-white/10">
               <GuideRow
                 label="Public or synthetic material"
@@ -413,6 +428,21 @@ export default function BlogPostPage() {
               and strategy out of them. Put matter-specific context inside the
               relevant private project.
             </p>
+            <figure className="py-4">
+              <Image
+                src="/images/blog/claude-legal-setup/generated-operating-instructions.webp"
+                alt="Claude generating detailed paralegal operating instructions for lawyer review"
+                width={1600}
+                height={806}
+                loading="eager"
+                sizes="(min-width: 1024px) 896px, 100vw"
+                className="h-auto w-full rounded-md border border-white/10"
+              />
+              <figcaption className="mt-3 text-xs leading-5 text-foreground/50">
+                Ford asks Claude to expand her short preferences into reviewable
+                operating instructions. Frame from the source video.
+              </figcaption>
+            </figure>
             <div className="overflow-hidden rounded-md border border-white/15 bg-[#101010]">
               <div className="border-b border-white/10 px-5 py-3 text-xs font-semibold uppercase text-primary/80">
                 Starter instructions
@@ -439,6 +469,21 @@ Do not say that legal authority has been verified unless the user confirms verif
                 personalization documentation
               </a>.
             </p>
+            <figure className="py-4">
+              <Image
+                src="/images/blog/claude-legal-setup/instructions-for-claude.webp"
+                alt="Claude General settings with the Instructions for Claude field and Save changes button"
+                width={1600}
+                height={992}
+                loading="eager"
+                sizes="(min-width: 1024px) 896px, 100vw"
+                className="h-auto w-full rounded-md border border-white/10"
+              />
+              <figcaption className="mt-3 text-xs leading-5 text-foreground/50">
+                The approved standing instructions are saved under General settings.
+                Keep matter facts out of this account-wide field.
+              </figcaption>
+            </figure>
           </section>
 
           <section id="matter-workspace" className="mt-16 scroll-mt-28 space-y-6">
@@ -500,21 +545,6 @@ Do not say that legal authority has been verified unless the user confirms verif
               cross-examination outline. Require a separate list of every claim
               that still needs verification.
             </blockquote>
-            <figure className="mx-auto max-w-2xl py-4">
-              <Image
-                src="/images/blog/claude-legal-setup/yaya-ford-frame.webp"
-                alt="Trial lawyer Yaya Ford discussing how Claude could support trial preparation"
-                width={960}
-                height={540}
-                loading="eager"
-                sizes="(min-width: 1024px) 896px, 100vw"
-                className="h-auto w-full rounded-md border border-white/10"
-              />
-              <figcaption className="mt-3 text-xs leading-5 text-foreground/50">
-                Ford describes the value she sees in faster expert-witness and
-                trial preparation. Frame from the source video.
-              </figcaption>
-            </figure>
             <p>
               The test is not whether the output sounds sophisticated. It is
               whether the system preserves the record, exposes uncertainty, and
