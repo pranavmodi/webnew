@@ -1,5 +1,7 @@
 name: Extract Claude legal video frames
 
+# One-time source-frame extraction for the Claude legal setup article.
+
 on:
   push:
     paths:
