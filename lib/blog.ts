@@ -12,6 +12,18 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    href: "/blog/how-to-set-up-claude-for-legal-work",
+    slug: "how-to-set-up-claude-for-legal-work",
+    title: "A Trial Lawyer's First Claude Session: How to Set Up Claude for Legal Work",
+    description:
+      "A step-by-step guide to installing and configuring Claude for legal work, informed by a trial lawyer's first session and current legal-data safeguards.",
+    author: "Pranav Modi",
+    date: "August 26, 2026",
+    readTime: "9 min read",
+    category: "AI Governance",
+    tags: ["Legal AI", "AI Strategy", "For PI Firms"],
+  },
+  {
     href: "/blog/ai-for-small-personal-injury-law-firms",
     slug: "ai-for-small-personal-injury-law-firms",
     title: "How a Small PI Firm Built Its Own AI Advantage Without Giving Up Control",
