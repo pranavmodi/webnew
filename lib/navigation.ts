@@ -35,6 +35,10 @@ export const caseStudiesLinks = [
 
 export const blogLinks = [
   {
+    href: "/blog/ai-transformation-one-workflow-at-a-time",
+    label: "AI Transformation, One Workflow at a Time",
+  },
+  {
     href: "/blog/ai-for-small-personal-injury-law-firms",
     label: "A Small PI Firm's AI Advantage",
   },

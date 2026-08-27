@@ -170,6 +170,11 @@ const caseStudies = [
 
 const blogPosts = [
   {
+    href: "/blog/ai-transformation-one-workflow-at-a-time",
+    title: "How to Eat the AI Transformation Elephant? One Workflow at a Time",
+    tag: "AI Transformation",
+  },
+  {
     href: "/blog/ai-for-small-personal-injury-law-firms",
     title: "How a Small PI Firm Built Its Own AI Advantage Without Giving Up Control",
     tag: "Practical AI Systems",

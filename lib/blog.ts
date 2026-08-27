@@ -12,6 +12,18 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    href: "/blog/ai-transformation-one-workflow-at-a-time",
+    slug: "ai-transformation-one-workflow-at-a-time",
+    title: "How to Eat the AI Transformation Elephant? One Workflow at a Time",
+    description:
+      "AI transformation becomes manageable when PI firms improve one measurable workflow at a time and carry what they learn into the next.",
+    author: "Pranav Modi",
+    date: "August 27, 2026",
+    readTime: "11 min read",
+    category: "AI Strategy",
+    tags: ["Legal AI", "AI Strategy", "For PI Firms"],
+  },
+  {
     href: "/blog/how-to-set-up-claude-for-legal-work",
     slug: "how-to-set-up-claude-for-legal-work",
     title: "A Trial Lawyer's First Claude Session: How to Set Up Claude for Legal Work",
