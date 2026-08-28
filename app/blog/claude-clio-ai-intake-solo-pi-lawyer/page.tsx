@@ -145,30 +145,30 @@ export default function BlogPostPage() {
       <JsonLd data={structuredData} />
 
       <header className="border-b border-primary/20 bg-[#050807]">
-        <div className="mx-auto max-w-5xl px-4 pb-12 pt-20 sm:px-6 sm:pb-16 sm:pt-24">
-          <div className="max-w-4xl">
-            <div className="flex items-center gap-3 text-xs text-foreground/65">
-              <Link href="/blog" className="transition hover:text-primary">Blog</Link>
-              <span aria-hidden="true" className="text-primary/50">/</span>
-              <span>AI Operations</span>
-            </div>
-            <p className="mt-8 text-xs font-semibold uppercase text-[#00ff41]">
-              Inside a working solo-firm system
-            </p>
-            <h1 className="mt-5 max-w-4xl text-4xl font-semibold leading-[1.08] text-white sm:text-5xl lg:text-[3.75rem]">
-              How a Solo PI Lawyer Used Claude and Clio to Cut Intake Work by Roughly 90%
-            </h1>
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-foreground/80 sm:text-xl">
-              Dictated facts become a structured matter, document packet, and next-step task list. The lawyer remains the reviewer.
-            </p>
-            <div className="mt-7 flex flex-wrap gap-x-4 gap-y-2 text-xs text-foreground/60">
-              <span>{post.author}</span><span aria-hidden="true">/</span>
-              <time dateTime="2026-08-28">{post.date}</time><span aria-hidden="true">/</span>
-              <span>{post.readTime}</span>
-            </div>
+        <div className="mx-auto max-w-4xl px-4 pt-20 sm:px-6 sm:pt-24">
+          <div className="flex items-center gap-3 text-xs text-foreground/65">
+            <Link href="/blog" className="transition hover:text-primary">Blog</Link>
+            <span aria-hidden="true" className="text-primary/50">/</span>
+            <span>AI Operations</span>
           </div>
+          <p className="mt-8 text-xs font-semibold uppercase text-[#00ff41]">
+            Inside a working solo-firm system
+          </p>
+          <h1 className="mt-5 max-w-4xl text-4xl font-semibold leading-[1.08] text-white sm:text-5xl lg:text-[3.75rem]">
+            How a Solo PI Lawyer Used Claude and Clio to Cut Intake Work by Roughly 90%
+          </h1>
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-foreground/80 sm:text-xl">
+            Dictated facts become a structured matter, document packet, and next-step task list. The lawyer remains the reviewer.
+          </p>
+          <div className="mt-7 flex flex-wrap gap-x-4 gap-y-2 text-xs text-foreground/60">
+            <span>{post.author}</span><span aria-hidden="true">/</span>
+            <time dateTime="2026-08-28">{post.date}</time><span aria-hidden="true">/</span>
+            <span>{post.readTime}</span>
+          </div>
+        </div>
 
-          <div className="mt-12 border-y border-white/10 py-6">
+        <div className="mx-auto mt-12 max-w-5xl px-4 pb-12 sm:px-6 sm:pb-16">
+          <div className="border-y border-white/10 py-6">
             <ol className="grid gap-0 sm:grid-cols-5">
               {workflow.map((step, index) => {
                 const Icon = step.icon;
