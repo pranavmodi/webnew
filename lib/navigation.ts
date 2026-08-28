@@ -35,6 +35,10 @@ export const caseStudiesLinks = [
 
 export const blogLinks = [
   {
+    href: "/blog/claude-clio-ai-intake-solo-pi-lawyer",
+    label: "Claude + Clio for PI Intake",
+  },
+  {
     href: "/blog/ai-transformation-one-workflow-at-a-time",
     label: "AI Transformation, One Workflow at a Time",
   },

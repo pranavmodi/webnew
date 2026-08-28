@@ -12,6 +12,18 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    href: "/blog/claude-clio-ai-intake-solo-pi-lawyer",
+    slug: "claude-clio-ai-intake-solo-pi-lawyer",
+    title: "How a Solo PI Lawyer Used Claude and Clio to Cut Intake Work by Roughly 90%",
+    description:
+      "How a solo PI lawyer uses Claude and Clio to turn dictated intake facts into matters, documents, tasks, and review-ready work.",
+    author: "Pranav Modi",
+    date: "August 28, 2026",
+    readTime: "9 min read",
+    category: "AI Operations",
+    tags: ["Legal AI", "Intake", "For PI Firms"],
+  },
+  {
     href: "/blog/ai-transformation-one-workflow-at-a-time",
     slug: "ai-transformation-one-workflow-at-a-time",
     title: "How to Eat the AI Transformation Elephant? One Workflow at a Time",

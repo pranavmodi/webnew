@@ -170,6 +170,11 @@ const caseStudies = [
 
 const blogPosts = [
   {
+    href: "/blog/claude-clio-ai-intake-solo-pi-lawyer",
+    title: "How a Solo PI Lawyer Used Claude and Clio to Cut Intake Work by Roughly 90%",
+    tag: "Claude + Clio",
+  },
+  {
     href: "/blog/ai-transformation-one-workflow-at-a-time",
     title: "How to Eat the AI Transformation Elephant? One Workflow at a Time",
     tag: "AI Transformation",
