@@ -170,6 +170,11 @@ const caseStudies = [
 
 const blogPosts = [
   {
+    href: "/blog/how-small-pi-firms-use-ai-2026",
+    title: "How Lawyers Are Actually Using AI in 2026: A Small PI Firm Owner's Guide",
+    tag: "Small-Firm AI Guide",
+  },
+  {
     href: "/blog/claude-clio-ai-intake-solo-pi-lawyer",
     title: "How a Solo PI Lawyer Used Claude and Clio to Cut Intake Work by Roughly 90%",
     tag: "Claude + Clio",

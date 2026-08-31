@@ -35,6 +35,10 @@ export const caseStudiesLinks = [
 
 export const blogLinks = [
   {
+    href: "/blog/how-small-pi-firms-use-ai-2026",
+    label: "How Small PI Firms Can Use AI in 2026",
+  },
+  {
     href: "/blog/claude-clio-ai-intake-solo-pi-lawyer",
     label: "Claude + Clio for PI Intake",
   },

@@ -12,6 +12,18 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    href: "/blog/how-small-pi-firms-use-ai-2026",
+    slug: "how-small-pi-firms-use-ai-2026",
+    title: "How Lawyers Are Actually Using AI in 2026: A Small PI Firm Owner's Guide",
+    description:
+      "How solo and small PI firms can use AI for intake, documents, research, monitoring, and client service without giving up control.",
+    author: "Pranav Modi",
+    date: "August 31, 2026",
+    readTime: "11 min read",
+    category: "AI Operations",
+    tags: ["Legal AI", "AI Strategy", "For PI Firms"],
+  },
+  {
     href: "/blog/claude-clio-ai-intake-solo-pi-lawyer",
     slug: "claude-clio-ai-intake-solo-pi-lawyer",
     title: "How a Solo PI Lawyer Used Claude and Clio to Cut Intake Work by Roughly 90%",
