@@ -396,6 +396,17 @@ export default function Page() {
           </div>
         </section>
 
+        <section className="mt-16 border-y border-white/15 py-10">
+          <p className="text-xs font-semibold uppercase text-primary">What this looks like in practice</p>
+          <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">Communication systems built around the next response</h2>
+          <p className="mt-5 max-w-3xl">
+            For Precise Imaging, a medical-imaging operation handling more than 600 emails a day, we built email triage that reads, tags, routes, and prepares replies, along with automated status responses and proactive communication tools. Routine questions move quickly, while exceptions reach staff with the relevant context. The same principle applies inside a PI firm: make routine movement visible and bring human attention to the moments where trust is at risk.
+          </p>
+          <Link href="/healthcare-case-study" className="mt-6 inline-flex items-center gap-2 font-semibold text-primary underline decoration-primary/35 underline-offset-4 hover:text-primary/80">
+            Read the Precise Imaging case study <ArrowRight className="h-4 w-4" />
+          </Link>
+        </section>
+
         <section className="mt-16 border-y border-primary/30 py-10">
           <p className="text-xs font-semibold uppercase text-primary">Turn review signals into operating changes</p>
           <h2 className="mt-4 text-3xl font-semibold text-white">Find the workflow that is costing your firm trust.</h2>
