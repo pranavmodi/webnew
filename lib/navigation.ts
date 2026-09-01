@@ -34,6 +34,7 @@ export const caseStudiesLinks = [
 ];
 
 export const blogLinks = [
+  { href: "/blog/pi-law-firm-reviews-client-trust", label: "What PI Clients Value" },
   {
     href: "/blog/how-small-pi-firms-use-ai-2026",
     label: "How Small PI Firms Can Use AI in 2026",

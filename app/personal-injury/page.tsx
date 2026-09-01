@@ -170,6 +170,11 @@ const caseStudies = [
 
 const blogPosts = [
   {
+    href: "/blog/pi-law-firm-reviews-client-trust",
+    title: "What 7,383 PI Law Firm Reviews Reveal About Client Trust",
+    tag: "Client Trust Research",
+  },
+  {
     href: "/blog/how-small-pi-firms-use-ai-2026",
     title: "How Lawyers Are Actually Using AI in 2026: A Small PI Firm Owner's Guide",
     tag: "Small-Firm AI Guide",

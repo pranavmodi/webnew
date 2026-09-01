@@ -12,6 +12,18 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    href: "/blog/pi-law-firm-reviews-client-trust",
+    slug: "pi-law-firm-reviews-client-trust",
+    title: "What 7,383 PI Law Firm Reviews Reveal About Client Trust",
+    description:
+      "An analysis of 7,383 PI law firm reviews shows how communication, care, access, delays, and outcomes shape client trust.",
+    author: "Pranav Modi",
+    date: "September 1, 2026",
+    readTime: "12 min read",
+    category: "Industry Analysis",
+    tags: ["For PI Firms", "Client Communication", "Industry Analysis"],
+  },
+  {
     href: "/blog/how-small-pi-firms-use-ai-2026",
     slug: "how-small-pi-firms-use-ai-2026",
     title: "How Lawyers Are Actually Using AI in 2026: A Small PI Firm Owner's Guide",
