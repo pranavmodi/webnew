@@ -34,6 +34,10 @@ export const caseStudiesLinks = [
 ];
 
 export const blogLinks = [
+  {
+    href: "/blog/ai-cannot-fix-broken-pi-workflow",
+    label: "Fix the Workflow Before AI",
+  },
   { href: "/blog/pi-law-firm-reviews-client-trust", label: "What PI Clients Value" },
   {
     href: "/blog/how-small-pi-firms-use-ai-2026",

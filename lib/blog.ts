@@ -12,6 +12,18 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    href: "/blog/ai-cannot-fix-broken-pi-workflow",
+    slug: "ai-cannot-fix-broken-pi-workflow",
+    title: "AI Cannot Fix a Broken PI Firm Workflow",
+    description:
+      "Why PI firms should map intake, data, handoffs, and human review before automating with AI.",
+    author: "Pranav Modi",
+    date: "September 3, 2026",
+    readTime: "9 min read",
+    category: "AI Operations",
+    tags: ["Legal AI", "AI Strategy", "For PI Firms"],
+  },
+  {
     href: "/blog/pi-law-firm-reviews-client-trust",
     slug: "pi-law-firm-reviews-client-trust",
     title: "What 7,383 PI Law Firm Reviews Reveal About Client Trust",

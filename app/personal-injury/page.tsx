@@ -170,6 +170,11 @@ const caseStudies = [
 
 const blogPosts = [
   {
+    href: "/blog/ai-cannot-fix-broken-pi-workflow",
+    title: "AI Cannot Fix a Broken PI Firm Workflow",
+    tag: "AI Operations",
+  },
+  {
     href: "/blog/pi-law-firm-reviews-client-trust",
     title: "What 7,383 PI Law Firm Reviews Reveal About Client Trust",
     tag: "Client Trust Research",
