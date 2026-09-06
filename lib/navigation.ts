@@ -35,6 +35,10 @@ export const caseStudiesLinks = [
 
 export const blogLinks = [
   {
+    href: "/blog/ai-governance-101-personal-injury-firms",
+    label: "AI Governance 101 for PI Firms",
+  },
+  {
     href: "/blog/ai-cannot-fix-broken-pi-workflow",
     label: "Fix the Workflow Before AI",
   },

@@ -12,6 +12,18 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    href: "/blog/ai-governance-101-personal-injury-firms",
+    slug: "ai-governance-101-personal-injury-firms",
+    title: "AI Governance 101 for Small Personal Injury Firms",
+    description:
+      "A plain-English guide to approved AI tools, client information, human review, vendor risk, and practical oversight for solo and small PI firms.",
+    author: "Pranav Modi",
+    date: "September 6, 2026",
+    readTime: "11 min read",
+    category: "AI Governance",
+    tags: ["Legal AI", "AI Strategy", "For PI Firms"],
+  },
+  {
     href: "/blog/ai-cannot-fix-broken-pi-workflow",
     slug: "ai-cannot-fix-broken-pi-workflow",
     title: "AI Cannot Fix a Broken PI Firm Workflow",
