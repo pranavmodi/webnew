@@ -18,6 +18,7 @@ const contents = [
   { id: "why-governance", label: "Why AI needs governance" },
   { id: "what-information-governance-means", label: "What information governance means" },
   { id: "where-information-lives", label: "Where firm information lives" },
+  { id: "rot-information", label: "Why ROT matters for AI" },
   { id: "know-what-you-have", label: "Start by knowing what you have" },
   { id: "ai-ready-information", label: "What makes information AI-ready" },
   { id: "defensible-disposal", label: "Keep and delete information carefully" },
@@ -37,6 +38,11 @@ const faqs = [
     question: "Why does information governance matter for AI?",
     answer:
       "AI relies on the information it can reach. If that information is duplicated, outdated, misclassified, incomplete, or available to the wrong people, AI can amplify those problems. Governance creates a smaller and more trustworthy information base.",
+  },
+  {
+    question: "What is ROT information in a law firm?",
+    answer:
+      "ROT means redundant, obsolete, and trivial information. In a PI firm, that can include duplicate medical records, superseded drafts and instructions, temporary downloads, test files, convenience copies, and other material that no longer has a business or legal purpose. Whether information is truly ROT must be determined under the firm's retention rules, legal holds, client obligations, and the context of the matter.",
   },
   {
     question: "Does AI-ready information mean connecting AI to every firm system?",
@@ -70,6 +76,7 @@ export const metadata: Metadata = {
     "law firm records management",
     "AI-ready law firm data",
     "defensible disposal law firm",
+    "ROT data law firm",
   ],
   alternates: { canonical: pageUrl },
   openGraph: {
@@ -243,6 +250,29 @@ export default function BlogPostPage() {
             </p>
           </section>
 
+          <section id="rot-information" className="mt-16 scroll-mt-28 space-y-6">
+            <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl">ROT is expensive before it becomes risky</h2>
+            <p>
+              Forde uses a useful records-management term: <strong className="font-semibold text-white">ROT</strong>, meaning redundant, obsolete, and trivial information. It is the material a firm keeps because nobody has decided whether it still deserves to exist.
+            </p>
+            <div className="divide-y divide-primary/20 border-y border-primary/25">
+              {[
+                ["Redundant", "Duplicate medical records, repeated email attachments, copied matter folders, and multiple versions stored without a clear controlling record."],
+                ["Obsolete", "Superseded drafts, expired instructions, old contact lists, former-vendor exports, and workflow documents that no longer describe how the firm works."],
+                ["Trivial", "Temporary downloads, test files, transitory notices, and convenience copies that have no continuing legal or business value."],
+              ].map(([title, text], index) => <div key={title} className="grid gap-2 py-5 sm:grid-cols-[3.5rem_10rem_1fr] sm:items-baseline"><span className="text-sm font-semibold text-primary">{String(index + 1).padStart(2, "0")}</span><h3 className="font-semibold text-white">{title}</h3><p>{text}</p></div>)}
+            </div>
+            <p>
+              ROT makes ordinary work slower. People search through more files, storage and migrations cost more, and sensitive information remains exposed longer than necessary. AI magnifies the problem: duplicates can give one fact artificial weight, obsolete instructions can produce the wrong answer, and trivial material consumes retrieval and review time without improving the work.
+            </p>
+            <div className="flex gap-4 border-y border-amber-400/25 bg-amber-400/[0.04] py-6">
+              <CircleAlert className="mt-1 size-6 shrink-0 text-amber-300" aria-hidden="true" />
+              <p className="text-foreground/90">
+                ROT is a review category, not permission to delete. A duplicate may contain unique annotations, an old draft may matter to a dispute, and a seemingly trivial message may be subject to a hold. Identify candidates first; apply retention rules, exceptions, review, and approval before disposal.
+              </p>
+            </div>
+          </section>
+
           <section id="know-what-you-have" className="mt-16 scroll-mt-28 space-y-6">
             <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl">Start with visibility, not a perfect policy</h2>
             <p>
@@ -357,7 +387,7 @@ export default function BlogPostPage() {
             <div className="divide-y divide-primary/20 border-y border-primary/25">
               {[
                 ["Week 1", "Map the repositories", "List where case and firm information lives, who owns each location, who can access it, and which vendors connect to it."],
-                ["Week 2", "Choose one target", "Select one closed-matter group, shared folder, mailbox, or storage list. Sample it to understand volume, duplicates, ownership, and classification gaps."],
+                ["Week 2", "Find the ROT", "Select one closed-matter group, shared folder, mailbox, or storage list. Sample it for redundant, obsolete, and trivial material, then separate clear candidates from records that need legal or operational judgment."],
                 ["Week 3", "Apply the rules", "Confirm the relevant retention policy, triggers, holds, approvals, and exceptions. Define what may be corrected, archived, transferred, or proposed for disposal."],
                 ["Week 4", "Complete one controlled action", "Carry out an approved cleanup, preserve the audit record, measure the result, and decide what the next manageable group should be."],
               ].map(([week, title, text]) => <div key={week} className="grid gap-2 py-6 sm:grid-cols-[6rem_12rem_1fr] sm:items-baseline"><span className="text-sm font-semibold text-primary">{week}</span><h3 className="font-semibold text-white">{title}</h3><p>{text}</p></div>)}
