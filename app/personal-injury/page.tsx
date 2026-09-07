@@ -170,6 +170,11 @@ const caseStudies = [
 
 const blogPosts = [
   {
+    href: "/blog/ai-governance-roi-small-pi-firms",
+    title: "The Business Case for AI Governance",
+    tag: "AI Governance & ROI",
+  },
+  {
     href: "/blog/ai-governance-101-personal-injury-firms",
     title: "AI Governance 101 for Small Personal Injury Firms",
     tag: "AI Governance",
