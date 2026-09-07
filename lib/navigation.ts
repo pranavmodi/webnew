@@ -36,7 +36,7 @@ export const caseStudiesLinks = [
 export const blogLinks = [
   {
     href: "/blog/ai-governance-roi-small-pi-firms",
-    label: "The Business Case for AI Governance",
+    label: "Information Governance Before AI",
   },
   {
     href: "/blog/ai-governance-101-personal-injury-firms",

@@ -14,13 +14,13 @@ export const blogPosts: BlogPost[] = [
   {
     href: "/blog/ai-governance-roi-small-pi-firms",
     slug: "ai-governance-roi-small-pi-firms",
-    title: "The Business Case for AI Governance in a Small PI Firm",
+    title: "Information Governance: The First Step Before AI for a Small PI Firm",
     description:
-      "How practical governance protects clients, reduces waste, improves adoption, and turns AI experiments into measurable returns.",
+      "A practical guide to finding, organizing, retaining, and safely disposing of PI firm information before connecting it to AI.",
     author: "Pranav Modi",
     date: "September 7, 2026",
-    readTime: "11 min read",
-    category: "AI Governance",
+    readTime: "12 min read",
+    category: "Information Governance",
     tags: ["Legal AI", "AI Strategy", "For PI Firms"],
   },
   {
