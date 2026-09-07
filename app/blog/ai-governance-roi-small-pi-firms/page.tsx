@@ -226,7 +226,7 @@ export default function BlogPostPage() {
           <section id="where-information-lives" className="mt-16 scroll-mt-28 space-y-6">
             <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl">The case-management system is not the whole file</h2>
             <p>
-              The episode emphasizes cross-platform governance because information rarely lives in one repository. That is true even in a small PI firm.
+              A small PI firm&apos;s information rarely lives in one repository. The case-management system may be the center of the matter, but it is seldom the whole record.
             </p>
             <div className="overflow-x-auto border-y border-white/10">
               <table className="w-full min-w-[720px] border-collapse text-left">
@@ -243,17 +243,17 @@ export default function BlogPostPage() {
               </table>
             </div>
             <p>
-              Full integration is not always necessary. Giles notes that sometimes a pointer, ownership record, and review date create enough visibility. Building an expensive connection to every system can cost more than the problem warrants.
+              Full integration is not always necessary. Sometimes a pointer, ownership record, and review date create enough visibility. Building an expensive connection to every system can cost more than the problem warrants.
             </p>
             <p>
-              <a href="https://mission.getpossibleminds.com/podcasts/7838?view=explained" target="_blank" rel="noreferrer" className="text-primary underline decoration-primary/35 underline-offset-4">Tony Forde&apos;s discussion of dark data and ROT</a> adds an important warning: the official document or case-management system may contain only part of the firm&apos;s working record. OneDrive, SharePoint, email, collaboration tools, personal folders, and AI products become a hidden attic of drafts, copies, and client information nobody is actively managing.
+              The official document or case-management system may contain only part of the firm&apos;s working record. OneDrive, SharePoint, email, collaboration tools, personal folders, and AI products can become a hidden attic of drafts, copies, and client information nobody is actively managing.
             </p>
           </section>
 
           <section id="rot-information" className="mt-16 scroll-mt-28 space-y-6">
             <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl">ROT is expensive before it becomes risky</h2>
             <p>
-              Forde uses a useful records-management term: <strong className="font-semibold text-white">ROT</strong>, meaning redundant, obsolete, and trivial information. It is the material a firm keeps because nobody has decided whether it still deserves to exist.
+              Records professionals use a useful term for this material: <strong className="font-semibold text-white">ROT</strong>, meaning redundant, obsolete, and trivial information. It is what a firm keeps because nobody has decided whether it still deserves to exist.
             </p>
             <div className="divide-y divide-primary/20 border-y border-primary/25">
               {[
@@ -276,7 +276,7 @@ export default function BlogPostPage() {
           <section id="know-what-you-have" className="mt-16 scroll-mt-28 space-y-6">
             <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl">Start with visibility, not a perfect policy</h2>
             <p>
-              The episode&apos;s first recommendation is simple: know what you have, where it is, and who is responsible. Without that visibility, governance is guesswork.
+              The first step is simple: know what you have, where it is, and who is responsible. Without that visibility, governance is guesswork.
             </p>
             <p>
               Begin with one information map. It can be a spreadsheet with a row for each major repository and columns for the owner, information categories, active users, connected vendors, authoritative source, retention basis, known holds, export method, and next review date.
@@ -311,7 +311,7 @@ export default function BlogPostPage() {
               Poor information does not merely create compliance risk. It makes AI less useful. The system may retrieve an old demand, treat duplicates as corroboration, expose a restricted matter, or produce an answer that takes longer to verify than the original task.
             </p>
             <p>
-              Classification also needs supervision. Software can identify predictable patterns such as phone numbers more easily than it can determine whether a document is authoritative, privileged, superseded, or connected to the right legal issue. Forde cautions that automated classification can produce both false positives and false negatives. A practical system begins with examples and rules supplied by people, uses the machine to assist, and samples the result before relying on it at scale.
+              Classification also needs supervision. Software can identify predictable patterns such as phone numbers more easily than it can determine whether a document is authoritative, privileged, superseded, or connected to the right legal issue. Automated classification can produce both false positives and false negatives. A practical system begins with examples and rules supplied by people, uses the machine to assist, and samples the result before relying on it at scale.
             </p>
           </section>
 
@@ -344,7 +344,7 @@ export default function BlogPostPage() {
           <section id="audit-trail" className="mt-16 scroll-mt-28 space-y-6">
             <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl">A written policy is not proof that it was followed</h2>
             <p>
-              A policy says what should happen. An audit trail shows what did happen. The episode treats that distinction as central to defensibility.
+              A policy says what should happen. An audit trail shows what did happen. That distinction is central to defensibility.
             </p>
             <div className="flex gap-4 border-y border-primary/25 py-6">
               <FileCheck2 className="mt-1 size-6 shrink-0 text-primary" aria-hidden="true" />
@@ -361,7 +361,7 @@ export default function BlogPostPage() {
           <section id="business-return" className="mt-16 scroll-mt-28 space-y-6">
             <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl">Where the business return comes from</h2>
             <p>
-              Information governance is often described as defensive work. The episode makes a more useful argument: it can also produce a measurable return.
+              Information governance is often described as defensive work. It can also produce a measurable return.
             </p>
             <div className="grid gap-px bg-white/10 sm:grid-cols-2">
               {[
@@ -393,10 +393,10 @@ export default function BlogPostPage() {
               ].map(([week, title, text]) => <div key={week} className="grid gap-2 py-6 sm:grid-cols-[6rem_12rem_1fr] sm:items-baseline"><span className="text-sm font-semibold text-primary">{week}</span><h3 className="font-semibold text-white">{title}</h3><p>{text}</p></div>)}
             </div>
             <p>
-              Giles advises firms not to let perfection prevent useful progress. His suggested pattern is to choose one overdue or clearly defined group, get the right approval, complete the work, and make the result visible. A finished, defensible improvement creates more confidence than an ambitious policy that changes nothing.
+              Do not let perfection prevent useful progress. Choose one overdue or clearly defined group, get the right approval, complete the work, and make the result visible. A finished, defensible improvement creates more confidence than an ambitious policy that changes nothing.
             </p>
             <p>
-              Forde reaches the same conclusion from an adoption perspective: one matter is not too small, and one practice group is not too large. Start where people already work, show them what the information review found, and use a visible result to recruit the next internal champion.
+              For an initial pilot, one matter is not too small and one practice group is not too large. Start where people already work, show them what the information review found, and use a visible result to recruit the next internal champion.
             </p>
             <p className="text-xl leading-9 text-foreground/95">
               Your first AI-readiness project may not involve an AI model at all. It may be learning what your firm knows, where that knowledge lives, and which parts can be trusted.
