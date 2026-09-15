@@ -12,6 +12,18 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    href: "/blog/great-ai-filter-personal-injury-firms",
+    slug: "great-ai-filter-personal-injury-firms",
+    title: "The Great AI Filter Is Here: Why Some PI Firms Will Pull Ahead",
+    description:
+      "Why AI advantage depends on reorganizing PI firm workflows, roles, data, and decisions rather than merely buying better legal technology.",
+    author: "Pranav Modi",
+    date: "September 15, 2026",
+    readTime: "9 min read",
+    category: "AI Strategy",
+    tags: ["Legal AI", "AI Strategy", "For PI Firms"],
+  },
+  {
     href: "/blog/ai-governance-roi-small-pi-firms",
     slug: "ai-governance-roi-small-pi-firms",
     title: "Information Governance: The First Step Before AI for a Small PI Firm",

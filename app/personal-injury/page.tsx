@@ -170,6 +170,11 @@ const caseStudies = [
 
 const blogPosts = [
   {
+    href: "/blog/great-ai-filter-personal-injury-firms",
+    title: "The Great AI Filter Is Here: Why Some PI Firms Will Pull Ahead",
+    tag: "AI Strategy",
+  },
+  {
     href: "/blog/ai-governance-roi-small-pi-firms",
     title: "Information Governance Before AI",
     tag: "Information Governance",

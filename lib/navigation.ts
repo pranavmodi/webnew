@@ -35,6 +35,10 @@ export const caseStudiesLinks = [
 
 export const blogLinks = [
   {
+    href: "/blog/great-ai-filter-personal-injury-firms",
+    label: "The Great AI Filter",
+  },
+  {
     href: "/blog/ai-governance-roi-small-pi-firms",
     label: "Information Governance Before AI",
   },
