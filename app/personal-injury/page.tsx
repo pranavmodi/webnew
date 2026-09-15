@@ -171,7 +171,7 @@ const caseStudies = [
 const blogPosts = [
   {
     href: "/blog/great-ai-filter-personal-injury-firms",
-    title: "The Great AI Filter Is Here: Why Some PI Firms Will Pull Ahead",
+    title: "The Great AI Filter Is Here: Not All Firms Will Get Through",
     tag: "AI Strategy",
   },
   {

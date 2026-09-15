@@ -14,7 +14,7 @@ export const blogPosts: BlogPost[] = [
   {
     href: "/blog/great-ai-filter-personal-injury-firms",
     slug: "great-ai-filter-personal-injury-firms",
-    title: "The Great AI Filter Is Here: Why Some PI Firms Will Pull Ahead",
+    title: "The Great AI Filter Is Here: Not All Firms Will Get Through",
     description:
       "Why AI advantage depends on reorganizing PI firm workflows, roles, data, and decisions rather than merely buying better legal technology.",
     author: "Pranav Modi",

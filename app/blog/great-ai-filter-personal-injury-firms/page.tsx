@@ -9,7 +9,7 @@ import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
 
 const slug = "great-ai-filter-personal-injury-firms";
-const pageTitle = "The Great AI Filter Is Here: Why Some PI Firms Will Pull Ahead";
+const pageTitle = "The Great AI Filter Is Here: Not All Firms Will Get Through";
 const description =
   "Why AI advantage depends on reorganizing PI firm workflows, roles, data, and decisions rather than merely buying better legal technology.";
 const pageUrl = `${SITE_URL}/blog/${slug}`;
