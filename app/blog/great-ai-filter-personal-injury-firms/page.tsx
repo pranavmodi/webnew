@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Network, Workflow } from "lucide-react";
+import { ArrowRight, Network } from "lucide-react";
 
 import ClickBeacon from "@/components/analytics/click-beacon";
 import { BlogTableOfContents } from "@/components/blog/table-of-contents";
@@ -11,7 +11,7 @@ import { SITE_NAME, SITE_URL } from "@/lib/constants";
 const slug = "great-ai-filter-personal-injury-firms";
 const pageTitle = "The Great AI Filter Is Here: Not All Firms Will Get Through";
 const description =
-  "Why AI advantage depends on reorganizing PI firm workflows, roles, data, and decisions rather than merely buying better legal technology.";
+  "Why AI adoption challenges the habits and relationships that made PI firms successful, and what architectural knowledge explains about change.";
 const pageUrl = `${SITE_URL}/blog/${slug}`;
 
 const contents = [
@@ -19,8 +19,8 @@ const contents = [
   { id: "why-awareness-is-not-enough", label: "Why awareness is not enough" },
   { id: "architectural-knowledge", label: "What architectural knowledge means" },
   { id: "intake-example", label: "The intake example" },
-  { id: "operating-architecture", label: "What the new architecture requires" },
-  { id: "small-firm-advantage", label: "The small-firm advantage" },
+  { id: "operating-architecture", label: "What the filter selects" },
+  { id: "small-firm-advantage", label: "One practical implication" },
   { id: "research-basis", label: "Research basis" },
 ];
 
@@ -146,9 +146,9 @@ export default function BlogPostPage() {
 
         <section className="mx-auto max-w-4xl px-4 pt-12 sm:px-6 sm:pt-16">
           <div className="border-y border-primary/30 py-8">
-            <p className="text-xs font-semibold uppercase text-primary/80">In plain English</p>
+            <p className="text-xs font-semibold uppercase text-primary/80">The central idea</p>
             <p className="mt-4 text-xl leading-9 text-foreground/95 sm:text-2xl sm:leading-10">
-              The great AI filter will separate firms by their ability to reorganize, not by their ability to subscribe. AI changes who does the first pass, when a human intervenes, where information moves, and how performance is measured. Firms that redesign those connections will improve with every case. Firms that preserve the old structure will accumulate tools without gaining a reliable operating advantage.
+              AI changes who does the first pass, when a human intervenes, where information moves, and how performance is measured. Its value depends on a firm&apos;s ability to rethink those connections. The habits that made an organization successful can also make that change difficult, even when its leaders understand the technology.
             </p>
           </div>
         </section>
@@ -165,7 +165,7 @@ export default function BlogPostPage() {
               At the second firm, the owner chooses one workflow. The team maps every handoff, assigns ownership, gives the AI only the information it needs, defines when a human takes over, and measures the result. Each correction improves the workflow for the next matter.
             </p>
             <p>
-              The difference is not model intelligence. It is organizational intelligence.
+              The same technology has entered two very different organizations. What happens next depends on the relationships, habits, and decisions surrounding it.
             </p>
           </section>
 
@@ -201,20 +201,20 @@ export default function BlogPostPage() {
               César Hidalgo&apos;s <a href="https://cesarhidalgo.com/books" target="_blank" rel="noreferrer" className="text-primary underline decoration-primary/35 underline-offset-4"><em>The Infinite Alphabet: And the Laws of Knowledge</em></a> examines how knowledge grows, moves, and decays. In <a href="https://cesarhidalgo.com/knowledge_course" target="_blank" rel="noreferrer" className="text-primary underline decoration-primary/35 underline-offset-4">his course built around the book</a>, Hidalgo connects learning curves and disruptive innovation with the difficulty of moving between them. One reason for that difficulty is architectural knowledge.
             </p>
             <p>
-              Rebecca Henderson and Kim Clark gave the term its influential management meaning. Their <a href="https://doi.org/10.2307/2393549" target="_blank" rel="noreferrer" className="text-primary underline decoration-primary/35 underline-offset-4">1990 study of architectural innovation</a> distinguished knowledge of individual components from knowledge of how the components fit together. They found that those relationships become embedded in an organization&apos;s structures and information-processing routines, making architectural change unusually difficult to recognize and execute.
+              Rebecca Henderson and Kim Clark explored this problem in their <a href="https://doi.org/10.2307/2393549" target="_blank" rel="noreferrer" className="text-primary underline decoration-primary/35 underline-offset-4">1990 study of architectural innovation</a>. They studied companies making the equipment used to print tiny circuit patterns on semiconductor chips. Established manufacturers understood the underlying technology. Yet some struggled when new designs changed how familiar parts worked together.
             </p>
-            <div className="grid gap-px bg-white/10 sm:grid-cols-2">
-              <div className="bg-[#050807] p-6">
-                <p className="text-xs font-semibold uppercase text-primary/80">Component knowledge</p>
-                <h3 className="mt-3 text-xl font-semibold text-white">What each part can do</h3>
-                <p className="mt-3 text-sm leading-6">The chatbot, CRM, phone system, summarizer, case-management platform, intake specialist, case manager, and lawyer.</p>
-              </div>
-              <div className="bg-[#050807] p-6">
-                <p className="text-xs font-semibold uppercase text-primary/80">Architectural knowledge</p>
-                <h3 className="mt-3 text-xl font-semibold text-white">How the parts work together</h3>
-                <p className="mt-3 text-sm leading-6">Ownership, handoffs, permissions, escalation, source of truth, review, incentives, feedback, and accountability.</p>
-              </div>
-            </div>
+            <p>
+              Their distinction was simple. <strong className="text-white">Component knowledge</strong> is knowing how each part works. <strong className="text-white">Architectural knowledge</strong> is knowing how those parts depend on one another. A company could retain its expertise in the parts while losing its advantage when the connections changed.
+            </p>
+            <p>
+              The difficult discovery was that the old connections also lived inside the organization. Teams knew whom to consult. Engineers knew which information mattered. Testing routines looked for familiar problems. These habits made the company efficient at building the old product, but could cause it to overlook problems in the new design. Hiring capable people or buying new equipment did not automatically change those habits.
+            </p>
+            <p>
+              Applied to a PI firm, the idea is easy to picture. A lawyer knows how to evaluate a case. An intake specialist knows how to speak with a frightened caller. The CRM stores the lead. The firm&apos;s architecture determines whether the right facts reach that lawyer while the caller is still deciding whom to hire.
+            </p>
+            <p>
+              That legal example is an application of the study&apos;s insight. Henderson and Clark studied manufacturing, and their findings do not establish which law firms will succeed with AI. They give us a useful explanation for why knowing the technology can coexist with difficulty changing the organization.
+            </p>
             <p className="text-xl leading-9 text-foreground/95">
               A firm can understand every AI tool on the market and still lack the knowledge required to rebuild its own workflow around them.
             </p>
@@ -231,50 +231,37 @@ export default function BlogPostPage() {
             <p>
               The firm automated the first step while preserving every broken connection around it. This is why <Link href="/blog/ai-cannot-fix-broken-pi-workflow" className="text-primary underline decoration-primary/35 underline-offset-4">AI cannot repair a broken PI workflow by itself</Link>.
             </p>
-            <div className="border-y border-primary/30 py-7">
-              <p className="text-xs font-semibold uppercase text-primary/80">The architectural questions</p>
-              <div className="mt-5 divide-y divide-white/10">
-                {[
-                  ["Ownership", "Who is responsible from first response until the lead is signed or closed?"],
-                  ["Escalation", "Which facts trigger immediate human contact, and by whom?"],
-                  ["Authority", "What may the AI say, create, update, or schedule without approval?"],
-                  ["Information", "Which system is authoritative, and where are corrections recorded?"],
-                  ["Learning", "Which outcomes and errors are reviewed so the workflow improves?"],
-                ].map(([title, text], index) => <div key={title} className="grid gap-2 py-5 sm:grid-cols-[3.5rem_10rem_1fr] sm:items-baseline"><span className="text-sm font-semibold text-primary">{String(index + 1).padStart(2, "0")}</span><h3 className="font-semibold text-white">{title}</h3><p>{text}</p></div>)}
-              </div>
-            </div>
+            <p>
+              Speed at the front exposes delays further along. The experienced employee who used to keep everything moving may have been compensating for gaps nobody had written down. Once a machine takes over part of the work, the firm discovers how much coordination depended on that person&apos;s memory and judgment.
+            </p>
           </section>
 
           <section id="operating-architecture" className="mt-16 scroll-mt-28 space-y-6">
-            <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl">What the new operating architecture requires</h2>
+            <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl">What the filter selects</h2>
             <p>
-              The hard part of AI transformation is deciding how the firm should work after intelligence becomes inexpensive. That requires changes across several connected layers.
+              As more firms gain access to capable AI, the ability to learn together becomes more valuable. Some firms will produce faster individuals. Others will turn individual discoveries into methods the whole firm can use and improve.
             </p>
-            <div className="divide-y divide-primary/20 border-y border-primary/25">
-              {[
-                ["Workflow", "Map the entire path, including delays, exceptions, rework, and the moment human judgment matters."],
-                ["Decision rights", "State what AI may recommend or execute and what a lawyer or staff member must approve."],
-                ["Information", "Give the system relevant, authoritative data with appropriate permissions and retention controls."],
-                ["Roles", "Move people away from repetitive transfer work and toward review, empathy, judgment, and exception handling."],
-                ["Incentives", "Measure useful outcomes such as qualified contact, signed cases, cycle time, corrections, and client experience."],
-                ["Learning", "Capture failures and overrides, then update the workflow rather than treating each error as an isolated event."],
-              ].map(([title, text], index) => <div key={title} className="grid gap-2 py-5 sm:grid-cols-[3.5rem_11rem_1fr] sm:items-baseline"><span className="text-sm font-semibold text-primary">{String(index + 1).padStart(2, "0")}</span><h3 className="font-semibold text-white">{title}</h3><p>{text}</p></div>)}
-            </div>
+            <p>
+              In the first firm, useful prompts, corrections, and techniques stay with the people who discover them. When they leave, much of the learning leaves too. In the second, an employee&apos;s discovery changes a shared workflow. An error changes the instructions. A lawyer&apos;s correction clarifies where judgment belongs. The next matter benefits from what happened in the previous one.
+            </p>
             <p>
               This is also why legal AI implementation remains difficult. A <a href="https://law.stanford.edu/publications/opportunities-and-challenges-in-legal-ai/" target="_blank" rel="noreferrer" className="text-primary underline decoration-primary/35 underline-offset-4">Stanford Law School review of legal AI</a> identifies firm structure, access to high-quality proprietary data, privacy, and integration with existing workflows among the enduring constraints. Better models do not automatically remove those organizational conditions.
+            </p>
+            <p>
+              PI firms have a useful economic starting point. Under a contingency model, reducing administrative effort can improve the economics of a case without reducing the hours available to bill. But an incentive to become efficient does not itself create the capacity to change. The owner still has to reconsider familiar roles, tolerate a period of learning, and make room for staff to question procedures that once worked well.
+            </p>
+            <p>
+              The title&apos;s warning is a competitive argument, not a forecast of mass closures. Losing ground may look ordinary at first: slower callbacks, more staff effort per case, inconsistent updates, less room to invest. If another firm keeps learning how to reduce those costs while improving service, the distance can grow. The model may be available to both firms. The accumulated ability to use it well takes time to build.
             </p>
           </section>
 
           <section id="small-firm-advantage" className="mt-16 scroll-mt-28 space-y-6">
-            <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl">Small PI firms can change the architecture faster</h2>
+            <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl">One practical implication</h2>
             <p>
-              A small firm has fewer people, less implementation capacity, and little room for a failed technology project. It also has an important advantage: the owner can see the whole workflow and change it without negotiating across dozens of committees.
+              Start with one workflow and follow its connections. Notice where ownership changes, information is copied, judgment enters, and exceptions arise. Make those relationships clear before introducing AI, then assign an owner and measure the result. A small firm can often bring everyone involved into the same conversation.
             </p>
             <p>
-              The sensible unit of change is one workflow. Choose an operational leak with a measurable outcome. Map how it works today. Redesign the roles, data, escalation, and review around AI. Run it on a limited scope. Keep human judgment where consequences are high. Measure what happened and preserve what the team learned.
-            </p>
-            <p>
-              Then move to the next workflow. This is the logic behind <Link href="/blog/ai-transformation-one-workflow-at-a-time" className="text-primary underline decoration-primary/35 underline-offset-4">building AI transformation one workflow at a time</Link>. The compounding advantage comes from the firm&apos;s growing ability to redesign itself, not from any single automation.
+              This is the reasoning behind <Link href="/blog/ai-transformation-one-workflow-at-a-time" className="text-primary underline decoration-primary/35 underline-offset-4">AI transformation one workflow at a time</Link>. The first project improves a piece of the business. It also teaches the firm how to change the next one.
             </p>
             <div className="flex gap-4 border-y border-primary/25 py-6">
               <Network className="mt-1 size-6 shrink-0 text-primary" aria-hidden="true" />
@@ -305,15 +292,8 @@ export default function BlogPostPage() {
           </section>
 
           <section className="mt-16 border-y border-primary/30 py-10">
-            <div className="flex items-start gap-4">
-              <Workflow className="mt-1 hidden size-7 shrink-0 text-primary sm:block" aria-hidden="true" />
-              <div>
-                <p className="text-xs font-semibold uppercase text-primary/80">Start with one workflow</p>
-                <h2 className="mt-4 max-w-2xl text-3xl font-semibold leading-tight text-white sm:text-4xl">Find the operating change your firm can make now.</h2>
-                <p className="mt-5 max-w-2xl">Possible Minds helps PI firms map a workflow, redesign its handoffs and controls, and build a narrow AI system around a measurable business outcome.</p>
-                <Link href="/consult" className="mt-7 inline-flex items-center gap-2 bg-[#00ff41] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[#00ff41]/90">Request a firm-specific diagnostic <ArrowRight className="size-4" aria-hidden="true" /></Link>
-              </div>
-            </div>
+            <p>Possible Minds helps PI firms understand how their work fits together and build AI systems around that understanding.</p>
+            <Link href="/consult" className="mt-5 inline-flex items-center gap-2 text-primary underline underline-offset-4">Discuss one workflow <ArrowRight className="size-4" aria-hidden="true" /></Link>
           </section>
         </article>
       </main>

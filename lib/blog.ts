@@ -16,7 +16,7 @@ export const blogPosts: BlogPost[] = [
     slug: "great-ai-filter-personal-injury-firms",
     title: "The Great AI Filter Is Here: Not All Firms Will Get Through",
     description:
-      "Why AI advantage depends on reorganizing PI firm workflows, roles, data, and decisions rather than merely buying better legal technology.",
+      "Why AI adoption challenges the habits and relationships that made PI firms successful, and what architectural knowledge explains about change.",
     author: "Pranav Modi",
     date: "September 15, 2026",
     readTime: "9 min read",
