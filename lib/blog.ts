@@ -12,6 +12,18 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    href: "/blog/ai-learning-loop-precise-imaging",
+    slug: "ai-learning-loop-precise-imaging",
+    title: "How We Built a Learning Loop for Precise Imaging's AI System",
+    description:
+      "How Precise Imaging turns staff corrections on 600+ daily emails into tested AI improvements using skills, feedback, and evals.",
+    author: "Pranav Modi",
+    date: "September 22, 2026",
+    readTime: "10 min read",
+    category: "AI Operations",
+    tags: ["AI Operations", "AI Evals", "For PI Firms"],
+  },
+  {
     href: "/blog/great-ai-filter-personal-injury-firms",
     slug: "great-ai-filter-personal-injury-firms",
     title: "The Great AI Filter Is Here: Not All Firms Will Get Through",

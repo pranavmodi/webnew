@@ -38,6 +38,10 @@ export const caseStudiesLinks = [
 
 export const blogLinks = [
   {
+    href: "/blog/ai-learning-loop-precise-imaging",
+    label: "The Precise Imaging Learning Loop",
+  },
+  {
     href: "/blog/great-ai-filter-personal-injury-firms",
     label: "The Great AI Filter",
   },

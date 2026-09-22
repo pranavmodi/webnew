@@ -170,6 +170,11 @@ const caseStudies = [
 
 const blogPosts = [
   {
+    href: "/blog/ai-learning-loop-precise-imaging",
+    title: "How We Built a Learning Loop for Precise Imaging's AI System",
+    tag: "Production AI Learning Loop",
+  },
+  {
     href: "/blog/great-ai-filter-personal-injury-firms",
     title: "The Great AI Filter Is Here: Not All Firms Will Get Through",
     tag: "AI Strategy",
