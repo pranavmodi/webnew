@@ -357,10 +357,10 @@ export default function PersonalInjuryPage() {
             </p>
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link
-                href="#diagnostics"
+                href="/ai-readiness-assessment"
                 className="inline-flex items-center rounded-full bg-[#00ff41] px-8 py-3 text-sm font-semibold text-[#04150d] transition hover:bg-[#00ff41]/90"
               >
-                Get a firm-specific diagnostic
+                Take the free intake diagnostic
               </Link>
               <Link
                 href="/law-case-study"

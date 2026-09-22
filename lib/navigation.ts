@@ -11,10 +11,13 @@ export const navLinks = [
   { href: "/about", label: "About" },
 ];
 
-export const piSystemsLinks = piProblemPages.map((page) => ({
-  href: `/personal-injury/${page.slug}`,
-  label: page.navLabel,
-}));
+export const piSystemsLinks = [
+  { href: "/ai-readiness-assessment", label: "Free Intake Diagnostic" },
+  ...piProblemPages.map((page) => ({
+    href: `/personal-injury/${page.slug}`,
+    label: page.navLabel,
+  })),
+];
 
 export const solutionsLinks = [
   { href: "/solutions/intake-agent", label: "Intake Agent" },
@@ -125,6 +128,7 @@ export const footerLinks = [
     links: [
       { label: "AI Reputation Tool", href: "https://reputable.getpossibleminds.com" },
       { label: "AI Readiness Audit", href: "https://aiaudit.getpossibleminds.com" },
+      { label: "Free Intake Diagnostic", href: "/ai-readiness-assessment" },
       { label: "Ask Mira", href: "/ai-consultant" },
       { label: "Intake Agent", href: "/solutions/intake-agent" },
       {

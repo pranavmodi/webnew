@@ -85,6 +85,27 @@ export function ConsultBookingForm() {
   });
 
   useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const focus = params.get("focus");
+    const stage = params.get("stage");
+    const focusLabels: Record<string, string> = {
+      response: "first response",
+      escalation: "human escalation",
+      followUp: "lead follow-up",
+      signing: "signing and case handoff",
+      visibility: "intake system visibility",
+      ownership: "AI ownership and control",
+    };
+
+    if (!focus || !focusLabels[focus]) return;
+    const stageNote = /^[1-4]$/.test(stage || "") ? ` (stage ${stage})` : "";
+    setForm((existing) => ({
+      ...existing,
+      notes: `Intake diagnostic focus: ${focusLabels[focus]}${stageNote}.`,
+    }));
+  }, []);
+
+  useEffect(() => {
     let cancelled = false;
     (async () => {
       try {

@@ -14,6 +14,7 @@ const staticPages = [
   { url: "/thesis", changeFrequency: "monthly" as const, priority: 0.85 },
   { url: "/consult", changeFrequency: "monthly" as const, priority: 0.8 },
   { url: "/ai-consultant", changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: "/ai-readiness-assessment", changeFrequency: "monthly" as const, priority: 0.95 },
   { url: "/solutions/intake-agent", changeFrequency: "weekly" as const, priority: 0.95 },
   { url: "/services/case-management-migration", changeFrequency: "monthly" as const, priority: 0.9 },
   { url: "/services/needles-migration", changeFrequency: "monthly" as const, priority: 0.85 },
