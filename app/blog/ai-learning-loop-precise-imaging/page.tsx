@@ -24,7 +24,7 @@ const pageUrl = `${SITE_URL}/blog/${slug}`;
 const publishedDate = "2026-09-22";
 
 const contents = [
-  { id: "what-learning-means", label: "What self-learning means here" },
+  { id: "what-learning-means", label: "How the learning loop works" },
   { id: "skills", label: "1. Separate business rules from code" },
   { id: "evals-first", label: "2. Build evals before changing rules" },
   { id: "human-feedback", label: "3. Capture feedback inside daily work" },
@@ -41,7 +41,7 @@ const faqs = [
       "An AI learning loop is a controlled process that captures human corrections, finds recurring error patterns, improves the system's instructions, and tests every change before release. The goal is to prevent the same operational mistake from recurring.",
   },
   {
-    question: "Does a self-learning AI system retrain its model automatically?",
+    question: "Does an AI learning loop retrain its model automatically?",
     answer:
       "Not necessarily, and ours does not depend on autonomous model retraining. The loop improves the business instructions, examples, evaluation cases, and workflow around the model. Humans still approve changes and production releases.",
   },
@@ -242,13 +242,27 @@ export default function BlogPostPage() {
 
           <section id="what-learning-means" className="mt-16 scroll-mt-28 space-y-6">
             <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl">
-              What &quot;self-learning&quot; means in a governed system
+              How the learning loop works in a governed system
             </h2>
             <p>
-              Self-learning is convenient shorthand, but it can create the wrong
-              picture. The production model does not quietly rewrite its own rules
-              after every correction. One person&apos;s preference should not become
-              company policy merely because it was expressed last.
+              Writing about AI-enabled innovation, former Google CEO{" "}
+              <a
+                href="https://www.linkedin.com/posts/eric-e-schmidt_schmidtsights-activity-7447357795898822656-B24k"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="text-primary underline decoration-primary/35 underline-offset-4"
+              >
+                Eric Schmidt
+              </a>{" "}
+              argues that as experimentation and iteration become cheaper, the
+              constraint becomes how quickly an organization can learn. His conclusion
+              is direct: &quot;those who embrace that loop will outpace those still
+              trying to avoid it.&quot;
+            </p>
+            <p>
+              A learning loop does not mean the production model quietly rewrites its
+              own rules after every correction. One person&apos;s preference should not
+              become company policy merely because it was expressed last.
             </p>
             <p>
               In our design, the system learns through a controlled sequence. Staff
@@ -491,10 +505,9 @@ export default function BlogPostPage() {
               Profit from fewer repeated mistakes
             </h2>
             <p>
-              &quot;Profit&quot; is the playful final step, but the economics are real.
-              A single corrected email saves little. A correction that prevents a
-              recurring error across a 600-plus-email day can save attention every day
-              thereafter.
+              The economics of the learning loop come from repetition. A single
+              corrected email saves little. A correction that prevents a recurring
+              error across a 600-plus-email day can save attention every day thereafter.
             </p>
             <p>
               The return appears as less manual sorting, fewer repeated corrections,
