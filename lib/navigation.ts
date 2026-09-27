@@ -38,6 +38,10 @@ export const caseStudiesLinks = [
 
 export const blogLinks = [
   {
+    href: "/blog/redesign-pi-workflows-around-ai",
+    label: "Redesign PI Workflows Around AI",
+  },
+  {
     href: "/blog/ai-learning-loop-precise-imaging",
     label: "The Precise Imaging Learning Loop",
   },

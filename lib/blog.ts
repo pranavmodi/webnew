@@ -12,6 +12,18 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    href: "/blog/redesign-pi-workflows-around-ai",
+    slug: "redesign-pi-workflows-around-ai",
+    title: "How Personal Injury Firms Should Redesign Workflows Around AI",
+    description:
+      "Seven practical principles for redesigning PI intake and case workflows around AI, grounded in electrification and organizational economics.",
+    author: "Pranav Modi",
+    date: "September 27, 2026",
+    readTime: "12 min read",
+    category: "AI Operations",
+    tags: ["AI Operations", "AI Strategy", "For PI Firms"],
+  },
+  {
     href: "/blog/ai-learning-loop-precise-imaging",
     slug: "ai-learning-loop-precise-imaging",
     title: "How We Built a Learning Loop for Precise Imaging's AI System",

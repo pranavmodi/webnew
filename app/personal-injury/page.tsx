@@ -170,6 +170,11 @@ const caseStudies = [
 
 const blogPosts = [
   {
+    href: "/blog/redesign-pi-workflows-around-ai",
+    title: "How Personal Injury Firms Should Redesign Workflows Around AI",
+    tag: "Workflow Redesign",
+  },
+  {
     href: "/blog/ai-learning-loop-precise-imaging",
     title: "How We Built a Learning Loop for Precise Imaging's AI System",
     tag: "Production AI Learning Loop",
