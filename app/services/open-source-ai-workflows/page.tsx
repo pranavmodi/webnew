@@ -28,7 +28,17 @@ const steps = [
   ["Operate and improve", "Train staff, monitor failures, review corrections, and retest changes. Agree on ownership of updates, backups, support, and the next workflow."],
 ];
 
+const advantages = [
+  ["Build around the way your firm works", "Your case-selection rules, escalation paths, and document standards should carry into the software. We can adapt an open codebase when the available configuration is not enough, instead of waiting for a vendor to prioritize the change."],
+  ["Keep control of sensitive information", "Choose where the application, documents, and models run. A properly configured local setup can reduce the number of outside services that receive client information. We trace the complete data flow, including connectors and telemetry."],
+  ["Reduce dependence on per-seat pricing", "The selected open-source platform can avoid an additional software license charge for every staff member. That can make broader team access more economical. We compare total costs, including hardware, model usage, implementation, and maintenance."],
+  ["Keep your workflow knowledge portable", "Your templates, instructions, evaluation examples, and operating rules can be maintained as documented files. The knowledge your team develops can carry forward when you change platforms or implementation partners, subject to applicable licenses."],
+  ["Choose and change your AI models", "Use a supported local model or approved external provider based on the task. You have a path to change that choice as quality, cost, and data requirements evolve. Each change still needs integration checks and evaluation against your firm's work."],
+  ["Inspect problems and control updates", "When a summary misses a fact or an agent routes work incorrectly, a technical team can inspect the instructions and code. With a self-hosted deployment, you can test a fix or an upstream release before introducing it to staff."],
+];
+
 const faqs = [
+  { question: "Why choose this over a proprietary AI subscription?", answer: "It is a strong fit when your firm needs workflows beyond a vendor's configuration options, control over data processing, reusable operating knowledge, or flexibility to change models and providers. Open-source software gives a technical team access to adapt the code. The tradeoff is responsibility for implementation and maintenance. A proprietary subscription can be a better fit when its existing features meet your needs and you want the vendor to operate the system." },
   { question: "Is the service free?", answer: "The selected open-source software may have no license fee. Our setup, customization, integrations, training, and support are paid services. Hardware, hosting, model usage, and third-party services can add costs. We scope those together before implementation." },
   { question: "Will all our data stay inside the firm?", answer: "That depends on the complete setup. A self-hosted application can still send data to a cloud model, connector, OCR service, or telemetry provider. For a local-only requirement, we assess and configure each of those paths, choose suitable local models, and test outbound connections." },
   { question: "Can we keep our current case-management software?", answer: "Usually that is the starting point. We assess available APIs, exports, access permissions, and vendor terms before promising an integration. MikeOSS and LQ.AI are AI foundations, not automatic replacements for the firm's case-management system." },
@@ -91,11 +101,23 @@ export default function OpenSourceAIWorkflowsPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
-        <div className="grid gap-8 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
-          <div><p className="text-sm font-semibold text-primary">Why open source</p><h2 className="mt-3 text-3xl font-semibold leading-tight text-white">Your workflow should be yours to change.</h2><p className="mt-5 leading-7 text-foreground/70">Your intake rules, document templates, and operating knowledge are specific to your firm. Open-source software gives us a foundation we can inspect and adapt as that work evolves.</p></div>
-          <div className="divide-y divide-white/15 border-y border-white/15">
-            {[["Adapt the process", "Change instructions, review steps, and integrations without waiting for a vendor's product roadmap."], ["Control deployment", "Run on firm-controlled hardware or an environment your firm selects. Decide which services, if any, may receive data."], ["Keep an exit path", "Document the setup, export paths, customizations, and operating instructions so another qualified team can maintain it."], ["See the full cost", "Separate software licensing from implementation, hardware, model usage, and maintenance. Open source can reduce license dependence; it still needs an operating budget."]].map(([heading, body]) => <div key={heading} className="py-5"><h3 className="font-semibold text-white">{heading}</h3><p className="mt-2 text-sm leading-7 text-foreground/70">{body}</p></div>)}
-          </div>
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold text-primary">Why choose open source over a closed platform?</p>
+          <h2 className="mt-3 text-3xl font-semibold leading-tight text-white">More control over the system your firm depends on.</h2>
+          <p className="mt-5 leading-7 text-foreground/70">A subscription gives you access to a vendor&apos;s product. An open-source deployment gives your technical team the ability to inspect, adapt, and operate the software. For a PI firm, that freedom has practical advantages.</p>
+        </div>
+        <div className="mt-9 grid gap-x-10 md:grid-cols-2">
+          {advantages.map(([heading, body], index) => (
+            <div key={heading} className="border-t border-white/15 py-7">
+              <p className="text-sm font-semibold text-primary">0{index + 1}</p>
+              <h3 className="mt-2 text-xl font-semibold leading-7 text-white">{heading}</h3>
+              <p className="mt-3 text-sm leading-7 text-foreground/70">{body}</p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-3 grid gap-7 border-y border-primary/25 py-7 md:grid-cols-2">
+          <div><h3 className="text-lg font-semibold text-white">A strong fit when control matters</h3><p className="mt-3 text-sm leading-7 text-foreground/70">You have a recurring workflow that standard tools handle poorly, specific data requirements, or a growing team that needs shared AI access. You want a system your firm can keep adapting, with a clear maintenance owner.</p></div>
+          <div><h3 className="text-lg font-semibold text-white">The tradeoff: someone must operate it</h3><p className="mt-3 text-sm leading-7 text-foreground/70">Self-hosting brings responsibility for updates, backups, security, and support. A proprietary service may be simpler when its standard workflow already fits. We help you compare the full operating cost and take on the implementation and support work agreed in scope.</p></div>
         </div>
       </section>
 
