@@ -20,6 +20,7 @@ export const piSystemsLinks = [
 ];
 
 export const solutionsLinks = [
+  { href: "/services/open-source-ai-workflows", label: "Open-Source AI Setup" },
   { href: "/solutions/intake-agent", label: "Intake Agent" },
   {
     href: "/services/case-management-migration",
