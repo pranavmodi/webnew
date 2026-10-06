@@ -12,6 +12,18 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    href: "/blog/measure-ai-roi-personal-injury-firms",
+    slug: "measure-ai-roi-personal-injury-firms",
+    title: "Your AI Saved Time. What Did Your PI Firm Gain?",
+    description:
+      "How PI firms can measure AI value beyond hours saved, adapting Ari Kaplan's framework to client service, capacity, quality, and real costs.",
+    author: "Pranav Modi",
+    date: "October 6, 2026",
+    readTime: "7 min read",
+    category: "AI Operations",
+    tags: ["AI ROI", "AI Strategy", "For PI Firms"],
+  },
+  {
     href: "/blog/redesign-pi-workflows-around-ai",
     slug: "redesign-pi-workflows-around-ai",
     title: "How Personal Injury Firms Should Redesign Workflows Around AI",

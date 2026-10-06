@@ -39,6 +39,10 @@ export const caseStudiesLinks = [
 
 export const blogLinks = [
   {
+    href: "/blog/measure-ai-roi-personal-injury-firms",
+    label: "Measuring AI ROI",
+  },
+  {
     href: "/blog/redesign-pi-workflows-around-ai",
     label: "Redesign PI Workflows Around AI",
   },

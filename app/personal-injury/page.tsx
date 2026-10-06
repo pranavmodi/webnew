@@ -170,6 +170,11 @@ const caseStudies = [
 
 const blogPosts = [
   {
+    href: "/blog/measure-ai-roi-personal-injury-firms",
+    title: "Your AI Saved Time. What Did Your PI Firm Gain?",
+    tag: "Measuring AI ROI",
+  },
+  {
     href: "/blog/redesign-pi-workflows-around-ai",
     title: "How Personal Injury Firms Should Redesign Workflows Around AI",
     tag: "Workflow Redesign",
