@@ -1,9 +1,11 @@
-import { Metadata } from "next";
+import { createBlogMetadata } from "@/lib/blog-seo";
+import { BlogArticleSchema } from "@/components/blog/article-schema";
+import { RelatedReading } from "@/components/blog/related-reading";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
-import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
+import { CALENDLY_URL } from "@/lib/constants";
 import { BlogTableOfContents } from "@/components/blog/table-of-contents";
 
 const contents = [
@@ -20,17 +22,14 @@ const contents = [
   { id: "the-transition-is-now", label: "The Transition Is Now" },
 ];
 
-export const metadata: Metadata = {
-  title: `When AI Is the User: The New Economics of Software | ${SITE_NAME}`,
-  description:
-    "Software has always been built for people. That era is ending. When AI agents become the primary users of software products, everything changes\u2014pricing, interfaces, distribution, and the very definition of value.",
-};
+export const metadata = createBlogMetadata("when-ai-is-the-user");
 
 export default function BlogPostPage() {
   const post = BLOG_POSTS_BY_SLUG["when-ai-is-the-user"];
 
   return (
     <div className="bg-black pb-24">
+      <BlogArticleSchema slug="when-ai-is-the-user" />
       <section className="relative overflow-hidden bg-gradient-to-b from-[#04150d] to-black">
         <div className="relative mx-auto max-w-4xl px-4 py-20 sm:px-6">
           <div className="space-y-5">
@@ -854,6 +853,7 @@ export default function BlogPostPage() {
           </div>
         </div>
       </article>
+      <RelatedReading slugs={["headless-legal-software-pi-vendor-rankings","build-vs-consume-ai-law-firms"]} />
     </div>
   );
 }

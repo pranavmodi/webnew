@@ -63,3 +63,40 @@ Passing this audit establishes technical eligibility, not guaranteed indexing.
 Google references:
 - https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls
 - https://support.google.com/webmasters/answer/7440203
+
+## Crawled but not indexed examples
+
+The subsequent export includes eight article URLs and two assets (favicon and
+font), rather than all twelve reported URLs. Assets do not need standalone
+search-result indexing. The supplied article crawl dates are in July/August;
+they do not establish Google's current view of the October site.
+
+The eight articles currently return 200, are indexable, have self-canonicals,
+appear in the sitemap, and are linked from the blog listing. No technical
+indexing blocker was found for those URLs. Improvements in this change:
+
+- Shared explicit article metadata, clean canonicals, and publication dates
+  drawn from the existing blog registry, without refreshing historical dates.
+- BlogPosting and breadcrumb structured data with an author profile link.
+- Topic-relevant, server-rendered related-reading links on all eight articles.
+- More descriptive metadata summaries without unsupported promotional claims.
+- Regression checks for article schema and social metadata in `seo:audit`.
+
+These changes improve interpretation and discovery; they do not guarantee
+indexing or establish why Google previously excluded the articles. A separate
+editorial evidence review remains advisable: the AI ownership article's 80%
+ROI statistic and the lien article's 563-negotiation dataset need traceable
+sources/methodology. No dataset or source verification is implied by this patch.
+
+After deployment, use Search Console live URL Inspection on the eight articles,
+request indexing for the priority pages, and monitor recrawls. Obtain the two
+remaining examples and the exact 404 report URLs before making further fixes.
+
+Article schema guidance:
+https://developers.google.com/search/docs/appearance/structured-data/article
+
+Validation: ESLint and the production build pass. The local production audit
+checks 78 sitemap URLs and 78 internal paths without errors. Playwright checks
+all eight updated articles at 390px and 1440px widths (16 checks): one H1,
+two related links, no horizontal overflow, and matching article/related-reading
+alignment. Desktop and mobile screenshots were also inspected.

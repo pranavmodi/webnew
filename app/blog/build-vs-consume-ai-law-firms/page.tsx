@@ -1,9 +1,11 @@
-import { Metadata } from "next";
+import { createBlogMetadata } from "@/lib/blog-seo";
+import { BlogArticleSchema } from "@/components/blog/article-schema";
+import { RelatedReading } from "@/components/blog/related-reading";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
-import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
+import { CALENDLY_URL } from "@/lib/constants";
 import { BlogTableOfContents } from "@/components/blog/table-of-contents";
 
 const contents = [
@@ -15,17 +17,14 @@ const contents = [
   { id: "the-compounding-future", label: "The Compounding Future" },
 ];
 
-export const metadata: Metadata = {
-  title: `Build vs. Consume: The AI Choice That Will Define Your Firm | ${SITE_NAME}`,
-  description:
-    "The legal industry is splitting into firms that use AI and firms that build with it. Here is what builders actually do, why the economics favor them, and how to start in the next 30 days.",
-};
+export const metadata = createBlogMetadata("build-vs-consume-ai-law-firms");
 
 export default function BlogPostPage() {
   const post = BLOG_POSTS_BY_SLUG["build-vs-consume-ai-law-firms"];
 
   return (
     <div className="bg-black pb-24">
+      <BlogArticleSchema slug="build-vs-consume-ai-law-firms" />
       <section className="relative overflow-hidden bg-gradient-to-b from-[#04150d] to-black">
         <div className="relative mx-auto max-w-4xl px-4 py-20 sm:px-6">
           <div className="space-y-5">
@@ -307,6 +306,7 @@ export default function BlogPostPage() {
           </Button>
         </section>
       </article>
+      <RelatedReading slugs={["when-ai-is-the-user","why-pi-firms-need-bespoke-ai-agents"]} />
     </div>
   );
 }

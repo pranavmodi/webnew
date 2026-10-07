@@ -1,9 +1,11 @@
-import { Metadata } from "next";
+import { createBlogMetadata } from "@/lib/blog-seo";
+import { BlogArticleSchema } from "@/components/blog/article-schema";
+import { RelatedReading } from "@/components/blog/related-reading";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
-import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
+import { CALENDLY_URL } from "@/lib/constants";
 import { BlogTableOfContents } from "@/components/blog/table-of-contents";
 
 const contents = [
@@ -21,17 +23,14 @@ const contents = [
   { id: "the-question-every-founder-should-ask-now", label: "The question every founder should ask now" },
 ];
 
-export const metadata: Metadata = {
-  title: `The Cybernetic Organization: What Norbert Wiener Saw Before the AI Era | ${SITE_NAME}`,
-  description:
-    "Most companies still operate like Roman legions: information climbs a hierarchy, decisions travel back down, and humans serve as the routing layer. AI changes that. Norbert Wiener&apos;s cybernetics offers a better model for how modern firms will sense, decide, act, and learn.",
-};
+export const metadata = createBlogMetadata("cybernetic-organization-ai");
 
 export default function BlogPostPage() {
   const post = BLOG_POSTS_BY_SLUG["cybernetic-organization-ai"];
 
   return (
     <div className="bg-black pb-24">
+      <BlogArticleSchema slug="cybernetic-organization-ai" />
       <section className="relative overflow-hidden bg-gradient-to-b from-[#04150d] to-black">
         <div className="relative mx-auto max-w-4xl px-4 py-20 sm:px-6">
           <div className="space-y-5">
@@ -323,6 +322,7 @@ export default function BlogPostPage() {
           </Button>
         </section>
       </article>
+      <RelatedReading slugs={["ai-learning-loop-precise-imaging","nobody-owns-ai-at-your-firm"]} />
     </div>
   );
 }

@@ -14,6 +14,14 @@ from urllib.request import HTTPRedirectHandler, Request, build_opener
 from xml.etree import ElementTree
 
 PRODUCTION = "https://getpossibleminds.com"
+ARTICLE_PATHS = {
+    "/blog/" + slug for slug in (
+        "when-ai-is-the-user", "cybernetic-organization-ai",
+        "build-vs-consume-ai-law-firms", "hidden-math-lien-negotiations",
+        "musk-algorithm-ai-pi-firm", "nobody-owns-ai-at-your-firm",
+        "the-science-of-client-intake-conversion", "ai-search-law-firm-marketing",
+    )
+}
 
 
 class NoRedirect(HTTPRedirectHandler):
@@ -28,11 +36,18 @@ class PageSignals(HTMLParser):
         self.canonicals = []
         self.robots = []
         self.links = []
+        self.json_ld = []
+        self.script_data = None
+        self.meta = {}
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
         if tag == "head":
             self.in_head = True
+        if tag == "script" and attrs.get("type") == "application/ld+json":
+            self.script_data = ""
+        if tag == "meta":
+            self.meta[attrs.get("property", attrs.get("name", ""))] = attrs.get("content", "")
         if tag == "link" and "canonical" in attrs.get("rel", "").split():
             self.canonicals.append((attrs.get("href", ""), self.in_head))
         if tag == "meta" and attrs.get("name", "").lower() in ("robots", "googlebot"):
@@ -41,8 +56,16 @@ class PageSignals(HTMLParser):
             self.links.append(attrs["href"])
 
     def handle_endtag(self, tag):
+        if tag == "script" and self.script_data is not None:
+            data = json.loads(self.script_data)
+            self.json_ld.extend(data if isinstance(data, list) else [data])
+            self.script_data = None
         if tag == "head":
             self.in_head = False
+
+    def handle_data(self, data):
+        if self.script_data is not None:
+            self.script_data += data
 
 
 def canonical_key(url):
@@ -99,6 +122,15 @@ def main():
             check(actual == expected, f"Wrong or missing head canonical: {url}: {actual}")
             directives = signals.robots + [headers.get("X-Robots-Tag", "").lower()]
             check(not any("noindex" in value for value in directives), f"Noindex page in sitemap: {url}")
+            if path in ARTICLE_PATHS:
+                articles = [node for node in signals.json_ld if node.get("@type") == "BlogPosting"]
+                check(len(articles) == 1, f"Expected one BlogPosting schema: {url}")
+                if len(articles) == 1:
+                    article = articles[0]
+                    check(article.get("url") == url and article.get("mainEntityOfPage") == url, f"Article URL mismatch: {url}")
+                    check(bool(article.get("headline") and article.get("datePublished") and article.get("author", {}).get("url")), f"Incomplete article schema: {url}")
+                check(any(node.get("@type") == "BreadcrumbList" for node in signals.json_ld), f"Missing breadcrumbs: {url}")
+                check(signals.meta.get("og:type") == "article" and signals.meta.get("og:url") == url, f"Wrong article social metadata: {url}")
             for href in signals.links:
                 link = urlsplit(urljoin(url, href))
                 if link.netloc == "getpossibleminds.com":
@@ -108,6 +140,7 @@ def main():
             errors.append(f"Fetch failed: {url}: {error}")
 
     known_paths = {urlsplit(url).path or "/" for url in urls}
+    check(ARTICLE_PATHS <= known_paths, "An audited article is missing from the sitemap")
     for path in sorted(internal_paths - known_paths):
         # Do not trigger personalized short links or stateful API requests.
         if path.startswith(("/api/", "/t/", "/c/", "/s/", "/w/")):

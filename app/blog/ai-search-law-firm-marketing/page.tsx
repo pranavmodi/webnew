@@ -1,9 +1,11 @@
-import { Metadata } from "next";
+import { createBlogMetadata } from "@/lib/blog-seo";
+import { BlogArticleSchema } from "@/components/blog/article-schema";
+import { RelatedReading } from "@/components/blog/related-reading";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
-import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
+import { CALENDLY_URL } from "@/lib/constants";
 import WaitlistForm from "./waitlist-form";
 import { BlogTableOfContents } from "@/components/blog/table-of-contents";
 
@@ -16,17 +18,14 @@ const contents = [
   { id: "the-tools-that-exist-and-what-they-miss", label: "The Tools That Exist - and What They Miss" },
 ];
 
-export const metadata: Metadata = {
-  title: `Your Rankings Held. Your Calls Didn't. | ${SITE_NAME}`,
-  description:
-    "Google's AI Overviews have quietly rewired how clients find personal injury attorneys. Most firms have no idea it's happening — and no tool to measure it.",
-};
+export const metadata = createBlogMetadata("ai-search-law-firm-marketing");
 
 export default function BlogPostPage() {
   const post = BLOG_POSTS_BY_SLUG["ai-search-law-firm-marketing"];
 
   return (
     <div className="bg-black pb-24">
+      <BlogArticleSchema slug="ai-search-law-firm-marketing" />
       <section className="relative overflow-hidden bg-gradient-to-b from-[#04150d] to-black">
         <div className="relative mx-auto max-w-4xl px-4 py-20 sm:px-6">
           <div className="space-y-5">
@@ -319,6 +318,7 @@ export default function BlogPostPage() {
           </Button>
         </section>
       </article>
+      <RelatedReading slugs={["the-science-of-client-intake-conversion","personal-injury-marketing-attribution"]} />
     </div>
   );
 }

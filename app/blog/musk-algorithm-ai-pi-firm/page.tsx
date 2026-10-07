@@ -1,9 +1,11 @@
-import { Metadata } from "next";
+import { createBlogMetadata } from "@/lib/blog-seo";
+import { BlogArticleSchema } from "@/components/blog/article-schema";
+import { RelatedReading } from "@/components/blog/related-reading";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
-import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
+import { CALENDLY_URL } from "@/lib/constants";
 import { BlogTableOfContents } from "@/components/blog/table-of-contents";
 
 const contents = [
@@ -22,17 +24,14 @@ const contents = [
   { id: "what-to-do-with-this-on-monday", label: "What to do with this on Monday" },
 ];
 
-export const metadata: Metadata = {
-  title: `Elon Musk's Algorithm Applied to AI Transformation for a PI Law Firm | ${SITE_NAME}`,
-  description:
-    "Most AI projects inside personal injury firms fail because they automate the wrong workflow. Musk's 5-step algorithm forces the redesign first — and produces a 10-agent operating model built on case movement, not case management.",
-};
+export const metadata = createBlogMetadata("musk-algorithm-ai-pi-firm");
 
 export default function BlogPostPage() {
   const post = BLOG_POSTS_BY_SLUG["musk-algorithm-ai-pi-firm"];
 
   return (
     <div className="bg-black pb-24">
+      <BlogArticleSchema slug="musk-algorithm-ai-pi-firm" />
       <section className="relative overflow-hidden bg-gradient-to-b from-[#04150d] to-black">
         <div className="relative mx-auto max-w-4xl px-4 py-20 sm:px-6">
           <div className="space-y-5">
@@ -739,6 +738,7 @@ export default function BlogPostPage() {
           </Button>
         </section>
       </article>
+      <RelatedReading slugs={["ai-cannot-fix-broken-pi-workflow","cybernetic-organization-ai"]} />
     </div>
   );
 }

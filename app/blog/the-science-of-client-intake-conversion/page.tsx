@@ -1,9 +1,11 @@
-import { Metadata } from "next";
+import { createBlogMetadata } from "@/lib/blog-seo";
+import { BlogArticleSchema } from "@/components/blog/article-schema";
+import { RelatedReading } from "@/components/blog/related-reading";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
-import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
+import { CALENDLY_URL } from "@/lib/constants";
 import { BlogTableOfContents } from "@/components/blog/table-of-contents";
 
 const contents = [
@@ -18,17 +20,14 @@ const contents = [
   { id: "intake-is-the-return-on-your-marketing-investment", label: "Intake Is the Return on Your Marketing Investment" },
 ];
 
-export const metadata: Metadata = {
-  title: `The Science of Client Intake and Lead Conversion | ${SITE_NAME}`,
-  description:
-    "Personal injury firms spend thousands per lead—then lose half of them to slow response times and broken follow-up. Here's how conversion science, proactive intake, and AI are closing the gap.",
-};
+export const metadata = createBlogMetadata("the-science-of-client-intake-conversion");
 
 export default function BlogPostPage() {
   const post = BLOG_POSTS_BY_SLUG["the-science-of-client-intake-conversion"];
 
   return (
     <div className="bg-black pb-24">
+      <BlogArticleSchema slug="the-science-of-client-intake-conversion" />
       <section className="relative overflow-hidden bg-gradient-to-b from-[#04150d] to-black">
         <div className="relative mx-auto max-w-4xl px-4 py-20 sm:px-6">
           <div className="space-y-5">
@@ -645,6 +644,7 @@ export default function BlogPostPage() {
           </div>
         </div>
       </article>
+      <RelatedReading slugs={["personal-injury-intake-marketing-system","ai-search-law-firm-marketing"]} />
     </div>
   );
 }

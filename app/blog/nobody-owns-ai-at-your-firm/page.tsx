@@ -1,9 +1,11 @@
-import { Metadata } from "next";
+import { createBlogMetadata } from "@/lib/blog-seo";
+import { BlogArticleSchema } from "@/components/blog/article-schema";
+import { RelatedReading } from "@/components/blog/related-reading";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
-import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
+import { CALENDLY_URL } from "@/lib/constants";
 import { BlogTableOfContents } from "@/components/blog/table-of-contents";
 
 const contents = [
@@ -16,29 +18,14 @@ const contents = [
   { id: "the-uncomfortable-truth", label: "The Uncomfortable Truth" },
 ];
 
-export const metadata: Metadata = {
-  title: `Nobody Owns AI at Your Firm (And That's Why It's Failing) | ${SITE_NAME}`,
-  description:
-    "80% of law firms can't show ROI from AI investments. The problem isn't the tools — it's that nobody owns the strategy. Here's what the most successful PI firms are doing differently.",
-  openGraph: {
-    title: "Nobody Owns AI at Your Firm (And That's Why It's Failing)",
-    description:
-      "80% of law firms can't show ROI from AI investments. The problem isn't the tools — it's that nobody owns the strategy. Here's what the most successful PI firms are doing differently.",
-    type: "article",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Nobody Owns AI at Your Firm (And That's Why It's Failing)",
-    description:
-      "80% of law firms can't show ROI from AI investments. The problem isn't the tools — it's that nobody owns the strategy.",
-  },
-};
+export const metadata = createBlogMetadata("nobody-owns-ai-at-your-firm");
 
 export default function BlogPostPage() {
   const post = BLOG_POSTS_BY_SLUG["nobody-owns-ai-at-your-firm"];
 
   return (
     <div className="bg-black pb-24">
+      <BlogArticleSchema slug="nobody-owns-ai-at-your-firm" />
       <section className="relative overflow-hidden bg-gradient-to-b from-[#04150d] to-black">
         <div className="relative mx-auto max-w-4xl px-4 py-20 sm:px-6">
           <div className="space-y-5">
@@ -239,6 +226,7 @@ export default function BlogPostPage() {
           </Button>
         </section>
       </article>
+      <RelatedReading slugs={["musk-algorithm-ai-pi-firm","ai-governance-101-personal-injury-firms"]} />
     </div>
   );
 }

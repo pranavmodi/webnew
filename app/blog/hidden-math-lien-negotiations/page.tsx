@@ -1,13 +1,15 @@
-import { Metadata } from "next";
+import { createBlogMetadata } from "@/lib/blog-seo";
+import { BlogArticleSchema } from "@/components/blog/article-schema";
+import { RelatedReading } from "@/components/blog/related-reading";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
-import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
+import { CALENDLY_URL } from "@/lib/constants";
 import { BlogTableOfContents } from "@/components/blog/table-of-contents";
 
-const pageTitle = "The Hidden Math of Lien Negotiations: What 563 Cases Reveal";
-const pageDescription = "We analyzed 563 real medical lien negotiations between a diagnostic imaging provider and PI law firms. The data reveals striking patterns in reduction demands, settlement timing, and firm behavior that neither side is tracking.";
+
+
 
 const contents = [
   { id: "the-dataset", label: "The Dataset" },
@@ -19,26 +21,14 @@ const contents = [
   { id: "the-bigger-picture", label: "The Bigger Picture" },
 ];
 
-export const metadata: Metadata = {
-  title: `${pageTitle} | ${SITE_NAME}`,
-  description: pageDescription,
-  openGraph: {
-    title: pageTitle,
-    description: pageDescription,
-    type: "article",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: pageTitle,
-    description: pageDescription,
-  },
-};
+export const metadata = createBlogMetadata("hidden-math-lien-negotiations");
 
 export default function BlogPostPage() {
   const post = BLOG_POSTS_BY_SLUG["hidden-math-lien-negotiations"];
 
   return (
     <div className="bg-black pb-24">
+      <BlogArticleSchema slug="hidden-math-lien-negotiations" />
       <section className="relative overflow-hidden bg-gradient-to-b from-[#04150d] to-black">
         <div className="relative mx-auto max-w-4xl px-4 py-20 sm:px-6">
           <div className="space-y-5">
@@ -402,6 +392,7 @@ export default function BlogPostPage() {
           </div>
         </section>
       </article>
+      <RelatedReading slugs={["insurance-ai-claims-pi-firms","measure-ai-roi-personal-injury-firms"]} />
     </div>
   );
 }

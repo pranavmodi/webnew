@@ -328,7 +328,7 @@ export const blogPosts: BlogPost[] = [
     slug: "cybernetic-organization-ai",
     title: "The Cybernetic Organization: What Norbert Wiener Saw Before the AI Era",
     description:
-      "Most companies still operate like Roman legions: information climbs a hierarchy, decisions travel back down, and humans serve as the routing layer. AI changes that. Norbert Wiener&apos;s cybernetics offers a better model for how modern firms will sense, decide, act, and learn.",
+      "How feedback loops and Norbert Wiener's cybernetics can inform AI workflows, human oversight, and organizational learning.",
     author: "Pranav Modi",
     date: "May 25, 2026",
     readTime: "11 min read",
@@ -340,7 +340,7 @@ export const blogPosts: BlogPost[] = [
     slug: "musk-algorithm-ai-pi-firm",
     title: "Elon Musk’s Algorithm Applied to AI Transformation for a PI Law Firm",
     description:
-      "Most AI projects inside personal injury firms fail because they automate the wrong workflow. Musk’s 5-step algorithm forces the redesign first — and produces a 10-agent operating model built on case movement, not case management.",
+      "Applying Elon Musk's five-step engineering framework to PI operations: question requirements, simplify workflows, and automate with human oversight.",
     author: "Pranav Modi",
     date: "May 20, 2026",
     readTime: "16 min read",
@@ -376,7 +376,7 @@ export const blogPosts: BlogPost[] = [
     slug: "build-vs-consume-ai-law-firms",
     title: "Build vs. Consume: The AI Choice That Will Define Your Firm",
     description:
-      "The legal industry is splitting into firms that use AI and firms that build with it. Here is what builders actually do, why the economics favor them, and how to start in the next 30 days.",
+      "What it means for a law firm to build AI workflows rather than use standalone tools, and how to begin with a focused pilot.",
     author: "Pranav Modi",
     date: "April 22, 2026",
     readTime: "7 min read",
@@ -388,7 +388,7 @@ export const blogPosts: BlogPost[] = [
     slug: "hidden-math-lien-negotiations",
     title: "The Hidden Math of Lien Negotiations: What 563 Cases Reveal",
     description:
-      "We analyzed 563 real medical lien negotiations between a diagnostic imaging provider and PI law firms. The data reveals striking patterns in reduction demands, settlement timing, and firm behavior that neither side is tracking.",
+      "An analysis of 563 medical lien negotiations explores opening offers, settlement timing, and patterns in provider-firm negotiations.",
     author: "Pranav Modi",
     date: "April 2, 2026",
     readTime: "9 min read",
@@ -400,7 +400,7 @@ export const blogPosts: BlogPost[] = [
     slug: "nobody-owns-ai-at-your-firm",
     title: "Nobody Owns AI at Your Firm (And That\u2019s Why It\u2019s Failing)",
     description:
-      "80% of law firms can\u2019t show ROI from AI investments. The problem isn\u2019t the tools \u2014 it\u2019s that nobody owns the strategy. Here\u2019s what the most successful PI firms are doing differently.",
+      "Why AI adoption needs an accountable owner, documented workflows, and clear measures of success in a personal injury firm.",
     author: "Pranav Modi",
     date: "March 24, 2026",
     readTime: "8 min read",
@@ -436,7 +436,7 @@ export const blogPosts: BlogPost[] = [
     slug: "ai-search-law-firm-marketing",
     title: "Your Rankings Held. Your Calls Didn\u2019t.",
     description:
-      "Google\u2019s AI Overviews have quietly rewired how clients find personal injury attorneys. Most firms have no idea it\u2019s happening \u2014 and no tool to measure it.",
+      "How AI search results can affect law firm visibility, website visits, and inquiries, and why rankings alone do not explain marketing performance.",
     author: "Pranav Modi",
     date: "March 12, 2026",
     readTime: "8 min read",
@@ -448,7 +448,7 @@ export const blogPosts: BlogPost[] = [
     slug: "the-science-of-client-intake-conversion",
     title: "The Science of Client Intake and Lead Conversion",
     description:
-      "Personal injury firms spend thousands per lead\u2014then lose half of them to slow response times and broken follow-up. Here\u2019s how conversion science, proactive intake, and AI are closing the gap.",
+      "How response speed, consistent follow-up, and human connection shape personal injury intake and lead conversion.",
     author: "Pranav Modi",
     date: "February 26, 2026",
     readTime: "10 min read",
@@ -472,7 +472,7 @@ export const blogPosts: BlogPost[] = [
     slug: "when-ai-is-the-user",
     title: "When AI Is the User: The New Economics of Software",
     description:
-      "Software has always been built for people. That era is ending. When AI agents become the primary users of software products, everything changes\u2014pricing, interfaces, distribution, and the very definition of value.",
+      "How software changes when AI agents use it: APIs, pricing, distribution, and the implications for businesses buying and building tools.",
     author: "Pranav Modi",
     date: "February 6, 2026",
     readTime: "12 min read",
