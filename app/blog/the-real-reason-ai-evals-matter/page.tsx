@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { BLOG_POSTS_BY_SLUG } from "@/lib/blog";
-import { CALENDLY_URL, SITE_NAME } from "@/lib/constants";
+import { CALENDLY_URL, SITE_NAME, SITE_URL } from "@/lib/constants";
 import { BlogTableOfContents } from "@/components/blog/table-of-contents";
 
 const contents = [
@@ -17,6 +17,7 @@ const contents = [
 ];
 
 export const metadata: Metadata = {
+  alternates: { canonical: `${SITE_URL}/blog/the-real-reason-ai-evals-matter` },
   title: `The Real Reason AI Evals Matter for Your Business | ${SITE_NAME}`,
   description:
     "Why AI evaluations are the foundation of learning loops that create unbreachable competitive moats—and how the smartest companies are using them to win in the age of AI.",

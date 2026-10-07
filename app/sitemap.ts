@@ -28,7 +28,6 @@ const staticPages = [
   { url: "/healthcare-case-study", changeFrequency: "monthly" as const, priority: 0.7 },
   { url: "/law-case-study", changeFrequency: "monthly" as const, priority: 0.7 },
   { url: "/security", changeFrequency: "monthly" as const, priority: 0.7 },
-  { url: "/tools/linkedin-outreach", changeFrequency: "monthly" as const, priority: 0.6 },
   { url: "/blog", changeFrequency: "weekly" as const, priority: 0.9 },
   { url: "/workshops", changeFrequency: "weekly" as const, priority: 0.85 },
   { url: "/workshops/ai-for-filevine-case-managers", changeFrequency: "weekly" as const, priority: 0.85 },

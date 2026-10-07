@@ -3,6 +3,16 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/contact",
+        destination: "/consult",
+        permanent: true,
+      },
+      {
+        source: "/admin",
+        destination: "/admin/engagement",
+        permanent: true,
+      },
+      {
         source: "/admin/advisor",
         destination: "https://advisor.getpossibleminds.com/admin",
         permanent: false,
@@ -11,6 +21,18 @@ const nextConfig = {
         source: "/workshops/ai-for-smartadvocate-litigation-paralegals",
         destination: "/workshops/ai-for-casepeer-litigation-paralegals",
         permanent: true,
+      },
+    ];
+  },
+  async headers() {
+    return [
+      {
+        source: "/admin/:path*",
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+      },
+      {
+        source: "/tools/linkedin-outreach",
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
       },
     ];
   },

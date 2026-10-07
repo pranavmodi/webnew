@@ -1,8 +1,10 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { SITE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Our Thesis",
+  alternates: { canonical: `${SITE_URL}/thesis` },
   description:
     "Why Possible Minds is building an AI operating layer for personal injury firms, starting with intake.",
 };
