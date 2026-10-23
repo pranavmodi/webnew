@@ -16,10 +16,10 @@ export const blogPosts: BlogPost[] = [
     slug: "law-firm-cybersecurity-ai-specialist",
     title: "AI Is Finding Software Weaknesses. Who Is Checking Your Firm?",
     description:
-      "A PI firm's guide to hiring a cybersecurity specialist: assess exposure, protect client information, fix vulnerabilities, and verify the results.",
+      "AI-driven cyber threats, expert forecasts, and law firms' legal duties. How to hire a specialist, assess exposure, fix weaknesses, and verify the work.",
     author: "Pranav Modi",
     date: "October 23, 2026",
-    readTime: "9 min read",
+    readTime: "12 min read",
     category: "Security & Governance",
     tags: ["Law Firm Cybersecurity", "AI Governance", "For PI Firms"],
   },

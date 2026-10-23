@@ -8,7 +8,7 @@ import { SITE_URL } from "@/lib/constants";
 import { securityArticleSlug, securityConsultation, securityServiceFaqs, securityServicePath } from "@/lib/security-service";
 
 const title = "Cybersecurity Assessment & Remediation for Law Firms";
-const description = "Protect client information with a scoped law firm security assessment, prioritized fixes, and retesting. Built for PI firms and small legal teams.";
+const description = "Protect client information with a scoped law firm security assessment, prioritized fixes, and retesting. For personal injury firms and other legal practices.";
 const url = `${SITE_URL}${securityServicePath}`;
 const container = "mx-auto max-w-6xl px-4 sm:px-6";
 const areas = [
@@ -38,7 +38,7 @@ export default function LawFirmCybersecurityPage() {
   return (
     <div className="-mt-4 bg-black pb-16 text-white/80">
       <JsonLd data={[
-        { "@context": "https://schema.org", "@type": "Service", name: title, description, url, serviceType: "Law firm security assessment and remediation", provider: { "@id": `${SITE_URL}/#organization` }, audience: { "@type": "BusinessAudience", audienceType: "Personal injury law firms and small legal teams" } },
+        { "@context": "https://schema.org", "@type": "Service", name: title, description, url, serviceType: "Law firm security assessment and remediation", provider: { "@id": `${SITE_URL}/#organization` }, audience: { "@type": "BusinessAudience", audienceType: "Personal injury law firms and other legal practices" } },
         { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: SITE_URL }, { "@type": "ListItem", position: 2, name: title, item: url }] },
         { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: securityServiceFaqs.map(({ question, answer }) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) },
       ]} />
@@ -47,7 +47,7 @@ export default function LawFirmCybersecurityPage() {
         <div className={`${container} py-8 sm:py-14`}>
           <p className="text-sm font-semibold text-emerald-300">Possible Minds / Security services</p>
           <h1 className="mt-4 max-w-4xl text-4xl font-semibold leading-tight text-white sm:text-5xl">Cybersecurity for personal injury firms.</h1>
-          <p className="mt-5 max-w-3xl text-lg leading-7 sm:leading-8">Know where client information is exposed. Fix the important weaknesses. Verify the changes. Hands-on assessment and remediation for PI firms and small legal teams.</p>
+          <p className="mt-5 max-w-3xl text-lg leading-7 sm:leading-8">Know where client information is exposed. Fix the important weaknesses. Verify the changes. Hands-on assessment and remediation for PI firms and other legal practices.</p>
           <div className="mt-7 flex flex-wrap items-center gap-5">
             <a href={securityConsultation} className="inline-flex max-w-full items-center gap-3 rounded bg-emerald-300 px-5 py-3 text-base font-semibold text-black hover:bg-emerald-200">Discuss a security assessment <ArrowRight className="h-5 w-5 shrink-0" aria-hidden="true" /></a>
             <a href="#engagement" className="py-2 text-sm font-semibold text-white underline decoration-white/40 underline-offset-4 hover:text-emerald-300">See the engagement</a>

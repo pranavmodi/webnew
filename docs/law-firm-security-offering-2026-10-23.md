@@ -4,7 +4,7 @@
 
 - Article: `/blog/law-firm-cybersecurity-ai-specialist`
 - Service: `/services/law-firm-cybersecurity`
-- Primary audience: PI firm owners; applicable to other small law firms.
+- Primary audience: law firm owners and partners, with PI-specific examples.
 - Offer: scoped assessment, validated prioritization, approved remediation,
   retesting, and documented handover alongside the existing IT provider.
 - Contact: `pranav@possiblemindshq.com`, using an email inquiry with no client
@@ -25,9 +25,9 @@
 2. NIST SP 800-115: plan technical assessments, analyze findings and develop
    mitigation strategies. This is an established 2008 guide, not a new mandate.
    https://csrc.nist.gov/pubs/sp/800/115/final
-3. CIS IG1 SME guide: essential hygiene baseline, not a complete guarantee or
-   necessarily sufficient for every firm's sensitive data.
-   https://www.cisecurity.org/insights/white-papers/implementation-guide-for-small-and-medium-sized-enterprises-cis-controls-ig1
+3. CIS Critical Security Controls: prioritized safeguards selected for the
+   firm's exposure and data; not a complete guarantee.
+   https://www.cisecurity.org/controls/v8
 4. Nmap: discovery and network inventory.
    https://nmap.org/book/intro.html
 5. Tenable: authenticated checks, privilege requirements, failed-access blind
@@ -49,8 +49,36 @@
     possession of medical records.
     https://www.hhs.gov/hipaa/for-professionals/covered-entities/index.html
 
-The six-person PI firm example is hypothetical. Existing illustration is labeled
+The PI firm example is hypothetical. Existing illustration is labeled
 as such and is not represented as a real client file or security dashboard.
+
+## Expanded news and obligations framing
+
+- PHP Foundation, October 21: two critical flaws patched; exploitation depends
+  on conditions. AI-assisted research helped establish impact. The article does
+  not infer that a reader's firm uses affected PHP or has been compromised.
+  https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/
+- Google Threat Intelligence Group, September 8: observed agent-enabled
+  credential harvesting, including a campaign developed in under six hours
+  after cloud-resource compromise. Distinct from forecasts.
+  https://cloud.google.com/blog/topics/threat-intelligence/from-prompting-to-autonomy-the-evolution-of-adversarial-ai
+- NCSC CTO Ollie Whitehouse, May 1: forecast of a vulnerability patch wave.
+  https://www.ncsc.gov.uk/blogs/prepare-for-vulnerability-patch-wave
+- OpenAI, October 21: provider forecast of sharply increasing findings; AI also
+  helped defenders. Not an independent estimate of future attack rates.
+  https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/
+- Dario Amodei, September: concern about capabilities outpacing safeguards.
+  Severe scenarios explicitly identified as warnings, not established outcomes.
+  https://darioamodei.com/post/we-must-pace-the-frontier
+- ABA Rule 1.6 commentary: reasonable safeguards, not strict liability.
+  https://www.americanbar.org/content/aba-cms-dotorg/en/groups/professional_responsibility/publications/model_rules_of_professional_conduct/rule_1_6_confidentiality_of_information/comment_on_rule_1_6/
+- California AG: individual notice and AG submission are distinct. More than
+  500 affected residents is the AG sample-submission threshold, not a blanket
+  exemption for smaller incidents. No universal deadline is asserted.
+  https://www.oag.ca.gov/privacy/databreach/reporting
+
+Small-firm positioning removed from the article and linked service, including
+FAQ/schema and metadata. Existing related-article routes remain unchanged.
 
 ## Implementation
 
@@ -78,3 +106,8 @@ No homepage copy was changed.
 - `git diff --check`: passed.
 
 Production publication is verified separately after the main-branch push.
+
+The expanded news/obligations revision passed lint, the 95-page production
+build, the 80-page SEO audit, and the same five-width browser checks. Lazy-loaded
+images are scrolled into view and decoded before asserting image availability.
+Mobile and desktop header/TOC screenshots were inspected again.
