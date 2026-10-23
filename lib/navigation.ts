@@ -20,6 +20,7 @@ export const piSystemsLinks = [
 ];
 
 export const solutionsLinks = [
+  { href: "/services/law-firm-cybersecurity", label: "Cybersecurity Assessment & Fixes" },
   { href: "/services/open-source-ai-workflows", label: "Open-Source AI Setup" },
   { href: "/solutions/intake-agent", label: "Intake Agent" },
   {
@@ -38,6 +39,7 @@ export const caseStudiesLinks = [
 ];
 
 export const blogLinks = [
+  { href: "/blog/law-firm-cybersecurity-ai-specialist", label: "Cybersecurity for Firm Owners" },
   {
     href: "/blog/measure-ai-roi-personal-injury-firms",
     label: "Measuring AI ROI",
@@ -151,6 +153,7 @@ export const footerLinks = [
       { label: "PI Owner AI Builder Program", href: "/build-partnership" },
       { label: "Our Thesis", href: "/thesis" },
       { label: "Security", href: "/security" },
+      { label: "Cybersecurity Services", href: "/services/law-firm-cybersecurity" },
       { label: "Email", href: "mailto:hello@possibleminds.ai" },
       { label: "Pranav on LinkedIn", href: LINKEDIN_URL },
     ],

@@ -128,7 +128,7 @@ export function Navbar() {
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
-            <SheetContent>
+            <SheetContent className="overflow-y-auto sm:block xl:hidden" aria-describedby={undefined}>
               <SheetHeader>
                 <SheetTitle className="text-left">Navigate</SheetTitle>
               </SheetHeader>

@@ -12,6 +12,18 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    href: "/blog/law-firm-cybersecurity-ai-specialist",
+    slug: "law-firm-cybersecurity-ai-specialist",
+    title: "AI Is Finding Software Weaknesses. Who Is Checking Your Firm?",
+    description:
+      "A PI firm's guide to hiring a cybersecurity specialist: assess exposure, protect client information, fix vulnerabilities, and verify the results.",
+    author: "Pranav Modi",
+    date: "October 23, 2026",
+    readTime: "9 min read",
+    category: "Security & Governance",
+    tags: ["Law Firm Cybersecurity", "AI Governance", "For PI Firms"],
+  },
+  {
     href: "/blog/measure-ai-roi-personal-injury-firms",
     slug: "measure-ai-roi-personal-injury-firms",
     title: "Your AI Saved Time. What Did Your PI Firm Gain?",

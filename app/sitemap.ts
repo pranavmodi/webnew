@@ -18,6 +18,7 @@ const staticPages = [
   { url: "/solutions/intake-agent", changeFrequency: "weekly" as const, priority: 0.95 },
   { url: "/services/case-management-migration", changeFrequency: "monthly" as const, priority: 0.9 },
   { url: "/services/open-source-ai-workflows", changeFrequency: "monthly" as const, priority: 0.9 },
+  { url: "/services/law-firm-cybersecurity", changeFrequency: "monthly" as const, priority: 0.9 },
   { url: "/services/needles-migration", changeFrequency: "monthly" as const, priority: 0.85 },
   { url: "/services/trialworks-migration", changeFrequency: "monthly" as const, priority: 0.85 },
   { url: "/services/abacuslaw-migration", changeFrequency: "monthly" as const, priority: 0.85 },

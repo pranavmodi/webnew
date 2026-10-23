@@ -170,6 +170,11 @@ const caseStudies = [
 
 const blogPosts = [
   {
+    href: "/blog/law-firm-cybersecurity-ai-specialist",
+    title: "AI Is Finding Software Weaknesses. Who Is Checking Your Firm?",
+    tag: "Cybersecurity",
+  },
+  {
     href: "/blog/measure-ai-roi-personal-injury-firms",
     title: "Your AI Saved Time. What Did Your PI Firm Gain?",
     tag: "Measuring AI ROI",
