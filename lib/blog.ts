@@ -12,6 +12,17 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    href: "/blog/ai-capacity-pi-firm-leadership",
+    slug: "ai-capacity-pi-firm-leadership",
+    title: "AI Can Help Your PI Firm Handle More Cases. What Kind of Firm Will You Build?",
+    description: "AI can free up time in a PI firm. How founders use that capacity shapes client care, staff workload, judgment, and the business they build.",
+    author: "Pranav Modi",
+    date: "October 29, 2026",
+    readTime: "6 min read",
+    category: "Firm Leadership",
+    tags: ["AI Strategy", "Law Firm Leadership", "For PI Firms"],
+  },
+  {
     href: "/blog/law-firm-cybersecurity-ai-specialist",
     slug: "law-firm-cybersecurity-ai-specialist",
     title: "AI Is Finding Software Weaknesses. Who Is Checking Your Firm?",

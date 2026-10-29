@@ -170,6 +170,11 @@ const caseStudies = [
 
 const blogPosts = [
   {
+    href: "/blog/ai-capacity-pi-firm-leadership",
+    title: "AI Can Help Your PI Firm Handle More Cases. What Kind of Firm Will You Build?",
+    tag: "Firm Leadership",
+  },
+  {
     href: "/blog/law-firm-cybersecurity-ai-specialist",
     title: "AI Is Finding Software Weaknesses. Who Is Checking Your Firm?",
     tag: "Cybersecurity",

@@ -39,6 +39,7 @@ export const caseStudiesLinks = [
 ];
 
 export const blogLinks = [
+  { href: "/blog/ai-capacity-pi-firm-leadership", label: "AI & the Firm You Build" },
   { href: "/blog/law-firm-cybersecurity-ai-specialist", label: "Cybersecurity for Firm Owners" },
   {
     href: "/blog/measure-ai-roi-personal-injury-firms",
